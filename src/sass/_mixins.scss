@@ -1,0 +1,16 @@
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin section {
+	width: $width-section;
+	@media (min-width: $breakpoint-tablet) {
+	}
+}
+
+@mixin section-large {
+	@media (min-width: $breakpoint-tablet) {
+	}
+}

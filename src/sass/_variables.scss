@@ -1,0 +1,25 @@
+// ---> COLORS:
+$color-background-main: #e1e1e1;
+
+$color-text-light: #ffffff;
+$color-text-dark: #000000;
+
+$color-navbar: #f8f8f8;
+
+// ---> Others:
+$padding-section: 5px;
+$padding-sub-section: 8px;
+
+$width-section: 97%;
+// $width-section-desktop: 97%;
+// $width-section-mobile: 97%;
+
+// ---> BREAKPOINTS:
+// -----> *** If you change these make sure to change them inside the functional components that use them for animations ***
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-medium: 992px;
+$breakpoint-large: 1600px;
+$breakpoint-desktop: 2100px;
+
+$breakpoint-mobile-landscape: 650px;
