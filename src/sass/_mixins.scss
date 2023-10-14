@@ -4,13 +4,11 @@
 	align-items: center;
 }
 
-@mixin section {
-	width: $width-section;
-	@media (min-width: $breakpoint-tablet) {
-	}
-}
-
-@mixin section-large {
+@mixin content-div {
+	width: $width-full;
+	background-color: $color-section-background;
+	margin: $margin-sub-section;
+	border-radius: 40px;
 	@media (min-width: $breakpoint-tablet) {
 	}
 }

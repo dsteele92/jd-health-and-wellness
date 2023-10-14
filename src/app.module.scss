@@ -1,5 +1,30 @@
 @import 'sass';
 
+* {
+	font-family: 'KoHo', 'Roboto', sans-serif;
+}
+
+h1 {
+}
+h2 {
+}
+h3 {
+}
+h4 {
+}
+p {
+	font-size: 2rem;
+	font-weight: 300;
+	// line-height: 1.8rem;
+	letter-spacing: 1pt;
+	text-align: justify;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
 .App {
 	background-color: $color-background-main;
 	height: 100%;

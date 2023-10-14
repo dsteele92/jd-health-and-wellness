@@ -1,0 +1,49 @@
+@import 'sass';
+
+.Intro {
+	height: 100vh;
+	width: 100vw;
+	background-image: url('../../../images/mt_hood_unsplash.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	// set background image position vertically to 30% of the image
+	background-position: center top;
+
+	.Tint {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.1);
+
+		.Headers {
+			position: absolute;
+			transform: translate(-50%, -50%);
+			left: 50%;
+			bottom: 55%;
+			.Title {
+				max-width: 60vw;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				letter-spacing: 10pt;
+
+				.JD {
+					font-size: 12rem;
+					font-weight: 200;
+					text-transform: uppercase;
+					color: white;
+					font-family: 'Kumbh Sans', sans-serif;
+					margin-right: 2rem;
+				}
+				.HW {
+					font-size: 5rem;
+					font-weight: 300;
+					text-transform: uppercase;
+					color: white;
+					font-family: 'Inter', sans-serif;
+				}
+			}
+		}
+	}
+}
