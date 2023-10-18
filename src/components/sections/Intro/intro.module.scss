@@ -10,13 +10,15 @@
 	// set background image position vertically to 30% of the image
 	background-position: center top;
 
-	.Background {
+	.BackgroundWrapper {
 		position: absolute;
 		height: 100%;
 		width: 100%;
+		overflow: hidden;
 		.Background {
 			position: absolute;
-			width: 100%;
+			min-width: 100%;
+			height: 100%;
 		}
 	}
 
