@@ -1,5 +1,5 @@
 import { React } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Style from './home.module.scss';
 import { Intro, About } from 'components';
 // import { useHasIntersected } from 'components';

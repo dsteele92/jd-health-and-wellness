@@ -1,5 +1,5 @@
-import { React, useState, useEffect, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { React } from 'react';
+// import { Link, useLocation } from 'react-router-dom';
 import Style from './intro.module.scss';
 import { MainMenu } from 'components';
 

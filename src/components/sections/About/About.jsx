@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { React } from 'react';
 import Style from './about.module.scss';
 import { SectionHeader } from 'components';
 
