@@ -22,12 +22,11 @@ export default function About() {
 				<div className={Style.Service}>
 					<div className={Style.ServiceName}>
 						<img
-							src='https://res.cloudinary.com/dp1dn1ghw/image/upload/v1697638379/JD/mt_hood_unsplash_cjdqfv.jpg'
-							alt='test pic'
-							style={{ height: '300px' }}
+							src='https://res.cloudinary.com/dp1dn1ghw/image/upload/v1697654802/JD/icons8-family-96_vuffga.png'
+							alt='family medicine icon'
+							className={Style.Icon}
 						/>
-						<div className={Style.Icon}></div>
-						<div className={Style.Text}></div>
+						<div className={Style.Text}>Family Medicine</div>
 					</div>
 					<div className={Style.ServiceDescription}></div>
 				</div>

@@ -29,10 +29,36 @@
 				width: calc(50% - 10px);
 				height: 100%;
 				border-radius: 40px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
 
 				&Name {
 					@extend .Service;
 					background-color: $color-blue;
+
+					.Icon {
+						height: 75px;
+						width: 75px;
+					}
+					.Text {
+						text-transform: uppercase;
+						letter-spacing: 1pt;
+						color: white;
+						font-family: 'Livvic', sans-serif;
+						font-size: 4rem;
+						@media screen and (max-width: $breakpoint-large) {
+							font-size: 3rem;
+						}
+						@media screen and (max-width: $breakpoint-medium) {
+							font-size: 2.5rem;
+						}
+						@media screen and (max-width: $breakpoint-tablet) {
+							font-size: 2rem;
+						}
+						font-weight: 200;
+					}
 				}
 				&Description {
 					@extend .Service;

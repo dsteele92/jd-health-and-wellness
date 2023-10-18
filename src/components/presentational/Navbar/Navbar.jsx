@@ -1,7 +1,6 @@
 import { React, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Style from './navbar.module.scss';
-import logo from '../../../images/logo.png';
 
 export default function Navbar() {
 	const [top, setTop] = useState(true);
@@ -28,7 +27,11 @@ export default function Navbar() {
 			<div className={top ? Style.Navbar : Style.NavbarScrolled}>
 				<div>
 					<Link to='/'>
-						<img src={logo} alt='JD Health and Wellness Logo' style={{ height: '50px' }} />
+						<img
+							src='https://res.cloudinary.com/dp1dn1ghw/image/upload/v1697653224/JD/logo_txsiex.png'
+							alt='JD Health and Wellness Logo'
+							style={{ height: '50px' }}
+						/>
 					</Link>
 				</div>
 				<div className={!top ? Style.NavLink : Style.NavLinkHide}>
