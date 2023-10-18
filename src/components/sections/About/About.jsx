@@ -21,6 +21,11 @@ export default function About() {
 			<div className={Style.Services}>
 				<div className={Style.Service}>
 					<div className={Style.ServiceName}>
+						<img
+							src='https://res.cloudinary.com/dp1dn1ghw/image/upload/v1697638379/JD/mt_hood_unsplash_cjdqfv.jpg'
+							alt='test pic'
+							style={{ height: '300px' }}
+						/>
 						<div className={Style.Icon}></div>
 						<div className={Style.Text}></div>
 					</div>
