@@ -7,20 +7,7 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 
-	// set background image position vertically to 30% of the image
-	background-position: center top;
-
-	.BackgroundWrapper {
-		position: absolute;
-		height: 100%;
-		width: 100%;
-		overflow: hidden;
-		.Background {
-			position: absolute;
-			min-width: 100%;
-			height: 100%;
-		}
-	}
+	background-position: center 10%;
 
 	.Tint {
 		position: absolute;
@@ -32,28 +19,80 @@
 			position: absolute;
 			transform: translate(-50%, -50%);
 			left: 50%;
-			bottom: 55%;
+			bottom: 48%;
+			@media screen and (max-width: $breakpoint-desktop) {
+				bottom: 48%;
+			}
+			@media screen and (max-width: $breakpoint-large) {
+				bottom: 50%;
+			}
+			@media screen and (max-width: $breakpoint-medium) {
+				bottom: 50%;
+			}
+			@media screen and (max-width: $breakpoint-tablet) {
+				bottom: 60%;
+			}
+			@media screen and (max-width: $breakpoint-mobile) {
+				bottom: 70%;
+			}
 			.Title {
-				max-width: 60vw;
+				max-width: 75vw;
 				display: flex;
 				justify-content: center;
 				align-items: center;
 				letter-spacing: 10pt;
+				// vertically align text center
 
 				.JD {
-					font-size: 12rem;
+					font-size: 15rem;
 					font-weight: 200;
 					text-transform: uppercase;
 					color: white;
 					font-family: 'Kumbh Sans', sans-serif;
 					margin-right: 2rem;
+
+					@media screen and (max-width: $breakpoint-desktop) {
+						// font-size: 12rem;
+					}
+					@media screen and (max-width: $breakpoint-large) {
+						font-size: 12rem;
+					}
+					@media screen and (max-width: $breakpoint-medium) {
+						font-size: 10rem;
+					}
+					@media screen and (max-width: $breakpoint-tablet) {
+						font-size: 8rem;
+						margin-right: 1rem;
+						letter-spacing: 8pt;
+					}
+					@media screen and (max-width: $breakpoint-mobile) {
+						font-size: 4rem;
+						margin-right: 0.5rem;
+					}
 				}
 				.HW {
-					font-size: 5rem;
+					font-size: 5.5rem;
 					font-weight: 300;
 					text-transform: uppercase;
 					color: white;
 					font-family: 'Inter', sans-serif;
+
+					@media screen and (max-width: $breakpoint-desktop) {
+						// font-size: 4rem;
+					}
+					@media screen and (max-width: $breakpoint-large) {
+						font-size: 4rem;
+					}
+					@media screen and (max-width: $breakpoint-medium) {
+						font-size: 3.5rem;
+					}
+					@media screen and (max-width: $breakpoint-tablet) {
+						font-size: 3rem;
+						letter-spacing: 6pt;
+					}
+					@media screen and (max-width: $breakpoint-mobile) {
+						font-size: 1.5rem;
+					}
 				}
 			}
 		}
