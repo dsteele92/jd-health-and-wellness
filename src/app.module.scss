@@ -23,6 +23,7 @@ h3 {
 h4 {
 	font-weight: 500;
 	letter-spacing: 1pt;
+	transition: $transition-fast;
 
 	font-size: 2rem;
 	@media screen and (max-width: $breakpoint-desktop) {
