@@ -5,3 +5,5 @@ export { default as Navbar } from './presentational/Navbar/Navbar.jsx';
 export { default as MainMenu } from './presentational/MainMenu/MainMenu.jsx';
 
 export { default as SectionHeader } from './generic/SectionHeader/SectionHeader.jsx';
+
+export { default as useHasIntersected } from './hooks/useHasIntersected.jsx';

@@ -12,3 +12,29 @@
 	@media (min-width: $breakpoint-tablet) {
 	}
 }
+
+@mixin bubble {
+	z-index: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	height: 100%;
+	width: 100%;
+	transition: $transition-bubble;
+
+	opacity: 0;
+	padding: 5px;
+
+	&Show {
+		@extend .Bubble;
+		opacity: 1;
+		padding: 0;
+	}
+}
+
+@mixin bubble-inner {
+	height: 100%;
+	width: 100%;
+	transition: $transition-bubble;
+}
