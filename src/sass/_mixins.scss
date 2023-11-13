@@ -26,10 +26,8 @@
 	opacity: 0;
 	padding: 5px;
 
-	&Show {
-		@extend .Bubble;
-		opacity: 1;
-		padding: 0;
+	&:hover {
+		padding: 3px;
 	}
 }
 
@@ -37,4 +35,22 @@
 	height: 100%;
 	width: 100%;
 	transition: $transition-bubble;
+}
+
+@mixin bubble-show {
+	transition: $transition-bubble;
+	opacity: 1;
+	padding: 0px;
+	// @keyframes bubbleAppear {
+	// 	from {
+	// 		opacity: 0;
+	// 		padding: 5px;
+	// 	}
+	// 	to {
+	// 		opacity: 1;
+	// 		padding: 0px;
+	// 	}
+	// }
+
+	// animation: bubbleAppear 0.3s ease-in 0.5s 1 forwards;
 }

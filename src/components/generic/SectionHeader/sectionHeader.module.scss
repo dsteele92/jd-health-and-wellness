@@ -33,6 +33,11 @@
 			border-radius: 40px;
 			background-color: $color-section-background;
 		}
+
+		&Show {
+			@extend .Bubble;
+			@include bubble-show;
+		}
 	}
 
 	.About {

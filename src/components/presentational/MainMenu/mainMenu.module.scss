@@ -36,35 +36,49 @@
 		// @include flex-center;
 
 		.Bubble {
+			position: relative;
 			@include bubble;
+			// @include bubble-show;
 
 			.BubbleInner {
 				@include bubble-inner;
 				border-radius: 20px;
 				background-color: rgba($color: #ffffff, $alpha: 0.4);
 				backdrop-filter: blur(3px);
-				&:hover {
-					background-color: rgba($color: #ffffff, $alpha: 0.3);
-				}
 			}
-		}
-		&:hover {
-			.Bubble {
-				padding: 3px;
+
+			.Content {
+				z-index: 100;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				height: 100%;
+				width: 100%;
+				padding: 1.2rem 1.5rem;
+				border-radius: 20px;
+				cursor: pointer;
+			}
+
+			&:hover {
 				.BubbleInner {
 					background-color: rgba($color: #ffffff, $alpha: 0.3);
 				}
 			}
-		}
 
-		.Content {
-			position: relative;
-			height: 100%;
-			width: 100%;
-			padding: 1.2rem 1.5rem;
-			border-radius: 20px;
-			cursor: pointer;
+			&Show {
+				@extend .Bubble;
+				@include bubble-show;
+			}
 		}
+		// &:hover {
+		// 	.Bubble {
+		// 		padding: 3px;
+		// 		.BubbleInner {
+		// 			background-color: rgba($color: #ffffff, $alpha: 0.3);
+		// 		}
+		// 	}
+		// }
 	}
 
 	.About {
