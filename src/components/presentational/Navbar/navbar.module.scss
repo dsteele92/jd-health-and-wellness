@@ -12,7 +12,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	transition: $transition-fast;
+	transition: $transition-slow;
 
 	.NavLink {
 		text-decoration: none;
@@ -21,7 +21,7 @@
 		font-weight: 300;
 		text-transform: uppercase;
 		letter-spacing: 1pt;
-		transition: $transition-fast;
+		transition: $transition-slow;
 
 		&:hover {
 			color: #ff0000;

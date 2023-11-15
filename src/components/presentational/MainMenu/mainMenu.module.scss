@@ -36,9 +36,7 @@
 		// @include flex-center;
 
 		.Bubble {
-			position: relative;
 			@include bubble;
-			// @include bubble-show;
 
 			.BubbleInner {
 				@include bubble-inner;
@@ -48,13 +46,7 @@
 			}
 
 			.Content {
-				z-index: 100;
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-				height: 100%;
-				width: 100%;
+				@include bubble-content;
 				padding: 1.2rem 1.5rem;
 				border-radius: 20px;
 				cursor: pointer;
@@ -71,14 +63,6 @@
 				@include bubble-show;
 			}
 		}
-		// &:hover {
-		// 	.Bubble {
-		// 		padding: 3px;
-		// 		.BubbleInner {
-		// 			background-color: rgba($color: #ffffff, $alpha: 0.3);
-		// 		}
-		// 	}
-		// }
 	}
 
 	.About {

@@ -7,7 +7,7 @@ export default function MainMenu() {
 	useEffect(() => {
 		setTimeout(() => {
 			setShowMenu(true);
-		}, 500);
+		}, 200);
 	}, []);
 
 	return (
