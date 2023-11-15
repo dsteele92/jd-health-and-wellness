@@ -9,46 +9,53 @@
 	background-color: $color-section-background;
 	margin: $margin-sub-section;
 	border-radius: 40px;
+	// overflow: hidden;
 	@media (min-width: $breakpoint-tablet) {
 	}
 }
 
-@mixin bubble {
+@mixin bubble-container {
 	z-index: 0;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	height: 100%;
-	width: 100%;
+	opacity: 0;
+	transition: $transition-bubble;
+}
+
+@mixin bubble {
+	z-index: -1;
 	transition: $transition-bubble;
 
-	opacity: 0;
-	padding: 5px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
 
-	&:hover {
-		padding: 3px;
-	}
+	// opacity: 0;
+	padding: 10px;
 }
 
 @mixin bubble-inner {
+	position: relative;
 	height: 100%;
 	width: 100%;
 	transition: $transition-bubble;
 }
 
-@mixin bubble-show {
-	transition: $transition-bubble-appear;
-	opacity: 1;
-	padding: 0px;
+@mixin bubble-active {
+	transition: $transition-bubble;
+	padding: 3px !important;
 }
 
-@mixin bubble-content {
-	z-index: 100;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	height: 100%;
-	width: 100%;
+@mixin bubble-show {
+	opacity: 1;
+	.Bubble {
+		padding: 0px;
+	}
 }
+
+// @mixin bubble-content {
+// 	z-index: 100;
+// 	// position: absolute;
+// 	// height: 100%;
+// 	// width: 100%;
+// }

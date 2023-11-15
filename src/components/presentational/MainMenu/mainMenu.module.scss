@@ -28,40 +28,44 @@
 		}
 	}
 
-	section {
+	.MenuSection {
+		@include bubble-container;
+		cursor: pointer;
 		position: relative;
 		height: 100%;
 		width: 100%;
-		// min-height: fit-content;
-		// @include flex-center;
 
 		.Bubble {
 			@include bubble;
-
 			.BubbleInner {
 				@include bubble-inner;
 				border-radius: 20px;
 				background-color: rgba($color: #ffffff, $alpha: 0.4);
 				backdrop-filter: blur(3px);
 			}
+		}
 
-			.Content {
-				@include bubble-content;
-				padding: 1.2rem 1.5rem;
-				border-radius: 20px;
-				cursor: pointer;
-			}
+		.Content {
+			// @include bubble-content;
+			// z-index: 100;
+			padding: 1.2rem 1.5rem;
+			border-radius: 20px;
+			cursor: pointer;
+		}
 
-			&:hover {
+		&:hover {
+			.Bubble {
+				@include bubble-active;
 				.BubbleInner {
 					background-color: rgba($color: #ffffff, $alpha: 0.3);
 				}
 			}
+		}
 
-			&Show {
-				@extend .Bubble;
-				@include bubble-show;
-			}
+		&Show {
+			@extend .MenuSection;
+			@include bubble-show;
+			transition-delay: 0s;
 		}
 	}
 

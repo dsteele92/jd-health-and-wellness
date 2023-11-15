@@ -24,7 +24,7 @@ $margin-sub-section: 10px auto 0;
 // ---> TRANSITIONS & ANIMATIONS:
 $transition-fast: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 $transition-bubble: all 0.3s ease-in-out;
-$transition-bubble-appear: all 0.5s ease-in-out;
+$transition-bubble-appear: all 0.5s ease-in-out 0.2s;
 $transition-slow: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
 // $transition-bubble:
 
