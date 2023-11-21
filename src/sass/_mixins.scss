@@ -4,6 +4,16 @@
 	align-items: center;
 }
 
+@mixin width {
+	width: $width-full;
+	@media screen and (max-width: $breakpoint-tablet) {
+		width: $width-tablet;
+	}
+	@media screen and (max-width: $breakpoint-mobile) {
+		width: $width-mobile;
+	}
+}
+
 @mixin content-div {
 	width: $width-full;
 	background-color: $color-section-background;
@@ -17,12 +27,12 @@
 @mixin bubble-container {
 	z-index: 0;
 	opacity: 0;
-	transition: $transition-bubble;
+	transition: $transition-bubble-appear;
 }
 
 @mixin bubble {
 	z-index: -1;
-	transition: $transition-bubble;
+	transition: $transition-bubble-appear;
 
 	position: absolute;
 	top: 0;
