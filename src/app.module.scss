@@ -5,15 +5,39 @@
 }
 
 h1 {
-}
-h2 {
+	font-size: 3rem;
+	font-weight: 500;
+	letter-spacing: 1pt;
 	@media screen and (max-width: $breakpoint-desktop) {
+		// font-size: 2.5rem;
 	}
 	@media screen and (max-width: $breakpoint-large) {
+		font-size: 2.5rem;
 	}
 	@media screen and (max-width: $breakpoint-medium) {
+		font-size: 2rem;
 	}
 	@media screen and (max-width: $breakpoint-tablet) {
+		// font-size: 1.5rem;
+	}
+	@media screen and (max-width: $breakpoint-mobile) {
+	}
+}
+h2 {
+	font-size: 2.5rem;
+	font-weight: 500;
+	letter-spacing: 0.5pt;
+	@media screen and (max-width: $breakpoint-desktop) {
+		font-size: 2rem;
+	}
+	@media screen and (max-width: $breakpoint-large) {
+		// font-size: 1.6rem;
+	}
+	@media screen and (max-width: $breakpoint-medium) {
+		font-size: 1.5rem;
+	}
+	@media screen and (max-width: $breakpoint-tablet) {
+		// font-size: 1rem;
 	}
 	@media screen and (max-width: $breakpoint-mobile) {
 	}
@@ -63,9 +87,22 @@ h4 {
 p {
 	font-size: 2rem;
 	font-weight: 300;
-	// line-height: 1.8rem;
 	letter-spacing: 1pt;
 	text-align: justify;
+	@media screen and (max-width: $breakpoint-desktop) {
+		font-size: 1.8rem;
+	}
+	@media screen and (max-width: $breakpoint-large) {
+		font-size: 1.6rem;
+	}
+	@media screen and (max-width: $breakpoint-medium) {
+		font-size: 1.2rem;
+	}
+	@media screen and (max-width: $breakpoint-tablet) {
+		font-size: 1rem;
+	}
+	@media screen and (max-width: $breakpoint-mobile) {
+	}
 }
 
 a {

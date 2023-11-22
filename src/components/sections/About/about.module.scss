@@ -9,7 +9,7 @@
 
 	.AboutText {
 		position: relative;
-		width: $width-full;
+		@include width;
 		margin: 0 auto;
 		@include bubble-container;
 
@@ -34,22 +34,28 @@
 	}
 
 	.Services {
-		width: $width-full;
+		position: relative;
+		@include width;
 		margin: 0 auto;
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
 		.Service {
+			position: relative;
+			z-index: 0;
 			width: 100%;
 			height: 300px;
 			margin: $margin-sub-section;
 
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
+			// display: flex;
+			// justify-content: space-between;
+			// align-items: center;
 
-			.Service {
-				width: calc(50% - 10px);
+			.Serv {
+				position: absolute;
+				top: 0;
+				left: 50%;
+				width: calc(50% - 5px);
 				height: 100%;
 				border-radius: 40px;
 				display: flex;
@@ -58,7 +64,9 @@
 				align-items: center;
 
 				&Name {
-					@extend .Service;
+					z-index: 1;
+					transform: translateX(calc(-50% + -5px));
+					@extend .Serv;
 					background-color: $color-blue;
 
 					.Icon {
@@ -71,6 +79,9 @@
 						color: white;
 						font-family: 'Livvic', sans-serif;
 						font-size: 4rem;
+						@media screen and (max-width: $breakpoint-desktop) {
+							font-size: 3.5rem;
+						}
 						@media screen and (max-width: $breakpoint-large) {
 							font-size: 3rem;
 						}
@@ -84,10 +95,53 @@
 					}
 				}
 				&Description {
-					@extend .Service;
+					transform: translateX(calc(-50% + 5px));
+					z-index: 0;
+					@extend .Serv;
 					background-color: $color-section-background;
 				}
 			}
+		}
+	}
+	.CTA {
+		position: relative;
+		@include width;
+		margin: 0 auto;
+		@include bubble-container;
+
+		.Bubble {
+			@include bubble;
+			.BubbleInner {
+				@include bubble-inner;
+				border-radius: 40px;
+				background-color: $color-section-background;
+			}
+		}
+		.Content {
+			@include content-div;
+			@include flex-center;
+			flex-direction: column;
+			padding: 50px 20px;
+			@media screen and (max-width: $breakpoint-tablet) {
+				padding: 30px 20px;
+			}
+			h1 {
+				// width: 100%;
+				color: $color-red;
+				margin-bottom: 10px;
+				text-transform: uppercase;
+				text-align: center;
+			}
+			h2 {
+				color: $color-blue;
+				text-transform: uppercase;
+				text-align: center;
+			}
+		}
+
+		&Show {
+			@extend .CTA;
+			@include bubble-show;
 		}
 	}
 }
