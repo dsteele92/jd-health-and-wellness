@@ -12,7 +12,6 @@
 		@include bubble;
 		.BubbleInner {
 			@include bubble-inner;
-			border-radius: 40px;
 			background-color: $color-section-background;
 		}
 	}

@@ -1,29 +1,10 @@
-import { React, useEffect, useRef } from 'react';
+import { React } from 'react';
 import Style from './about.module.scss';
-import { SectionHeader, useHasIntersected } from 'components';
+import { SectionHeader, useHasIntersected, Services } from 'components';
 
 export default function About() {
 	const [aboutText, aboutTextIntersected] = useHasIntersected({ threshold: 0.25 });
 	const [CTA, CTAIntersected] = useHasIntersected({ threshold: 0.25 });
-
-	const service1name = useRef();
-
-	useEffect(() => {
-		// console.dir(service1name.current);
-		console.log(service1name.current.clientWidth);
-
-		const handleScroll = (event) => {
-			const windowHeight = window.innerHeight;
-			const currentScroll = window.pageYOffset;
-			console.log(windowHeight, currentScroll);
-		};
-
-		window.addEventListener('scroll', handleScroll);
-
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
-	}, []);
 
 	return (
 		<div className={Style.About}>
@@ -43,54 +24,7 @@ export default function About() {
 					</p>
 				</div>
 			</div>
-			<div className={Style.Services}>
-				<div className={Style.Service}>
-					<div className={Style.ServName} ref={service1name}>
-						<img
-							src='https://res.cloudinary.com/dp1dn1ghw/image/upload/v1697654802/JD/icons8-family-96_vuffga.png'
-							alt='family medicine icon'
-							className={Style.Icon}
-						/>
-						<div className={Style.Text}>Family Medicine</div>
-					</div>
-					<div className={Style.ServDescription}></div>
-				</div>
-				<div className={Style.Service}>
-					<div className={Style.ServName}>
-						<div className={Style.Icon}></div>
-						<div className={Style.Text}></div>
-					</div>
-					<div className={Style.ServDescription}></div>
-				</div>
-				<div className={Style.Service}>
-					<div className={Style.ServName}>
-						<div className={Style.Icon}></div>
-						<div className={Style.Text}></div>
-					</div>
-					<div className={Style.ServDescription}></div>
-				</div>
-				<div className={Style.Service}>
-					<div className={Style.ServName}>
-						<div className={Style.Icon}></div>
-						<div className={Style.Text}></div>
-					</div>
-					<div className={Style.ServDescription}></div>
-				</div>
-				<div className={Style.Service}>
-					<div className={Style.ServName}>
-						<div className={Style.Icon}></div>
-						<div className={Style.Text}></div>
-					</div>
-					<div className={Style.ServDescription}></div>
-				</div>
-				<div className={Style.Service}>
-					<div className={Style.ServName}>
-						<div className={Style.Icon}></div>
-						<div className={Style.Text}></div>
-					</div>
-					<div className={Style.ServDescription}></div>
-				</div>
-			</div>
+			<Services />
 			<div className={CTAIntersected ? Style.CTAShow : Style.CTA} ref={CTA}>
 				<div className={Style.Bubble}>
 					<div className={Style.BubbleInner}></div>

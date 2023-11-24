@@ -25,6 +25,7 @@
 }
 
 @mixin bubble-container {
+	// this is responsible for the fading in of each section
 	z-index: 0;
 	opacity: 0;
 	transition: $transition-bubble-appear;
@@ -40,7 +41,7 @@
 	height: 100%;
 	width: 100%;
 
-	// opacity: 0;
+	// this is responsible for the enlarging of each bubble on the fade-in
 	padding: 10px;
 }
 
@@ -48,15 +49,19 @@
 	position: relative;
 	height: 100%;
 	width: 100%;
+	border-radius: 40px;
+	// this is the transition for any background color changes
 	transition: $transition-bubble;
 }
 
 @mixin bubble-active {
+	// this sets the transition for the bubbles on hover
 	transition: $transition-bubble;
 	padding: 3px !important;
 }
 
 @mixin bubble-show {
+	// tnis is responsible for the fade-in of each bubble
 	opacity: 1;
 	.Bubble {
 		padding: 0px;

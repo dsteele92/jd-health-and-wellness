@@ -17,7 +17,6 @@
 			@include bubble;
 			.BubbleInner {
 				@include bubble-inner;
-				border-radius: 40px;
 				background-color: $color-section-background;
 			}
 		}
@@ -33,76 +32,6 @@
 		}
 	}
 
-	.Services {
-		position: relative;
-		@include width;
-		margin: 0 auto;
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-start;
-		.Service {
-			position: relative;
-			z-index: 0;
-			width: 100%;
-			height: 300px;
-			margin: $margin-sub-section;
-
-			// display: flex;
-			// justify-content: space-between;
-			// align-items: center;
-
-			.Serv {
-				position: absolute;
-				top: 0;
-				left: 50%;
-				width: calc(50% - 5px);
-				height: 100%;
-				border-radius: 40px;
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-
-				&Name {
-					z-index: 1;
-					transform: translateX(calc(-50% + -5px));
-					@extend .Serv;
-					background-color: $color-blue;
-
-					.Icon {
-						height: 75px;
-						width: 75px;
-					}
-					.Text {
-						text-transform: uppercase;
-						letter-spacing: 1pt;
-						color: white;
-						font-family: 'Livvic', sans-serif;
-						font-size: 4rem;
-						@media screen and (max-width: $breakpoint-desktop) {
-							font-size: 3.5rem;
-						}
-						@media screen and (max-width: $breakpoint-large) {
-							font-size: 3rem;
-						}
-						@media screen and (max-width: $breakpoint-medium) {
-							font-size: 2.5rem;
-						}
-						@media screen and (max-width: $breakpoint-tablet) {
-							font-size: 2rem;
-						}
-						font-weight: 200;
-					}
-				}
-				&Description {
-					transform: translateX(calc(-50% + 5px));
-					z-index: 0;
-					@extend .Serv;
-					background-color: $color-section-background;
-				}
-			}
-		}
-	}
 	.CTA {
 		position: relative;
 		@include width;
@@ -113,7 +42,6 @@
 			@include bubble;
 			.BubbleInner {
 				@include bubble-inner;
-				border-radius: 40px;
 				background-color: $color-section-background;
 			}
 		}
