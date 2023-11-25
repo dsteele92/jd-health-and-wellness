@@ -1,13 +1,37 @@
 @import 'sass';
 
+// .ExampleSection {
+// 	position: relative;
+// 	margin: 0 auto;
+// 	@include width;
+// 	@include bubble-container;
+
+// 	.Bubble {
+// 		@include bubble;
+// 		.BubbleInner {
+// 			@include bubble-inner;
+// 			// set background color
+// 		}
+// 	}
+// 	.Content {
+// 		@include content-div;
+// 		// set padding here
+// 	}
+
+// 	&Show {
+// 		@extend .ExampleSection;
+// 		@include bubble-show;
+// 	}
+// }
+
 * {
 	font-family: 'KoHo', 'Roboto', sans-serif;
 }
 
 h1 {
 	font-size: 3rem;
-	font-weight: 500;
-	letter-spacing: 1pt;
+	font-weight: 400;
+	letter-spacing: 2pt;
 	@media screen and (max-width: $breakpoint-desktop) {
 		// font-size: 2.5rem;
 	}

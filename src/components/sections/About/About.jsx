@@ -1,6 +1,6 @@
 import { React } from 'react';
 import Style from './about.module.scss';
-import { SectionHeader, useHasIntersected, Services } from 'components';
+import { SectionHeader, useHasIntersected, Services, Staff } from 'components';
 
 export default function About() {
 	const [aboutText, aboutTextIntersected] = useHasIntersected({ threshold: 0.25 });
@@ -34,6 +34,9 @@ export default function About() {
 					<h2>Call (503) 877-1995</h2>
 				</div>
 			</div>
+			<SectionHeader text='OUR STAFF' section='About' />
+			<Staff />
+			<SectionHeader text='COMMUNITY & GOVERNMENT' section='About' />
 		</div>
 	);
 }

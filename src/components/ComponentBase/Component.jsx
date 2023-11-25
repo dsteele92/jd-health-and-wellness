@@ -1,6 +1,16 @@
-import { React } from 'react';
-import Style from './intro.module.scss';
+import { React, useRef } from 'react';
+import Style from './component.module.scss';
+import { useHasIntersected } from 'components';
 
 export default function Component() {
-	return <div className={Style.Component}></div>;
+	const [component, componentIntersected] = useHasIntersected({ threshold: 0.25 });
+
+	return (
+		<div className={componentIntersected ? Style.ComponentShow : Style.Component} ref={component}>
+			<div className={Style.Bubble}>
+				<div className={Style.BubbleInner}></div>
+			</div>
+			<div className={Style.Content}></div>
+		</div>
+	);
 }

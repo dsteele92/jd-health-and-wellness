@@ -24,6 +24,16 @@
 	}
 }
 
+@mixin text-padding {
+	padding: 6% 12%;
+	@media screen and (max-width: $breakpoint-tablet) {
+		// padding: 0 5%;
+	}
+	@media screen and (max-width: $breakpoint-mobile) {
+		// padding: 0 2%;
+	}
+}
+
 @mixin bubble-container {
 	// this is responsible for the fading in of each section
 	z-index: 0;

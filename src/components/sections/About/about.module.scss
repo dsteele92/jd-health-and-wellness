@@ -23,7 +23,7 @@
 		.Content {
 			@include content-div;
 			@include flex-center;
-			padding: 100px 200px;
+			@include text-padding;
 		}
 
 		&Show {

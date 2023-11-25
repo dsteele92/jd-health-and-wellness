@@ -1,0 +1,62 @@
+@import 'sass';
+
+.Staff {
+	position: relative;
+	margin: 0 auto;
+	@include width;
+	@include bubble-container;
+
+	.Bubble {
+		@include bubble;
+		.BubbleInner {
+			@include bubble-inner;
+			background-color: $color-section-background;
+		}
+	}
+	.Content {
+		@include content-div;
+		// set padding here
+
+		.TextDisplay {
+			position: relative;
+			// overflow: hidden;
+
+			.MovingTextSm {
+				position: relative;
+				height: 50px;
+				width: 100%;
+				overflow: hidden;
+				h1 {
+					position: absolute;
+					width: fit-content;
+					white-space: nowrap;
+					font-weight: 300;
+					color: $color-blue;
+					text-transform: uppercase;
+					text-align: center;
+				}
+			}
+			.MovingTextLg {
+				position: relative;
+				height: 150px;
+				width: 100%;
+				overflow: hidden;
+
+				.LargeText {
+					color: rgb(165, 165, 165);
+					text-align: center;
+					white-space: nowrap;
+					font-size: 6rem;
+					font-weight: 300;
+					text-transform: uppercase;
+					letter-spacing: 3pt;
+				}
+			}
+		}
+	}
+
+	&Show {
+		@extend .Staff;
+		@include bubble-show;
+	}
+}
