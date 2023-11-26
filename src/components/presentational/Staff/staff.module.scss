@@ -16,33 +16,94 @@
 	.Content {
 		@include content-div;
 		// set padding here
+		padding-top: 5vh;
+
+		.CarouselFrameOuter {
+			position: relative;
+			height: 250px;
+			width: 80%;
+			max-width: 1000px;
+			overflow: hidden;
+			border: 1px solid black;
+			margin: 0 auto 5vh;
+			border-radius: 20px;
+			// overflow-x: scroll;
+			.CarouselFrameInner {
+				height: 100%;
+				display: flex;
+				flex-direction: row;
+				overflow: visible;
+				transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+				.Photos {
+					flex-shrink: 0;
+					height: 100%;
+					display: flex;
+					justify-content: space-around;
+					align-items: center;
+
+					.Photo {
+						position: relative;
+						height: 100%;
+						width: 35vw;
+						max-width: 60vh;
+						// border-radius: 10px;
+						background-size: cover;
+						background-repeat: no-repeat;
+						background-position: center;
+						cursor: pointer;
+					}
+				}
+			}
+		}
 
 		.TextDisplay {
 			position: relative;
+			height: 300px;
 			// overflow: hidden;
+
+			.StaffInfo {
+				height: 100%;
+				width: 90%;
+
+				&Hide {
+					@extend .StaffInfo;
+					display: none;
+				}
+			}
 
 			.MovingTextSm {
 				position: relative;
-				height: 50px;
+				height: 75px;
 				width: 100%;
 				overflow: hidden;
 				h1 {
 					position: absolute;
-					width: fit-content;
+					left: 0;
+					top: 30%;
 					white-space: nowrap;
 					font-weight: 300;
 					color: $color-blue;
 					text-transform: uppercase;
 					text-align: center;
 				}
+
+				&Hide {
+					@extend .MovingTextSm;
+					display: none;
+				}
 			}
 			.MovingTextLg {
 				position: relative;
-				height: 150px;
+				height: 225px;
 				width: 100%;
 				overflow: hidden;
+				margin-top: 5vh;
 
 				.LargeText {
+					position: absolute;
+					left: 0;
+					// top: 30%;
 					color: rgb(165, 165, 165);
 					text-align: center;
 					white-space: nowrap;
@@ -50,6 +111,11 @@
 					font-weight: 300;
 					text-transform: uppercase;
 					letter-spacing: 3pt;
+				}
+
+				&Hide {
+					@extend .MovingTextLg;
+					display: none;
 				}
 			}
 		}
