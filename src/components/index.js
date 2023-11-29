@@ -8,3 +8,4 @@ export { default as Services } from './presentational/Services/Services.jsx';
 export { default as Staff } from './presentational/Staff/Staff.jsx';
 
 export { default as useHasIntersected } from './hooks/useHasIntersected.jsx';
+export { ScrollProvider, useScroll } from './hooks/scrollProvider.jsx';

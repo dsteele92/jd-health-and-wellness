@@ -16,42 +16,114 @@
 	.Content {
 		@include content-div;
 		// set padding here
-		padding-top: 5vh;
+		position: relative;
+		padding: 5vh 0 3vh;
 
-		.CarouselFrameOuter {
+		.Carousel {
 			position: relative;
-			height: 250px;
-			width: 80%;
-			max-width: 1000px;
-			overflow: hidden;
-			border: 1px solid black;
-			margin: 0 auto 5vh;
-			border-radius: 20px;
-			// overflow-x: scroll;
-			.CarouselFrameInner {
-				height: 100%;
-				display: flex;
-				flex-direction: row;
-				overflow: visible;
-				transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+			margin: 0 auto;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 90%;
+			margin: 0 auto 3vh;
 
-				.Photos {
-					flex-shrink: 0;
+			.Arrow {
+				margin: 0 20px;
+				font-size: 30px;
+				color: $color-blue;
+				cursor: pointer;
+				transition: $transition-regular;
+
+				&Disable {
+					@extend .Arrow;
+					opacity: 0.5;
+					cursor: default;
+				}
+			}
+
+			.CarouselFrameOuter {
+				position: relative;
+				height: 250px;
+				width: 90%;
+				flex-shrink: 0;
+				max-width: 1000px;
+				border: 1px solid black;
+				border-radius: 40px;
+				overflow: hidden;
+
+				.CarouselFrameInner {
 					height: 100%;
 					display: flex;
-					justify-content: space-around;
-					align-items: center;
+					flex-direction: row;
+					transition: $transition-regular;
+					// overflow: visible;
 
-					.Photo {
-						position: relative;
+					.Photos {
+						flex-shrink: 0;
 						height: 100%;
-						width: 35vw;
-						max-width: 60vh;
-						// border-radius: 10px;
-						background-size: cover;
-						background-repeat: no-repeat;
-						background-position: center;
-						cursor: pointer;
+						display: flex;
+						justify-content: space-around;
+						align-items: center;
+
+						.Photo {
+							position: relative;
+							height: 100%;
+							width: 35vw;
+							max-width: 60vh;
+							// border-radius: 10px;
+							background-size: cover;
+							background-repeat: no-repeat;
+							background-position: center;
+							cursor: pointer;
+							&::after {
+								transition: $transition-regular;
+								content: '';
+								height: 100%;
+								width: 100%;
+								position: absolute;
+								top: 0;
+								left: 0;
+								background-color: black;
+								opacity: 0;
+							}
+
+							&Dim {
+								@extend .Photo;
+								&::after {
+									content: '';
+									height: 100%;
+									width: 100%;
+									position: absolute;
+									top: 0;
+									left: 0;
+									background-color: black;
+									opacity: 0.3;
+								}
+							}
+						}
+					}
+				}
+			}
+			.CarouselBottom {
+				position: absolute;
+				width: 90%;
+				max-width: 1000px;
+				top: 100%;
+				left: 50%;
+				transform: translateX(-50%);
+				display: flex;
+				.CarouselSelect {
+					@include flex-center;
+					width: 25%;
+					opacity: 0;
+					transition: $transition-fast;
+					font-size: 30px;
+					color: $color-red;
+
+					&Selected {
+						@extend .CarouselSelect;
+						opacity: 1;
 					}
 				}
 			}
@@ -60,11 +132,31 @@
 		.TextDisplay {
 			position: relative;
 			height: 300px;
-			// overflow: hidden;
-
+			@include flex-center;
+			flex-direction: column;
+			// overflow-y: scroll;
 			.StaffInfo {
-				height: 100%;
+				margin: 0 auto;
+				padding: 0 2%;
+				height: fit-content;
+				max-height: 95%;
+				overflow-y: auto;
 				width: 90%;
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				align-items: flex-start;
+
+				h4 {
+					margin-bottom: 0.5rem;
+				}
+
+				// p {
+				// 	font-size: 1.25rem;
+				// 	@media screen and (max-width: $breakpoint-medium) {
+				// 		font-size: 1rem;
+				// 	}
+				// }
 
 				&Hide {
 					@extend .StaffInfo;
@@ -74,13 +166,14 @@
 
 			.MovingTextSm {
 				position: relative;
-				height: 75px;
+				height: 100px;
 				width: 100%;
 				overflow: hidden;
 				h1 {
 					position: absolute;
-					left: 0;
-					top: 30%;
+					// left: 0;
+					right: 0;
+					bottom: 0;
 					white-space: nowrap;
 					font-weight: 300;
 					color: $color-blue;
@@ -95,10 +188,11 @@
 			}
 			.MovingTextLg {
 				position: relative;
-				height: 225px;
+				height: 200px;
+				top: 10%;
 				width: 100%;
 				overflow: hidden;
-				margin-top: 5vh;
+				// margin-top: 5vh;
 
 				.LargeText {
 					position: absolute;

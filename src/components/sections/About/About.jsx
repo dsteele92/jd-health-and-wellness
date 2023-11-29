@@ -1,10 +1,23 @@
-import { React } from 'react';
+import { React, useEffect, useRef } from 'react';
 import Style from './about.module.scss';
-import { SectionHeader, useHasIntersected, Services, Staff } from 'components';
+import { SectionHeader, useHasIntersected, Services, Staff, useScroll } from 'components';
+// import { HiArrowLongDown } from 'react-icons/hi2';
+import { PiArrowBendRightDownThin } from 'react-icons/pi';
 
 export default function About() {
 	const [aboutText, aboutTextIntersected] = useHasIntersected({ threshold: 0.25 });
 	const [CTA, CTAIntersected] = useHasIntersected({ threshold: 0.25 });
+
+	const circleText = useRef();
+
+	const { scrollY } = useScroll();
+
+	useEffect(() => {
+		const delta = (scrollY / 10) % 360;
+		if (aboutTextIntersected) {
+			circleText.current.style.transform = `rotateZ(${delta % 360}deg)`;
+		}
+	}, [scrollY, aboutTextIntersected]);
 
 	return (
 		<div className={Style.About}>
@@ -22,6 +35,16 @@ export default function About() {
 						symptoms, we see the body as an interconnected system working to strengthen both body and mind
 						to improve one’s complete health.
 					</p>
+					<div className={Style.Circle}>
+						{/* <div className={Style.CircleText}>SEE OUR SERVICES</div> */}
+						<img
+							src='https://res.cloudinary.com/dp1dn1ghw/image/upload/v1701272999/Vector_ig0xqy.png'
+							alt='See our services'
+							className={Style.CircleText}
+							ref={circleText}
+						/>
+						<PiArrowBendRightDownThin />
+					</div>
 				</div>
 			</div>
 			<Services />

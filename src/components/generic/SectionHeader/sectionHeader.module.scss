@@ -27,6 +27,26 @@
 		@media screen and (max-width: $breakpoint-mobile) {
 			padding-left: $padding-left-mobile;
 		}
+
+		.SectionHeader {
+			font-size: 2.5rem;
+			font-weight: 500;
+			letter-spacing: 0.5pt;
+			@media screen and (max-width: $breakpoint-desktop) {
+				font-size: 1.8rem;
+			}
+			@media screen and (max-width: $breakpoint-large) {
+				font-size: 1.6rem;
+			}
+			@media screen and (max-width: $breakpoint-medium) {
+				font-size: 1.2rem;
+			}
+			@media screen and (max-width: $breakpoint-tablet) {
+				font-size: 1rem;
+			}
+			@media screen and (max-width: $breakpoint-mobile) {
+			}
+		}
 	}
 
 	&Show {

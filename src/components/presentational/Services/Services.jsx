@@ -1,5 +1,6 @@
 import { React, useEffect, useRef } from 'react';
 import Style from './services.module.scss';
+import { useScroll } from 'components';
 
 export default function Services() {
 	const services = useRef();
@@ -16,6 +17,8 @@ export default function Services() {
 	const service5R = useRef();
 	const service6R = useRef();
 
+	const { scrollY } = useScroll();
+
 	useEffect(() => {
 		// // see properties of services section div
 		// console.dir(services.current);
@@ -26,139 +29,129 @@ export default function Services() {
 		// // height of service sub-sections (including margins)
 		// console.log(service1L.current.clientHeight + 8);
 
-		const handleScroll = (event) => {
-			// const windowHeight = window.innerHeight;
-			const scrollToServices = services.current.offsetTop - window.innerHeight;
-			const currentScroll = window.pageYOffset;
-			const serviceHeight = service1L.current.clientHeight + 8;
+		const scrollToServices = services.current.offsetTop - window.innerHeight;
+		const serviceHeight = service1L.current.clientHeight + 8;
 
-			if ((scrollToServices + 2 * serviceHeight - currentScroll) / (2 * serviceHeight) > 1) {
-				service1L.current.style.left = '25%';
-			} else if ((scrollToServices + 2 * serviceHeight - currentScroll) / (2 * serviceHeight) < 0) {
-				service1L.current.style.left = '0%';
-			} else {
-				service1L.current.style.left = `${
-					25 * ((scrollToServices + 2 * serviceHeight - currentScroll) / (2 * serviceHeight))
-				}%`;
-			}
+		if ((scrollToServices + 2 * serviceHeight - scrollY) / (2 * serviceHeight) > 1) {
+			service1L.current.style.left = '25%';
+		} else if ((scrollToServices + 2 * serviceHeight - scrollY) / (2 * serviceHeight) < 0) {
+			service1L.current.style.left = '0%';
+		} else {
+			service1L.current.style.left = `${
+				25 * ((scrollToServices + 2 * serviceHeight - scrollY) / (2 * serviceHeight))
+			}%`;
+		}
 
-			if ((scrollToServices + 3 * serviceHeight - currentScroll) / (2 * serviceHeight) > 1) {
-				service2L.current.style.left = '25%';
-			} else if ((scrollToServices + 3 * serviceHeight - currentScroll) / (2 * serviceHeight) < 0) {
-				service2L.current.style.left = '0%';
-			} else {
-				service2L.current.style.left = `${
-					25 * ((scrollToServices + 3 * serviceHeight - currentScroll) / (2 * serviceHeight))
-				}%`;
-			}
+		if ((scrollToServices + 3 * serviceHeight - scrollY) / (2 * serviceHeight) > 1) {
+			service2L.current.style.left = '25%';
+		} else if ((scrollToServices + 3 * serviceHeight - scrollY) / (2 * serviceHeight) < 0) {
+			service2L.current.style.left = '0%';
+		} else {
+			service2L.current.style.left = `${
+				25 * ((scrollToServices + 3 * serviceHeight - scrollY) / (2 * serviceHeight))
+			}%`;
+		}
 
-			if ((scrollToServices + 4 * serviceHeight - currentScroll) / (2 * serviceHeight) > 1) {
-				service3L.current.style.left = '25%';
-			} else if ((scrollToServices + 4 * serviceHeight - currentScroll) / (2 * serviceHeight) < 0) {
-				service3L.current.style.left = '0%';
-			} else {
-				service3L.current.style.left = `${
-					25 * ((scrollToServices + 4 * serviceHeight - currentScroll) / (2 * serviceHeight))
-				}%`;
-			}
+		if ((scrollToServices + 4 * serviceHeight - scrollY) / (2 * serviceHeight) > 1) {
+			service3L.current.style.left = '25%';
+		} else if ((scrollToServices + 4 * serviceHeight - scrollY) / (2 * serviceHeight) < 0) {
+			service3L.current.style.left = '0%';
+		} else {
+			service3L.current.style.left = `${
+				25 * ((scrollToServices + 4 * serviceHeight - scrollY) / (2 * serviceHeight))
+			}%`;
+		}
 
-			if ((scrollToServices + 5 * serviceHeight - currentScroll) / (2 * serviceHeight) > 1) {
-				service4L.current.style.left = '25%';
-			} else if ((scrollToServices + 5 * serviceHeight - currentScroll) / (2 * serviceHeight) < 0) {
-				service4L.current.style.left = '0%';
-			} else {
-				service4L.current.style.left = `${
-					25 * ((scrollToServices + 5 * serviceHeight - currentScroll) / (2 * serviceHeight))
-				}%`;
-			}
+		if ((scrollToServices + 5 * serviceHeight - scrollY) / (2 * serviceHeight) > 1) {
+			service4L.current.style.left = '25%';
+		} else if ((scrollToServices + 5 * serviceHeight - scrollY) / (2 * serviceHeight) < 0) {
+			service4L.current.style.left = '0%';
+		} else {
+			service4L.current.style.left = `${
+				25 * ((scrollToServices + 5 * serviceHeight - scrollY) / (2 * serviceHeight))
+			}%`;
+		}
 
-			if ((scrollToServices + 6 * serviceHeight - currentScroll) / (2 * serviceHeight) > 1) {
-				service5L.current.style.left = '25%';
-			} else if ((scrollToServices + 6 * serviceHeight - currentScroll) / (2 * serviceHeight) < 0) {
-				service5L.current.style.left = '0%';
-			} else {
-				service5L.current.style.left = `${
-					25 * ((scrollToServices + 6 * serviceHeight - currentScroll) / (2 * serviceHeight))
-				}%`;
-			}
+		if ((scrollToServices + 6 * serviceHeight - scrollY) / (2 * serviceHeight) > 1) {
+			service5L.current.style.left = '25%';
+		} else if ((scrollToServices + 6 * serviceHeight - scrollY) / (2 * serviceHeight) < 0) {
+			service5L.current.style.left = '0%';
+		} else {
+			service5L.current.style.left = `${
+				25 * ((scrollToServices + 6 * serviceHeight - scrollY) / (2 * serviceHeight))
+			}%`;
+		}
 
-			if ((scrollToServices + 7 * serviceHeight - currentScroll) / (2 * serviceHeight) > 1) {
-				service6L.current.style.left = '25%';
-			} else if ((scrollToServices + 7 * serviceHeight - currentScroll) / (2 * serviceHeight) < 0) {
-				service6L.current.style.left = '0%';
-			} else {
-				service6L.current.style.left = `${
-					25 * ((scrollToServices + 7 * serviceHeight - currentScroll) / (2 * serviceHeight))
-				}%`;
-			}
+		if ((scrollToServices + 7 * serviceHeight - scrollY) / (2 * serviceHeight) > 1) {
+			service6L.current.style.left = '25%';
+		} else if ((scrollToServices + 7 * serviceHeight - scrollY) / (2 * serviceHeight) < 0) {
+			service6L.current.style.left = '0%';
+		} else {
+			service6L.current.style.left = `${
+				25 * ((scrollToServices + 7 * serviceHeight - scrollY) / (2 * serviceHeight))
+			}%`;
+		}
 
-			if ((scrollToServices + 2 * serviceHeight - currentScroll) / (2 * serviceHeight) > 1) {
-				service1R.current.style.right = '25%';
-			} else if ((scrollToServices + 2 * serviceHeight - currentScroll) / (2 * serviceHeight) < 0) {
-				service1R.current.style.right = '0%';
-			} else {
-				service1R.current.style.right = `${
-					25 * ((scrollToServices + 2 * serviceHeight - currentScroll) / (2 * serviceHeight))
-				}%`;
-			}
+		if ((scrollToServices + 2 * serviceHeight - scrollY) / (2 * serviceHeight) > 1) {
+			service1R.current.style.right = '25%';
+		} else if ((scrollToServices + 2 * serviceHeight - scrollY) / (2 * serviceHeight) < 0) {
+			service1R.current.style.right = '0%';
+		} else {
+			service1R.current.style.right = `${
+				25 * ((scrollToServices + 2 * serviceHeight - scrollY) / (2 * serviceHeight))
+			}%`;
+		}
 
-			if ((scrollToServices + 3 * serviceHeight - currentScroll) / (2 * serviceHeight) > 1) {
-				service2R.current.style.right = '25%';
-			} else if ((scrollToServices + 3 * serviceHeight - currentScroll) / (2 * serviceHeight) < 0) {
-				service2R.current.style.right = '0%';
-			} else {
-				service2R.current.style.right = `${
-					25 * ((scrollToServices + 3 * serviceHeight - currentScroll) / (2 * serviceHeight))
-				}%`;
-			}
+		if ((scrollToServices + 3 * serviceHeight - scrollY) / (2 * serviceHeight) > 1) {
+			service2R.current.style.right = '25%';
+		} else if ((scrollToServices + 3 * serviceHeight - scrollY) / (2 * serviceHeight) < 0) {
+			service2R.current.style.right = '0%';
+		} else {
+			service2R.current.style.right = `${
+				25 * ((scrollToServices + 3 * serviceHeight - scrollY) / (2 * serviceHeight))
+			}%`;
+		}
 
-			if ((scrollToServices + 4 * serviceHeight - currentScroll) / (2 * serviceHeight) > 1) {
-				service3R.current.style.right = '25%';
-			} else if ((scrollToServices + 4 * serviceHeight - currentScroll) / (2 * serviceHeight) < 0) {
-				service3R.current.style.right = '0%';
-			} else {
-				service3R.current.style.right = `${
-					25 * ((scrollToServices + 4 * serviceHeight - currentScroll) / (2 * serviceHeight))
-				}%`;
-			}
+		if ((scrollToServices + 4 * serviceHeight - scrollY) / (2 * serviceHeight) > 1) {
+			service3R.current.style.right = '25%';
+		} else if ((scrollToServices + 4 * serviceHeight - scrollY) / (2 * serviceHeight) < 0) {
+			service3R.current.style.right = '0%';
+		} else {
+			service3R.current.style.right = `${
+				25 * ((scrollToServices + 4 * serviceHeight - scrollY) / (2 * serviceHeight))
+			}%`;
+		}
 
-			if ((scrollToServices + 5 * serviceHeight - currentScroll) / (2 * serviceHeight) > 1) {
-				service4R.current.style.right = '25%';
-			} else if ((scrollToServices + 5 * serviceHeight - currentScroll) / (2 * serviceHeight) < 0) {
-				service4R.current.style.right = '0%';
-			} else {
-				service4R.current.style.right = `${
-					25 * ((scrollToServices + 5 * serviceHeight - currentScroll) / (2 * serviceHeight))
-				}%`;
-			}
+		if ((scrollToServices + 5 * serviceHeight - scrollY) / (2 * serviceHeight) > 1) {
+			service4R.current.style.right = '25%';
+		} else if ((scrollToServices + 5 * serviceHeight - scrollY) / (2 * serviceHeight) < 0) {
+			service4R.current.style.right = '0%';
+		} else {
+			service4R.current.style.right = `${
+				25 * ((scrollToServices + 5 * serviceHeight - scrollY) / (2 * serviceHeight))
+			}%`;
+		}
 
-			if ((scrollToServices + 6 * serviceHeight - currentScroll) / (2 * serviceHeight) > 1) {
-				service5R.current.style.right = '25%';
-			} else if ((scrollToServices + 6 * serviceHeight - currentScroll) / (2 * serviceHeight) < 0) {
-				service5R.current.style.right = '0%';
-			} else {
-				service5R.current.style.right = `${
-					25 * ((scrollToServices + 6 * serviceHeight - currentScroll) / (2 * serviceHeight))
-				}%`;
-			}
+		if ((scrollToServices + 6 * serviceHeight - scrollY) / (2 * serviceHeight) > 1) {
+			service5R.current.style.right = '25%';
+		} else if ((scrollToServices + 6 * serviceHeight - scrollY) / (2 * serviceHeight) < 0) {
+			service5R.current.style.right = '0%';
+		} else {
+			service5R.current.style.right = `${
+				25 * ((scrollToServices + 6 * serviceHeight - scrollY) / (2 * serviceHeight))
+			}%`;
+		}
 
-			if ((scrollToServices + 7 * serviceHeight - currentScroll) / (2 * serviceHeight) > 1) {
-				service6R.current.style.right = '25%';
-			} else if ((scrollToServices + 7 * serviceHeight - currentScroll) / (2 * serviceHeight) < 0) {
-				service6R.current.style.right = '0%';
-			} else {
-				service6R.current.style.right = `${
-					25 * ((scrollToServices + 7 * serviceHeight - currentScroll) / (2 * serviceHeight))
-				}%`;
-			}
-		};
-
-		window.addEventListener('scroll', handleScroll);
-
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
-	}, []);
+		if ((scrollToServices + 7 * serviceHeight - scrollY) / (2 * serviceHeight) > 1) {
+			service6R.current.style.right = '25%';
+		} else if ((scrollToServices + 7 * serviceHeight - scrollY) / (2 * serviceHeight) < 0) {
+			service6R.current.style.right = '0%';
+		} else {
+			service6R.current.style.right = `${
+				25 * ((scrollToServices + 7 * serviceHeight - scrollY) / (2 * serviceHeight))
+			}%`;
+		}
+	}, [scrollY]);
 
 	return (
 		<div className={Style.Services} ref={services}>

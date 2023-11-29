@@ -67,63 +67,58 @@ h2 {
 	}
 }
 h3 {
-	// SECTION HEADERS
-	font-size: 2.5rem;
-	font-weight: 500;
-	letter-spacing: 0.5pt;
+	font-size: 1.75rem;
+	font-weight: 400;
+	letter-spacing: 1pt;
 	@media screen and (max-width: $breakpoint-desktop) {
-		font-size: 1.8rem;
+		font-size: 1.5rem;
 	}
 	@media screen and (max-width: $breakpoint-large) {
-		font-size: 1.6rem;
+		font-size: 1.25rem;
 	}
 	@media screen and (max-width: $breakpoint-medium) {
-		font-size: 1.2rem;
+		font-size: 1rem;
 	}
 	@media screen and (max-width: $breakpoint-tablet) {
-		font-size: 1rem;
 	}
 	@media screen and (max-width: $breakpoint-mobile) {
 	}
 }
 h4 {
-	// MENU HEADERS
-	font-weight: 500;
+	font-weight: 300;
 	letter-spacing: 1pt;
-	transition: $transition-fast;
 
-	font-size: 2rem;
+	font-size: 1.5rem;
 	@media screen and (max-width: $breakpoint-desktop) {
-		font-size: 1.8rem;
+		font-size: 1.25rem;
 	}
 	@media screen and (max-width: $breakpoint-large) {
-		font-size: 1.6rem;
+		font-size: 1rem;
 	}
 	@media screen and (max-width: $breakpoint-medium) {
-		font-size: 1.2rem;
+		// font-size: 0.75rem;
 	}
 	@media screen and (max-width: $breakpoint-tablet) {
-		font-size: 1rem;
 	}
 	@media screen and (max-width: $breakpoint-mobile) {
 	}
 }
+
 p {
-	font-size: 2rem;
+	font-size: 1.25rem;
 	font-weight: 300;
 	letter-spacing: 1pt;
 	text-align: justify;
 	@media screen and (max-width: $breakpoint-desktop) {
-		font-size: 1.8rem;
+		font-size: 1.1rem;
 	}
 	@media screen and (max-width: $breakpoint-large) {
-		font-size: 1.6rem;
+		font-size: 1rem;
 	}
 	@media screen and (max-width: $breakpoint-medium) {
-		font-size: 1.2rem;
+		font-size: 0.9rem;
 	}
 	@media screen and (max-width: $breakpoint-tablet) {
-		font-size: 1rem;
 	}
 	@media screen and (max-width: $breakpoint-mobile) {
 	}

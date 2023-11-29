@@ -1,15 +1,19 @@
 import { React, useState, useEffect, useRef } from 'react';
 import Style from './staff.module.scss';
-import { useHasIntersected } from 'components';
+import { useHasIntersected, useScroll } from 'components';
+import { BsFillArrowRightCircleFill, BsFillArrowLeftCircleFill } from 'react-icons/bs';
+import { FaGripLines } from 'react-icons/fa';
 
 export default function Staff() {
-	const [carouselIndex, setCarouselIndex] = useState(2);
+	const [carouselIndex, setCarouselIndex] = useState(0);
 	const [showInfo, setShowInfo] = useState(-1);
 
 	const [staff, staffIntersected] = useHasIntersected({ threshold: 0.25 });
 
 	const smText = useRef();
 	const lgText = useRef();
+
+	const { scrollY } = useScroll();
 
 	const staffPhotos = [
 		{
@@ -99,56 +103,83 @@ export default function Staff() {
 	];
 
 	useEffect(() => {
-		const handleScroll = (event) => {
-			// const windowHeight = window.innerHeight;
-			const currentScroll = window.pageYOffset;
-		};
+		// console.log((50 * scrollY) / window.innerHeight);
+		const delta = (3 * scrollY) / window.innerHeight;
+		const deltaSlow = scrollY / window.innerHeight;
+		if (staffIntersected) {
+			smText.current.style.transform = `translateX(${delta % 100}%)`;
+			lgText.current.style.transform = `translateX(${-(deltaSlow % 100)}%)`;
+		}
+	}, [scrollY, staffIntersected]);
 
-		window.addEventListener('scroll', handleScroll);
-
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
-	}, []);
+	const handleArrow = (delta) => {
+		// const current = carouselIndex;
+		if (carouselIndex + delta < 0) {
+			setCarouselIndex(0);
+			// setShowInfo(0);
+		} else if (carouselIndex + delta > staffPhotos.length - 4) {
+			setCarouselIndex(staffPhotos.length - 4);
+			// setShowInfo(staffPhotos.length - 4);
+		} else {
+			setCarouselIndex(carouselIndex + delta);
+			// setShowInfo(carouselIndex + delta);
+		}
+		setShowInfo(-1);
+	};
 
 	return (
-		<div className={staffIntersected ? Style.StaffShow : Style.Staff} ref={staff}>
+		<div
+			className={staffIntersected ? Style.StaffShow : Style.Staff}
+			ref={staff}
+			onMouseLeave={() => setShowInfo(-1)}>
 			<div className={Style.Bubble}>
 				<div className={Style.BubbleInner}></div>
 			</div>
 			<div className={Style.Content}>
-				<div className={Style.CarouselFrameOuter}>
+				<div className={Style.Carousel}>
 					<div
-						className={Style.CarouselFrameInner}
-						style={{ transform: `translateX(-${carouselIndex * 25}%)` }}>
-						<div className={Style.Photos} style={{ width: `${staffPhotos.length * 25}%` }}>
-							{staffPhotos.map((img, index) => (
-								<div
-									className={Style.Photo}
-									style={{ backgroundImage: `url(${img.url})` }}
-									key={index}></div>
-							))}
+						className={Style[`Arrow${carouselIndex > 0 ? '' : 'Disable'}`]}
+						onClick={() => handleArrow(-4)}>
+						<BsFillArrowLeftCircleFill />
+					</div>
+					<div className={Style.CarouselFrameOuter}>
+						<div
+							className={Style.CarouselFrameInner}
+							style={{ transform: `translateX(-${carouselIndex * 25}%)` }}>
+							<div className={Style.Photos} style={{ width: `${staffPhotos.length * 25}%` }}>
+								{staffPhotos.map((img, index) => (
+									<div
+										className={Style[`Photo${showInfo !== -1 && showInfo !== index ? 'Dim' : ''}`]}
+										style={{ backgroundImage: `url(${img.url})` }}
+										key={index}
+										onMouseEnter={() => setShowInfo(index)}></div>
+								))}
+							</div>
 						</div>
 					</div>
+					<div
+						className={Style[`Arrow${carouselIndex < staffPhotos.length - 4 ? '' : 'Disable'}`]}
+						onClick={() => handleArrow(4)}>
+						<BsFillArrowRightCircleFill />
+					</div>
+					{/* <div className={Style.CarouselBottom}>
+						{[0, 1, 2, 3].map((index) => (
+							<div
+								className={Style[`CarouselSelect${staffPhotos.length - showInfo <=4 ? (showInfo - ()) showInfo % 4 === index ? 'Selected' : ''}`]}
+								key={index}>
+								<FaGripLines />
+							</div>
+						))}
+					</div> */}
 				</div>
 				<div className={Style.TextDisplay}>
 					<div className={showInfo >= 0 ? Style.StaffInfo : Style.StaffInfoHide}>
-						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut neque necessitatibus dolorum nisi
-						laudantium? Iusto vel fuga aliquid voluptates quis illo voluptatum ipsum fugit quas voluptatibus
-						harum iure, maiores eius. Cumque atque tenetur, placeat voluptatibus architecto ipsa ipsam culpa
-						optio distinctio quia quisquam repellendus aperiam soluta ex inventore similique error sequi ab
-						temporibus non a? Molestias expedita ratione reiciendis nemo! Voluptates, aut? Repudiandae sunt
-						error facilis tenetur quaerat magnam quos, saepe impedit quae! Autem repudiandae omnis, mollitia
-						fugit dolorum molestias minus doloremque ex impedit enim assumenda. Deleniti saepe dolorem sint.
-						Asperiores qui culpa perferendis earum totam, excepturi natus consequatur minus beatae vitae,
-						consectetur laudantium veniam eaque voluptatem officiis, placeat ex vero praesentium quasi
-						suscipit veritatis! Blanditiis corporis totam dolore sit? Iusto dicta qui vitae libero
-						distinctio veniam in vel. Ducimus autem animi accusantium nulla quaerat totam voluptates nostrum
-						aliquam consequatur est, debitis repellat nesciunt expedita saepe excepturi dicta doloribus
-						fugit!
+						<h3>{showInfo >= 0 ? staffPhotos[showInfo].name : ''}</h3>
+						<h4>{showInfo >= 0 ? staffPhotos[showInfo].title : ''}</h4>
+						<p>{showInfo >= 0 ? staffPhotos[showInfo].info : ''}</p>
 					</div>
-					<div className={showInfo < 0 ? Style.MovingTextSm : Style.MovingTextSmHide} ref={smText}>
-						<h1>
+					<div className={showInfo < 0 ? Style.MovingTextSm : Style.MovingTextSmHide}>
+						<h1 ref={smText}>
 							Hover over photos to read more · Hover over photos to read more · Hover over photos to read
 							more · Hover over photos to read more · Hover over photos to read more · Hover over photos
 							to read more · Hover over photos to read more ·{' '}
@@ -157,7 +188,7 @@ export default function Staff() {
 					<div className={showInfo < 0 ? Style.MovingTextLg : Style.MovingTextLgHide}>
 						<div className={Style.LargeText} ref={lgText}>
 							Meet the team · Meet the team · Meet the team · Meet the team · Meet the team · Meet the
-							team · Meet the team · Meet the team ·{' '}
+							team · Meet the team ·{' '}
 						</div>
 					</div>
 				</div>

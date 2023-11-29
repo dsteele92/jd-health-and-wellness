@@ -24,6 +24,31 @@
 			@include content-div;
 			@include flex-center;
 			@include text-padding;
+
+			.Circle {
+				height: calc(100vw * 0.08);
+				max-height: 100px;
+				width: calc(100vw * 0.08);
+				max-width: 100px;
+				position: absolute;
+				border-radius: 50%;
+				border: 0.5px solid $color-blue;
+				right: 30px;
+				bottom: 25px;
+				@include flex-center;
+				color: $color-blue;
+				font-size: 25px;
+
+				.CircleText {
+					position: absolute;
+					top: 7%;
+					left: 7%;
+					height: 86%;
+					width: 86%;
+					transform: rotateZ(0deg);
+					// transform: rotateZ(90deg);
+				}
+			}
 		}
 
 		&Show {
