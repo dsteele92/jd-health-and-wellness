@@ -15,7 +15,7 @@
 }
 
 @mixin content-div {
-	width: $width-full;
+	width: 100%;
 	background-color: $color-section-background;
 	margin: $margin-sub-section;
 	border-radius: 40px;

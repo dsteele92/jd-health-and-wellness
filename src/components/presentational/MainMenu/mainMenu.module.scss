@@ -71,6 +71,27 @@
 			padding: 1.2rem 1.5rem;
 			border-radius: 20px;
 			cursor: pointer;
+
+			.SubLinks {
+				@media screen and (max-width: $breakpoint-mobile) {
+					display: none;
+				}
+				margin-left: 3%;
+				margin-top: 0.5rem;
+				height: fit-content;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+
+				.MenuHeader {
+					color: rgb(222, 222, 222);
+					margin: 0.3rem 0;
+					@media screen and (max-width: $breakpoint-mobile) {
+						margin: 0.1rem;
+						font-size: 0.8rem;
+					}
+				}
+			}
 		}
 
 		&:hover {
@@ -95,28 +116,6 @@
 		@media screen and (max-width: $breakpoint-tablet) {
 			grid-column: 1;
 			grid-row: 1 / 2;
-		}
-		.Content {
-			.SubLinks {
-				@media screen and (max-width: $breakpoint-mobile) {
-					display: none;
-				}
-				margin-left: 3%;
-				margin-top: 0.5rem;
-				height: fit-content;
-				display: flex;
-				flex-direction: column;
-				justify-content: space-between;
-
-				.MenuHeader {
-					color: rgb(222, 222, 222);
-					margin: 0.3rem 0;
-					@media screen and (max-width: $breakpoint-mobile) {
-						margin: 0.1rem;
-						font-size: 0.8rem;
-					}
-				}
-			}
 		}
 	}
 

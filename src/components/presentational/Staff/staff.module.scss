@@ -46,6 +46,7 @@
 				position: relative;
 				height: 250px;
 				width: 90%;
+				margin: 0 20px;
 				flex-shrink: 0;
 				max-width: 1000px;
 				border: 1px solid black;
@@ -132,6 +133,7 @@
 		.TextDisplay {
 			position: relative;
 			height: 300px;
+			width: 100%;
 			@include flex-center;
 			flex-direction: column;
 			// overflow-y: scroll;
@@ -172,7 +174,7 @@
 				h1 {
 					position: absolute;
 					// left: 0;
-					right: 0;
+					left: 0;
 					bottom: 0;
 					white-space: nowrap;
 					font-weight: 300;
@@ -196,13 +198,13 @@
 
 				.LargeText {
 					position: absolute;
-					left: 0;
+					right: 0;
 					// top: 30%;
-					color: rgb(165, 165, 165);
+					color: $color-background-main;
 					text-align: center;
 					white-space: nowrap;
 					font-size: 6rem;
-					font-weight: 300;
+					font-weight: 400;
 					text-transform: uppercase;
 					letter-spacing: 3pt;
 				}

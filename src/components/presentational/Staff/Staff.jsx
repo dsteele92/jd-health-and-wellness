@@ -1,8 +1,7 @@
 import { React, useState, useEffect, useRef } from 'react';
 import Style from './staff.module.scss';
-import { useHasIntersected, useScroll } from 'components';
-import { BsFillArrowRightCircleFill, BsFillArrowLeftCircleFill } from 'react-icons/bs';
-import { FaGripLines } from 'react-icons/fa';
+import { useHasIntersected, useScroll, ButtonRound } from 'components';
+// import { FaGripLines } from 'react-icons/fa';
 
 export default function Staff() {
 	const [carouselIndex, setCarouselIndex] = useState(0);
@@ -107,8 +106,8 @@ export default function Staff() {
 		const delta = (3 * scrollY) / window.innerHeight;
 		const deltaSlow = scrollY / window.innerHeight;
 		if (staffIntersected) {
-			smText.current.style.transform = `translateX(${delta % 100}%)`;
-			lgText.current.style.transform = `translateX(${-(deltaSlow % 100)}%)`;
+			smText.current.style.transform = `translateX(${-delta % 100}%)`;
+			lgText.current.style.transform = `translateX(${deltaSlow % 100}%)`;
 		}
 	}, [scrollY, staffIntersected]);
 
@@ -137,11 +136,7 @@ export default function Staff() {
 			</div>
 			<div className={Style.Content}>
 				<div className={Style.Carousel}>
-					<div
-						className={Style[`Arrow${carouselIndex > 0 ? '' : 'Disable'}`]}
-						onClick={() => handleArrow(-4)}>
-						<BsFillArrowLeftCircleFill />
-					</div>
+					<ButtonRound onClick={() => handleArrow(-4)} direction='left' />
 					<div className={Style.CarouselFrameOuter}>
 						<div
 							className={Style.CarouselFrameInner}
@@ -157,11 +152,7 @@ export default function Staff() {
 							</div>
 						</div>
 					</div>
-					<div
-						className={Style[`Arrow${carouselIndex < staffPhotos.length - 4 ? '' : 'Disable'}`]}
-						onClick={() => handleArrow(4)}>
-						<BsFillArrowRightCircleFill />
-					</div>
+					<ButtonRound onClick={() => handleArrow(4)} />
 					{/* <div className={Style.CarouselBottom}>
 						{[0, 1, 2, 3].map((index) => (
 							<div

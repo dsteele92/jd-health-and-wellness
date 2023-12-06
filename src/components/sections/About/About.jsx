@@ -7,6 +7,7 @@ import { PiArrowBendRightDownThin } from 'react-icons/pi';
 export default function About() {
 	const [aboutText, aboutTextIntersected] = useHasIntersected({ threshold: 0.25 });
 	const [CTA, CTAIntersected] = useHasIntersected({ threshold: 0.25 });
+	const [community, communityIntersected] = useHasIntersected({ threshold: 0.25 });
 
 	const circleText = useRef();
 
@@ -60,6 +61,22 @@ export default function About() {
 			<SectionHeader text='OUR STAFF' section='About' />
 			<Staff />
 			<SectionHeader text='COMMUNITY & GOVERNMENT' section='About' />
+			<div className={communityIntersected ? Style.CommunityShow : Style.Community} ref={community}>
+				<div className={Style.Bubble}>
+					<div className={Style.BubbleInner}></div>
+				</div>
+				<div className={Style.Content}>
+					<div className={Style.Links}>
+						<div className={Style.Link}></div>
+						<div className={Style.Link}></div>
+						<div className={Style.Link}></div>
+						<div className={Style.Link}></div>
+					</div>
+				</div>
+			</div>
+			<SectionHeader text='REVIEWS' section='Reviews' />
+			<SectionHeader text='PATIENT FORMS' section='Forms' />
+			<SectionHeader text='CONTACT US' section='Contact' />
 		</div>
 	);
 }
