@@ -1,13 +1,15 @@
-import { React, useEffect, useRef } from 'react';
+import { React, useEffect, useRef, useState } from 'react';
 import Style from './about.module.scss';
-import { SectionHeader, useHasIntersected, Services, Staff, useScroll } from 'components';
+import { SectionHeader, useHasIntersected, Services, Staff, useScroll, ButtonRound } from 'components';
 // import { HiArrowLongDown } from 'react-icons/hi2';
 import { PiArrowBendRightDownThin } from 'react-icons/pi';
+import { communityLinks } from 'content';
 
 export default function About() {
 	const [aboutText, aboutTextIntersected] = useHasIntersected({ threshold: 0.25 });
 	const [CTA, CTAIntersected] = useHasIntersected({ threshold: 0.25 });
 	const [community, communityIntersected] = useHasIntersected({ threshold: 0.25 });
+	const [communityLinkSelected, setCommunityLinkSelected] = useState(-1);
 
 	const circleText = useRef();
 
@@ -66,11 +68,16 @@ export default function About() {
 					<div className={Style.BubbleInner}></div>
 				</div>
 				<div className={Style.Content}>
-					<div className={Style.Links}>
-						<div className={Style.Link}></div>
-						<div className={Style.Link}></div>
-						<div className={Style.Link}></div>
-						<div className={Style.Link}></div>
+					<div className={Style.Links} onMouseLeave={() => setCommunityLinkSelected(-1)}>
+						{communityLinks.map((item, index) => (
+							<div
+								className={Style.Link}
+								key={index}
+								onMouseEnter={() => setCommunityLinkSelected(index)}>
+								<h3 className={Style.Article}>{item.name}</h3>
+								<ButtonRound size='medium' active={communityLinkSelected === index ? true : false} />
+							</div>
+						))}
 					</div>
 				</div>
 			</div>

@@ -136,23 +136,36 @@ export default function Staff() {
 			</div>
 			<div className={Style.Content}>
 				<div className={Style.Carousel}>
-					<ButtonRound onClick={() => handleArrow(-4)} direction='left' />
+					<ButtonRound
+						onClick={() => handleArrow(-4)}
+						direction='left'
+						size='medium'
+						disabled={carouselIndex === 0 ? true : false}
+					/>
 					<div className={Style.CarouselFrameOuter}>
 						<div
 							className={Style.CarouselFrameInner}
 							style={{ transform: `translateX(-${carouselIndex * 25}%)` }}>
 							<div className={Style.Photos} style={{ width: `${staffPhotos.length * 25}%` }}>
 								{staffPhotos.map((img, index) => (
-									<div
-										className={Style[`Photo${showInfo !== -1 && showInfo !== index ? 'Dim' : ''}`]}
-										style={{ backgroundImage: `url(${img.url})` }}
-										key={index}
-										onMouseEnter={() => setShowInfo(index)}></div>
+									<div className={Style.PhotoContainer}>
+										<div
+											className={
+												Style[`Photo${showInfo !== -1 && showInfo !== index ? 'Dim' : ''}`]
+											}
+											style={{ backgroundImage: `url(${img.url})` }}
+											key={index}
+											onMouseEnter={() => setShowInfo(index)}></div>
+									</div>
 								))}
 							</div>
 						</div>
 					</div>
-					<ButtonRound onClick={() => handleArrow(4)} />
+					<ButtonRound
+						onClick={() => handleArrow(4)}
+						disabled={carouselIndex === staffPhotos.length - 4 ? true : false}
+						size='medium'
+					/>
 					{/* <div className={Style.CarouselBottom}>
 						{[0, 1, 2, 3].map((index) => (
 							<div

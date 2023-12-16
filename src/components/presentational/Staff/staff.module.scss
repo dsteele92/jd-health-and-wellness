@@ -49,8 +49,8 @@
 				margin: 0 20px;
 				flex-shrink: 0;
 				max-width: 1000px;
-				border: 1px solid black;
-				border-radius: 40px;
+				// border: 1px solid black;
+				// border-radius: 40px;
 				overflow: hidden;
 
 				.CarouselFrameInner {
@@ -67,31 +67,25 @@
 						justify-content: space-around;
 						align-items: center;
 
-						.Photo {
+						.PhotoContainer {
 							position: relative;
 							height: 100%;
-							width: 35vw;
-							max-width: 60vh;
-							// border-radius: 10px;
-							background-size: cover;
-							background-repeat: no-repeat;
-							background-position: center;
-							cursor: pointer;
-							&::after {
-								transition: $transition-regular;
-								content: '';
-								height: 100%;
-								width: 100%;
-								position: absolute;
-								top: 0;
-								left: 0;
-								background-color: black;
-								opacity: 0;
-							}
-
-							&Dim {
-								@extend .Photo;
+							width: 25%;
+							@include flex-center;
+							.Photo {
+								position: relative;
+								height: 95%;
+								width: 95%;
+								// max-width: 60vh;
+								border: 1px solid $color-blue;
+								border-radius: 10px;
+								overflow: hidden;
+								background-size: cover;
+								background-repeat: no-repeat;
+								background-position: center;
+								cursor: pointer;
 								&::after {
+									transition: $transition-regular;
 									content: '';
 									height: 100%;
 									width: 100%;
@@ -99,7 +93,21 @@
 									top: 0;
 									left: 0;
 									background-color: black;
-									opacity: 0.3;
+									opacity: 0;
+								}
+
+								&Dim {
+									@extend .Photo;
+									&::after {
+										content: '';
+										height: 100%;
+										width: 100%;
+										position: absolute;
+										top: 0;
+										left: 0;
+										background-color: black;
+										opacity: 0.4;
+									}
 								}
 							}
 						}
