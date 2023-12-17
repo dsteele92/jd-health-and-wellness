@@ -1,0 +1,64 @@
+@import 'sass';
+
+.Button {
+	position: relative;
+	flex-shrink: 0;
+	background-color: $color-section-background;
+	@include flex-center;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: $transition-regular;
+
+	&:active {
+		opacity: 0.8;
+	}
+
+	.Arrow {
+		font-family: 'Koho', serif;
+		color: rgba($color: $color-yellow, $alpha: 0.6);
+		width: 100%;
+		line-height: 1;
+		text-align: center;
+		transition: $transition-regular;
+	}
+}
+
+.large {
+	height: 70px;
+	width: 70px;
+
+	.Arrow {
+		font-size: 50px;
+		font-weight: 900;
+	}
+}
+
+.medium {
+	height: 60px;
+	width: 60px;
+	.Arrow {
+		font-size: 45px;
+		font-weight: 900;
+	}
+}
+
+.small {
+	height: 50px;
+	width: 50px;
+	.Arrow {
+		font-size: 40px;
+		font-weight: 900;
+	}
+}
+
+.Active {
+	background-color: $color-background-main;
+	.Arrow {
+		color: $color-section-background;
+	}
+}
+
+.Disabled {
+	background-color: rgba($color: $color-background-main, $alpha: 0.5);
+	cursor: default;
+}

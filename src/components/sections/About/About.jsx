@@ -81,9 +81,6 @@ export default function About() {
 					</div>
 				</div>
 			</div>
-			<SectionHeader text='REVIEWS' section='Reviews' />
-			<SectionHeader text='PATIENT FORMS' section='Forms' />
-			<SectionHeader text='CONTACT US' section='Contact' />
 		</div>
 	);
 }

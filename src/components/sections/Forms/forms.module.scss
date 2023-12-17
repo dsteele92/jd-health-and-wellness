@@ -1,0 +1,64 @@
+@import 'sass';
+
+.Forms {
+	position: relative;
+	margin: 0 auto;
+	@include width;
+	@include bubble-container;
+
+	.Bubble {
+		@include bubble;
+		.BubbleInner {
+			@include bubble-inner;
+			// set background color
+		}
+	}
+	.Content {
+		@include content-div;
+		background-color: transparent;
+		// set padding here
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+		column-gap: 8px;
+		row-gap: 8px;
+
+		.Form {
+			width: 100%;
+			@include height-sm;
+			background-color: $color-section-background;
+			// margin: $margin-sub-section;
+			border-radius: 40px;
+			overflow: hidden;
+
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			cursor: pointer;
+
+			.FormTitle {
+				width: 100%;
+				height: 65%;
+				@include flex-center;
+				flex-direction: column;
+				justify-content: flex-start;
+				padding: 2.5rem 1rem;
+				h3 {
+					text-transform: uppercase;
+					text-align: center;
+				}
+			}
+			.Button {
+				width: 100%;
+				height: 35%;
+				@include flex-center;
+				background-color: rgba($color: $color-yellow, $alpha: 0.6);
+			}
+		}
+	}
+
+	&Show {
+		@extend .Forms;
+		@include bubble-show;
+	}
+}

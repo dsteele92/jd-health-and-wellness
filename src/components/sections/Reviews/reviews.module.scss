@@ -1,0 +1,96 @@
+@import 'sass';
+
+.Reviews {
+	position: relative;
+	margin: 0 auto;
+	@include width;
+	@include bubble-container;
+
+	.Bubble {
+		@include bubble;
+		.BubbleInner {
+			@include bubble-inner;
+			background-color: $color-section-background;
+		}
+	}
+	.Content {
+		@include content-div;
+		// set padding here
+		position: relative;
+		padding: 5vh 0 3vh;
+
+		.Carousel {
+			position: relative;
+			margin: 0 auto;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 90%;
+			margin: 0 auto 3vh;
+
+			.Arrow {
+				margin: 0 20px;
+				font-size: 30px;
+				color: $color-blue;
+				cursor: pointer;
+				transition: $transition-regular;
+
+				&Disable {
+					@extend .Arrow;
+					opacity: 0.5;
+					cursor: default;
+				}
+			}
+
+			.CarouselFrameOuter {
+				position: relative;
+				height: 250px;
+				width: 90%;
+				margin: 0 20px;
+				flex-shrink: 0;
+				max-width: 1000px;
+				// border: 1px solid black;
+				// border-radius: 40px;
+				overflow: hidden;
+				// padding: 0 50px;
+				// box-sizing: content-box;
+
+				.CarouselFrameInner {
+					position: absolute;
+					height: 100%;
+					width: 105%;
+					display: flex;
+					flex-direction: row;
+					transition: $transition-regular;
+					// overflow: visible;
+
+					.Review {
+						flex-shrink: 0;
+						height: 100%;
+						width: 50%;
+						@include flex-center;
+
+						.Rev {
+							position: relative;
+							height: 100%;
+							width: 100%;
+							padding: 5%;
+							@include flex-center;
+							flex-direction: column;
+							border-right: 1px solid $color-yellow;
+
+							h3 {
+								margin-bottom: 1rem;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&Show {
+		@extend .Reviews;
+		@include bubble-show;
+	}
+}

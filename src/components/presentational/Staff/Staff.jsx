@@ -148,13 +148,12 @@ export default function Staff() {
 							style={{ transform: `translateX(-${carouselIndex * 25}%)` }}>
 							<div className={Style.Photos} style={{ width: `${staffPhotos.length * 25}%` }}>
 								{staffPhotos.map((img, index) => (
-									<div className={Style.PhotoContainer}>
+									<div className={Style.PhotoContainer} key={index}>
 										<div
 											className={
 												Style[`Photo${showInfo !== -1 && showInfo !== index ? 'Dim' : ''}`]
 											}
 											style={{ backgroundImage: `url(${img.url})` }}
-											key={index}
 											onMouseEnter={() => setShowInfo(index)}></div>
 									</div>
 								))}

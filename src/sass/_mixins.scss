@@ -14,6 +14,19 @@
 	}
 }
 
+@mixin height-sm {
+	height: 25vh;
+	min-height: 200px;
+}
+@mixin height-md {
+	height: 30vh;
+	min-height: 250px;
+}
+@mixin height-lg {
+	height: 35vh;
+	min-height: 300px;
+}
+
 @mixin content-div {
 	width: 100%;
 	background-color: $color-section-background;

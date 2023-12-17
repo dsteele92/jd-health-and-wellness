@@ -1,0 +1,25 @@
+@import 'sass';
+
+.Contact {
+	position: relative;
+	margin: 0 auto;
+	@include width;
+	@include bubble-container;
+
+	.Bubble {
+		@include bubble;
+		.BubbleInner {
+			@include bubble-inner;
+			// set background color
+		}
+	}
+	.Content {
+		@include content-div;
+		// set padding here
+	}
+
+	&Show {
+		@extend .Contact;
+		@include bubble-show;
+	}
+}

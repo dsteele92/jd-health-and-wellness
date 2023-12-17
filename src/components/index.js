@@ -1,8 +1,12 @@
 export { default as Intro } from './sections/Intro/Intro.jsx';
 export { default as About } from './sections/About/About.jsx';
+export { default as Reviews } from './sections/Reviews/Reviews.jsx';
+export { default as Forms } from './sections/Forms/Forms.jsx';
+export { default as Contact } from './sections/Contact/Contact.jsx';
 
 export { default as SectionHeader } from './generic/SectionHeader/SectionHeader.jsx';
 export { default as ButtonRound } from './generic/ButtonRound/ButtonRound.jsx';
+export { default as ButtonRoundInverse } from './generic/ButtonRoundInverse/ButtonRoundInverse.jsx';
 
 export { default as Navbar } from './presentational/Navbar/Navbar.jsx';
 export { default as MainMenu } from './presentational/MainMenu/MainMenu.jsx';
