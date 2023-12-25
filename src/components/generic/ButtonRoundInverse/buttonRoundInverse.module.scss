@@ -15,11 +15,21 @@
 
 	.Arrow {
 		font-family: 'Koho', serif;
-		color: rgba($color: $color-yellow, $alpha: 0.6);
 		width: 100%;
 		line-height: 1;
 		text-align: center;
-		// transition: $transition-bubble-appear;
+	}
+	.About {
+		color: $color-blue;
+	}
+	.Reviews {
+		color: rgba($color: $color-yellow, $alpha: 0.6);
+	}
+	.Forms {
+		color: rgba($color: $color-yellow, $alpha: 0.6);
+	}
+	.Contact {
+		color: $color-green;
 	}
 }
 
@@ -54,10 +64,6 @@
 .Active {
 	transition: $transition-bubble;
 	background-color: $color-background-main;
-	// .Arrow {
-	// 	transition: $transition-bubble;
-	// 	color: $color-section-background;
-	// }
 }
 
 .Disabled {

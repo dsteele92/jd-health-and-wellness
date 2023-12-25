@@ -32,6 +32,7 @@ export default function Forms() {
 									size='small'
 									direction='down'
 									active={formSelected === index ? true : false}
+									section='Forms'
 								/>
 							</div>
 						</div>

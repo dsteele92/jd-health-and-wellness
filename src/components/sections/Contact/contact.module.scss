@@ -58,13 +58,12 @@
 
 			input,
 			textarea {
-				// padding: 10px 0 10px;
 				background-color: transparent;
 				border: none;
 				font-weight: 400;
 				letter-spacing: 1pt;
-				// color: $color-text-dark;
 				color: $color-green;
+				width: 100%;
 
 				// same as h3 sizing
 				font-size: 1.75rem;
@@ -88,10 +87,6 @@
 				color: $color-green;
 				font-weight: 300;
 				letter-spacing: 1pt;
-				// vertical-align: middle;
-			}
-			textarea::placeholder {
-				// padding: 20px 0 10px;
 			}
 		}
 
@@ -101,8 +96,42 @@
 		}
 	}
 
-	&Show {
-		@extend .Input;
-		@include bubble-show;
+	.Button {
+		@include bubble-container;
+		height: 100%;
+		width: 100%;
+		.Bubble {
+			@include bubble;
+			.BubbleInner {
+				@include bubble-inner;
+				background-color: $color-green;
+				// set background color
+			}
+		}
+		.Content {
+			cursor: pointer;
+			height: 100%;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+
+			h3 {
+				margin-top: 1rem;
+				color: $color-text-light;
+			}
+		}
+
+		&:hover {
+			.Bubble {
+				@include bubble-active;
+			}
+		}
+
+		&Show {
+			@extend .Button;
+			@include bubble-show;
+		}
 	}
 }

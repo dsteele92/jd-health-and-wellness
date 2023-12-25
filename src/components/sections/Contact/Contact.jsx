@@ -10,6 +10,7 @@ export default function Contact() {
 	const [phone, setPhone] = useState('');
 	const [email, setEmail] = useState('');
 	const [message, setMessage] = useState('');
+	const [submitHover, setSubmitHover] = useState(false);
 
 	return (
 		<div>
@@ -97,22 +98,23 @@ export default function Contact() {
 							name='message'
 							id='message'
 							placeholder='MESSAGE'
-							cols='30'
 							maxLength='500'
-							// rows='100%'
 							value={message}
 							onChange={(e) => setMessage(e.target.value)}></textarea>
 					</div>
 				</div>
 				<div
 					className={
-						contactIntersected ? `${Style.InputShow} ${Style.Submit}` : `${Style.Input} ${Style.Submit}`
-					}>
+						contactIntersected ? `${Style.ButtonShow} ${Style.Submit}` : `${Style.Button} ${Style.Submit}`
+					}
+					onMouseEnter={() => setSubmitHover(true)}
+					onMouseLeave={() => setSubmitHover(false)}>
 					<div className={Style.Bubble}>
 						<div className={Style.BubbleInner}></div>
 					</div>
 					<div className={Style.Content}>
-						<div className={Style.Submit}></div>
+						<ButtonRoundInverse size='small' direction='right' active={submitHover} section='Contact' />
+						<h3>SEND</h3>
 					</div>
 				</div>
 			</div>

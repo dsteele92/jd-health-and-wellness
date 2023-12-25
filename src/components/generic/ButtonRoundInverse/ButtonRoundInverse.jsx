@@ -8,6 +8,7 @@ export default function ButtonRoundInverse({
 	onClick,
 	size = 'large',
 	active = false,
+	section,
 }) {
 	let transform = 'rotate(0deg) translate(3px, -5px)';
 
@@ -23,7 +24,7 @@ export default function ButtonRoundInverse({
 		<div
 			className={`${Style.Button} ${Style[size]} ${disabled ? Style.Disabled : ''} ${active ? Style.Active : ''}`}
 			onClick={onClick}>
-			<div className={Style.Arrow} style={{ transform: transform }}>
+			<div className={`${Style.Arrow} ${Style[section]}`} style={{ transform: transform }}>
 				>
 			</div>
 		</div>
