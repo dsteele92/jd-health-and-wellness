@@ -4,22 +4,105 @@
 	position: relative;
 	margin: 0 auto;
 	@include width;
-	@include bubble-container;
+	// @include height-lg;
+	margin: $margin-section;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: minmax(80px, 10vh) minmax(80px, 10vh) minmax(160px, 20vh);
+	column-gap: $margin;
+	row-gap: $margin;
 
-	.Bubble {
-		@include bubble;
-		.BubbleInner {
-			@include bubble-inner;
-			// set background color
-		}
+	.FirstName {
+		grid-column: 1 / 2;
+		grid-row: 1 / 1;
 	}
-	.Content {
-		@include content-div;
-		// set padding here
+	.LastName {
+		grid-column: 2 / 3;
+		grid-row: 1 / 1;
+	}
+	.Phone {
+		grid-column: 3 / 4;
+		grid-row: 1 / 1;
+	}
+	.Email {
+		grid-column: 1 / 3;
+		grid-row: 2 / 2;
+	}
+	.Message {
+		grid-column: 1 / 3;
+		grid-row: 3 / 3;
+	}
+	.Submit {
+		grid-column: 3 / 4;
+		grid-row: 2 / 4;
+	}
+
+	.Input {
+		@include bubble-container;
+		height: 100%;
+		width: 100%;
+		.Bubble {
+			@include bubble;
+			.BubbleInner {
+				@include bubble-inner;
+				background-color: $color-section-background;
+				// set background color
+			}
+		}
+		.Content {
+			height: 100%;
+			width: 100%;
+			display: flex;
+			justify-content: flex-start;
+			padding: 10px 3vw;
+
+			input,
+			textarea {
+				// padding: 10px 0 10px;
+				background-color: transparent;
+				border: none;
+				font-weight: 400;
+				letter-spacing: 1pt;
+				// color: $color-text-dark;
+				color: $color-green;
+
+				// same as h3 sizing
+				font-size: 1.75rem;
+				@media screen and (max-width: $breakpoint-desktop) {
+					font-size: 1.5rem;
+				}
+				@media screen and (max-width: $breakpoint-large) {
+					font-size: 1.25rem;
+				}
+				@media screen and (max-width: $breakpoint-medium) {
+					font-size: 1rem;
+				}
+			}
+			textarea {
+				padding: 20px 0;
+				width: 100%;
+			}
+
+			input::placeholder,
+			textarea::placeholder {
+				color: $color-green;
+				font-weight: 300;
+				letter-spacing: 1pt;
+				// vertical-align: middle;
+			}
+			textarea::placeholder {
+				// padding: 20px 0 10px;
+			}
+		}
+
+		&Show {
+			@extend .Input;
+			@include bubble-show;
+		}
 	}
 
 	&Show {
-		@extend .Contact;
+		@extend .Input;
 		@include bubble-show;
 	}
 }

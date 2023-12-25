@@ -22,13 +22,14 @@ $padding-left-mobile: 10px;
 $width-full: 99%;
 $width-tablet: 97%;
 $width-mobile: 95%;
-$margin-section: 8px auto 0;
-$margin-sub-section: 8px auto 0;
+$margin-section: 12px auto 0;
+$margin-sub-section: 12px auto 0;
+$margin: 12px;
 
 // ---> TRANSITIONS & ANIMATIONS:
 $transition-fast: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 $transition-bubble: all 0.3s ease-in-out;
-$transition-bubble-appear: all 0.5s ease-in-out 0.2s;
+$transition-bubble-appear: all 0.4s ease-in-out 0.2s;
 $transition-slow: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
 $transition-regular: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
 // $transition-bubble:

@@ -22,7 +22,7 @@
 			position: absolute;
 			top: 0;
 			// left: 50%;
-			width: calc(50% - 4px);
+			width: calc(50% - calc($margin / 2));
 			height: 100%;
 			border-radius: 40px;
 			display: flex;

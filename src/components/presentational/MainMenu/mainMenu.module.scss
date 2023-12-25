@@ -16,8 +16,8 @@
 		grid-template-columns: 1fr;
 		grid-template-rows: repeat(4, 1fr);
 	}
-	column-gap: 0.5vw;
-	row-gap: 0.5vw;
+	column-gap: $margin;
+	row-gap: $margin;
 
 	.MenuHeader {
 		font-weight: 500;
@@ -68,7 +68,7 @@
 		.Content {
 			// @include bubble-content;
 			// z-index: 100;
-			padding: 1.2rem 1.5rem;
+			padding: 1.3rem 1.6rem;
 			border-radius: 20px;
 			cursor: pointer;
 

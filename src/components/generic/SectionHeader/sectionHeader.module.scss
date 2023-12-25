@@ -3,8 +3,7 @@
 .Header {
 	@include bubble-container;
 	position: relative;
-	height: 10vh;
-	min-height: 80px;
+	@include height-header;
 	@include width;
 	margin: $margin-section;
 

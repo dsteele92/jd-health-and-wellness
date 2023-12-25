@@ -10,17 +10,20 @@ export default function Forms() {
 	return (
 		<div>
 			<SectionHeader text='PATIENT FORMS' section='Forms' />
-			<div className={formsIntersected ? Style.FormsShow : Style.Forms} ref={forms}>
-				<div className={Style.Bubble}>
-					<div className={Style.BubbleInner}></div>
-				</div>
-				<div className={Style.Content}>
-					{patientForms.map((form, index) => (
-						<div
-							className={Style.Form}
-							key={index}
-							onMouseEnter={() => setFormSelected(index)}
-							onMouseLeave={() => setFormSelected(-1)}>
+			<div className={Style.Forms} ref={forms}>
+				{patientForms.map((form, index) => (
+					<div
+						className={formsIntersected ? Style.FormShow : Style.Form}
+						key={index}
+						onMouseEnter={() => setFormSelected(index)}
+						onMouseLeave={() => setFormSelected(-1)}>
+						<div className={Style.Bubble}>
+							<div className={Style.BubbleInner}>
+								<div className={Style.Top}></div>
+								<div className={Style.Bottom}></div>
+							</div>
+						</div>
+						<div className={Style.Content}>
 							<div className={Style.FormTitle}>
 								<h3>{form.name}</h3>
 							</div>
@@ -32,8 +35,8 @@ export default function Forms() {
 								/>
 							</div>
 						</div>
-					))}
-				</div>
+					</div>
+				))}
 			</div>
 		</div>
 	);

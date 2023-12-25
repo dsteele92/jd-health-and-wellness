@@ -4,29 +4,44 @@
 	position: relative;
 	margin: 0 auto;
 	@include width;
-	@include bubble-container;
+	// @include bubble-container;
+	margin: $margin-section;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	column-gap: $margin;
+	row-gap: $margin;
 
-	.Bubble {
-		@include bubble;
-		.BubbleInner {
-			@include bubble-inner;
-			// set background color
+	.Form {
+		@include bubble-container;
+		.Bubble {
+			@include bubble;
+			.BubbleInner {
+				@include bubble-inner;
+				display: flex;
+				flex-direction: column;
+				.Top {
+					border-radius: 40px 40px 0 0;
+					height: 65%;
+					width: 100%;
+					background-color: $color-section-background;
+				}
+				.Bottom {
+					border-radius: 0 0 40px 40px;
+					height: 35%;
+					width: 100%;
+					background-color: rgba($color: $color-yellow, $alpha: 0.6);
+				}
+			}
 		}
-	}
-	.Content {
-		@include content-div;
-		background-color: transparent;
-		// set padding here
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-template-rows: 1fr 1fr;
-		column-gap: 8px;
-		row-gap: 8px;
-
-		.Form {
-			width: 100%;
+		.Content {
+			// z-index: 100;
+			// @include content-div;
+			cursor: pointer;
+			// background-color: transparent;
+			// set padding here
 			@include height-sm;
-			background-color: $color-section-background;
+			// background-color: $color-section-background;
 			// margin: $margin-sub-section;
 			border-radius: 40px;
 			overflow: hidden;
@@ -52,13 +67,22 @@
 				width: 100%;
 				height: 35%;
 				@include flex-center;
-				background-color: rgba($color: $color-yellow, $alpha: 0.6);
+				// background-color: rgba($color: $color-yellow, $alpha: 0.6);
 			}
 		}
-	}
 
-	&Show {
-		@extend .Forms;
-		@include bubble-show;
+		&:hover {
+			.Bubble {
+				@include bubble-active;
+				// .BubbleInner {
+				// 	background-color: rgba($color: #ffffff, $alpha: 0.3);
+				// }
+			}
+		}
+
+		&Show {
+			@extend .Form;
+			@include bubble-show;
+		}
 	}
 }

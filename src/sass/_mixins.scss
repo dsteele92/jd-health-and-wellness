@@ -14,6 +14,10 @@
 	}
 }
 
+@mixin height-header {
+	height: 10vh;
+	min-height: 80px;
+}
 @mixin height-sm {
 	height: 25vh;
 	min-height: 200px;
@@ -52,6 +56,7 @@
 	z-index: 0;
 	opacity: 0;
 	transition: $transition-bubble-appear;
+	position: relative;
 }
 
 @mixin bubble {
@@ -80,11 +85,11 @@
 @mixin bubble-active {
 	// this sets the transition for the bubbles on hover
 	transition: $transition-bubble;
-	padding: 3px !important;
+	padding: 5px !important;
 }
 
 @mixin bubble-show {
-	// tnis is responsible for the fade-in of each bubble
+	// this is responsible for the fade-in of each bubble
 	opacity: 1;
 	.Bubble {
 		padding: 0px;

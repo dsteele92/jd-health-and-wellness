@@ -106,8 +106,8 @@ export default function Staff() {
 		const delta = (3 * scrollY) / window.innerHeight;
 		const deltaSlow = scrollY / window.innerHeight;
 		if (staffIntersected) {
-			smText.current.style.transform = `translateX(${-delta % 100}%)`;
-			lgText.current.style.transform = `translateX(${deltaSlow % 100}%)`;
+			smText.current.style.transform = `translateX(${deltaSlow % 100}%)`;
+			lgText.current.style.transform = `translateX(${-delta % 100}%)`;
 		}
 	}, [scrollY, staffIntersected]);
 
