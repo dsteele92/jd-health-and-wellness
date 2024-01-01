@@ -1,4 +1,4 @@
-import { React, useRef } from 'react';
+import { React } from 'react';
 import Style from './footer.module.scss';
 import { useHasIntersected } from 'components';
 

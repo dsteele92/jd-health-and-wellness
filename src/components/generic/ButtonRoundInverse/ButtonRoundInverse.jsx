@@ -1,6 +1,5 @@
 import { React } from 'react';
 import Style from './buttonRoundInverse.module.scss';
-import { MdOutlineArrowForwardIos } from 'react-icons/md';
 
 export default function ButtonRoundInverse({
 	direction = 'right',
