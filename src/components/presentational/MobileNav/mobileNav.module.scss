@@ -1,0 +1,309 @@
+@import 'sass';
+
+.MobileNav {
+	z-index: 100;
+	display: none;
+	@media screen and (max-width: $breakpoint-tablet) {
+		display: block;
+	}
+
+	.Logo {
+		position: fixed;
+		opacity: 1;
+		transition: $transition-regular;
+		@media screen and (orientation: portrait) {
+			top: 25px;
+			left: 7%;
+		}
+		@media screen and (orientation: landscape) {
+			top: 5%;
+			left: 5%;
+		}
+		.MobileNavLogo {
+			height: 40px;
+		}
+
+		&Hide {
+			@extend .Logo;
+			opacity: 0;
+		}
+	}
+	.NavButton {
+		position: fixed;
+		@media screen and (orientation: portrait) {
+			top: 30px;
+			right: 8%;
+		}
+		@media screen and (orientation: landscape) {
+			top: 5%;
+			right: 5%;
+		}
+
+		height: 40px;
+		width: 40px;
+		background-color: rgba($color: $color-navbar, $alpha: 0.5);
+		backdrop-filter: blur(10px);
+		z-index: 200;
+		@include flex-center;
+		font-size: 25px;
+		border-radius: 50%;
+		display: none;
+		@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-tablet) {
+			display: flex;
+		}
+
+		.IconMobile {
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-end;
+			align-items: center;
+			cursor: pointer;
+			// transform: translateX(30px);
+
+			&Active {
+				@extend .IconMobile;
+				cursor: default;
+			}
+
+			.Bars {
+				transform: translateY(3px);
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: flex-end;
+
+				.Bar {
+					transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+					cursor: pointer;
+
+					&1X {
+						@extend .Bar;
+						transform: translate(2px, 3px) rotateZ(-45deg);
+					}
+					&2X {
+						@extend .Bar;
+						display: none;
+					}
+					&3X {
+						@extend .Bar;
+						transform: translate(-2px, -5px) rotateZ(45deg);
+					}
+				}
+
+				.Line {
+					stroke: $color-text-grey;
+					stroke-width: 2px;
+				}
+			}
+		}
+	}
+
+	.NavBackground {
+		display: none;
+		position: fixed;
+		z-index: 99;
+		right: 0;
+		height: 100vh;
+		width: 100vw;
+		background-color: $color-background-main;
+		transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+		&Show {
+			@extend .NavBackground;
+			display: block;
+			opacity: 0;
+			animation: appear 0.5s forwards;
+		}
+	}
+
+	.NavContainer {
+		position: fixed;
+		top: 0;
+		z-index: 100;
+
+		display: none;
+		@media screen and (max-width: $breakpoint-tablet), (max-height: $breakpoint-tablet) {
+			display: block;
+		}
+
+		.Top {
+			width: 100vw;
+			height: 2%;
+			position: fixed;
+			top: 0;
+			background: $color-navbar;
+			transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+			transform: translateY(-105%);
+			&Active {
+				@extend .Top;
+				transform: translateY(0);
+			}
+		}
+		.Bottom {
+			width: 100vw;
+			height: 5%;
+			position: fixed;
+			bottom: 0;
+			background: $color-navbar;
+			transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+			transform: translateY(105%);
+			&Active {
+				@extend .Bottom;
+				transform: translateY(0);
+			}
+		}
+		.Left {
+			width: 84%;
+			@media screen and (max-width: 700px) {
+				width: 83%;
+			}
+			@media screen and (max-width: 600px) {
+				width: 82%;
+			}
+			@media screen and (max-width: 500px) {
+				width: 80%;
+			}
+			@media screen and (max-width: 400px) {
+				width: 78%;
+			}
+			@media screen and (max-width: 300px) {
+				width: 76%;
+			}
+			height: 100vh;
+			position: fixed;
+			left: 0;
+			background: $color-navbar;
+			transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+			transform: translateX(-105%);
+			&Active {
+				@extend .Left;
+				transform: translateX(0);
+			}
+		}
+		.Right {
+			@media screen and (orientation: portrait) {
+				width: 6%;
+			}
+			@media screen and (orientation: landscape) {
+				width: 3%;
+			}
+			height: 100vh;
+			position: fixed;
+			right: 0;
+			background: $color-navbar;
+			transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+			transform: translateX(105%);
+			&Active {
+				@extend .Right;
+				transform: translateX(0);
+			}
+		}
+	}
+
+	.MobileMenu {
+		position: fixed;
+		z-index: 105;
+		top: 0;
+		left: 10%;
+		height: 100%;
+		width: 75%;
+		transition: $transition-regular;
+		opacity: 0;
+		transform: translateY(-100vh);
+
+		ul {
+			position: absolute;
+			top: 15%;
+			left: 0;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-start;
+
+			@media screen and (max-height: 600px) {
+				top: 10%;
+				height: 60%;
+			}
+
+			.List {
+				list-style: none;
+				position: relative;
+				height: 70px;
+				width: fit-content;
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+				overflow: hidden;
+				transform: rotateX(90deg);
+				transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s;
+
+				.Current {
+					cursor: default;
+				}
+
+				h3 {
+					font-size: 20px;
+					letter-spacing: 0.5pt;
+					font-weight: 100;
+					text-transform: uppercase;
+				}
+
+				a {
+					text-decoration: none;
+					color: black;
+				}
+
+				.HighlightCurrent {
+					position: absolute;
+					top: 50%;
+					left: 0;
+					transform: translate(0, -50%);
+					height: 10px;
+					width: 100%;
+
+					&Home {
+						@extend .HighlightCurrent;
+						background-color: rgba($color: $color-background-main, $alpha: 0.3);
+					}
+
+					&About {
+						@extend .HighlightCurrent;
+						background-color: rgba($color: $color-blue, $alpha: 0.3);
+					}
+
+					&Reviews {
+						@extend .HighlightCurrent;
+						background-color: rgba($color: $color-yellow, $alpha: 0.3);
+					}
+
+					&Forms {
+						@extend .HighlightCurrent;
+						background-color: rgba($color: $color-yellow, $alpha: 0.3);
+					}
+
+					&Contact {
+						@extend .HighlightCurrent;
+						background-color: rgba($color: $color-green, $alpha: 0.3);
+					}
+				}
+
+				&:hover {
+					.Highlight {
+						transform: translate(0, -50%);
+					}
+				}
+
+				&Fall {
+					@extend .List;
+					transform: rotateX(0);
+				}
+			}
+		}
+		&Active {
+			@extend .MobileMenu;
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+}

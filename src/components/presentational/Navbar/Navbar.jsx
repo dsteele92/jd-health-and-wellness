@@ -1,60 +1,71 @@
-import { React, useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { React, useState, useEffect, forwardRef } from 'react';
 import Style from './navbar.module.scss';
+import { useScroll } from 'components';
 
-export default function Navbar() {
+const Navbar = forwardRef((props, ref) => {
+	const { scrollToIntro, scrollToAbout, scrollToReviews, scrollToForms, scrollToContact, currentSection } = props;
 	const [top, setTop] = useState(true);
+	const { scrollY } = useScroll();
 
 	useEffect(() => {
-		const handleScroll = (event) => {
-			// console.log(window.pageYOffset);
-			if (window.pageYOffset >= 30) {
-				setTop(false);
-			} else if (window.pageYOffset < 30) {
-				setTop(true);
-			}
-		};
-
-		window.addEventListener('scroll', handleScroll);
-
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
-	}, []);
+		if (scrollY >= 30) {
+			setTop(false);
+		} else if (scrollY < 30) {
+			setTop(true);
+		}
+	}, [scrollY]);
 
 	return (
 		<div>
-			<div className={top ? Style.Navbar : Style.NavbarScrolled}>
+			<div className={top ? Style.Navbar : Style[`NavbarScrolled${currentSection}`]} ref={ref}>
 				<div>
-					<Link to='/'>
-						<img
-							src='https://res.cloudinary.com/dp1dn1ghw/image/upload/v1697653224/JD/logo_txsiex.png'
-							alt='JD Health and Wellness Logo'
-							style={{ height: '50px' }}
-						/>
-					</Link>
+					<img
+						src='https://res.cloudinary.com/dp1dn1ghw/image/upload/v1697653224/JD/logo_txsiex.png'
+						alt='JD Health and Wellness Logo'
+						className={Style.NavLogo}
+						onClick={scrollToIntro}
+					/>
 				</div>
-				<div className={!top ? Style.NavLink : Style.NavLinkHide}>
-					<Link to='/'>Home</Link>
+				<div
+					className={`${!top ? Style.NavLink : Style.NavLinkHide} ${
+						currentSection === 1 ? Style[`Current${currentSection}`] : ''
+					}`}
+					onClick={scrollToAbout}>
+					About
 				</div>
-				<div className={!top ? Style.NavLink : Style.NavLinkHide}>
-					<Link to='/about'>About</Link>
+				<div
+					className={`${!top ? Style.NavLink : Style.NavLinkHide} ${
+						currentSection === 2 ? Style[`Current${currentSection}`] : ''
+					}`}
+					onClick={scrollToReviews}>
+					Reviews
 				</div>
-				<div className={!top ? Style.NavLink : Style.NavLinkHide}>
-					<Link to='/reviews'>Reviews</Link>
+				<div
+					className={`${!top ? Style.NavLink : Style.NavLinkHide} ${
+						currentSection === 3 ? Style[`Current${currentSection}`] : ''
+					}`}
+					onClick={scrollToForms}>
+					Patient Forms
 				</div>
-				<div className={!top ? Style.NavLink : Style.NavLinkHide}>
-					<Link to='/forms'>Patient Forms</Link>
+				<div
+					className={`${!top ? Style.NavLink : Style.NavLinkHide} ${
+						currentSection === 4 ? Style[`Current${currentSection}`] : ''
+					}`}
+					onClick={scrollToContact}>
+					Contact
 				</div>
-				<div className={!top ? Style.NavLink : Style.NavLinkHide}>
-					<Link to='/contact'>Contact</Link>
-				</div>
-				<div className={!top ? Style.NavLinkPortalScrolled : Style.NavLinkPortal}>
-					<a href='https://www.linkedin.com/in/daltondsteele/' target='_blank' rel='noopener noreferrer'>
+
+				<div className={!top ? Style.PortalScrolled : Style.Portal}>
+					<a
+						href='https://patientportal.intelichart.com/login/Account/Login?ReturnUrl=%2f'
+						target='_blank'
+						rel='noopener noreferrer'>
 						Patient Portal
 					</a>
 				</div>
 			</div>
 		</div>
 	);
-}
+});
+
+export default Navbar;

@@ -1,11 +1,10 @@
-import { React, useEffect, useRef, useState } from 'react';
+import { React, useEffect, useRef, useState, forwardRef } from 'react';
 import Style from './about.module.scss';
 import { SectionHeader, useHasIntersected, Services, Staff, useScroll, ButtonRound } from 'components';
-// import { HiArrowLongDown } from 'react-icons/hi2';
 import { PiArrowBendRightDownThin } from 'react-icons/pi';
 import { communityLinks } from 'content';
 
-export default function About() {
+const About = forwardRef((props, ref) => {
 	const [aboutText, aboutTextIntersected] = useHasIntersected({ threshold: 0.25 });
 	const [CTA, CTAIntersected] = useHasIntersected({ threshold: 0.25 });
 	const [community, communityIntersected] = useHasIntersected({ threshold: 0.25 });
@@ -23,7 +22,7 @@ export default function About() {
 	}, [scrollY, aboutTextIntersected]);
 
 	return (
-		<div className={Style.About}>
+		<div className={Style.About} ref={ref}>
 			<SectionHeader text='WHO WE ARE' section='About' />
 			<div className={aboutTextIntersected ? Style.AboutTextShow : Style.AboutText} ref={aboutText}>
 				<div className={Style.Bubble}>
@@ -83,4 +82,6 @@ export default function About() {
 			</div>
 		</div>
 	);
-}
+});
+
+export default About;

@@ -4,10 +4,10 @@
 	position: relative;
 	margin: 0 auto;
 	@include width;
-	// @include height-lg;
 	margin: $margin-section;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
+	// set the height of the grid sections in accordance with height-sm mixin
 	grid-template-rows: minmax(80px, 10vh) minmax(80px, 10vh) minmax(160px, 20vh);
 	column-gap: $margin;
 	row-gap: $margin;
@@ -133,5 +133,29 @@
 			@extend .Button;
 			@include bubble-show;
 		}
+	}
+}
+
+.Maps {
+	position: relative;
+	@include width;
+	margin: $margin-section;
+
+	.Bubble {
+		@include bubble;
+		.BubbleInner {
+			@include bubble-inner;
+			// set background color
+		}
+	}
+	.Content {
+		@include height-xl;
+		border-radius: 40px;
+		overflow: hidden;
+	}
+
+	&Show {
+		@extend .Maps;
+		@include bubble-show;
 	}
 }

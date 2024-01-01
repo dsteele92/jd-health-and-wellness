@@ -20,5 +20,5 @@ export default function useIsIntersecting(options) {
 		};
 	}, [options, isIntersecting]);
 
-	return [section];
+	return [section, isIntersecting];
 }

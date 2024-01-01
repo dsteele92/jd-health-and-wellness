@@ -1,5 +1,6 @@
 import { React, useEffect, useState } from 'react';
 import Style from './mainMenu.module.scss';
+import { RxOpenInNewWindow } from 'react-icons/rx';
 
 export default function MainMenu() {
 	const [showMenu, setShowMenu] = useState(false);
@@ -47,6 +48,19 @@ export default function MainMenu() {
 				</div>
 				<div className={Style.Content}>
 					<div className={Style.MenuHeader}>Contact Us</div>
+				</div>
+			</section>
+			<section className={`${Style.Portal} ${showMenu ? Style.MenuSectionShow : Style.MenuSection}`}>
+				<div className={Style.Bubble}>
+					<div className={Style.BubbleInner}></div>
+				</div>
+				<div className={Style.Content}>
+					<div className={Style.MenuHeader}>
+						Patient Portal{' '}
+						<span>
+							<RxOpenInNewWindow />
+						</span>
+					</div>
 				</div>
 			</section>
 		</menu>

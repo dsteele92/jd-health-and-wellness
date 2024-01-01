@@ -1,9 +1,9 @@
-import { React, useState } from 'react';
+import { React, useState, forwardRef } from 'react';
 import Style from './reviews.module.scss';
 import { useHasIntersected, ButtonRound, SectionHeader } from 'components';
 import { reviewsData } from 'content';
 
-export default function Reviews() {
+const Reviews = forwardRef((props, ref) => {
 	const [carouselIndex, setCarouselIndex] = useState(0);
 
 	const [reviews, reviewsIntersected] = useHasIntersected({ threshold: 0.25 });
@@ -19,7 +19,7 @@ export default function Reviews() {
 	};
 
 	return (
-		<div>
+		<div ref={ref}>
 			<SectionHeader text='REVIEWS' section='Reviews' />
 			<div className={reviewsIntersected ? Style.ReviewsShow : Style.Reviews} ref={reviews}>
 				<div className={Style.Bubble}>
@@ -57,4 +57,6 @@ export default function Reviews() {
 			</div>
 		</div>
 	);
-}
+});
+
+export default Reviews;

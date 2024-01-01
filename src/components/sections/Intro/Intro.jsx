@@ -1,11 +1,11 @@
-import { React } from 'react';
+import { React, forwardRef } from 'react';
 // import { Link, useLocation } from 'react-router-dom';
 import Style from './intro.module.scss';
 import { MainMenu } from 'components';
 
-export default function Intro() {
+const Intro = forwardRef((props, ref) => {
 	return (
-		<div className={Style.Intro}>
+		<div className={Style.Intro} ref={ref}>
 			<div className={Style.Tint}>
 				<div className={Style.Headers}>
 					<div className={Style.Title}>
@@ -20,4 +20,6 @@ export default function Intro() {
 			</div>
 		</div>
 	);
-}
+});
+
+export default Intro;

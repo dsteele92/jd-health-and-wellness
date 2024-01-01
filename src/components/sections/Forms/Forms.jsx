@@ -1,14 +1,14 @@
-import { React, useState } from 'react';
+import { React, useState, forwardRef } from 'react';
 import Style from './forms.module.scss';
 import { useHasIntersected, SectionHeader, ButtonRoundInverse } from 'components';
 import { patientForms } from 'content';
 
-export default function Forms() {
+const Forms = forwardRef((props, ref) => {
 	const [forms, formsIntersected] = useHasIntersected({ threshold: 0.25 });
 	const [formSelected, setFormSelected] = useState(-1);
 
 	return (
-		<div>
+		<div ref={ref}>
 			<SectionHeader text='PATIENT FORMS' section='Forms' />
 			<div className={Style.Forms} ref={forms}>
 				{patientForms.map((form, index) => (
@@ -41,4 +41,6 @@ export default function Forms() {
 			</div>
 		</div>
 	);
-}
+});
+
+export default Forms;

@@ -1,9 +1,10 @@
-import { React, useState } from 'react';
+import { React, useState, forwardRef } from 'react';
 import Style from './contact.module.scss';
-import { useHasIntersected, SectionHeader, ButtonRoundInverse } from 'components';
+import { useHasIntersected, SectionHeader, ButtonRoundInverse, GoogleMaps } from 'components';
 
-export default function Contact() {
+const Contact = forwardRef((props, ref) => {
 	const [contact, contactIntersected] = useHasIntersected({ threshold: 0.25 });
+	const [maps, mapsIntersected] = useHasIntersected({ threshold: 0.25 });
 
 	const [firstName, setFirstName] = useState('');
 	const [lastName, setLastName] = useState('');
@@ -13,9 +14,9 @@ export default function Contact() {
 	const [submitHover, setSubmitHover] = useState(false);
 
 	return (
-		<div>
+		<div ref={ref}>
 			<SectionHeader text='CONTACT US' section='Contact' />
-			<div className={Style.Contact} ref={contact}>
+			<section className={Style.Contact} ref={contact}>
 				<div
 					className={
 						contactIntersected
@@ -117,7 +118,17 @@ export default function Contact() {
 						<h3>SEND</h3>
 					</div>
 				</div>
-			</div>
+			</section>
+			<section className={mapsIntersected ? Style.MapsShow : Style.Maps} ref={maps}>
+				<div className={Style.Bubble}>
+					<div className={Style.BubbleInner}></div>
+				</div>
+				<div className={Style.Content}>
+					<GoogleMaps />
+				</div>
+			</section>
 		</div>
 	);
-}
+});
+
+export default Contact;
