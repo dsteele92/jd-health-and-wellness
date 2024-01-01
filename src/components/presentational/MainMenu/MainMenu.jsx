@@ -56,10 +56,15 @@ export default function MainMenu() {
 				</div>
 				<div className={Style.Content}>
 					<div className={Style.MenuHeader}>
-						Patient Portal{' '}
-						<span>
-							<RxOpenInNewWindow />
-						</span>
+						<a
+							href='https://patientportal.intelichart.com/login/Account/Login?ReturnUrl=%2f'
+							target='_blank'
+							rel='noopener noreferrer'>
+							Patient Portal{' '}
+							<span>
+								<RxOpenInNewWindow />
+							</span>
+						</a>
 					</div>
 				</div>
 			</section>

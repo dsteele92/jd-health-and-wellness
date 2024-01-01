@@ -2,6 +2,7 @@ import { React, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Style from './mobileNav.module.scss';
 import { useScroll } from 'components';
+import { RxOpenInNewWindow } from 'react-icons/rx';
 
 export default function MobileNav(props) {
 	const { scrollToIntro, scrollToAbout, scrollToReviews, scrollToForms, scrollToContact, currentSection } = props;
@@ -106,6 +107,19 @@ export default function MobileNav(props) {
 							<h3>Contact</h3>
 							<div className={currentSection === 4 ? Style.HighlightCurrentContact : ''}></div>
 						</div>
+					</li>
+					<li className={openNav ? Style.ListFall : Style.List}>
+						<a
+							href='https://patientportal.intelichart.com/login/Account/Login?ReturnUrl=%2f'
+							target='_blank'
+							rel='noopener noreferrer'>
+							<h3>
+								Patient Portal{' '}
+								<span>
+									<RxOpenInNewWindow />
+								</span>
+							</h3>
+						</a>
 					</li>
 				</ul>
 			</menu>

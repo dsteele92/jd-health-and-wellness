@@ -27,9 +27,12 @@
 		font-weight: 500;
 		letter-spacing: 1pt;
 		transition: $transition-fast;
-
 		color: white;
 		text-transform: uppercase;
+		a {
+			color: white;
+			text-decoration: none;
+		}
 		&:hover {
 			cursor: pointer;
 		}
