@@ -22,6 +22,10 @@
 	}
 	column-gap: $margin;
 	row-gap: $margin;
+	a {
+		color: white;
+		text-decoration: none;
+	}
 
 	.MenuHeader {
 		font-weight: 500;
@@ -29,10 +33,6 @@
 		transition: $transition-fast;
 		color: white;
 		text-transform: uppercase;
-		a {
-			color: white;
-			text-decoration: none;
-		}
 		&:hover {
 			cursor: pointer;
 		}
@@ -78,9 +78,6 @@
 			cursor: pointer;
 
 			.SubLinks {
-				// @media screen and (max-width: $breakpoint-mobile) {
-				// 	display: none;
-				// }
 				margin-left: 3%;
 				margin-top: 0.5rem;
 				height: fit-content;

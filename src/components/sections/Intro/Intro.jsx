@@ -1,9 +1,9 @@
 import { React, forwardRef } from 'react';
-// import { Link, useLocation } from 'react-router-dom';
 import Style from './intro.module.scss';
 import { MainMenu } from 'components';
 
 const Intro = forwardRef((props, ref) => {
+	const { scrollToAbout, scrollToReviews, scrollToForms, scrollToContact } = props;
 	return (
 		<div className={Style.Intro} ref={ref}>
 			<div className={Style.Tint}>
@@ -16,7 +16,12 @@ const Intro = forwardRef((props, ref) => {
 						</div>
 					</div>
 				</div>
-				<MainMenu />
+				<MainMenu
+					scrollToAbout={scrollToAbout}
+					scrollToReviews={scrollToReviews}
+					scrollToForms={scrollToForms}
+					scrollToContact={scrollToContact}
+				/>
 			</div>
 		</div>
 	);

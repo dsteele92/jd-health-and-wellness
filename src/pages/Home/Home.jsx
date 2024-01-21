@@ -88,7 +88,13 @@ export default function Home() {
 				scrollToContact={scrollToMobileContact}
 				currentSection={currentSection}
 			/>
-			<Intro ref={intro} />
+			<Intro
+				ref={intro}
+				scrollToAbout={scrollToAbout}
+				scrollToReviews={scrollToReviews}
+				scrollToForms={scrollToForms}
+				scrollToContact={scrollToContact}
+			/>
 			<About ref={about} />
 			<Reviews ref={reviews} />
 			<Forms ref={forms} />
