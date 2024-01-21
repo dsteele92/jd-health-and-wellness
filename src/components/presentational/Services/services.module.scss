@@ -1,9 +1,11 @@
 @import 'sass';
 
 .Services {
+	@media screen and (max-width: $breakpoint-tablet) {
+		display: none;
+	}
 	position: relative;
 	@include width;
-	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
@@ -31,6 +33,7 @@
 			align-items: center;
 
 			&Name {
+				padding: 1rem;
 				z-index: 1;
 				left: 25%;
 				// transform: translateX(calc(-50% + -5px));
@@ -60,12 +63,11 @@
 					@media screen and (max-width: $breakpoint-tablet) {
 						font-size: 1.5rem;
 					}
-					font-weight: 200;
+					font-weight: 300;
 				}
 			}
 			&Description {
-				// transform: translateX(calc(-50% + 5px));
-				padding: 5%;
+				padding: 2rem 5%;
 				letter-spacing: 0.5pt;
 				font-size: 1.2rem;
 				@media screen and (max-width: $breakpoint-large) {
@@ -74,7 +76,6 @@
 				@media screen and (max-width: $breakpoint-medium) {
 					font-size: 0.8rem;
 				}
-				font-weight: 300;
 				text-align: justify;
 				z-index: 0;
 				right: 25%;

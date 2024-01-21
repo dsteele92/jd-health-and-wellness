@@ -40,19 +40,6 @@
 	background-color: $color-section-background;
 	margin: $margin-sub-section;
 	border-radius: 40px;
-	// overflow: hidden;
-	@media (min-width: $breakpoint-tablet) {
-	}
-}
-
-@mixin text-padding {
-	padding: 6% 12%;
-	@media screen and (max-width: $breakpoint-tablet) {
-		// padding: 0 5%;
-	}
-	@media screen and (max-width: $breakpoint-mobile) {
-		// padding: 0 2%;
-	}
 }
 
 @mixin bubble-container {

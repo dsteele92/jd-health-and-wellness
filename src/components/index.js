@@ -12,6 +12,7 @@ export { default as Navbar } from './presentational/Navbar/Navbar.jsx';
 export { default as MobileNav } from './presentational/MobileNav/MobileNav.jsx';
 export { default as MainMenu } from './presentational/MainMenu/MainMenu.jsx';
 export { default as Services } from './presentational/Services/Services.jsx';
+export { default as ServicesMobile } from './presentational/Services/ServicesMobile.jsx';
 export { default as Staff } from './presentational/Staff/Staff.jsx';
 export { default as GoogleMaps } from './presentational/GoogleMaps/GoogleMaps.jsx';
 export { default as Footer } from './presentational/Footer/Footer.jsx';

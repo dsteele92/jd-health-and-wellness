@@ -164,12 +164,12 @@ export default function Services() {
 					/>
 					<div className={Style.Text}>Family Medicine</div>
 				</div>
-				<div className={Style.ServDescription} ref={service1R}>
+				<p className={Style.ServDescription} ref={service1R}>
 					Our experience in family medicine enables us to accept and treat patients of all ages. The staff at
 					JD Health & Wellness Center will get to know you personally in order to better understand your
 					individual needs and concerns. We keep track of your general health with an annual wellness exam and
 					use this as a foundation for healthy living planning.
-				</div>
+				</p>
 			</div>
 			<div className={Style.Service}>
 				<div className={Style.ServName} ref={service2L}>
@@ -182,11 +182,11 @@ export default function Services() {
 					</div>
 					<div className={Style.Text}>Mental Health</div>
 				</div>
-				<div className={Style.ServDescription} ref={service2R}>
+				<p className={Style.ServDescription} ref={service2R}>
 					Maintaining your mental health is essential to living a healthy, positive life. We understand that
 					managing your mental health on your own is a difficult task which is why we provide nurturing and
 					compassionate support for our patients in the form of psychotherapy.
-				</div>
+				</p>
 			</div>
 			<div className={Style.Service}>
 				<div className={Style.ServName} ref={service3L}>
@@ -199,11 +199,11 @@ export default function Services() {
 					</div>
 					<div className={Style.Text}>Addiction Treatment</div>
 				</div>
-				<div className={Style.ServDescription} ref={service3R}>
+				<p className={Style.ServDescription} ref={service3R}>
 					Our clinic in Salem, OR, provides a safe place for those struggling with addiction to overcome their
 					dependency. We offer our patient's addiction treatment for a wide range of drugs, including opioids
 					and narcotics. No matter what your story is or where you come from, we're here to help.
-				</div>
+				</p>
 			</div>
 			<div className={Style.Service}>
 				<div className={Style.ServName} ref={service4L}>
@@ -216,12 +216,12 @@ export default function Services() {
 					</div>
 					<div className={Style.Text}>Counseling Services</div>
 				</div>
-				<div className={Style.ServDescription} ref={service4R}>
+				<p className={Style.ServDescription} ref={service4R}>
 					JD Health & Wellness Center offers a variety of counseling services for our patients so that we can
 					best meet your individual needs. Our staff counsels patients on everything from basic health
 					concerns like nutrition to addiction management. Whether you're coping with trauma or simply hoping
 					to improve your lifestyle, contact us today.
-				</div>
+				</p>
 			</div>
 			<div className={Style.Service}>
 				<div className={Style.ServName} ref={service5L}>
@@ -234,11 +234,11 @@ export default function Services() {
 					</div>
 					<div className={Style.Text}>Medication Assisted Therapy</div>
 				</div>
-				<div className={Style.ServDescription} ref={service5R}>
+				<p className={Style.ServDescription} ref={service5R}>
 					Medication-assisted therapy is a key component in fighting against addition. By combining medication
 					and therapy together, a more effective treatment is produced. Please get in touch so that we can
 					create a plan that suits your needs.
-				</div>
+				</p>
 			</div>
 			<div className={Style.Service}>
 				<div className={Style.ServName} ref={service6L}>
@@ -251,11 +251,11 @@ export default function Services() {
 					</div>
 					<div className={Style.Text}>Neurofeedback Therapy</div>
 				</div>
-				<div className={Style.ServDescription} ref={service6R}>
+				<p className={Style.ServDescription} ref={service6R}>
 					Neurofeedback is direct training of brain function to more appropriate patterns. Neurofeedback is
 					also called EEG Biofeedback, because it is based on electrical brain activity, the
 					electroencephalogram, or EEG. Neurofeedback is training in self-regulation.
-				</div>
+				</p>
 			</div>
 		</div>
 	);

@@ -1,6 +1,6 @@
 import { React, useEffect, useRef, useState, forwardRef } from 'react';
 import Style from './about.module.scss';
-import { SectionHeader, useHasIntersected, Services, Staff, useScroll, ButtonRound } from 'components';
+import { SectionHeader, useHasIntersected, Services, ServicesMobile, Staff, useScroll, ButtonRound } from 'components';
 import { PiArrowBendRightDownThin } from 'react-icons/pi';
 import { communityLinks } from 'content';
 
@@ -50,6 +50,7 @@ const About = forwardRef((props, ref) => {
 				</div>
 			</div>
 			<Services />
+			<ServicesMobile />
 			<div className={CTAIntersected ? Style.CTAShow : Style.CTA} ref={CTA}>
 				<div className={Style.Bubble}>
 					<div className={Style.BubbleInner}></div>
@@ -69,13 +70,18 @@ const About = forwardRef((props, ref) => {
 				<div className={Style.Content}>
 					<div className={Style.Links} onMouseLeave={() => setCommunityLinkSelected(-1)}>
 						{communityLinks.map((item, index) => (
-							<div
-								className={Style.Link}
-								key={index}
-								onMouseEnter={() => setCommunityLinkSelected(index)}>
-								<h3 className={Style.Article}>{item.name}</h3>
-								<ButtonRound size='medium' active={communityLinkSelected === index ? true : false} />
-							</div>
+							<a href='/' target='_blank' rel='noopener noreferrer'>
+								<div
+									className={Style.Link}
+									key={index}
+									onMouseEnter={() => setCommunityLinkSelected(index)}>
+									<h3 className={Style.Article}>{item.name}</h3>
+									<ButtonRound
+										size='medium'
+										active={communityLinkSelected === index ? true : false}
+									/>
+								</div>
+							</a>
 						))}
 					</div>
 				</div>
