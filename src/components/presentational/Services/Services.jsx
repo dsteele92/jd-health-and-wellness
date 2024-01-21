@@ -162,7 +162,7 @@ export default function Services() {
 						alt='family medicine icon'
 						className={Style.Icon}
 					/>
-					<div className={Style.Text}>Family Medicine</div>
+					<h1 className={Style.Text}>Family Medicine</h1>
 				</div>
 				<p className={Style.ServDescription} ref={service1R}>
 					Our experience in family medicine enables us to accept and treat patients of all ages. The staff at
@@ -180,7 +180,7 @@ export default function Services() {
 							className={Style.Icon}
 						/>
 					</div>
-					<div className={Style.Text}>Mental Health</div>
+					<h1 className={Style.Text}>Mental Health</h1>
 				</div>
 				<p className={Style.ServDescription} ref={service2R}>
 					Maintaining your mental health is essential to living a healthy, positive life. We understand that
@@ -197,7 +197,7 @@ export default function Services() {
 							className={Style.Icon}
 						/>
 					</div>
-					<div className={Style.Text}>Addiction Treatment</div>
+					<h1 className={Style.Text}>Addiction Treatment</h1>
 				</div>
 				<p className={Style.ServDescription} ref={service3R}>
 					Our clinic in Salem, OR, provides a safe place for those struggling with addiction to overcome their
@@ -214,7 +214,7 @@ export default function Services() {
 							className={Style.Icon}
 						/>
 					</div>
-					<div className={Style.Text}>Counseling Services</div>
+					<h1 className={Style.Text}>Counseling Services</h1>
 				</div>
 				<p className={Style.ServDescription} ref={service4R}>
 					JD Health & Wellness Center offers a variety of counseling services for our patients so that we can
@@ -232,7 +232,7 @@ export default function Services() {
 							className={Style.Icon}
 						/>
 					</div>
-					<div className={Style.Text}>Medication Assisted Therapy</div>
+					<h1 className={Style.Text}>Medication Assisted Therapy</h1>
 				</div>
 				<p className={Style.ServDescription} ref={service5R}>
 					Medication-assisted therapy is a key component in fighting against addition. By combining medication
@@ -249,7 +249,7 @@ export default function Services() {
 							className={Style.Icon}
 						/>
 					</div>
-					<div className={Style.Text}>Neurofeedback Therapy</div>
+					<h1 className={Style.Text}>Neurofeedback Therapy</h1>
 				</div>
 				<p className={Style.ServDescription} ref={service6R}>
 					Neurofeedback is direct training of brain function to more appropriate patterns. Neurofeedback is

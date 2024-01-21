@@ -23,7 +23,7 @@ export default function ServicesMobile() {
 							alt='family medicine icon'
 							className={Style.Icon}
 						/>
-						<h2 className={Style.Text}>Family Medicine</h2>
+						<h1 className={Style.Text}>Family Medicine</h1>
 					</div>
 					<p className={Style.ServDescription}>
 						Our experience in family medicine enables us to accept and treat patients of all ages. The staff
@@ -33,7 +33,7 @@ export default function ServicesMobile() {
 					</p>
 				</div>
 			</div>
-			<div className={service1Intersected ? Style.ServiceShow : Style.Service} ref={service2}>
+			<div className={service2Intersected ? Style.ServiceShow : Style.Service} ref={service2}>
 				<div className={Style.Bubble}>
 					<div className={Style.BubbleInner}></div>
 				</div>
@@ -46,7 +46,7 @@ export default function ServicesMobile() {
 								className={Style.Icon}
 							/>
 						</div>
-						<div className={Style.Text}>Mental Health</div>
+						<h1 className={Style.Text}>Mental Health</h1>
 					</div>
 					<p className={Style.ServDescription}>
 						Maintaining your mental health is essential to living a healthy, positive life. We understand
@@ -55,7 +55,7 @@ export default function ServicesMobile() {
 					</p>
 				</div>
 			</div>
-			<div className={service1Intersected ? Style.ServiceShow : Style.Service} ref={service3}>
+			<div className={service3Intersected ? Style.ServiceShow : Style.Service} ref={service3}>
 				<div className={Style.Bubble}>
 					<div className={Style.BubbleInner}></div>
 				</div>
@@ -68,7 +68,7 @@ export default function ServicesMobile() {
 								className={Style.Icon}
 							/>
 						</div>
-						<div className={Style.Text}>Addiction Treatment</div>
+						<h1 className={Style.Text}>Addiction Treatment</h1>
 					</div>
 					<p className={Style.ServDescription}>
 						Our clinic in Salem, OR, provides a safe place for those struggling with addiction to overcome
@@ -78,7 +78,7 @@ export default function ServicesMobile() {
 					</p>
 				</div>
 			</div>
-			<div className={service1Intersected ? Style.ServiceShow : Style.Service} ref={service4}>
+			<div className={service4Intersected ? Style.ServiceShow : Style.Service} ref={service4}>
 				<div className={Style.Bubble}>
 					<div className={Style.BubbleInner}></div>
 				</div>
@@ -91,7 +91,7 @@ export default function ServicesMobile() {
 								className={Style.Icon}
 							/>
 						</div>
-						<div className={Style.Text}>Counseling Services</div>
+						<h1 className={Style.Text}>Counseling Services</h1>
 					</div>
 					<p className={Style.ServDescription}>
 						JD Health & Wellness Center offers a variety of counseling services for our patients so that we
@@ -101,7 +101,7 @@ export default function ServicesMobile() {
 					</p>
 				</div>
 			</div>
-			<div className={service1Intersected ? Style.ServiceShow : Style.Service} ref={service5}>
+			<div className={service5Intersected ? Style.ServiceShow : Style.Service} ref={service5}>
 				<div className={Style.Bubble}>
 					<div className={Style.BubbleInner}></div>
 				</div>
@@ -114,7 +114,7 @@ export default function ServicesMobile() {
 								className={Style.Icon}
 							/>
 						</div>
-						<div className={Style.Text}>Medication Assisted Therapy</div>
+						<h1 className={Style.Text}>Medication Assisted Therapy</h1>
 					</div>
 					<p className={Style.ServDescription}>
 						Medication-assisted therapy is a key component in fighting against addition. By combining
@@ -123,7 +123,7 @@ export default function ServicesMobile() {
 					</p>
 				</div>
 			</div>
-			<div className={service1Intersected ? Style.ServiceShow : Style.Service} ref={service6}>
+			<div className={service6Intersected ? Style.ServiceShow : Style.Service} ref={service6}>
 				<div className={Style.Bubble}>
 					<div className={Style.BubbleInner}></div>
 				</div>
@@ -136,7 +136,7 @@ export default function ServicesMobile() {
 								className={Style.Icon}
 							/>
 						</div>
-						<div className={Style.Text}>Neurofeedback Therapy</div>
+						<h1 className={Style.Text}>Neurofeedback Therapy</h1>
 					</div>
 					<p className={Style.ServDescription}>
 						Neurofeedback is direct training of brain function to more appropriate patterns. Neurofeedback

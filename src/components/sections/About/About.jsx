@@ -14,6 +14,8 @@ const About = forwardRef((props, ref) => {
 
 	const { scrollY } = useScroll();
 
+	const windowWidth = window.innerWidth;
+
 	useEffect(() => {
 		const delta = (scrollY / 10) % 360;
 		if (aboutTextIntersected) {
@@ -38,7 +40,6 @@ const About = forwardRef((props, ref) => {
 						to improve one’s complete health.
 					</p>
 					<div className={Style.Circle}>
-						{/* <div className={Style.CircleText}>SEE OUR SERVICES</div> */}
 						<img
 							src='https://res.cloudinary.com/dp1dn1ghw/image/upload/v1701272999/Vector_ig0xqy.png'
 							alt='See our services'
@@ -49,15 +50,16 @@ const About = forwardRef((props, ref) => {
 					</div>
 				</div>
 			</div>
-			<Services />
-			<ServicesMobile />
+			{windowWidth >= 768 ? <Services /> : <ServicesMobile />}
 			<div className={CTAIntersected ? Style.CTAShow : Style.CTA} ref={CTA}>
 				<div className={Style.Bubble}>
 					<div className={Style.BubbleInner}></div>
 				</div>
 				<div className={Style.Content}>
 					<h1>Schedule an appointment today!</h1>
-					<h2>Call (503) 877-1995</h2>
+					<a href='tel:5038771995'>
+						<h2>Call (503) 877-1995</h2>
+					</a>
 				</div>
 			</div>
 			<SectionHeader text='OUR STAFF' section='About' />

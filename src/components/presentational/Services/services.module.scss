@@ -1,10 +1,8 @@
 @import 'sass';
 
 .Services {
-	@media screen and (max-width: $breakpoint-tablet) {
-		display: none;
-	}
 	position: relative;
+	margin: 0 auto;
 	@include width;
 	display: flex;
 	flex-direction: column;
@@ -33,7 +31,7 @@
 			align-items: center;
 
 			&Name {
-				padding: 1rem;
+				padding: 2rem;
 				z-index: 1;
 				left: 25%;
 				// transform: translateX(calc(-50% + -5px));
@@ -50,19 +48,6 @@
 					letter-spacing: 1pt;
 					color: white;
 					font-family: 'Livvic', sans-serif;
-					font-size: 3rem;
-					@media screen and (max-width: $breakpoint-desktop) {
-						font-size: 2.5rem;
-					}
-					@media screen and (max-width: $breakpoint-large) {
-						font-size: 2.5rem;
-					}
-					@media screen and (max-width: $breakpoint-medium) {
-						font-size: 1.75rem;
-					}
-					@media screen and (max-width: $breakpoint-tablet) {
-						font-size: 1.5rem;
-					}
 					font-weight: 300;
 				}
 			}
