@@ -1,0 +1,108 @@
+@import 'sass';
+
+.Staff {
+	position: relative;
+	margin: 0 auto;
+	@include width;
+	@include bubble-container;
+
+	.Bubble {
+		@include bubble;
+		.BubbleInner {
+			@include bubble-inner;
+			background-color: $color-section-background;
+		}
+	}
+	.Content {
+		@include content-div;
+		position: relative;
+		padding: 2rem 0;
+
+		.Carousel {
+			position: relative;
+			margin: 0 auto;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 90%;
+			margin: 0 auto;
+
+			.CarouselFrameOuter {
+				position: relative;
+				height: fit-content;
+				width: 90%;
+				margin: 0 20px;
+				flex-shrink: 0;
+				max-width: 1000px;
+				overflow: hidden;
+
+				.CarouselFrameInner {
+					display: flex;
+					flex-direction: row;
+					transition: $transition-regular;
+
+					.Members {
+						flex-shrink: 0;
+						display: flex;
+						justify-content: space-around;
+						align-items: center;
+
+						.Info {
+							position: relative;
+							display: flex;
+							flex-direction: column;
+							align-items: center;
+							height: fit-content;
+							width: 100%;
+							h4 {
+								font-size: 1.2rem;
+								@media screen and (max-width: $breakpoint-mobile) {
+									font-size: 1rem;
+								}
+								font-weight: 500;
+								margin: 0.25rem;
+								text-align: center;
+							}
+
+							.TextDisplay {
+								margin: 0.5rem 0;
+								max-height: 25vh;
+								overflow: auto;
+							}
+
+							.Photo {
+								position: relative;
+								height: 50vw;
+								max-height: 20rem;
+								min-height: 15rem;
+								width: 50vw;
+								max-width: 20rem;
+								min-width: 15rem;
+								margin: 1rem;
+								border: 1px solid $color-blue;
+								border-radius: 10px;
+								overflow: hidden;
+								background-size: cover;
+								background-repeat: no-repeat;
+								background-position: center;
+								cursor: pointer;
+							}
+						}
+					}
+				}
+			}
+			.Buttons {
+				display: flex;
+				justify-content: space-between;
+				margin-top: 1rem;
+				width: 8rem;
+			}
+		}
+	}
+
+	&Show {
+		@extend .Staff;
+		@include bubble-show;
+	}
+}

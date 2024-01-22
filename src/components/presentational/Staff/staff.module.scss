@@ -46,6 +46,7 @@
 				position: relative;
 				height: 250px;
 				width: 90%;
+
 				margin: 0 20px;
 				flex-shrink: 0;
 				max-width: 1000px;
@@ -111,28 +112,6 @@
 								}
 							}
 						}
-					}
-				}
-			}
-			.CarouselBottom {
-				position: absolute;
-				width: 90%;
-				max-width: 1000px;
-				top: 100%;
-				left: 50%;
-				transform: translateX(-50%);
-				display: flex;
-				.CarouselSelect {
-					@include flex-center;
-					width: 25%;
-					opacity: 0;
-					transition: $transition-fast;
-					font-size: 30px;
-					color: $color-red;
-
-					&Selected {
-						@extend .CarouselSelect;
-						opacity: 1;
 					}
 				}
 			}

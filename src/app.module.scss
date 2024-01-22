@@ -52,15 +52,8 @@ h2 {
 	@media screen and (max-width: $breakpoint-desktop) {
 		font-size: 2rem;
 	}
-	@media screen and (max-width: $breakpoint-large) {
-		// font-size: 1.6rem;
-	}
 	@media screen and (max-width: $breakpoint-medium) {
 		font-size: 1.5rem;
-	}
-	@media screen and (max-width: $breakpoint-tablet) {
-	}
-	@media screen and (max-width: $breakpoint-mobile) {
 	}
 }
 h3 {
@@ -76,10 +69,6 @@ h3 {
 	@media screen and (max-width: $breakpoint-medium) {
 		font-size: 1rem;
 	}
-	@media screen and (max-width: $breakpoint-tablet) {
-	}
-	@media screen and (max-width: $breakpoint-mobile) {
-	}
 }
 h4 {
 	font-weight: 300;
@@ -92,13 +81,6 @@ h4 {
 	@media screen and (max-width: $breakpoint-large) {
 		font-size: 1rem;
 	}
-	@media screen and (max-width: $breakpoint-medium) {
-		// font-size: 0.75rem;
-	}
-	@media screen and (max-width: $breakpoint-tablet) {
-	}
-	@media screen and (max-width: $breakpoint-mobile) {
-	}
 }
 
 p {
@@ -106,18 +88,11 @@ p {
 	font-weight: 400;
 	letter-spacing: 1pt;
 	text-align: justify;
-	@media screen and (max-width: $breakpoint-desktop) {
-		font-size: 1.1rem;
-	}
 	@media screen and (max-width: $breakpoint-large) {
 		font-size: 1rem;
 	}
 	@media screen and (max-width: $breakpoint-medium) {
 		font-size: 0.9rem;
-	}
-	@media screen and (max-width: $breakpoint-tablet) {
-	}
-	@media screen and (max-width: $breakpoint-mobile) {
 	}
 }
 

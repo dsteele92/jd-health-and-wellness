@@ -24,17 +24,51 @@ const Forms = forwardRef((props, ref) => {
 							</div>
 						</div>
 						<div className={Style.Content}>
-							<div className={Style.FormTitle}>
-								<h3>{form.name}</h3>
-							</div>
-							<div className={Style.Button}>
-								<ButtonRoundInverse
-									size='small'
-									direction='down'
-									active={formSelected === index ? true : false}
-									section='Forms'
-								/>
-							</div>
+							{form.spanish ? (
+								<div className={Style.FormWrapper}>
+									<div className={Style.FormTitle}>
+										<h3>{form.name}</h3>
+										<div className={Style.SelectLanguage}>
+											<a
+												href={form.link}
+												target='_blank'
+												rel='noopener noreferrer'
+												className={Style.Language}>
+												<h4>English</h4>
+											</a>
+											<a
+												href={form.spanish}
+												target='_blank'
+												rel='noopener noreferrer'
+												className={Style.Language}>
+												<h4>Spanish</h4>
+											</a>
+										</div>
+									</div>
+									<div className={Style.Button}>
+										<ButtonRoundInverse
+											size='small'
+											direction='down'
+											active={formSelected === index ? true : false}
+											section='Forms'
+										/>
+									</div>
+								</div>
+							) : (
+								<a href={form.link} target='_blank' rel='noopener noreferrer'>
+									<div className={Style.FormTitle}>
+										<h3>{form.name}</h3>
+									</div>
+									<div className={Style.Button}>
+										<ButtonRoundInverse
+											size='small'
+											direction='down'
+											active={formSelected === index ? true : false}
+											section='Forms'
+										/>
+									</div>
+								</a>
+							)}
 						</div>
 					</div>
 				))}

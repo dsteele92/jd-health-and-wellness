@@ -1,6 +1,17 @@
 import { React, useRef, useEffect, useState } from 'react';
 import Style from './home.module.scss';
-import { Navbar, MobileNav, Intro, About, Reviews, Forms, Contact, useScroll } from 'components';
+import {
+	Navbar,
+	MobileNav,
+	Intro,
+	About,
+	Reviews,
+	ReviewsMobile,
+	Forms,
+	FormsMobile,
+	Contact,
+	useScroll,
+} from 'components';
 
 export default function Home() {
 	const navbar = useRef();
@@ -12,6 +23,8 @@ export default function Home() {
 	const [currentSection, setCurrentSection] = useState(0);
 
 	const { scrollY } = useScroll();
+
+	const windowWidth = window.innerWidth;
 
 	useEffect(() => {
 		if (scrollY >= contact.current.offsetTop - navbar.current.clientHeight - 5) {
@@ -96,8 +109,8 @@ export default function Home() {
 				scrollToContact={scrollToContact}
 			/>
 			<About ref={about} />
-			<Reviews ref={reviews} />
-			<Forms ref={forms} />
+			{windowWidth < 768 ? <ReviewsMobile ref={reviews} /> : <Reviews ref={reviews} />}
+			{windowWidth < 768 ? <FormsMobile ref={forms} /> : <Forms ref={forms} />}
 			<Contact ref={contact} />
 		</div>
 	);

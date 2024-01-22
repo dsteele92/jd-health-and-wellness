@@ -1,7 +1,9 @@
 export { default as Intro } from './sections/Intro/Intro.jsx';
 export { default as About } from './sections/About/About.jsx';
 export { default as Reviews } from './sections/Reviews/Reviews.jsx';
+export { default as ReviewsMobile } from './sections/Reviews/ReviewsMobile.jsx';
 export { default as Forms } from './sections/Forms/Forms.jsx';
+export { default as FormsMobile } from './sections/Forms/FormsMobile.jsx';
 export { default as Contact } from './sections/Contact/Contact.jsx';
 
 export { default as SectionHeader } from './generic/SectionHeader/SectionHeader.jsx';
@@ -14,6 +16,7 @@ export { default as MainMenu } from './presentational/MainMenu/MainMenu.jsx';
 export { default as Services } from './presentational/Services/Services.jsx';
 export { default as ServicesMobile } from './presentational/Services/ServicesMobile.jsx';
 export { default as Staff } from './presentational/Staff/Staff.jsx';
+export { default as StaffMobile } from './presentational/Staff/StaffMobile.jsx';
 export { default as GoogleMaps } from './presentational/GoogleMaps/GoogleMaps.jsx';
 export { default as Footer } from './presentational/Footer/Footer.jsx';
 

@@ -1,4 +1,4 @@
-import { React, useEffect, useRef } from 'react';
+import { React } from 'react';
 import { useHasIntersected } from 'components';
 import Style from './servicesMobile.module.scss';
 

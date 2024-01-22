@@ -1,14 +1,12 @@
 import { React, useState, forwardRef } from 'react';
-import Style from './reviews.module.scss';
+import Style from './reviewsMobile.module.scss';
 import { useHasIntersected, ButtonRound, SectionHeader } from 'components';
 import { reviewsData } from 'content';
 
-const Reviews = forwardRef((props, ref) => {
+const ReviewsMobile = forwardRef((props, ref) => {
 	const [carouselIndex, setCarouselIndex] = useState(0);
 
 	const [reviews, reviewsIntersected] = useHasIntersected({ threshold: 0.25 });
-
-	const windowWidth = window.innerWidth;
 
 	const handleArrow = (delta) => {
 		if (carouselIndex + delta < 0) {
@@ -29,19 +27,13 @@ const Reviews = forwardRef((props, ref) => {
 				</div>
 				<div className={Style.Content}>
 					<div className={Style.Carousel}>
-						<ButtonRound
-							onClick={() => handleArrow(-2)}
-							direction='left'
-							size={windowWidth < 992 ? 'small' : 'medium'}
-							disabled={carouselIndex === 0 ? true : false}
-						/>
 						<div className={Style.CarouselFrameOuter}>
 							<div
 								className={Style.CarouselFrameInner}
-								style={{ transform: `translateX(-${carouselIndex * 50}%)` }}>
-								<div className={Style.Review} style={{ width: `${reviewsData.length * 50}%` }}>
+								style={{ transform: `translateX(-${carouselIndex * 100}%)` }}>
+								<div className={Style.Members} style={{ width: `${reviewsData.length * 100}%` }}>
 									{reviewsData.map((info, index) => (
-										<div className={Style.Rev} key={index}>
+										<div className={Style.Info} key={index}>
 											{info.name && <h4>{info.name}</h4>}
 											<p className={Style.TextDisplay}>{info.review}</p>
 										</div>
@@ -49,11 +41,19 @@ const Reviews = forwardRef((props, ref) => {
 								</div>
 							</div>
 						</div>
-						<ButtonRound
-							onClick={() => handleArrow(2)}
-							disabled={carouselIndex === reviewsData.length - 2 ? true : false}
-							size={windowWidth < 992 ? 'small' : 'medium'}
-						/>
+						<div className={Style.Buttons}>
+							<ButtonRound
+								onClick={() => handleArrow(-1)}
+								direction='left'
+								size='small'
+								disabled={carouselIndex === 0 ? true : false}
+							/>
+							<ButtonRound
+								onClick={() => handleArrow(1)}
+								disabled={carouselIndex === reviewsData.length - 4 ? true : false}
+								size='small'
+							/>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -61,4 +61,4 @@ const Reviews = forwardRef((props, ref) => {
 	);
 });
 
-export default Reviews;
+export default ReviewsMobile;

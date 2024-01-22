@@ -1,6 +1,15 @@
 import { React, useEffect, useRef, useState, forwardRef } from 'react';
 import Style from './about.module.scss';
-import { SectionHeader, useHasIntersected, Services, ServicesMobile, Staff, useScroll, ButtonRound } from 'components';
+import {
+	SectionHeader,
+	useHasIntersected,
+	Services,
+	ServicesMobile,
+	Staff,
+	StaffMobile,
+	useScroll,
+	ButtonRound,
+} from 'components';
 import { PiArrowBendRightDownThin } from 'react-icons/pi';
 import { communityLinks } from 'content';
 
@@ -63,7 +72,7 @@ const About = forwardRef((props, ref) => {
 				</div>
 			</div>
 			<SectionHeader text='OUR STAFF' section='About' />
-			<Staff />
+			{windowWidth >= 768 ? <Staff /> : <StaffMobile />}
 			<SectionHeader text='COMMUNITY & GOVERNMENT' section='About' />
 			<div className={communityIntersected ? Style.CommunityShow : Style.Community} ref={community}>
 				<div className={Style.Bubble}>
@@ -79,7 +88,7 @@ const About = forwardRef((props, ref) => {
 									onMouseEnter={() => setCommunityLinkSelected(index)}>
 									<h3 className={Style.Article}>{item.name}</h3>
 									<ButtonRound
-										size='medium'
+										size={windowWidth < 768 ? 'small' : 'medium'}
 										active={communityLinkSelected === index ? true : false}
 									/>
 								</div>
