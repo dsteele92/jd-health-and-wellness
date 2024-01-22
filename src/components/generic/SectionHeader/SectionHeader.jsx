@@ -3,7 +3,7 @@ import Style from './sectionHeader.module.scss';
 import { useHasIntersected } from 'components';
 
 export default function SectionHeader(props) {
-	const [header, headerIntersected] = useHasIntersected({ threshold: 1 });
+	const [header, headerIntersected] = useHasIntersected();
 
 	return (
 		<div ref={header} className={headerIntersected ? Style.HeaderShow : Style.Header}>

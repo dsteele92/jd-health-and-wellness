@@ -6,7 +6,7 @@ import { staffInfo } from 'content';
 export default function StaffMobile() {
 	const [carouselIndex, setCarouselIndex] = useState(0);
 
-	const [staff, staffIntersected] = useHasIntersected({ threshold: 0.25 });
+	const [staff, staffIntersected] = useHasIntersected();
 
 	const handleArrow = (delta) => {
 		if (carouselIndex + delta < 0 || carouselIndex + delta === staffInfo.length) return;

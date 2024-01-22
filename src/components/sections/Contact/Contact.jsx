@@ -3,8 +3,8 @@ import Style from './contact.module.scss';
 import { useHasIntersected, SectionHeader, ButtonRoundInverse, GoogleMaps } from 'components';
 
 const Contact = forwardRef((props, ref) => {
-	const [contact, contactIntersected] = useHasIntersected({ threshold: 0.25 });
-	const [maps, mapsIntersected] = useHasIntersected({ threshold: 0.25 });
+	const [contact, contactIntersected] = useHasIntersected();
+	const [maps, mapsIntersected] = useHasIntersected();
 
 	const [firstName, setFirstName] = useState('');
 	const [lastName, setLastName] = useState('');

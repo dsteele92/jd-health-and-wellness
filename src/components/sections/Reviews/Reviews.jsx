@@ -6,7 +6,7 @@ import { reviewsData } from 'content';
 const Reviews = forwardRef((props, ref) => {
 	const [carouselIndex, setCarouselIndex] = useState(0);
 
-	const [reviews, reviewsIntersected] = useHasIntersected({ threshold: 0.25 });
+	const [reviews, reviewsIntersected] = useHasIntersected();
 
 	const windowWidth = window.innerWidth;
 

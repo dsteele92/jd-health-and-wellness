@@ -4,7 +4,7 @@ import { useHasIntersected, SectionHeader, ButtonRound } from 'components';
 import { patientForms } from 'content';
 
 const FormsMobile = forwardRef((props, ref) => {
-	const [forms, formsIntersected] = useHasIntersected({ threshold: 0.25 });
+	const [forms, formsIntersected] = useHasIntersected();
 	const [formSelected, setFormSelected] = useState(-1);
 
 	return (

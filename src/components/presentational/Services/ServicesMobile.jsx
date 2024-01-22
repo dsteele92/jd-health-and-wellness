@@ -3,12 +3,12 @@ import { useHasIntersected } from 'components';
 import Style from './servicesMobile.module.scss';
 
 export default function ServicesMobile() {
-	const [service1, service1Intersected] = useHasIntersected({ threshold: 0.25 });
-	const [service2, service2Intersected] = useHasIntersected({ threshold: 0.25 });
-	const [service3, service3Intersected] = useHasIntersected({ threshold: 0.25 });
-	const [service4, service4Intersected] = useHasIntersected({ threshold: 0.25 });
-	const [service5, service5Intersected] = useHasIntersected({ threshold: 0.25 });
-	const [service6, service6Intersected] = useHasIntersected({ threshold: 0.25 });
+	const [service1, service1Intersected] = useHasIntersected();
+	const [service2, service2Intersected] = useHasIntersected();
+	const [service3, service3Intersected] = useHasIntersected();
+	const [service4, service4Intersected] = useHasIntersected();
+	const [service5, service5Intersected] = useHasIntersected();
+	const [service6, service6Intersected] = useHasIntersected();
 
 	return (
 		<div className={Style.ServicesMobile}>

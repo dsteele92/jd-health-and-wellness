@@ -14,9 +14,9 @@ import { PiArrowBendRightDownThin } from 'react-icons/pi';
 import { communityLinks } from 'content';
 
 const About = forwardRef((props, ref) => {
-	const [aboutText, aboutTextIntersected] = useHasIntersected({ threshold: 0.25 });
-	const [CTA, CTAIntersected] = useHasIntersected({ threshold: 0.25 });
-	const [community, communityIntersected] = useHasIntersected({ threshold: 0.25 });
+	const [aboutText, aboutTextIntersected] = useHasIntersected();
+	const [CTA, CTAIntersected] = useHasIntersected();
+	const [community, communityIntersected] = useHasIntersected();
 	const [communityLinkSelected, setCommunityLinkSelected] = useState(-1);
 
 	const circleText = useRef();

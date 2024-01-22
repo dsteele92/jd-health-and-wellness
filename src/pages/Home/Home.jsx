@@ -11,6 +11,7 @@ import {
 	FormsMobile,
 	Contact,
 	useScroll,
+	Footer,
 } from 'components';
 
 export default function Home() {
@@ -112,6 +113,7 @@ export default function Home() {
 			{windowWidth < 768 ? <ReviewsMobile ref={reviews} /> : <Reviews ref={reviews} />}
 			{windowWidth < 768 ? <FormsMobile ref={forms} /> : <Forms ref={forms} />}
 			<Contact ref={contact} />
+			<Footer />
 		</div>
 	);
 }

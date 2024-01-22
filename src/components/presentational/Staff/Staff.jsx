@@ -7,7 +7,7 @@ export default function Staff() {
 	const [carouselIndex, setCarouselIndex] = useState(0);
 	const [showInfo, setShowInfo] = useState(-1);
 
-	const [staff, staffIntersected] = useHasIntersected({ threshold: 0.25 });
+	const [staff, staffIntersected] = useHasIntersected();
 
 	const windowWidth = window.innerWidth;
 

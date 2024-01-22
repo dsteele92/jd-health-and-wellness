@@ -1,6 +1,6 @@
 @import 'sass';
 
-.Component {
+.Footer {
 	position: relative;
 	margin: 0 auto;
 	@include width;
@@ -10,16 +10,22 @@
 		@include bubble;
 		.BubbleInner {
 			@include bubble-inner;
-			// set background color
 		}
 	}
 	.Content {
+		height: 100%;
+		width: 100%;
 		@include content-div;
-		// set padding here
+		@include flex-center;
+		height: 4rem;
+		h3 {
+			font-weight: 300;
+			text-transform: uppercase;
+		}
 	}
 
 	&Show {
-		@extend .Component;
+		@extend .Footer;
 		@include bubble-show;
 	}
 }
