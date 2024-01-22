@@ -27,7 +27,7 @@ const options = {
 
 const GoogleMaps = memo((props) => {
 	const { isLoaded, loadError } = useJsApiLoader({
-		googleMapsApiKey: '',
+		googleMapsApiKey: 'AIzaSyB17rMLil-lGiQATtZEQUHygKoF0vRRq_w',
 		// ...otherOptions
 	});
 
