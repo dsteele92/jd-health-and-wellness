@@ -26,7 +26,8 @@
 				padding: 2rem 3rem;
 			}
 
-			p {
+			.IntroText {
+				font-size: 20px;
 				max-width: 80rem;
 				@media screen and (max-width: $breakpoint-medium) {
 					max-width: 40rem;

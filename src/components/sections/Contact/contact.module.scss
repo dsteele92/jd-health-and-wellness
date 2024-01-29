@@ -60,7 +60,7 @@
 			textarea {
 				background-color: transparent;
 				border: none;
-				font-weight: 400;
+				font-weight: 500;
 				letter-spacing: 1pt;
 				color: $color-green;
 				width: 100%;
@@ -70,9 +70,7 @@
 				@media screen and (max-width: $breakpoint-desktop) {
 					font-size: 1.5rem;
 				}
-				@media screen and (max-width: $breakpoint-large) {
-					font-size: 1.25rem;
-				}
+
 				@media screen and (max-width: $breakpoint-medium) {
 					font-size: 1rem;
 				}
@@ -85,8 +83,16 @@
 			input::placeholder,
 			textarea::placeholder {
 				color: $color-green;
-				font-weight: 300;
+				font-weight: 400;
 				letter-spacing: 1pt;
+				font-size: 1.75rem;
+				@media screen and (max-width: $breakpoint-desktop) {
+					font-size: 1.5rem;
+				}
+
+				@media screen and (max-width: $breakpoint-medium) {
+					font-size: 1rem;
+				}
 			}
 		}
 
@@ -150,7 +156,7 @@
 	}
 	.Content {
 		@include height-xl;
-		border-radius: 40px;
+		border-radius: 20px;
 		overflow: hidden;
 	}
 

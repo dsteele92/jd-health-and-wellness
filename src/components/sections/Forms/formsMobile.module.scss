@@ -18,13 +18,13 @@
 			display: flex;
 			flex-direction: column;
 			.Top {
-				border-radius: 40px 40px 0 0;
+				border-radius: 20px 20px 0 0;
 				height: 65%;
 				width: 100%;
 				background-color: $color-section-background;
 			}
 			.Bottom {
-				border-radius: 0 0 40px 40px;
+				border-radius: 0 0 20px 20px;
 				height: 35%;
 				width: 100%;
 				background-color: rgba($color: $color-yellow, $alpha: 0.6);
@@ -33,7 +33,7 @@
 	}
 	.Content {
 		@include height-sm;
-		border-radius: 40px;
+		border-radius: 20px;
 		overflow: hidden;
 		display: flex;
 		flex-direction: column;

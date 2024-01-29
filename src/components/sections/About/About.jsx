@@ -40,7 +40,7 @@ const About = forwardRef((props, ref) => {
 					<div className={Style.BubbleInner}></div>
 				</div>
 				<div className={Style.Content}>
-					<p>
+					<p className={Style.IntroText}>
 						JD Health & Wellness Center has been serving patients in the Salem, Oregon area for over 30
 						years in a variety of health and wellness services from primary care to mental health and
 						addiction. Regardless of what kind of pain you are experiencing we believe in all methods from

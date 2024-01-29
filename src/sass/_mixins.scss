@@ -39,7 +39,7 @@
 	width: 100%;
 	background-color: $color-section-background;
 	margin: $margin-sub-section;
-	border-radius: 40px;
+	border-radius: 20px;
 }
 
 @mixin bubble-container {
@@ -68,7 +68,7 @@
 	position: relative;
 	height: 100%;
 	width: 100%;
-	border-radius: 40px;
+	border-radius: 20px;
 	// this is the transition for any background color changes
 	transition: $transition-bubble;
 }
