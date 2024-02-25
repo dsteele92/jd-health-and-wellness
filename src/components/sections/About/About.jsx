@@ -40,22 +40,24 @@ const About = forwardRef((props, ref) => {
 					<div className={Style.BubbleInner}></div>
 				</div>
 				<div className={Style.Content}>
-					<p className={Style.IntroText}>
+					<h3 className={Style.IntroText}>
 						JD Health & Wellness Center has been serving patients in the Salem, Oregon area for over 30
 						years in a variety of health and wellness services from primary care to mental health and
 						addiction. Regardless of what kind of pain you are experiencing we believe in all methods from
 						traditional to alternative medicine. We believe in treating the whole person not just their
 						symptoms, we see the body as an interconnected system working to strengthen both body and mind
 						to improve one’s complete health.
-					</p>
-					<div className={Style.Circle}>
-						<img
-							src='https://res.cloudinary.com/dp1dn1ghw/image/upload/v1701272999/Vector_ig0xqy.png'
-							alt='See our services'
-							className={Style.CircleText}
-							ref={circleText}
-						/>
-						<PiArrowBendRightDownThin />
+					</h3>
+					<div className={Style.SpinnerContainer}>
+						<div className={Style.Circle}>
+							<img
+								src='https://res.cloudinary.com/dp1dn1ghw/image/upload/v1708820289/see-our-services.png'
+								alt='See our services'
+								className={Style.CircleText}
+								ref={circleText}
+							/>
+							<PiArrowBendRightDownThin />
+						</div>
 					</div>
 				</div>
 			</div>

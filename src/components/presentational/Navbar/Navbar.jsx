@@ -17,7 +17,7 @@ const Navbar = forwardRef((props, ref) => {
 
 	return (
 		<div>
-			<div className={top ? Style.Navbar : Style[`NavbarScrolled${currentSection}`]} ref={ref}>
+			<div className={Style[`Navbar${top ? '' : 'Scrolled'}`]} ref={ref}>
 				<div>
 					<img
 						src='https://res.cloudinary.com/dp1dn1ghw/image/upload/v1697653224/JD/logo_txsiex.png'

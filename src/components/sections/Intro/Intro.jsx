@@ -1,6 +1,7 @@
 import { React, forwardRef } from 'react';
 import Style from './intro.module.scss';
 import { MainMenu } from 'components';
+import { HiArrowLongDown } from 'react-icons/hi2';
 
 const Intro = forwardRef((props, ref) => {
 	const { scrollToAbout, scrollToReviews, scrollToForms, scrollToContact } = props;
@@ -22,6 +23,11 @@ const Intro = forwardRef((props, ref) => {
 					scrollToForms={scrollToForms}
 					scrollToContact={scrollToContact}
 				/>
+				<div className={Style.Arrow}>
+					<div className={Style.Bounce} onClick={scrollToAbout}>
+						<HiArrowLongDown />
+					</div>
+				</div>
 			</div>
 		</div>
 	);

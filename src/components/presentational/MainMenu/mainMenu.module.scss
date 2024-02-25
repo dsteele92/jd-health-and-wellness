@@ -2,8 +2,8 @@
 
 .Menu {
 	position: absolute;
-	bottom: 2%;
-	height: 45%;
+	bottom: 18%;
+	height: 20rem;
 	@media screen and (max-width: $breakpoint-tablet) {
 		bottom: 5%;
 		height: fit-content;
@@ -87,7 +87,7 @@
 
 				.MenuHeader {
 					color: rgb(222, 222, 222);
-					margin: 0.3rem 0;
+					margin: 0.5rem 0;
 					@media screen and (max-width: $breakpoint-tablet) {
 						margin: 0.2rem;
 						font-size: 1rem;

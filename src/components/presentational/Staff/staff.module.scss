@@ -17,113 +17,15 @@
 		@include content-div;
 		// set padding here
 		position: relative;
-		padding: 5vh 0 3vh;
-
-		.Carousel {
-			position: relative;
-			margin: 0 auto;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			width: 90%;
-			margin: 0 auto 3vh;
-
-			.Arrow {
-				margin: 0 20px;
-				font-size: 30px;
-				color: $color-blue;
-				cursor: pointer;
-				transition: $transition-regular;
-
-				&Disable {
-					@extend .Arrow;
-					opacity: 0.5;
-					cursor: default;
-				}
-			}
-
-			.CarouselFrameOuter {
-				position: relative;
-				height: 250px;
-				width: 90%;
-
-				margin: 0 20px;
-				flex-shrink: 0;
-				max-width: 1000px;
-				// border: 1px solid black;
-				// border-radius: 20px;
-				overflow: hidden;
-
-				.CarouselFrameInner {
-					height: 100%;
-					display: flex;
-					flex-direction: row;
-					transition: $transition-regular;
-					// overflow: visible;
-
-					.Photos {
-						flex-shrink: 0;
-						height: 100%;
-						display: flex;
-						justify-content: space-around;
-						align-items: center;
-
-						.PhotoContainer {
-							position: relative;
-							height: 100%;
-							width: 25%;
-							@include flex-center;
-							.Photo {
-								position: relative;
-								height: 95%;
-								width: 95%;
-								// max-width: 60vh;
-								border: 1px solid $color-blue;
-								border-radius: 10px;
-								overflow: hidden;
-								background-size: cover;
-								background-repeat: no-repeat;
-								background-position: center;
-								cursor: pointer;
-								&::after {
-									transition: $transition-regular;
-									content: '';
-									height: 100%;
-									width: 100%;
-									position: absolute;
-									top: 0;
-									left: 0;
-									background-color: black;
-									opacity: 0;
-								}
-
-								&Dim {
-									@extend .Photo;
-									&::after {
-										content: '';
-										height: 100%;
-										width: 100%;
-										position: absolute;
-										top: 0;
-										left: 0;
-										background-color: black;
-										opacity: 0.4;
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
+		// padding: 5vh 0 3vh;
+		padding: 3rem 1rem 4rem;
 
 		.TextDisplay {
 			position: relative;
-			height: 300px;
+			height: 150px;
 			width: 100%;
 			@include flex-center;
 			flex-direction: column;
-			// overflow-y: scroll;
 			.StaffInfo {
 				margin: 0 auto;
 				padding: 0 2%;
@@ -140,67 +42,50 @@
 					margin-bottom: 0.5rem;
 				}
 
-				// p {
-				// 	font-size: 1.25rem;
-				// 	@media screen and (max-width: $breakpoint-medium) {
-				// 		font-size: 1rem;
-				// 	}
-				// }
-
 				&Hide {
 					@extend .StaffInfo;
 					display: none;
 				}
 			}
-
+			.MovingTextLg {
+				position: relative;
+				height: 50%;
+				width: 100%;
+				overflow: hidden;
+				.LargeText {
+					position: absolute;
+					top: 0;
+					left: 0;
+					color: $color-background-main;
+					text-align: center;
+					white-space: nowrap;
+					font-size: 3rem;
+					font-weight: 400;
+					text-transform: uppercase;
+					letter-spacing: 3pt;
+				}
+			}
 			.MovingTextSm {
 				position: relative;
-				height: 100px;
+				height: 50%;
 				width: 100%;
 				overflow: hidden;
 				h1 {
 					position: absolute;
-					// left: 0;
 					right: 0;
-					bottom: 0;
+					top: 0;
 					white-space: nowrap;
 					font-weight: 300;
 					color: $color-blue;
 					text-transform: uppercase;
 					text-align: center;
 				}
-
-				&Hide {
-					@extend .MovingTextSm;
-					display: none;
-				}
 			}
-			.MovingTextLg {
-				position: relative;
-				height: 200px;
-				top: 10%;
-				width: 100%;
-				overflow: hidden;
-				// margin-top: 5vh;
-
-				.LargeText {
-					position: absolute;
-					left: 0;
-					// top: 30%;
-					color: $color-background-main;
-					text-align: center;
-					white-space: nowrap;
-					font-size: 6rem;
-					font-weight: 400;
-					text-transform: uppercase;
-					letter-spacing: 3pt;
-				}
-
-				&Hide {
-					@extend .MovingTextLg;
-					display: none;
-				}
-			}
+		}
+		.Carousel {
+			margin: 1rem auto;
+			position: relative;
+			width: 90%;
 		}
 	}
 

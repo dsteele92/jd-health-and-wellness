@@ -1,15 +1,74 @@
-import { React, useState, useEffect, useRef } from 'react';
+import { React, useMemo, useEffect, useRef } from 'react';
 import Style from './staff.module.scss';
-import { useHasIntersected, useScroll, ButtonRound } from 'components';
+import { Carousel } from '@mantine/carousel';
+import { useHasIntersected, useScroll } from 'components';
+import { Paper, Text, Title, Button, rem } from '@mantine/core';
 import { staffInfo } from 'content';
+import classes from './CardsCarousel.module.css';
+
+// function Card({ image, title, category }) {
+// 	return (
+// 		<Paper shadow='md' p='xl' radius='md' style={{ backgroundImage: `url(${image})` }} className={classes.card}>
+// 			<div>
+// 				<Text className={classes.category} size='xs'>
+// 					{category}
+// 				</Text>
+// 				<Title order={3} className={classes.title}>
+// 					{title}
+// 				</Title>
+// 			</div>
+// 			<Button variant='white' color='dark'>
+// 				Read article
+// 			</Button>
+// 		</Paper>
+// 	);
+// }
+function Card({ name, title, url, info }) {
+	return (
+		<Paper
+			shadow='md'
+			p='xl'
+			radius='md'
+			style={{ backgroundImage: `url(${url})` }}
+			className={classes.card}></Paper>
+	);
+}
+
+const data = [
+	{
+		image: 'https://images.unsplash.com/photo-1508193638397-1c4234db14d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80',
+		title: 'Best forests to visit in North America',
+		category: 'nature',
+	},
+	{
+		image: 'https://images.unsplash.com/photo-1559494007-9f5847c49d94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80',
+		title: 'Hawaii beaches review: better than you think',
+		category: 'beach',
+	},
+	{
+		image: 'https://images.unsplash.com/photo-1608481337062-4093bf3ed404?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80',
+		title: 'Mountains at night: 12 best locations to enjoy the view',
+		category: 'nature',
+	},
+	{
+		image: 'https://images.unsplash.com/photo-1507272931001-fc06c17e4f43?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80',
+		title: 'Aurora in Norway: when to visit for best experience',
+		category: 'nature',
+	},
+	{
+		image: 'https://images.unsplash.com/photo-1510798831971-661eb04b3739?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80',
+		title: 'Best places to visit this winter',
+		category: 'tourism',
+	},
+	{
+		image: 'https://images.unsplash.com/photo-1582721478779-0ae163c05a60?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80',
+		title: 'Active volcanos reviews: travel at your own risk',
+		category: 'nature',
+	},
+];
 
 export default function Staff() {
-	const [carouselIndex, setCarouselIndex] = useState(0);
-	const [showInfo, setShowInfo] = useState(-1);
-
 	const [staff, staffIntersected] = useHasIntersected();
-
-	const windowWidth = window.innerWidth;
 
 	const smText = useRef();
 	const lgText = useRef();
@@ -25,76 +84,39 @@ export default function Staff() {
 		}
 	}, [scrollY, staffIntersected]);
 
-	const handleArrow = (delta) => {
-		if (carouselIndex + delta < 0) {
-			setCarouselIndex(0);
-		} else if (carouselIndex + delta > staffInfo.length - 4) {
-			setCarouselIndex(staffInfo.length - 4);
-		} else {
-			setCarouselIndex(carouselIndex + delta);
-		}
-		setShowInfo(-1);
-	};
+	const slides = useMemo(() => {
+		return staffInfo.map((item, index) => (
+			<Carousel.Slide key={index}>
+				<Card {...item} />
+			</Carousel.Slide>
+		));
+	}, []);
 
 	return (
-		<div
-			className={staffIntersected ? Style.StaffShow : Style.Staff}
-			ref={staff}
-			onMouseLeave={() => setShowInfo(-1)}>
+		<div className={staffIntersected ? Style.StaffShow : Style.Staff} ref={staff}>
 			<div className={Style.Bubble}>
 				<div className={Style.BubbleInner}></div>
 			</div>
 			<div className={Style.Content}>
-				<div className={Style.Carousel}>
-					<ButtonRound
-						onClick={() => handleArrow(-4)}
-						direction='left'
-						size={windowWidth < 992 ? 'small' : 'medium'}
-						disabled={carouselIndex === 0 ? true : false}
-					/>
-					<div className={Style.CarouselFrameOuter}>
-						<div
-							className={Style.CarouselFrameInner}
-							style={{ transform: `translateX(-${carouselIndex * 25}%)` }}>
-							<div className={Style.Photos} style={{ width: `${staffInfo.length * 25}%` }}>
-								{staffInfo.map((img, index) => (
-									<div className={Style.PhotoContainer} key={index}>
-										<div
-											className={
-												Style[`Photo${showInfo !== -1 && showInfo !== index ? 'Dim' : ''}`]
-											}
-											style={{ backgroundImage: `url(${img.url})` }}
-											onMouseEnter={() => setShowInfo(index)}></div>
-									</div>
-								))}
-							</div>
+				<div className={Style.TextDisplay}>
+					<div className={Style.MovingTextLg}>
+						<div className={Style.LargeText} ref={lgText}>
+							Meet the team · Meet the team · Meet the team · Meet the team · Meet the team · Meet the
+							team · Meet the team ·{' '}
 						</div>
 					</div>
-					<ButtonRound
-						onClick={() => handleArrow(4)}
-						disabled={carouselIndex === staffInfo.length - 4 ? true : false}
-						size={windowWidth < 992 ? 'small' : 'medium'}
-					/>
-				</div>
-				<div className={Style.TextDisplay}>
-					<div className={showInfo >= 0 ? Style.StaffInfo : Style.StaffInfoHide}>
-						<h3>{showInfo >= 0 ? staffInfo[showInfo].name : ''}</h3>
-						<h4>{showInfo >= 0 ? staffInfo[showInfo].title : ''}</h4>
-						<p>{showInfo >= 0 ? staffInfo[showInfo].info : ''}</p>
-					</div>
-					<div className={showInfo < 0 ? Style.MovingTextSm : Style.MovingTextSmHide}>
+					<div className={Style.MovingTextSm}>
 						<h1 ref={smText}>
 							Hover over photos to read more · Hover over photos to read more · Hover over photos to read
 							more · Hover over photos to read more · Hover over photos to read more · Hover over photos
 							to read more · Hover over photos to read more ·{' '}
 						</h1>
 					</div>
-					<div className={showInfo < 0 ? Style.MovingTextLg : Style.MovingTextLgHide}>
-						<div className={Style.LargeText} ref={lgText}>
-							Meet the team · Meet the team · Meet the team · Meet the team · Meet the team · Meet the
-							team · Meet the team ·{' '}
-						</div>
-					</div>
+				</div>
+				<div className={Style.Carousel}>
+					<Carousel slideSize='25%' slideGap={{ base: rem(2), sm: 'xl' }} align='start' slidesToScroll={4}>
+						{slides}
+					</Carousel>
 				</div>
 			</div>
 		</div>

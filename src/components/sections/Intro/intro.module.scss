@@ -116,5 +116,21 @@
 				}
 			}
 		}
+		.Arrow {
+			position: absolute;
+			top: 90%;
+			left: 50%;
+			transform: translateX(-50%);
+			@include flex-center;
+			font-size: 30px;
+			color: white;
+
+			.Bounce {
+				position: absolute;
+				top: 0;
+				animation: bounce 1.5s infinite;
+				cursor: pointer;
+			}
+		}
 	}
 }

@@ -27,7 +27,6 @@
 			}
 
 			.IntroText {
-				font-size: 20px;
 				max-width: 80rem;
 				@media screen and (max-width: $breakpoint-medium) {
 					max-width: 40rem;
@@ -35,10 +34,12 @@
 			}
 
 			.Circle {
-				height: calc(100vw * 0.08);
-				max-height: 100px;
-				width: calc(100vw * 0.08);
-				max-width: 100px;
+				// height: calc(100vw * 0.08);
+				// max-height: 100px;
+				// width: calc(100vw * 0.08);
+				// max-width: 100px;
+				height: 125px;
+				width: 125px;
 				position: absolute;
 				border-radius: 50%;
 				border: 0.5px solid $color-blue;
