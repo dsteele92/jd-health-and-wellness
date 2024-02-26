@@ -35,12 +35,15 @@ const Reviews = forwardRef((props, ref) => {
 
 	return (
 		<div ref={ref}>
-			<SectionHeader text='REVIEWS' section='Reviews' />
+			{/* <SectionHeader text='REVIEWS' section='Reviews' /> */}
 			<div className={reviewsIntersected ? Style.ReviewsShow : Style.Reviews} ref={reviews}>
 				<div className={Style.Bubble}>
 					<div className={Style.BubbleInner}></div>
 				</div>
 				<div className={Style.Content}>
+					<div className={Style.SectionHeader}>
+						<h3>Reviews</h3>
+					</div>
 					<div className={Style.Carousel}>
 						<Carousel
 							slideSize={{ base: mobile ? '100%' : '33.333%' }}

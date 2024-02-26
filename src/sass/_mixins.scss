@@ -14,6 +14,18 @@
 	}
 }
 
+@mixin section-header {
+	width: fit-content;
+	height: fit-content;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	padding: 1rem;
+	background-color: $color-blue;
+	border-radius: 10px;
+	color: white;
+	text-transform: uppercase;
+}
+
 @mixin height-header {
 	height: 10vh;
 	min-height: 80px;

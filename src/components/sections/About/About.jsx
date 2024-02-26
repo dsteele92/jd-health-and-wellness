@@ -17,8 +17,8 @@ const About = forwardRef((props, ref) => {
 	const [aboutText, aboutTextIntersected] = useHasIntersected();
 	// const [CTA, CTAIntersected] = useHasIntersected();
 	// const [video, videoIntersected] = useHasIntersected();
-	const [community, communityIntersected] = useHasIntersected();
-	const [communityLinkSelected, setCommunityLinkSelected] = useState(-1);
+	// const [community, communityIntersected] = useHasIntersected();
+	// const [communityLinkSelected, setCommunityLinkSelected] = useState(-1);
 
 	const circleText = useRef();
 	// const ourStory = useRef();
@@ -50,7 +50,7 @@ const About = forwardRef((props, ref) => {
 					<div className={Style.BubbleInner}></div>
 				</div>
 				<div className={Style.Content}>
-					<div className={Style.Header}>
+					<div className={Style.SectionHeader}>
 						<h3>Who We Are</h3>
 					</div>
 					<h3 className={Style.IntroText}>
@@ -61,7 +61,7 @@ const About = forwardRef((props, ref) => {
 						symptoms, we see the body as an interconnected system working to strengthen both body and mind
 						to improve one’s complete health.
 					</h3>
-					<div className={Style.Header}>
+					<div className={Style.SectionHeader}>
 						<h3>Our Story</h3>
 					</div>
 					<div className={Style.VideoContainer}>
@@ -76,7 +76,7 @@ const About = forwardRef((props, ref) => {
 					<div className={Style.SpinnerContainer}>
 						<div className={Style.Circle}>
 							<img
-								src='https://res.cloudinary.com/dp1dn1ghw/image/upload/v1708820289/see-our-services.png'
+								src='https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/see-our-services.png'
 								alt='See our services'
 								className={Style.CircleText}
 								ref={circleText}
@@ -115,10 +115,10 @@ const About = forwardRef((props, ref) => {
 					</div>
 				</div>
 			</div> */}
-			<SectionHeader text='OUR STAFF' section='About' />
+			{/* <SectionHeader text='OUR STAFF' section='About' /> */}
 			<Staff />
-			<SectionHeader text='COMMUNITY & GOVERNMENT' section='About' />
-			<div className={communityIntersected ? Style.CommunityShow : Style.Community} ref={community}>
+			{/* <SectionHeader text='COMMUNITY & GOVERNMENT' section='About' /> */}
+			{/* <div className={communityIntersected ? Style.CommunityShow : Style.Community} ref={community}>
 				<div className={Style.Bubble}>
 					<div className={Style.BubbleInner}></div>
 				</div>
@@ -140,7 +140,7 @@ const About = forwardRef((props, ref) => {
 						))}
 					</div>
 				</div>
-			</div>
+			</div> */}
 		</div>
 	);
 });

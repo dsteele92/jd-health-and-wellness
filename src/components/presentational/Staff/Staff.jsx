@@ -56,6 +56,9 @@ export default function Staff() {
 				<div className={Style.BubbleInner}></div>
 			</div>
 			<div className={Style.Content}>
+				<div className={Style.SectionHeader}>
+					<h3>Who We Are</h3>
+				</div>
 				<div className={Style.TextDisplay}>
 					<div className={Style.MovingTextLg}>
 						<div className={Style.LargeText} ref={lgText}>
