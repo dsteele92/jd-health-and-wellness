@@ -1,24 +1,37 @@
-import { React, useState, forwardRef } from 'react';
+import { React, useState, forwardRef, useMemo } from 'react';
 import Style from './reviews.module.scss';
 import { useHasIntersected, ButtonRound, SectionHeader } from 'components';
 import { reviewsData } from 'content';
+import { Carousel } from '@mantine/carousel';
+import { useMediaQuery } from '@mantine/hooks';
+import { useMantineTheme, rem } from '@mantine/core';
+
+function Card({ name, review }) {
+	return (
+		<div className={Style.Card}>
+			<div className={Style.Header}>
+				<h3>{name}</h3>
+			</div>
+			<div className={Style.Review}>
+				<p>{review}</p>
+			</div>
+		</div>
+	);
+}
 
 const Reviews = forwardRef((props, ref) => {
-	const [carouselIndex, setCarouselIndex] = useState(0);
-
 	const [reviews, reviewsIntersected] = useHasIntersected();
 
-	const windowWidth = window.innerWidth;
+	const theme = useMantineTheme();
+	const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
 
-	const handleArrow = (delta) => {
-		if (carouselIndex + delta < 0) {
-			setCarouselIndex(0);
-		} else if (carouselIndex + delta > reviewsData.length - 2) {
-			setCarouselIndex(reviewsData.length - 2);
-		} else {
-			setCarouselIndex(carouselIndex + delta);
-		}
-	};
+	const slides = useMemo(() => {
+		return reviewsData.map((item, index) => (
+			<Carousel.Slide key={index}>
+				<Card {...item} />
+			</Carousel.Slide>
+		));
+	}, []);
 
 	return (
 		<div ref={ref}>
@@ -29,31 +42,13 @@ const Reviews = forwardRef((props, ref) => {
 				</div>
 				<div className={Style.Content}>
 					<div className={Style.Carousel}>
-						<ButtonRound
-							onClick={() => handleArrow(-2)}
-							direction='left'
-							size={windowWidth < 992 ? 'small' : 'medium'}
-							disabled={carouselIndex === 0 ? true : false}
-						/>
-						<div className={Style.CarouselFrameOuter}>
-							<div
-								className={Style.CarouselFrameInner}
-								style={{ transform: `translateX(-${carouselIndex * 50}%)` }}>
-								<div className={Style.Review} style={{ width: `${reviewsData.length * 50}%` }}>
-									{reviewsData.map((info, index) => (
-										<div className={Style.Rev} key={index}>
-											{info.name && <h4>{info.name}</h4>}
-											<p className={Style.TextDisplay}>{info.review}</p>
-										</div>
-									))}
-								</div>
-							</div>
-						</div>
-						<ButtonRound
-							onClick={() => handleArrow(2)}
-							disabled={carouselIndex === reviewsData.length - 2 ? true : false}
-							size={windowWidth < 992 ? 'small' : 'medium'}
-						/>
+						<Carousel
+							slideSize={{ base: mobile ? '100%' : '33.333%' }}
+							slideGap={{ base: mobile ? rem(10) : rem(25) }}
+							align='start'
+							slidesToScroll={3}>
+							{slides}
+						</Carousel>
 					</div>
 				</div>
 			</div>

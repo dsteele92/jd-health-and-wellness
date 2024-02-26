@@ -43,7 +43,7 @@
 	.NavLink {
 		@include shared;
 		padding: 5px 0;
-		border-bottom: 1px solid rgba($color: $color-blue, $alpha: 0);
+		border-bottom: 1px solid rgba($color: $color-green, $alpha: 0);
 		@media screen and (max-width: $breakpoint-tablet) {
 			display: none;
 		}
@@ -85,19 +85,19 @@
 
 		&0 {
 			@extend .NavbarScrolled;
-			border-bottom: $color-blue 1px solid;
+			border-bottom: $color-green 1px solid;
 		}
 		&1 {
 			@extend .NavbarScrolled;
-			border-bottom: $color-blue 1px solid;
+			border-bottom: $color-green 1px solid;
 		}
 		&2 {
 			@extend .NavbarScrolled;
-			border-bottom: $color-yellow 1px solid;
+			border-bottom: $color-green 1px solid;
 		}
 		&3 {
 			@extend .NavbarScrolled;
-			border-bottom: $color-yellow 1px solid;
+			border-bottom: $color-green 1px solid;
 		}
 		&4 {
 			@extend .NavbarScrolled;

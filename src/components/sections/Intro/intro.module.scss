@@ -19,10 +19,7 @@
 			position: absolute;
 			transform: translate(-50%, -50%);
 			left: 50%;
-			bottom: 48%;
-			@media screen and (max-width: $breakpoint-desktop) {
-				bottom: 48%;
-			}
+			bottom: 45%;
 			@media screen and (max-width: $breakpoint-large) {
 				bottom: 50%;
 			}
@@ -47,19 +44,15 @@
 				justify-content: center;
 				align-items: center;
 				letter-spacing: 10pt;
-				// vertically align text center
 
 				.JD {
-					font-size: 15rem;
+					font-size: 13rem;
 					font-weight: 200;
 					text-transform: uppercase;
 					color: white;
 					font-family: 'Kumbh Sans', sans-serif;
 					margin-right: 2rem;
 
-					@media screen and (max-width: $breakpoint-desktop) {
-						// font-size: 12rem;
-					}
 					@media screen and (max-width: $breakpoint-large) {
 						font-size: 12rem;
 					}
@@ -85,15 +78,12 @@
 					}
 				}
 				.HW {
-					font-size: 5.5rem;
+					font-size: 4.5rem;
 					font-weight: 300;
 					text-transform: uppercase;
 					color: white;
 					font-family: 'Inter', sans-serif;
 
-					@media screen and (max-width: $breakpoint-desktop) {
-						// font-size: 4rem;
-					}
 					@media screen and (max-width: $breakpoint-large) {
 						font-size: 4rem;
 					}

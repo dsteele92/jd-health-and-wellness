@@ -158,7 +158,7 @@ export default function Services() {
 			<div className={Style.Service}>
 				<div className={Style.ServName} ref={service1L}>
 					<img
-						src='https://res.cloudinary.com/dp1dn1ghw/image/upload/v1697654802/JD/icons8-family-96_vuffga.png'
+						src='https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/icons8-family-96_vuffga.png'
 						alt='family medicine icon'
 						className={Style.Icon}
 					/>
@@ -175,7 +175,7 @@ export default function Services() {
 				<div className={Style.ServName} ref={service2L}>
 					<div className={Style.Icon}>
 						<img
-							src='https://res.cloudinary.com/dp1dn1ghw/image/upload/v1697654806/JD/icons8-mental-health-64_wgenol.png'
+							src='https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/icons8-mental-health-64_wgenol.png'
 							alt='mental health icon'
 							className={Style.Icon}
 						/>
@@ -192,7 +192,7 @@ export default function Services() {
 				<div className={Style.ServName} ref={service3L}>
 					<div className={Style.Icon}>
 						<img
-							src='https://res.cloudinary.com/dp1dn1ghw/image/upload/v1697654810/JD/icons8-syringe-96_hphcd5.png'
+							src='https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/icons8-syringe-96_hphcd5.png'
 							alt='addiction treatment icon'
 							className={Style.Icon}
 						/>
@@ -209,7 +209,7 @@ export default function Services() {
 				<div className={Style.ServName} ref={service4L}>
 					<div className={Style.Icon}>
 						<img
-							src='https://res.cloudinary.com/dp1dn1ghw/image/upload/v1700857767/icons8-trust-64_d2qzwq.png'
+							src='https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/icons8-trust-64_d2qzwq.png'
 							alt='counseling icon'
 							className={Style.Icon}
 						/>
@@ -227,7 +227,7 @@ export default function Services() {
 				<div className={Style.ServName} ref={service5L}>
 					<div className={Style.Icon}>
 						<img
-							src='https://res.cloudinary.com/dp1dn1ghw/image/upload/v1700857779/icons8-medication-64_thodbg.png'
+							src='https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/icons8-medication-64_thodbg.png'
 							alt='medication icon'
 							className={Style.Icon}
 						/>
@@ -244,17 +244,18 @@ export default function Services() {
 				<div className={Style.ServName} ref={service6L}>
 					<div className={Style.Icon}>
 						<img
-							src='https://res.cloudinary.com/dp1dn1ghw/image/upload/v1700857787/icons8-brain-64_l9evnl.png'
+							src='https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/icons8-brain-64_l9evnl.png'
 							alt='neuro icon'
 							className={Style.Icon}
 						/>
 					</div>
-					<h1 className={Style.Text}>Neurofeedback Therapy</h1>
+					<h1 className={Style.Text}>EMDR Therapy</h1>
 				</div>
 				<p className={Style.ServDescription} ref={service6R}>
-					Neurofeedback is direct training of brain function to more appropriate patterns. Neurofeedback is
-					also called EEG Biofeedback, because it is based on electrical brain activity, the
-					electroencephalogram, or EEG. Neurofeedback is training in self-regulation.
+					Eye Movement Desensitization and Reprocessing (EMDR) therapy is a proven treatment that helps people
+					reduce or even eliminate the distress caused by traumatic memories. It is based on brain science for
+					how memories are stored in the brain and body. Through EMDR, you can create new associations with
+					traumatic memories to lessen the impact those memories have on your life.
 				</p>
 			</div>
 		</div>

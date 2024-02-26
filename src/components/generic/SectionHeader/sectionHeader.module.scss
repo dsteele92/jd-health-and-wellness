@@ -16,6 +16,7 @@
 	}
 
 	main {
+		color: $color-green;
 		height: 100%;
 		width: 100%;
 		border-radius: 20px;
@@ -31,12 +32,9 @@
 			font-size: 2rem;
 			font-weight: 500;
 			letter-spacing: 0.5pt;
-			// @media screen and (max-width: $breakpoint-desktop) {
-			// 	font-size: 1.8rem;
+			// @media screen and (max-width: $breakpoint-large) {
+			// 	font-size: 1.6rem;
 			// }
-			@media screen and (max-width: $breakpoint-large) {
-				font-size: 1.6rem;
-			}
 			@media screen and (max-width: $breakpoint-medium) {
 				font-size: 1.2rem;
 			}
@@ -54,13 +52,13 @@
 	}
 
 	.About {
-		color: $color-blue;
+		color: $color-green;
 	}
 	.Reviews {
-		color: $color-yellow;
+		color: $color-green;
 	}
 	.Forms {
-		color: $color-yellow;
+		color: $color-green;
 	}
 	.Contact {
 		color: $color-green;

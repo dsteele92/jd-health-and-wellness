@@ -18,15 +18,16 @@
 		width: 100%;
 		line-height: 1;
 		text-align: center;
+		transition: $transition-bubble-appear;
 	}
 	.About {
-		color: $color-blue;
+		color: $color-green;
 	}
 	.Reviews {
-		color: rgba($color: $color-yellow, $alpha: 0.6);
+		color: $color-green;
 	}
 	.Forms {
-		color: rgba($color: $color-yellow, $alpha: 0.6);
+		color: $color-green;
 	}
 	.Contact {
 		color: $color-green;
@@ -64,6 +65,10 @@
 .Active {
 	transition: $transition-bubble;
 	background-color: $color-background-main;
+	.Arrow {
+		transition: $transition-bubble;
+		color: $color-blue;
+	}
 }
 
 .Disabled {

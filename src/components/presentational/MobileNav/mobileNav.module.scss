@@ -270,17 +270,17 @@
 
 					&About {
 						@extend .HighlightCurrent;
-						background-color: rgba($color: $color-blue, $alpha: 0.3);
+						background-color: rgba($color: $color-green, $alpha: 0.3);
 					}
 
 					&Reviews {
 						@extend .HighlightCurrent;
-						background-color: rgba($color: $color-yellow, $alpha: 0.3);
+						background-color: rgba($color: $color-green, $alpha: 0.3);
 					}
 
 					&Forms {
 						@extend .HighlightCurrent;
-						background-color: rgba($color: $color-yellow, $alpha: 0.3);
+						background-color: rgba($color: $color-green, $alpha: 0.3);
 					}
 
 					&Contact {

@@ -36,7 +36,7 @@
 				left: 25%;
 				// transform: translateX(calc(-50% + -5px));
 				@extend .Serv;
-				background-color: $color-blue;
+				background-color: $color-green;
 
 				.Icon {
 					height: 65px;
@@ -65,7 +65,7 @@
 				z-index: 0;
 				right: 25%;
 				@extend .Serv;
-				background-color: $color-section-background;
+				background-color: $color-section-background-2;
 			}
 		}
 	}

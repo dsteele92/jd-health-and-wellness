@@ -21,15 +21,40 @@
 		.Content {
 			@include content-div;
 			@include flex-center;
-			padding: 6% 15%;
+			flex-direction: column;
+			padding: 1rem 3rem 6rem;
 			@media screen and (max-width: $breakpoint-mobile) {
 				padding: 2rem 3rem;
 			}
-
+			.Header {
+				// align-self: flex-start;
+				margin-top: 2rem;
+				margin-bottom: 2rem;
+				padding: 1rem;
+				background-color: $color-blue;
+				border-radius: 10px;
+				color: white;
+				text-transform: uppercase;
+			}
 			.IntroText {
+				width: 70%;
 				max-width: 80rem;
+				text-align: justify;
 				@media screen and (max-width: $breakpoint-medium) {
 					max-width: 40rem;
+				}
+			}
+			.VideoContainer {
+				width: 50rem;
+				max-width: 90vw;
+				height: fit-content;
+				overflow: hidden;
+
+				video {
+					border-radius: 10px;
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
 				}
 			}
 
@@ -94,13 +119,13 @@
 			}
 			h1 {
 				// width: 100%;
-				color: $color-red;
-				margin-bottom: 10px;
+				color: $color-blue;
+				margin-bottom: 0.5rem;
 				text-transform: uppercase;
 				text-align: center;
 			}
 			h2 {
-				color: $color-blue;
+				color: $color-green;
 				text-transform: uppercase;
 				text-align: center;
 			}
@@ -108,6 +133,65 @@
 
 		&Show {
 			@extend .CTA;
+			@include bubble-show;
+		}
+	}
+
+	.Video {
+		position: relative;
+		@include width;
+		margin: $margin-section;
+		@include bubble-container;
+
+		.Bubble {
+			@include bubble;
+			.BubbleInner {
+				@include bubble-inner;
+				background-color: $color-section-background;
+			}
+		}
+		.Content {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-between;
+			padding: 3rem 0;
+			.MovingTextLg {
+				margin-bottom: 2rem;
+				position: relative;
+				height: 5rem;
+				width: 100%;
+				overflow: hidden;
+				.LargeText {
+					position: absolute;
+					top: 0;
+					left: 0;
+					color: $color-background-main;
+					text-align: center;
+					white-space: nowrap;
+					font-size: 3rem;
+					font-weight: 400;
+					text-transform: uppercase;
+					letter-spacing: 3pt;
+				}
+			}
+			.VideoContainer {
+				width: 50rem;
+				max-width: 90vw;
+				height: fit-content;
+				overflow: hidden;
+
+				video {
+					border-radius: 10px;
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+		}
+
+		&Show {
+			@extend .Video;
 			@include bubble-show;
 		}
 	}

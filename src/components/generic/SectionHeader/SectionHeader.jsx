@@ -10,7 +10,7 @@ export default function SectionHeader(props) {
 			<div className={Style.Bubble}>
 				<div className={Style.BubbleInner}></div>
 			</div>
-			<main className={Style[props.section]}>
+			<main>
 				<div className={Style.SectionHeader}>{props.text}</div>
 			</main>
 		</div>

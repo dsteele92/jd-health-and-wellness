@@ -15,13 +15,23 @@ import { communityLinks } from 'content';
 
 const About = forwardRef((props, ref) => {
 	const [aboutText, aboutTextIntersected] = useHasIntersected();
-	const [CTA, CTAIntersected] = useHasIntersected();
+	// const [CTA, CTAIntersected] = useHasIntersected();
+	// const [video, videoIntersected] = useHasIntersected();
 	const [community, communityIntersected] = useHasIntersected();
 	const [communityLinkSelected, setCommunityLinkSelected] = useState(-1);
 
 	const circleText = useRef();
+	// const ourStory = useRef();
 
 	const { scrollY } = useScroll();
+
+	// useEffect(() => {
+	// 	const delta = (3 * scrollY) / window.innerHeight;
+	// 	const deltaSlow = scrollY / window.innerHeight;
+	// 	if (videoIntersected) {
+	// 		ourStory.current.style.transform = `translateX(${-delta % 100}%)`;
+	// 	}
+	// }, [scrollY, videoIntersected]);
 
 	const windowWidth = window.innerWidth;
 
@@ -34,12 +44,15 @@ const About = forwardRef((props, ref) => {
 
 	return (
 		<div className={Style.About} ref={ref}>
-			<SectionHeader text='WHO WE ARE' section='About' />
+			{/* <SectionHeader text='WHO WE ARE' section='About' /> */}
 			<div className={aboutTextIntersected ? Style.AboutTextShow : Style.AboutText} ref={aboutText}>
 				<div className={Style.Bubble}>
 					<div className={Style.BubbleInner}></div>
 				</div>
 				<div className={Style.Content}>
+					<div className={Style.Header}>
+						<h3>Who We Are</h3>
+					</div>
 					<h3 className={Style.IntroText}>
 						JD Health & Wellness Center has been serving patients in the Salem, Oregon area for over 30
 						years in a variety of health and wellness services from primary care to mental health and
@@ -48,6 +61,18 @@ const About = forwardRef((props, ref) => {
 						symptoms, we see the body as an interconnected system working to strengthen both body and mind
 						to improve one’s complete health.
 					</h3>
+					<div className={Style.Header}>
+						<h3>Our Story</h3>
+					</div>
+					<div className={Style.VideoContainer}>
+						<video controls>
+							<source
+								src='https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/JDHW_Better-Together-2.mp4'
+								type='video/mp4'
+							/>
+							Your browser does not support the video tag.
+						</video>
+					</div>
 					<div className={Style.SpinnerContainer}>
 						<div className={Style.Circle}>
 							<img
@@ -62,7 +87,7 @@ const About = forwardRef((props, ref) => {
 				</div>
 			</div>
 			{windowWidth >= 768 ? <Services /> : <ServicesMobile />}
-			<div className={CTAIntersected ? Style.CTAShow : Style.CTA} ref={CTA}>
+			{/* <div className={CTAIntersected ? Style.CTAShow : Style.CTA} ref={CTA}>
 				<div className={Style.Bubble}>
 					<div className={Style.BubbleInner}></div>
 				</div>
@@ -72,9 +97,26 @@ const About = forwardRef((props, ref) => {
 						<h2>Call (503) 877-1995</h2>
 					</a>
 				</div>
-			</div>
+			</div> */}
+			{/* <SectionHeader text='OUR STORY' section='About' />
+			<div className={videoIntersected ? Style.VideoShow : Style.Video} ref={video}>
+				<div className={Style.Bubble}>
+					<div className={Style.BubbleInner}></div>
+				</div>
+				<div className={Style.Content}>
+					<div className={Style.VideoContainer}>
+						<video controls>
+							<source
+								src='https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/JDHW_Better-Together-2.mp4'
+								type='video/mp4'
+							/>
+							Your browser does not support the video tag.
+						</video>
+					</div>
+				</div>
+			</div> */}
 			<SectionHeader text='OUR STAFF' section='About' />
-			{windowWidth >= 768 ? <Staff /> : <StaffMobile />}
+			<Staff />
 			<SectionHeader text='COMMUNITY & GOVERNMENT' section='About' />
 			<div className={communityIntersected ? Style.CommunityShow : Style.Community} ref={community}>
 				<div className={Style.Bubble}>
@@ -83,7 +125,7 @@ const About = forwardRef((props, ref) => {
 				<div className={Style.Content}>
 					<div className={Style.Links} onMouseLeave={() => setCommunityLinkSelected(-1)}>
 						{communityLinks.map((item, index) => (
-							<a href='/' target='_blank' rel='noopener noreferrer'>
+							<a href='/' target='_blank' rel='noopener noreferrer' key={index}>
 								<div
 									className={Style.Link}
 									key={index}

@@ -86,10 +86,11 @@ p {
 	font-size: 1.25rem;
 	font-weight: 400;
 	letter-spacing: 1pt;
+	line-height: 1.5;
 	text-align: justify;
-	@media screen and (max-width: $breakpoint-large) {
-		font-size: 1rem;
-	}
+	// @media screen and (max-width: $breakpoint-large) {
+	// 	font-size: 1rem;
+	// }
 	@media screen and (max-width: $breakpoint-medium) {
 		font-size: 0.9rem;
 	}

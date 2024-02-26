@@ -28,7 +28,7 @@
 					border-radius: 0 0 20px 20px;
 					height: 35%;
 					width: 100%;
-					background-color: rgba($color: $color-yellow, $alpha: 0.6);
+					background-color: $color-green;
 				}
 			}
 		}
@@ -78,7 +78,7 @@
 						cursor: pointer;
 						&:hover {
 							h4 {
-								border-bottom: 1px solid $color-yellow;
+								border-bottom: 1px solid $color-blue;
 							}
 						}
 					}

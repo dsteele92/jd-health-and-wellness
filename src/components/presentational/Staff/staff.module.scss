@@ -1,5 +1,53 @@
 @import 'sass';
 
+.Card {
+	height: 25rem;
+	@media screen and (max-width: $breakpoint-medium) {
+		height: 20rem;
+	}
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
+	border-radius: 10px;
+	overflow: hidden;
+	cursor: pointer;
+	.Header {
+		padding: 0.5rem 1rem;
+		width: 100%;
+		height: fit-content;
+		min-height: 5rem;
+		flex-shrink: 0;
+		background-color: $color-green;
+		color: white;
+	}
+	.CardImage {
+		width: 100%;
+		flex-grow: 1;
+		height: 15rem;
+		background-size: cover;
+		background-position: center;
+		filter: grayscale(10%);
+		.CardText {
+			height: 100%;
+			opacity: 0;
+			transition: $transition-regular;
+			padding: 1rem 1rem 2rem 1rem;
+			background-color: rgba($color: $color-blue, $alpha: 0.9);
+			color: white;
+			overflow: auto;
+			p {
+				text-align: left;
+			}
+		}
+	}
+	&:hover {
+		.CardText {
+			opacity: 1;
+		}
+	}
+}
+
 .Staff {
 	position: relative;
 	margin: 0 auto;
@@ -18,7 +66,7 @@
 		// set padding here
 		position: relative;
 		// padding: 5vh 0 3vh;
-		padding: 3rem 1rem 4rem;
+		padding: 3rem 0 4rem;
 
 		.TextDisplay {
 			position: relative;
@@ -83,9 +131,10 @@
 			}
 		}
 		.Carousel {
-			margin: 1rem auto;
+			margin: 2rem auto;
 			position: relative;
 			width: 90%;
+			max-width: 75rem;
 		}
 	}
 

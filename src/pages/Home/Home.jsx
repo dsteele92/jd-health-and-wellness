@@ -110,7 +110,7 @@ export default function Home() {
 				scrollToContact={scrollToContact}
 			/>
 			<About ref={about} />
-			{windowWidth < 768 ? <ReviewsMobile ref={reviews} /> : <Reviews ref={reviews} />}
+			<Reviews ref={reviews} />
 			{windowWidth < 768 ? <FormsMobile ref={forms} /> : <Forms ref={forms} />}
 			<Contact ref={contact} />
 			<Footer />
