@@ -52,7 +52,8 @@
 				@include flex-center;
 				flex-direction: column;
 				.VideoContainer {
-					width: 50rem;
+					margin-top: 1rem;
+					width: 60rem;
 					max-width: 90vw;
 					height: fit-content;
 					overflow: hidden;
