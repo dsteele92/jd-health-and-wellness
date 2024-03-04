@@ -7,7 +7,7 @@
 	@include flex-center;
 	border-radius: 50%;
 	cursor: pointer;
-	transition: $transition-bubble-appear;
+	transition: $transition-slow;
 
 	&:active {
 		opacity: 0.8;
@@ -63,12 +63,8 @@
 }
 
 .Active {
-	transition: $transition-bubble;
-	background-color: $color-background-main;
-	.Arrow {
-		transition: $transition-bubble;
-		color: $color-blue;
-	}
+	transition: $transition-slow;
+	background-color: $color-blue;
 }
 
 .Disabled {

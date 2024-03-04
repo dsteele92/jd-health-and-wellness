@@ -1,6 +1,6 @@
-import { React, useState, forwardRef, useMemo } from 'react';
+import { React, forwardRef, useMemo } from 'react';
 import Style from './reviews.module.scss';
-import { useHasIntersected, ButtonRound, SectionHeader } from 'components';
+import { useHasIntersected, SectionHeader } from 'components';
 import { reviewsData } from 'content';
 import { Carousel } from '@mantine/carousel';
 import { useMediaQuery } from '@mantine/hooks';
@@ -35,15 +35,12 @@ const Reviews = forwardRef((props, ref) => {
 
 	return (
 		<div ref={ref}>
-			{/* <SectionHeader text='REVIEWS' section='Reviews' /> */}
 			<div className={reviewsIntersected ? Style.ReviewsShow : Style.Reviews} ref={reviews}>
 				<div className={Style.Bubble}>
 					<div className={Style.BubbleInner}></div>
 				</div>
 				<div className={Style.Content}>
-					<div className={Style.SectionHeader}>
-						<h3>Reviews</h3>
-					</div>
+					<SectionHeader text='Reviews' />
 					<div className={Style.Carousel}>
 						<Carousel
 							slideSize={{ base: mobile ? '100%' : '33.333%' }}

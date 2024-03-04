@@ -6,18 +6,23 @@ import {
 	Intro,
 	About,
 	Reviews,
-	ReviewsMobile,
 	Forms,
 	FormsMobile,
 	Contact,
 	useScroll,
 	Footer,
+	Services,
+	ServicesMobile,
+	Staff,
 } from 'components';
 
 export default function Home() {
 	const navbar = useRef();
 	const intro = useRef();
 	const about = useRef();
+	const services = useRef();
+	const staff = useRef();
+	// const news = useRef();
 	const reviews = useRef();
 	const forms = useRef();
 	const contact = useRef();
@@ -49,6 +54,14 @@ export default function Home() {
 		const offset = about.current.offsetTop - navbar.current.clientHeight - 5;
 		window.scrollTo({ top: offset, behavior: 'smooth' });
 	};
+	// const scrollToServices = () => {
+	// 	const offset = services.current.offsetTop - navbar.current.clientHeight - 5;
+	// 	window.scrollTo({ top: offset, behavior: 'smooth' });
+	// };
+	// const scrollToStaff = () => {
+	// 	const offset = staff.current.offsetTop - navbar.current.clientHeight - 5;
+	// 	window.scrollTo({ top: offset, behavior: 'smooth' });
+	// };
 	const scrollToReviews = () => {
 		const offset = reviews.current.offsetTop - navbar.current.clientHeight - 5;
 		window.scrollTo({ top: offset, behavior: 'smooth' });
@@ -110,6 +123,8 @@ export default function Home() {
 				scrollToContact={scrollToContact}
 			/>
 			<About ref={about} />
+			{windowWidth >= 768 ? <Services ref={services} /> : <ServicesMobile ref={services} />}
+			<Staff ref={staff} />
 			<Reviews ref={reviews} />
 			{windowWidth < 768 ? <FormsMobile ref={forms} /> : <Forms ref={forms} />}
 			<Contact ref={contact} />

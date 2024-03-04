@@ -3,64 +3,28 @@
 .Header {
 	@include bubble-container;
 	position: relative;
-	@include height-header;
-	@include width;
-	margin: $margin-section;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	width: fit-content;
+	height: fit-content;
 
 	.Bubble {
 		@include bubble;
 		.BubbleInner {
 			@include bubble-inner;
-			background-color: $color-section-background;
+			border-radius: 10px;
+			background-color: $color-blue;
 		}
 	}
 
-	main {
-		color: $color-green;
-		height: 100%;
-		width: 100%;
-		border-radius: 20px;
-		display: flex;
-		justify-content: flex-start;
-		align-items: center;
-		padding-left: $padding-left;
-		@media screen and (max-width: $breakpoint-mobile) {
-			padding-left: $padding-left-mobile;
-		}
-
-		.SectionHeader {
-			font-size: 2rem;
-			font-weight: 500;
-			letter-spacing: 0.5pt;
-			// @media screen and (max-width: $breakpoint-large) {
-			// 	font-size: 1.6rem;
-			// }
-			@media screen and (max-width: $breakpoint-medium) {
-				font-size: 1.2rem;
-			}
-			@media screen and (max-width: $breakpoint-tablet) {
-				font-size: 1rem;
-			}
-			@media screen and (max-width: $breakpoint-mobile) {
-			}
-		}
+	.SectionHeader {
+		padding: 1.25rem;
+		color: white;
+		text-transform: uppercase;
 	}
 
 	&Show {
 		@extend .Header;
 		@include bubble-show;
-	}
-
-	.About {
-		color: $color-green;
-	}
-	.Reviews {
-		color: $color-green;
-	}
-	.Forms {
-		color: $color-green;
-	}
-	.Contact {
-		color: $color-green;
 	}
 }

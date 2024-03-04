@@ -2,7 +2,7 @@ import { React, useMemo, useEffect, useRef } from 'react';
 import Style from './staff.module.scss';
 import { Carousel } from '@mantine/carousel';
 import { useMediaQuery } from '@mantine/hooks';
-import { useHasIntersected, useScroll } from 'components';
+import { useHasIntersected, useScroll, SectionHeader } from 'components';
 import { useMantineTheme, rem } from '@mantine/core';
 import { staffInfo } from 'content';
 
@@ -56,9 +56,7 @@ export default function Staff() {
 				<div className={Style.BubbleInner}></div>
 			</div>
 			<div className={Style.Content}>
-				<div className={Style.SectionHeader}>
-					<h3>Who We Are</h3>
-				</div>
+				<SectionHeader text='Our Staff' />
 				<div className={Style.TextDisplay}>
 					<div className={Style.MovingTextLg}>
 						<div className={Style.LargeText} ref={lgText}>

@@ -70,10 +70,6 @@
 		flex-direction: column;
 		align-items: center;
 
-		.SectionHeader {
-			@include section-header;
-		}
-
 		.TextDisplay {
 			position: relative;
 			height: 150px;

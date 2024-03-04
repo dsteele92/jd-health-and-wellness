@@ -1,22 +1,19 @@
-import { React, useEffect, useRef, useState, forwardRef } from 'react';
+import { React, useEffect, useRef, forwardRef } from 'react';
 import Style from './about.module.scss';
-import { SectionHeader, useHasIntersected, Services, ServicesMobile, Staff, StaffMobile, useScroll } from 'components';
+import { SectionHeader, useHasIntersected, useScroll } from 'components';
 import { PiArrowBendRightDownThin } from 'react-icons/pi';
-import { Transition } from '@mantine/core';
-import { communityLinks } from 'content';
 
 const About = forwardRef((props, ref) => {
 	const [about, aboutIntersected] = useHasIntersected();
+	const [whoWeAre, whoWeAreIntersected] = useHasIntersected({ threshold: 0.5 });
+	const [video, videoIntersected] = useHasIntersected({ threshold: 0.3 });
 	// const [CTA, CTAIntersected] = useHasIntersected();
 	// const [video, videoIntersected] = useHasIntersected();
 	// const [community, communityIntersected] = useHasIntersected();
 	// const [communityLinkSelected, setCommunityLinkSelected] = useState(-1);
 
 	const circleText = useRef();
-
 	const { scrollY } = useScroll();
-
-	const windowWidth = window.innerWidth;
 
 	useEffect(() => {
 		const delta = (scrollY / 10) % 360;
@@ -32,11 +29,9 @@ const About = forwardRef((props, ref) => {
 					<div className={Style.BubbleInner}></div>
 				</div>
 				<div className={Style.Content}>
-					<div className={Style.WhoWeAre}>
-						<div className={Style.SectionHeader}>
-							<h3>Who We Are</h3>
-						</div>
-						<h3 className={Style.IntroText}>
+					<div className={Style.WhoWeAre} ref={whoWeAre}>
+						<SectionHeader text='Who We Are' />
+						<h3 className={Style[`IntroText${whoWeAreIntersected ? 'Show' : ''}`]}>
 							JD Health & Wellness Center has been serving patients in the Salem, Oregon area for over 30
 							years in a variety of health and wellness services from primary care to mental health and
 							addiction. Regardless of what kind of pain you are experiencing we believe in all methods
@@ -45,11 +40,9 @@ const About = forwardRef((props, ref) => {
 							and mind to improve one’s complete health.
 						</h3>
 					</div>
-					<div className={Style.Story}>
-						<div className={Style.SectionHeader}>
-							<h3>Our Story</h3>
-						</div>
-						<div className={Style.VideoContainer}>
+					<div className={Style.Story} ref={video}>
+						<SectionHeader text='Our Story' />
+						<div className={Style[`VideoContainer${videoIntersected ? 'Show' : ''}`]}>
 							<video controls>
 								<source
 									src='https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/JDHW_Better-Together-2.mp4'
@@ -72,7 +65,7 @@ const About = forwardRef((props, ref) => {
 					</div>
 				</div>
 			</div>
-			{windowWidth >= 768 ? <Services /> : <ServicesMobile />}
+			{/* {windowWidth >= 768 ? <Services /> : <ServicesMobile />} */}
 			{/* <div className={CTAIntersected ? Style.CTAShow : Style.CTA} ref={CTA}>
 				<div className={Style.Bubble}>
 					<div className={Style.BubbleInner}></div>
@@ -84,24 +77,7 @@ const About = forwardRef((props, ref) => {
 					</a>
 				</div>
 			</div> */}
-			{/* <SectionHeader text='OUR STORY' section='About' />
-			<div className={videoIntersected ? Style.VideoShow : Style.Video} ref={video}>
-				<div className={Style.Bubble}>
-					<div className={Style.BubbleInner}></div>
-				</div>
-				<div className={Style.Content}>
-					<div className={Style.VideoContainer}>
-						<video controls>
-							<source
-								src='https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/JDHW_Better-Together-2.mp4'
-								type='video/mp4'
-							/>
-							Your browser does not support the video tag.
-						</video>
-					</div>
-				</div>
-			</div> */}
-			<Staff />
+			{/* <Staff /> */}
 			{/* <SectionHeader text='COMMUNITY & GOVERNMENT' section='About' /> */}
 			{/* <div className={communityIntersected ? Style.CommunityShow : Style.Community} ref={community}>
 				<div className={Style.Bubble}>

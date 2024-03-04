@@ -28,28 +28,28 @@ const Navbar = forwardRef((props, ref) => {
 				</div>
 				<div
 					className={`${!top ? Style.NavLink : Style.NavLinkHide} ${
-						currentSection === 1 ? Style[`Current${currentSection}`] : ''
+						currentSection === 1 ? Style.Current : ''
 					}`}
 					onClick={scrollToAbout}>
 					About
 				</div>
 				<div
 					className={`${!top ? Style.NavLink : Style.NavLinkHide} ${
-						currentSection === 2 ? Style[`Current${currentSection}`] : ''
+						currentSection === 2 ? Style.Current : ''
 					}`}
 					onClick={scrollToReviews}>
 					Reviews
 				</div>
 				<div
 					className={`${!top ? Style.NavLink : Style.NavLinkHide} ${
-						currentSection === 3 ? Style[`Current${currentSection}`] : ''
+						currentSection === 3 ? Style.Current : ''
 					}`}
 					onClick={scrollToForms}>
 					Patient Forms
 				</div>
 				<div
 					className={`${!top ? Style.NavLink : Style.NavLinkHide} ${
-						currentSection === 4 ? Style[`Current${currentSection}`] : ''
+						currentSection === 4 ? Style.Current : ''
 					}`}
 					onClick={scrollToContact}>
 					Contact
