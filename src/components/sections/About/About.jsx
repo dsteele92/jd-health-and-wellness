@@ -1,77 +1,63 @@
 import { React, useEffect, useRef, useState, forwardRef } from 'react';
 import Style from './about.module.scss';
-import {
-	SectionHeader,
-	useHasIntersected,
-	Services,
-	ServicesMobile,
-	Staff,
-	StaffMobile,
-	useScroll,
-	ButtonRound,
-} from 'components';
+import { SectionHeader, useHasIntersected, Services, ServicesMobile, Staff, StaffMobile, useScroll } from 'components';
 import { PiArrowBendRightDownThin } from 'react-icons/pi';
+import { Transition } from '@mantine/core';
 import { communityLinks } from 'content';
 
 const About = forwardRef((props, ref) => {
-	const [aboutText, aboutTextIntersected] = useHasIntersected();
+	const [about, aboutIntersected] = useHasIntersected();
 	// const [CTA, CTAIntersected] = useHasIntersected();
 	// const [video, videoIntersected] = useHasIntersected();
 	// const [community, communityIntersected] = useHasIntersected();
 	// const [communityLinkSelected, setCommunityLinkSelected] = useState(-1);
 
 	const circleText = useRef();
-	// const ourStory = useRef();
 
 	const { scrollY } = useScroll();
-
-	// useEffect(() => {
-	// 	const delta = (3 * scrollY) / window.innerHeight;
-	// 	const deltaSlow = scrollY / window.innerHeight;
-	// 	if (videoIntersected) {
-	// 		ourStory.current.style.transform = `translateX(${-delta % 100}%)`;
-	// 	}
-	// }, [scrollY, videoIntersected]);
 
 	const windowWidth = window.innerWidth;
 
 	useEffect(() => {
 		const delta = (scrollY / 10) % 360;
-		if (aboutTextIntersected) {
+		if (aboutIntersected) {
 			circleText.current.style.transform = `rotateZ(${delta % 360}deg)`;
 		}
-	}, [scrollY, aboutTextIntersected]);
+	}, [scrollY, aboutIntersected]);
 
 	return (
-		<div className={Style.About} ref={ref}>
-			{/* <SectionHeader text='WHO WE ARE' section='About' /> */}
-			<div className={aboutTextIntersected ? Style.AboutTextShow : Style.AboutText} ref={aboutText}>
+		<div className={Style.AboutSection} ref={ref}>
+			<div className={aboutIntersected ? Style.AboutShow : Style.About} ref={about}>
 				<div className={Style.Bubble}>
 					<div className={Style.BubbleInner}></div>
 				</div>
 				<div className={Style.Content}>
-					<div className={Style.SectionHeader}>
-						<h3>Who We Are</h3>
+					<div className={Style.WhoWeAre}>
+						<div className={Style.SectionHeader}>
+							<h3>Who We Are</h3>
+						</div>
+						<h3 className={Style.IntroText}>
+							JD Health & Wellness Center has been serving patients in the Salem, Oregon area for over 30
+							years in a variety of health and wellness services from primary care to mental health and
+							addiction. Regardless of what kind of pain you are experiencing we believe in all methods
+							from traditional to alternative medicine. We believe in treating the whole person not just
+							their symptoms, we see the body as an interconnected system working to strengthen both body
+							and mind to improve one’s complete health.
+						</h3>
 					</div>
-					<h3 className={Style.IntroText}>
-						JD Health & Wellness Center has been serving patients in the Salem, Oregon area for over 30
-						years in a variety of health and wellness services from primary care to mental health and
-						addiction. Regardless of what kind of pain you are experiencing we believe in all methods from
-						traditional to alternative medicine. We believe in treating the whole person not just their
-						symptoms, we see the body as an interconnected system working to strengthen both body and mind
-						to improve one’s complete health.
-					</h3>
-					<div className={Style.SectionHeader}>
-						<h3>Our Story</h3>
-					</div>
-					<div className={Style.VideoContainer}>
-						<video controls>
-							<source
-								src='https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/JDHW_Better-Together-2.mp4'
-								type='video/mp4'
-							/>
-							Your browser does not support the video tag.
-						</video>
+					<div className={Style.Story}>
+						<div className={Style.SectionHeader}>
+							<h3>Our Story</h3>
+						</div>
+						<div className={Style.VideoContainer}>
+							<video controls>
+								<source
+									src='https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/JDHW_Better-Together-2.mp4'
+									type='video/mp4'
+								/>
+								Your browser does not support the video tag.
+							</video>
+						</div>
 					</div>
 					<div className={Style.SpinnerContainer}>
 						<div className={Style.Circle}>
@@ -115,7 +101,6 @@ const About = forwardRef((props, ref) => {
 					</div>
 				</div>
 			</div> */}
-			{/* <SectionHeader text='OUR STAFF' section='About' /> */}
 			<Staff />
 			{/* <SectionHeader text='COMMUNITY & GOVERNMENT' section='About' /> */}
 			{/* <div className={communityIntersected ? Style.CommunityShow : Style.Community} ref={community}>

@@ -1,6 +1,7 @@
 import { React, useEffect, useRef } from 'react';
 import Style from './services.module.scss';
 import { useScroll } from 'components';
+import { serviceContent } from 'content';
 
 export default function Services() {
 	const services = useRef();
@@ -158,104 +159,89 @@ export default function Services() {
 			<div className={Style.Service}>
 				<div className={Style.ServName} ref={service1L}>
 					<img
-						src='https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/icons8-family-96_vuffga.png'
-						alt='family medicine icon'
+						src={serviceContent[0].image.url}
+						alt={serviceContent[0].image.altText}
 						className={Style.Icon}
 					/>
-					<h1 className={Style.Text}>Family Medicine</h1>
+					<h1 className={Style.Text}>{serviceContent[0].name}</h1>
 				</div>
 				<p className={Style.ServDescription} ref={service1R}>
-					Our experience in family medicine enables us to accept and treat patients of all ages. The staff at
-					JD Health & Wellness Center will get to know you personally in order to better understand your
-					individual needs and concerns. We keep track of your general health with an annual wellness exam and
-					use this as a foundation for healthy living planning.
+					{serviceContent[0].service}
 				</p>
 			</div>
 			<div className={Style.Service}>
 				<div className={Style.ServName} ref={service2L}>
 					<div className={Style.Icon}>
 						<img
-							src='https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/icons8-mental-health-64_wgenol.png'
-							alt='mental health icon'
+							src={serviceContent[1].image.url}
+							alt={serviceContent[1].image.altText}
 							className={Style.Icon}
 						/>
 					</div>
-					<h1 className={Style.Text}>Mental Health</h1>
+					<h1 className={Style.Text}>{serviceContent[1].name}</h1>
 				</div>
 				<p className={Style.ServDescription} ref={service2R}>
-					Maintaining your mental health is essential to living a healthy, positive life. We understand that
-					managing your mental health on your own is a difficult task which is why we provide nurturing and
-					compassionate support for our patients in the form of psychotherapy.
+					{serviceContent[1].service}
 				</p>
 			</div>
 			<div className={Style.Service}>
 				<div className={Style.ServName} ref={service3L}>
 					<div className={Style.Icon}>
 						<img
-							src='https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/icons8-syringe-96_hphcd5.png'
-							alt='addiction treatment icon'
+							src={serviceContent[2].image.url}
+							alt={serviceContent[2].image.altText}
 							className={Style.Icon}
 						/>
 					</div>
-					<h1 className={Style.Text}>Addiction Treatment</h1>
+					<h1 className={Style.Text}>{serviceContent[2].name}</h1>
 				</div>
 				<p className={Style.ServDescription} ref={service3R}>
-					Our clinic in Salem, OR, provides a safe place for those struggling with addiction to overcome their
-					dependency. We offer our patient's addiction treatment for a wide range of drugs, including opioids
-					and narcotics. No matter what your story is or where you come from, we're here to help.
+					{serviceContent[2].service}
 				</p>
 			</div>
 			<div className={Style.Service}>
 				<div className={Style.ServName} ref={service4L}>
 					<div className={Style.Icon}>
 						<img
-							src='https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/icons8-trust-64_d2qzwq.png'
-							alt='counseling icon'
+							src={serviceContent[3].image.url}
+							alt={serviceContent[3].image.altText}
 							className={Style.Icon}
 						/>
 					</div>
-					<h1 className={Style.Text}>Counseling Services</h1>
+					<h1 className={Style.Text}>{serviceContent[3].name}</h1>
 				</div>
 				<p className={Style.ServDescription} ref={service4R}>
-					JD Health & Wellness Center offers a variety of counseling services for our patients so that we can
-					best meet your individual needs. Our staff counsels patients on everything from basic health
-					concerns like nutrition to addiction management. Whether you're coping with trauma or simply hoping
-					to improve your lifestyle, contact us today.
+					{serviceContent[3].service}
 				</p>
 			</div>
 			<div className={Style.Service}>
 				<div className={Style.ServName} ref={service5L}>
 					<div className={Style.Icon}>
 						<img
-							src='https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/icons8-medication-64_thodbg.png'
-							alt='medication icon'
+							src={serviceContent[4].image.url}
+							alt={serviceContent[4].image.altText}
 							className={Style.Icon}
 						/>
 					</div>
-					<h1 className={Style.Text}>Medication Assisted Therapy</h1>
+					<h1 className={Style.Text}>{serviceContent[4].name}</h1>
 				</div>
 				<p className={Style.ServDescription} ref={service5R}>
-					Medication-assisted therapy is a key component in fighting against addition. By combining medication
-					and therapy together, a more effective treatment is produced. Please get in touch so that we can
-					create a plan that suits your needs.
+					{serviceContent[4].service}
 				</p>
 			</div>
 			<div className={Style.Service}>
 				<div className={Style.ServName} ref={service6L}>
 					<div className={Style.Icon}>
 						<img
-							src='https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/icons8-brain-64_l9evnl.png'
-							alt='neuro icon'
+							src={serviceContent[5].image.url}
+							alt={serviceContent[5].image.altText}
 							className={Style.Icon}
 						/>
 					</div>
-					<h1 className={Style.Text}>EMDR Therapy</h1>
+					<h1 className={Style.Text}>{serviceContent[5].name}</h1>
 				</div>
 				<p className={Style.ServDescription} ref={service6R}>
-					Eye Movement Desensitization and Reprocessing (EMDR) therapy is a proven treatment that helps people
-					reduce or even eliminate the distress caused by traumatic memories. It is based on brain science for
-					how memories are stored in the brain and body. Through EMDR, you can create new associations with
-					traumatic memories to lessen the impact those memories have on your life.
+					{serviceContent[5].service}
 				</p>
 			</div>
 		</div>

@@ -1,11 +1,11 @@
 @import 'sass';
 
-.About {
+.AboutSection {
 	height: fit-content;
 	width: 100%;
 	margin-top: 15px;
 
-	.AboutText {
+	.About {
 		position: relative;
 		@include width;
 		margin: 0 auto;
@@ -29,28 +29,38 @@
 			.SectionHeader {
 				@include section-header;
 			}
-			.IntroText {
-				width: 70%;
-				max-width: 80rem;
-				text-align: justify;
-				@media screen and (max-width: $breakpoint-medium) {
-					max-width: 40rem;
+			.WhoWeAre {
+				width: 100%;
+				@include flex-center;
+				flex-direction: column;
+
+				.IntroText {
+					width: 70%;
+					max-width: 80rem;
+					text-align: justify;
+					@media screen and (max-width: $breakpoint-medium) {
+						max-width: 40rem;
+					}
 				}
 			}
-			.VideoContainer {
-				width: 50rem;
-				max-width: 90vw;
-				height: fit-content;
-				overflow: hidden;
+			.Story {
+				width: 100%;
+				@include flex-center;
+				flex-direction: column;
+				.VideoContainer {
+					width: 50rem;
+					max-width: 90vw;
+					height: fit-content;
+					overflow: hidden;
 
-				video {
-					border-radius: 10px;
-					width: 100%;
-					height: 100%;
-					object-fit: cover;
+					video {
+						border-radius: 10px;
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+					}
 				}
 			}
-
 			.SpinnerContainer {
 				height: 150px;
 				width: 150px;
@@ -90,7 +100,7 @@
 		}
 
 		&Show {
-			@extend .AboutText;
+			@extend .About;
 			@include bubble-show;
 		}
 	}
