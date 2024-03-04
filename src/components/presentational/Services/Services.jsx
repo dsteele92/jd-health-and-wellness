@@ -1,9 +1,9 @@
-import { React, useEffect, useRef } from 'react';
+import { React, useEffect, useRef, forwardRef } from 'react';
 import Style from './services.module.scss';
 import { useScroll } from 'components';
 import { serviceContent } from 'content';
 
-export default function Services() {
+const Services = forwardRef((props, ref) => {
 	const services = useRef();
 	const service1L = useRef();
 	const service2L = useRef();
@@ -246,4 +246,6 @@ export default function Services() {
 			</div>
 		</div>
 	);
-}
+});
+
+export default Services;

@@ -1,4 +1,4 @@
-import { React, useMemo, useEffect, useRef } from 'react';
+import { React, useMemo, useEffect, useRef, forwardRef } from 'react';
 import Style from './staff.module.scss';
 import { Carousel } from '@mantine/carousel';
 import { useMediaQuery } from '@mantine/hooks';
@@ -22,7 +22,7 @@ function Card({ name, title, url, info }) {
 	);
 }
 
-export default function Staff() {
+const Staff = forwardRef((props, ref) => {
 	const [staff, staffIntersected] = useHasIntersected();
 
 	const smText = useRef();
@@ -84,4 +84,6 @@ export default function Staff() {
 			</div>
 		</div>
 	);
-}
+});
+
+export default Staff;
