@@ -126,7 +126,7 @@ export default function Home() {
 			{windowWidth >= 768 ? <Services ref={services} /> : <ServicesMobile ref={services} />}
 			<Staff ref={staff} />
 			<Reviews ref={reviews} />
-			{windowWidth < 768 ? <FormsMobile ref={forms} /> : <Forms ref={forms} />}
+			<Forms ref={forms} />
 			<Contact ref={contact} />
 			<Footer />
 		</div>
