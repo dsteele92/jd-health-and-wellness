@@ -1,11 +1,19 @@
-import { React, useState, forwardRef } from 'react';
+import { React, useState, forwardRef, useMemo } from 'react';
 import Style from './forms.module.scss';
 import { useHasIntersected, SectionHeader, ButtonRoundInverse } from 'components';
 import { patientForms } from 'content';
+import { Modal } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
+import { IntakeForm } from './IntakeForm.tsx';
 
 const Forms = forwardRef((props, ref) => {
 	const [forms, formsIntersected] = useHasIntersected();
 	const [formSelected, setFormSelected] = useState(-1);
+	const [opened, { open, close }] = useDisclosure(false);
+
+	const formModal = useMemo(() => {
+		return <IntakeForm />;
+	}, []);
 
 	return (
 		<div ref={ref}>
@@ -14,6 +22,14 @@ const Forms = forwardRef((props, ref) => {
 					<div className={Style.BubbleInner}></div>
 				</div>
 				<div className={Style.Content}>
+					<Modal
+						opened={opened}
+						onClose={close}
+						fullScreen
+						radius={0}
+						transitionProps={{ transition: 'fade', duration: 200 }}>
+						{formModal}
+					</Modal>
 					<SectionHeader text='Patient Forms' />
 					<div className={Style.FormsContainer}>
 						{patientForms.map((form, index) => (
@@ -21,7 +37,8 @@ const Forms = forwardRef((props, ref) => {
 								className={formsIntersected ? Style.FormShow : Style.Form}
 								key={index}
 								onMouseEnter={() => setFormSelected(index)}
-								onMouseLeave={() => setFormSelected(-1)}>
+								onMouseLeave={() => setFormSelected(-1)}
+								onClick={open}>
 								<div className={Style.FormBubble}>
 									<div className={Style.FormBubbleInner}>
 										<div className={Style.Top}></div>
@@ -29,51 +46,19 @@ const Forms = forwardRef((props, ref) => {
 									</div>
 								</div>
 								<div className={Style.FormContent}>
-									{form.spanish ? (
-										<div className={Style.FormWrapper}>
-											<div className={Style.FormTitle}>
-												<h3>{form.name}</h3>
-												<div className={Style.SelectLanguage}>
-													<a
-														href={form.link}
-														target='_blank'
-														rel='noopener noreferrer'
-														className={Style.Language}>
-														<h4>English</h4>
-													</a>
-													<a
-														href={form.spanish}
-														target='_blank'
-														rel='noopener noreferrer'
-														className={Style.Language}>
-														<h4>Spanish</h4>
-													</a>
-												</div>
-											</div>
-											<div className={Style.Button}>
-												<ButtonRoundInverse
-													size='small'
-													direction='down'
-													active={formSelected === index ? true : false}
-													section='Forms'
-												/>
-											</div>
+									<div className={Style.FormWrapper}>
+										<div className={Style.FormTitle}>
+											<h3>{form.name}</h3>
 										</div>
-									) : (
-										<a href={form.link} target='_blank' rel='noopener noreferrer'>
-											<div className={Style.FormTitle}>
-												<h3>{form.name}</h3>
-											</div>
-											<div className={Style.Button}>
-												<ButtonRoundInverse
-													size='small'
-													direction='down'
-													active={formSelected === index ? true : false}
-													section='Forms'
-												/>
-											</div>
-										</a>
-									)}
+										<div className={Style.Button}>
+											<ButtonRoundInverse
+												size='small'
+												direction='down'
+												active={formSelected === index ? true : false}
+												section='Forms'
+											/>
+										</div>
+									</div>
 								</div>
 							</div>
 						))}
