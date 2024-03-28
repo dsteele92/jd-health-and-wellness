@@ -1,118 +1,99 @@
 @import 'sass';
 
 .AboutSection {
+	position: relative;
+	overflow: hidden;
 	height: fit-content;
-	width: 100%;
 	margin-top: 15px;
+	@include section;
 
-	.About {
-		position: relative;
-		@include width;
-		margin: 0 auto;
-		@include bubble-container;
+	.InnerWrapper {
+		@include section-inner;
+		display: grid;
+		grid-template-columns: 30% auto;
+		grid-row: auto auto auto;
+		justify-items: center;
+		align-items: center;
+		row-gap: 6rem;
+		padding-top: 6rem;
+		padding-bottom: 20em;
 
-		.Bubble {
-			@include bubble;
-			.BubbleInner {
-				@include bubble-inner;
-				background-color: $color-section-background;
-			}
-		}
-		.Content {
-			@include content-div;
-			@include flex-center;
+		.HeaderWrapper {
+			display: flex;
 			flex-direction: column;
-			padding: 1rem 3rem 4rem;
-			@media screen and (max-width: $breakpoint-mobile) {
-				padding: 2rem 3rem;
-			}
+			width: 14rem;
 
-			.WhoWeAre {
-				width: 100%;
-				@include flex-center;
-				flex-direction: column;
+			.Header {
+				color: $color-green;
+				text-transform: uppercase;
+				font-family: 'Aboreto', sans-serif;
+				font-size: 3.5rem;
+				font-weight: 700;
 
-				.IntroText {
-					width: 70%;
-					max-width: 80rem;
-					text-align: justify;
-					opacity: 0;
-					@media screen and (max-width: $breakpoint-medium) {
-						max-width: 40rem;
-					}
-
-					&Show {
-						@extend .IntroText;
-						animation: fadeInLift 0.75s ease forwards;
-					}
+				&1 {
+					@extend .Header;
+					align-self: flex-start;
 				}
-			}
-			.Story {
-				width: 100%;
-				@include flex-center;
-				flex-direction: column;
-				.VideoContainer {
-					margin-top: 1rem;
-					width: 60rem;
-					max-width: 90vw;
-					height: fit-content;
-					overflow: hidden;
-					opacity: 0;
-
-					video {
-						border-radius: 10px;
-						width: 100%;
-						height: 100%;
-						object-fit: cover;
-					}
-
-					&Show {
-						@extend .VideoContainer;
-						animation: fadeInLift 0.75s ease forwards;
-					}
+				&2 {
+					@extend .Header;
+					align-self: center;
 				}
-			}
-			.SpinnerContainer {
-				height: 150px;
-				width: 150px;
-				position: relative;
-				margin-top: 3rem;
-				.Circle {
-					height: 150px;
-					width: 150px;
-					position: absolute;
-					border-radius: 50%;
-					border: 0.5px solid $color-blue;
-					// right: 30px;
-					// bottom: 25px;
-					top: 50%;
-					left: 50%;
-					transform: translate(-50%, -50%);
-					@include flex-center;
-					color: $color-blue;
-					background-color: $color-lightblue;
-					font-size: 25px;
-
-					@media screen and (max-width: $breakpoint-tablet) {
-						display: none;
-					}
-
-					.CircleText {
-						position: absolute;
-						top: 7%;
-						left: 7%;
-						height: 86%;
-						width: 86%;
-						transform: rotateZ(0deg);
-						// transform: rotateZ(90deg);
-					}
+				&3 {
+					@extend .Header;
+					align-self: flex-end;
 				}
 			}
 		}
 
-		&Show {
-			@extend .About;
-			@include bubble-show;
+		.WhoWeAre {
+			border: 2px solid $color-green;
+			border-radius: 20px;
+			background-color: white;
+			width: 50rem;
+			max-width: 90vw;
+			justify-self: center;
+			text-align: justify;
+			padding: 1rem 2rem;
+
+			.IntroText {
+				@media screen and (max-width: $breakpoint-medium) {
+					max-width: 40rem;
+				}
+
+				&Show {
+					@extend .IntroText;
+					animation: fadeInLift 0.75s ease forwards;
+				}
+			}
+		}
+		.Story {
+			// width: 100%;
+			justify-self: center;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			.VideoContainer {
+				margin-top: 1rem;
+				width: 50rem;
+				max-width: 90vw;
+				height: fit-content;
+				overflow: hidden;
+				opacity: 0;
+
+				video {
+					border: 2px solid $color-green;
+					border-radius: 20px;
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+
+				&Show {
+					@extend .VideoContainer;
+					animation: fadeInLift 0.75s ease forwards;
+				}
+			}
 		}
 	}
 
@@ -277,6 +258,45 @@
 		&Show {
 			@extend .Community;
 			@include bubble-show;
+		}
+	}
+
+	.SpinnerContainer {
+		height: 300px;
+		width: 300px;
+		position: absolute;
+		// margin-top: 3rem;
+		bottom: 3rem;
+		left: 3rem;
+		.Circle {
+			height: 300px;
+			width: 300px;
+			position: absolute;
+			border-radius: 50%;
+			border: 0.5px solid $color-blue;
+			// right: 30px;
+			// bottom: 25px;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			@include flex-center;
+			color: $color-blue;
+			background-color: $color-lightblue;
+			font-size: 25px;
+
+			@media screen and (max-width: $breakpoint-tablet) {
+				display: none;
+			}
+
+			.CircleText {
+				position: absolute;
+				top: 7%;
+				left: 7%;
+				height: 86%;
+				width: 86%;
+				transform: rotateZ(0deg);
+				// transform: rotateZ(90deg);
+			}
 		}
 	}
 }

@@ -97,7 +97,7 @@ export default function Home() {
 	};
 
 	return (
-		<div className={Style.Home}>
+		<div>
 			<Navbar
 				ref={navbar}
 				scrollToIntro={scrollToIntro}
@@ -115,20 +115,22 @@ export default function Home() {
 				scrollToContact={scrollToMobileContact}
 				currentSection={currentSection}
 			/>
-			<Intro
-				ref={intro}
-				scrollToAbout={scrollToAbout}
-				scrollToReviews={scrollToReviews}
-				scrollToForms={scrollToForms}
-				scrollToContact={scrollToContact}
-			/>
-			<About ref={about} />
-			{windowWidth >= 768 ? <Services ref={services} /> : <ServicesMobile ref={services} />}
-			<Staff ref={staff} />
-			<Reviews ref={reviews} />
-			{windowWidth < 768 ? <FormsMobile ref={forms} /> : <Forms ref={forms} />}
-			<Contact ref={contact} />
-			<Footer />
+			<div className={Style.Home}>
+				<Intro
+					ref={intro}
+					scrollToAbout={scrollToAbout}
+					scrollToReviews={scrollToReviews}
+					scrollToForms={scrollToForms}
+					scrollToContact={scrollToContact}
+				/>
+				<About ref={about} />
+				{windowWidth >= 768 ? <Services ref={services} /> : <ServicesMobile ref={services} />}
+				<Staff ref={staff} />
+				<Reviews ref={reviews} />
+				{windowWidth < 768 ? <FormsMobile ref={forms} /> : <Forms ref={forms} />}
+				<Contact ref={contact} />
+				<Footer />
+			</div>
 		</div>
 	);
 }

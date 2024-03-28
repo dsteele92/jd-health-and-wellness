@@ -7,16 +7,13 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
+	gap: 0.75rem;
+
 	.Service {
 		position: relative;
 		z-index: 0;
 		width: 100%;
 		@include height-sm;
-		margin: $margin-sub-section;
-
-		// display: flex;
-		// justify-content: space-between;
-		// align-items: center;
 
 		.Serv {
 			position: absolute;

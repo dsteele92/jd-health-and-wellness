@@ -51,8 +51,24 @@
 	min-height: 350px;
 }
 
-@mixin content-div {
+@mixin section {
+	background-color: $color-section-background;
+	border-radius: 20px;
+	margin: 0 auto;
+	@include width;
+}
+
+@mixin section-inner {
 	width: 100%;
+	max-width: $inner-max-width;
+	margin: 0 auto;
+	padding: 4rem 3rem 4rem;
+	@media screen and (max-width: $breakpoint-mobile) {
+		padding: 2rem 3rem;
+	}
+}
+
+@mixin content-div {
 	background-color: $color-section-background;
 	margin: $margin-sub-section;
 	border-radius: 20px;
