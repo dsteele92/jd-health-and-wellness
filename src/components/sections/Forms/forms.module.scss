@@ -57,6 +57,7 @@
 				}
 				.FormContent {
 					@include height-sm;
+					cursor: pointer;
 					border-radius: 20px;
 					overflow: hidden;
 					display: flex;
