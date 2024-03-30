@@ -23,7 +23,6 @@ export const IntakeForm = () => {
     e.preventDefault();
     // Handle form submission here, you can send data to backend or perform any other actions
     console.log({
-      name,
       phoneNumber,
       gender,
       race,

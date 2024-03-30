@@ -163,7 +163,7 @@ const Services = forwardRef((props, ref) => {
 						alt={serviceContent[0].image.altText}
 						className={Style.Icon}
 					/>
-					<h1 className={Style.Text}>{serviceContent[0].name}</h1>
+					<h2 className={Style.Text}>{serviceContent[0].name}</h2>
 				</div>
 				<p className={Style.ServDescription} ref={service1R}>
 					{serviceContent[0].service}
@@ -178,7 +178,7 @@ const Services = forwardRef((props, ref) => {
 							className={Style.Icon}
 						/>
 					</div>
-					<h1 className={Style.Text}>{serviceContent[1].name}</h1>
+					<h2 className={Style.Text}>{serviceContent[1].name}</h2>
 				</div>
 				<p className={Style.ServDescription} ref={service2R}>
 					{serviceContent[1].service}
@@ -193,7 +193,7 @@ const Services = forwardRef((props, ref) => {
 							className={Style.Icon}
 						/>
 					</div>
-					<h1 className={Style.Text}>{serviceContent[2].name}</h1>
+					<h2 className={Style.Text}>{serviceContent[2].name}</h2>
 				</div>
 				<p className={Style.ServDescription} ref={service3R}>
 					{serviceContent[2].service}
@@ -208,7 +208,7 @@ const Services = forwardRef((props, ref) => {
 							className={Style.Icon}
 						/>
 					</div>
-					<h1 className={Style.Text}>{serviceContent[3].name}</h1>
+					<h2 className={Style.Text}>{serviceContent[3].name}</h2>
 				</div>
 				<p className={Style.ServDescription} ref={service4R}>
 					{serviceContent[3].service}
@@ -223,7 +223,7 @@ const Services = forwardRef((props, ref) => {
 							className={Style.Icon}
 						/>
 					</div>
-					<h1 className={Style.Text}>{serviceContent[4].name}</h1>
+					<h2 className={Style.Text}>{serviceContent[4].name}</h2>
 				</div>
 				<p className={Style.ServDescription} ref={service5R}>
 					{serviceContent[4].service}
@@ -238,7 +238,7 @@ const Services = forwardRef((props, ref) => {
 							className={Style.Icon}
 						/>
 					</div>
-					<h1 className={Style.Text}>{serviceContent[5].name}</h1>
+					<h2 className={Style.Text}>{serviceContent[5].name}</h2>
 				</div>
 				<p className={Style.ServDescription} ref={service6R}>
 					{serviceContent[5].service}

@@ -1,0 +1,30 @@
+@import 'sass';
+
+.Header {
+	@include bubble-container;
+	position: relative;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	width: fit-content;
+	height: fit-content;
+
+	.Bubble {
+		@include bubble;
+		.BubbleInner {
+			@include bubble-inner;
+			border-radius: 10px;
+			background-color: $color-blue;
+		}
+	}
+
+	.SectionHeader {
+		padding: 1.25rem;
+		color: white;
+		text-transform: uppercase;
+	}
+
+	&Show {
+		@extend .Header;
+		@include bubble-show;
+	}
+}

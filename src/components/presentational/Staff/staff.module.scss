@@ -50,98 +50,101 @@
 
 .Staff {
 	position: relative;
-	margin: 0 auto;
-	@include width;
-	@include bubble-container;
+	overflow: hidden;
+	height: fit-content;
+	@include section;
 
-	.Bubble {
-		@include bubble;
-		.BubbleInner {
-			@include bubble-inner;
-			background-color: $color-section-background;
-		}
-	}
-	.Content {
-		@include content-div;
-		// set padding here
+	.TextDisplay {
+		margin-top: 3rem;
 		position: relative;
-		padding: 2rem 0 4rem;
-		display: flex;
+		height: 150px;
+		width: 100%;
+		@include flex-center;
 		flex-direction: column;
-		align-items: center;
-
-		.TextDisplay {
-			position: relative;
-			height: 150px;
-			width: 100%;
-			@include flex-center;
+		.StaffInfo {
+			margin: 0 auto;
+			padding: 0 2%;
+			height: fit-content;
+			max-height: 95%;
+			overflow-y: auto;
+			width: 90%;
+			display: flex;
 			flex-direction: column;
-			.StaffInfo {
-				margin: 0 auto;
-				padding: 0 2%;
-				height: fit-content;
-				max-height: 95%;
-				overflow-y: auto;
-				width: 90%;
-				display: flex;
-				flex-direction: column;
-				justify-content: flex-start;
-				align-items: flex-start;
+			justify-content: flex-start;
+			align-items: flex-start;
 
-				h4 {
-					margin-bottom: 0.5rem;
-				}
+			h4 {
+				margin-bottom: 0.5rem;
+			}
 
-				&Hide {
-					@extend .StaffInfo;
-					display: none;
-				}
-			}
-			.MovingTextLg {
-				position: relative;
-				height: 50%;
-				width: 100%;
-				overflow: hidden;
-				.LargeText {
-					position: absolute;
-					top: 0;
-					left: 0;
-					color: $color-background-main;
-					text-align: center;
-					white-space: nowrap;
-					font-size: 3rem;
-					font-weight: 400;
-					text-transform: uppercase;
-					letter-spacing: 3pt;
-				}
-			}
-			.MovingTextSm {
-				position: relative;
-				height: 50%;
-				width: 100%;
-				overflow: hidden;
-				h1 {
-					position: absolute;
-					right: 0;
-					top: 0;
-					white-space: nowrap;
-					font-weight: 300;
-					color: $color-blue;
-					text-transform: uppercase;
-					text-align: center;
-				}
+			&Hide {
+				@extend .StaffInfo;
+				display: none;
 			}
 		}
-		.Carousel {
-			margin: 2rem auto;
+		.MovingTextLg {
 			position: relative;
-			width: 90%;
-			max-width: 75rem;
+			height: 50%;
+			width: 100%;
+			overflow: hidden;
+			.LargeText {
+				position: absolute;
+				top: 0;
+				left: 0;
+				color: $color-background-main;
+				text-align: center;
+				white-space: nowrap;
+				font-size: 3rem;
+				font-weight: 400;
+				text-transform: uppercase;
+				letter-spacing: 3pt;
+			}
+		}
+		.MovingTextSm {
+			position: relative;
+			height: 50%;
+			width: 100%;
+			overflow: hidden;
+			.SmallText {
+				position: absolute;
+				right: 0;
+				top: 0;
+				white-space: nowrap;
+				font-weight: 300;
+				font-size: 3.5rem;
+				letter-spacing: 2pt;
+				color: $color-blue;
+				text-transform: uppercase;
+				text-align: center;
+			}
 		}
 	}
 
-	&Show {
-		@extend .Staff;
-		@include bubble-show;
+	.InnerWrapper {
+		@include section-inner;
+		row-gap: 6rem;
+		padding-top: 6rem;
+		padding-bottom: 400px;
+
+		.AboutSubSection {
+			padding: 0 5%;
+			gap: 0;
+
+			.Content {
+				@include section-content;
+
+				.Carousel {
+					margin: 2rem auto;
+					position: relative;
+					width: 90%;
+					max-width: 75rem;
+				}
+			}
+
+			&Show {
+				@extend .Staff;
+				@include bubble-show;
+			}
+		}
 	}
 }

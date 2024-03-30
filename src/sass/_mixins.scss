@@ -68,6 +68,12 @@
 	}
 }
 
+@mixin section-content {
+	width: 70%;
+	display: flex;
+	justify-content: center;
+}
+
 @mixin content-div {
 	background-color: $color-section-background;
 	margin: $margin-sub-section;

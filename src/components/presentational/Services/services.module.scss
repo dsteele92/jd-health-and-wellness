@@ -28,12 +28,11 @@
 			align-items: center;
 
 			&Name {
+				@extend .Serv;
+				background-color: rgba($color: $color-green, $alpha: 1);
 				padding: 2rem;
 				z-index: 1;
 				left: 25%;
-				// transform: translateX(calc(-50% + -5px));
-				@extend .Serv;
-				background-color: $color-green;
 
 				.Icon {
 					height: 65px;
@@ -49,6 +48,8 @@
 				}
 			}
 			&Description {
+				@extend .Serv;
+				background-color: $color-section-background;
 				padding: 2rem 5%;
 				letter-spacing: 0.5pt;
 				font-size: 1.2rem;
@@ -61,8 +62,6 @@
 				text-align: justify;
 				z-index: 0;
 				right: 25%;
-				@extend .Serv;
-				background-color: $color-section-background;
 			}
 		}
 	}

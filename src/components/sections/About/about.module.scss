@@ -4,276 +4,174 @@
 	position: relative;
 	overflow: hidden;
 	height: fit-content;
-	margin-top: 15px;
 	@include section;
 
 	.InnerWrapper {
 		@include section-inner;
-		display: grid;
-		grid-template-columns: 30% auto;
-		grid-row: auto auto auto;
-		justify-items: center;
-		align-items: center;
 		row-gap: 6rem;
 		padding-top: 6rem;
-		padding-bottom: 20em;
+		padding-bottom: 400px;
 
-		.HeaderWrapper {
-			display: flex;
-			flex-direction: column;
-			width: 14rem;
+		.AboutSubSection {
+			padding: 0 5%;
+			gap: 0;
 
-			.Header {
-				color: $color-green;
-				text-transform: uppercase;
-				font-family: 'Aboreto', sans-serif;
-				font-size: 3.5rem;
-				font-weight: 700;
+			.Content {
+				@include section-content;
+				.IntroText {
+					justify-self: center;
+					text-align: justify;
+					padding: 2rem;
+					opacity: 0;
 
-				&1 {
-					@extend .Header;
-					align-self: flex-start;
-				}
-				&2 {
-					@extend .Header;
-					align-self: center;
-				}
-				&3 {
-					@extend .Header;
-					align-self: flex-end;
-				}
-			}
-		}
-
-		.WhoWeAre {
-			border: 2px solid $color-green;
-			border-radius: 20px;
-			background-color: white;
-			width: 50rem;
-			max-width: 90vw;
-			justify-self: center;
-			text-align: justify;
-			padding: 1rem 2rem;
-
-			.IntroText {
-				@media screen and (max-width: $breakpoint-medium) {
-					max-width: 40rem;
-				}
-
-				&Show {
-					@extend .IntroText;
-					animation: fadeInLift 0.75s ease forwards;
-				}
-			}
-		}
-		.Story {
-			// width: 100%;
-			justify-self: center;
-			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
-			align-items: center;
-			.VideoContainer {
-				margin-top: 1rem;
-				width: 50rem;
-				max-width: 90vw;
-				height: fit-content;
-				overflow: hidden;
-				opacity: 0;
-
-				video {
-					border: 2px solid $color-green;
-					border-radius: 20px;
-					width: 100%;
-					height: 100%;
-					object-fit: cover;
-				}
-
-				&Show {
-					@extend .VideoContainer;
-					animation: fadeInLift 0.75s ease forwards;
-				}
-			}
-		}
-	}
-
-	.CTA {
-		position: relative;
-		@include width;
-		margin: 0 auto;
-		@include bubble-container;
-
-		.Bubble {
-			@include bubble;
-			.BubbleInner {
-				@include bubble-inner;
-				background-color: $color-section-background;
-			}
-		}
-		.Content {
-			@include content-div;
-			@include flex-center;
-			flex-direction: column;
-			padding: 50px 20px;
-			@media screen and (max-width: $breakpoint-tablet) {
-				padding: 30px 20px;
-			}
-			h1 {
-				// width: 100%;
-				color: $color-blue;
-				margin-bottom: 0.5rem;
-				text-transform: uppercase;
-				text-align: center;
-			}
-			h2 {
-				color: $color-green;
-				text-transform: uppercase;
-				text-align: center;
-			}
-		}
-
-		&Show {
-			@extend .CTA;
-			@include bubble-show;
-		}
-	}
-
-	.Video {
-		position: relative;
-		@include width;
-		margin: $margin-section;
-		@include bubble-container;
-
-		.Bubble {
-			@include bubble;
-			.BubbleInner {
-				@include bubble-inner;
-				background-color: $color-section-background;
-			}
-		}
-		.Content {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: space-between;
-			padding: 3rem 0;
-			.MovingTextLg {
-				margin-bottom: 2rem;
-				position: relative;
-				height: 5rem;
-				width: 100%;
-				overflow: hidden;
-				.LargeText {
-					position: absolute;
-					top: 0;
-					left: 0;
-					color: $color-background-main;
-					text-align: center;
-					white-space: nowrap;
-					font-size: 3rem;
-					font-weight: 400;
-					text-transform: uppercase;
-					letter-spacing: 3pt;
-				}
-			}
-			.VideoContainer {
-				width: 50rem;
-				max-width: 90vw;
-				height: fit-content;
-				overflow: hidden;
-
-				video {
-					border-radius: 10px;
-					width: 100%;
-					height: 100%;
-					object-fit: cover;
-				}
-			}
-		}
-
-		&Show {
-			@extend .Video;
-			@include bubble-show;
-		}
-	}
-
-	.Community {
-		position: relative;
-		margin: 0 auto;
-		@include width;
-		@include bubble-container;
-
-		.Bubble {
-			@include bubble;
-			.BubbleInner {
-				@include bubble-inner;
-				// set background color
-			}
-		}
-		.Content {
-			@include content-div;
-			// set padding here
-			height: 30vh;
-			width: 100%;
-			min-height: 400px;
-			overflow: hidden;
-
-			.Links {
-				position: relative;
-				height: 100%;
-				width: 100%;
-				display: grid;
-				grid-template-rows: repeat(4, 1fr);
-
-				a {
-					list-style: none;
-					&:nth-child(2n) {
-						background-color: $color-grey-light;
+					&Show {
+						@extend .IntroText;
+						animation: fadeInLift 0.75s ease forwards;
 					}
-					.Link {
-						position: relative;
+				}
+				.VideoContainer {
+					width: 50rem;
+					max-width: 100%;
+					height: fit-content;
+					overflow: hidden;
+					opacity: 0;
+
+					video {
+						border: 2px solid $color-green;
+						border-radius: 10px;
 						width: 100%;
 						height: 100%;
-						display: flex;
-						justify-content: space-between;
-						align-items: center;
-						padding: 0 3rem;
-						@media screen and (max-width: $breakpoint-tablet) {
-							padding: 0 2rem;
-						}
+						object-fit: cover;
+					}
 
-						.Article {
-							height: 100%;
-							width: 60%;
-							display: flex;
-							flex-direction: row;
-							align-items: center;
-							justify-content: flex-start;
-						}
+					&Show {
+						@extend .VideoContainer;
+						animation: fadeInLift 0.75s ease forwards;
 					}
 				}
 			}
 		}
-
-		&Show {
-			@extend .Community;
-			@include bubble-show;
-		}
 	}
 
+	// .CTA {
+	// 	position: relative;
+	// 	@include width;
+	// 	margin: 0 auto;
+	// 	@include bubble-container;
+
+	// 	.Bubble {
+	// 		@include bubble;
+	// 		.BubbleInner {
+	// 			@include bubble-inner;
+	// 			background-color: $color-section-background;
+	// 		}
+	// 	}
+	// 	.Content {
+	// 		@include content-div;
+	// 		@include flex-center;
+	// 		flex-direction: column;
+	// 		padding: 50px 20px;
+	// 		@media screen and (max-width: $breakpoint-tablet) {
+	// 			padding: 30px 20px;
+	// 		}
+	// 		h1 {
+	// 			// width: 100%;
+	// 			color: $color-blue;
+	// 			margin-bottom: 0.5rem;
+	// 			text-transform: uppercase;
+	// 			text-align: center;
+	// 		}
+	// 		h2 {
+	// 			color: $color-green;
+	// 			text-transform: uppercase;
+	// 			text-align: center;
+	// 		}
+	// 	}
+
+	// 	&Show {
+	// 		@extend .CTA;
+	// 		@include bubble-show;
+	// 	}
+	// }
+
+	// .Community {
+	// 	position: relative;
+	// 	margin: 0 auto;
+	// 	@include width;
+	// 	@include bubble-container;
+
+	// 	.Bubble {
+	// 		@include bubble;
+	// 		.BubbleInner {
+	// 			@include bubble-inner;
+	// 			// set background color
+	// 		}
+	// 	}
+	// 	.Content {
+	// 		@include content-div;
+	// 		// set padding here
+	// 		height: 30vh;
+	// 		width: 100%;
+	// 		min-height: 400px;
+	// 		overflow: hidden;
+
+	// 		.Links {
+	// 			position: relative;
+	// 			height: 100%;
+	// 			width: 100%;
+	// 			display: grid;
+	// 			grid-template-rows: repeat(4, 1fr);
+
+	// 			a {
+	// 				list-style: none;
+	// 				&:nth-child(2n) {
+	// 					background-color: $color-grey-light;
+	// 				}
+	// 				.Link {
+	// 					position: relative;
+	// 					width: 100%;
+	// 					height: 100%;
+	// 					display: flex;
+	// 					justify-content: space-between;
+	// 					align-items: center;
+	// 					padding: 0 3rem;
+	// 					@media screen and (max-width: $breakpoint-tablet) {
+	// 						padding: 0 2rem;
+	// 					}
+
+	// 					.Article {
+	// 						height: 100%;
+	// 						width: 60%;
+	// 						display: flex;
+	// 						flex-direction: row;
+	// 						align-items: center;
+	// 						justify-content: flex-start;
+	// 					}
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+
+	// 	&Show {
+	// 		@extend .Community;
+	// 		@include bubble-show;
+	// 	}
+	// }
+
 	.SpinnerContainer {
-		height: 300px;
-		width: 300px;
+		z-index: 10;
+		height: 200px;
+		width: 200px;
 		position: absolute;
 		// margin-top: 3rem;
-		bottom: 3rem;
-		left: 3rem;
+		bottom: 4rem;
+		left: 4rem;
 		.Circle {
-			height: 300px;
-			width: 300px;
+			height: 200px;
+			width: 200px;
 			position: absolute;
 			border-radius: 50%;
-			border: 0.5px solid $color-blue;
+			border: 1px solid $color-blue;
 			// right: 30px;
 			// bottom: 25px;
 			top: 50%;
@@ -281,7 +179,7 @@
 			transform: translate(-50%, -50%);
 			@include flex-center;
 			color: $color-blue;
-			background-color: $color-lightblue;
+			background-color: rgba($color: $color-lightblue, $alpha: 0.85);
 			font-size: 25px;
 
 			@media screen and (max-width: $breakpoint-tablet) {
@@ -298,5 +196,14 @@
 				// transform: rotateZ(90deg);
 			}
 		}
+	}
+	.PineTrees {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 1000px;
+		min-width: 100%;
+		height: 300px;
+		// opacity: 0.75;
 	}
 }

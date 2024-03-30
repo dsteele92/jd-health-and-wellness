@@ -1,30 +1,26 @@
 @import 'sass';
 
-.Header {
-	@include bubble-container;
-	position: relative;
-	margin-top: 2rem;
-	margin-bottom: 2rem;
-	width: fit-content;
-	height: fit-content;
+.HeaderWrapper {
+	display: flex;
+	flex-direction: column;
+	width: 14rem;
+	max-width: 30%;
 
-	.Bubble {
-		@include bubble;
-		.BubbleInner {
-			@include bubble-inner;
-			border-radius: 10px;
-			background-color: $color-blue;
-		}
-	}
-
-	.SectionHeader {
-		padding: 1.25rem;
-		color: white;
+	.Header {
+		color: $color-green;
 		text-transform: uppercase;
-	}
 
-	&Show {
-		@extend .Header;
-		@include bubble-show;
+		&1 {
+			@extend .Header;
+			align-self: flex-start;
+		}
+		&2 {
+			@extend .Header;
+			align-self: center;
+		}
+		&3 {
+			@extend .Header;
+			align-self: flex-end;
+		}
 	}
 }
