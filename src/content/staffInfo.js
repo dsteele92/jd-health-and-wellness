@@ -1,7 +1,7 @@
 export const staffInfo = [
 	{
 		name: 'Eric Davis',
-		title: 'MSW, BCD, LCSW, QMHP, MAC',
+		title: 'LCSW, MSW, BCD, QMHP, MAC',
 		url: 'https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/eric.jpeg',
 		info: 'Mr. Davis is passionate about helping individuals in their time of need; the homeless, the lost, individuals enslaved to addiction and those emotionally paralyzed by the struggles of life. He strives to bring resources and tools that bring hope in hopeless and fearful times. He endeavors to provide this care in a kind, compassionate, non-judgmental, and welcoming manner and encourages those who work with him to do the same. He and his colleagues want to be a blessing to you and your family in your time of need. Contact the office of JD Health and Wellness for more information today. He is also a Board Certified Diplomat is the profession’s premier advanced-generalist practice certification, embodying the highest standards in the areas of clinical education, training, and experience. The BCD is issued by the American Board of Examiners (ABE) to those who can demonstrate their ability to practice advanced-generalist clinical social work at a high level of competency.',
 	},

@@ -1,7 +1,10 @@
 @import 'sass';
 
 .Card {
-	height: 25rem;
+	height: 20rem;
+	@media screen and (max-width: $breakpoint-medium) {
+		height: 15rem;
+	}
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
@@ -41,36 +44,27 @@
 
 .Reviews {
 	position: relative;
-	margin: 0 auto;
-	@include width;
-	@include bubble-container;
+	overflow: hidden;
+	height: fit-content;
+	@include section;
 
-	.Bubble {
-		@include bubble;
-		.BubbleInner {
-			@include bubble-inner;
-			background-color: $color-section-background;
+	.InnerWrapper {
+		@include section-inner;
+
+		.AboutSubSection {
+			padding: 0 5%;
+			gap: 0;
+
+			.Content {
+				@include section-content;
+
+				.Carousel {
+					margin: 2rem auto;
+					position: relative;
+					width: 100%;
+					max-width: 75rem;
+				}
+			}
 		}
-	}
-	.Content {
-		@include content-div;
-		// set padding here
-		position: relative;
-		padding: 2rem 0 4rem;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-
-		.Carousel {
-			margin: 2rem auto;
-			position: relative;
-			width: 90%;
-			max-width: 75rem;
-		}
-	}
-
-	&Show {
-		@extend .Reviews;
-		@include bubble-show;
 	}
 }

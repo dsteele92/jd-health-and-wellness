@@ -4,7 +4,7 @@ import { useHasIntersected, SectionHeader } from 'components';
 import { reviewsData } from 'content';
 import { Carousel } from '@mantine/carousel';
 import { useMediaQuery } from '@mantine/hooks';
-import { useMantineTheme, rem } from '@mantine/core';
+import { useMantineTheme, rem, Group, Stack } from '@mantine/core';
 
 function Card({ name, review }) {
 	return (
@@ -18,6 +18,34 @@ function Card({ name, review }) {
 		</div>
 	);
 }
+
+// function Card({ name, title, url, info }) {
+// 	return (
+// 		<div className={Style.CardOuter}>
+// 			<div className={Style.CardInner}>
+
+// 					<div className={Style.Circle}>
+// 						<p className={Style.Caption}>{name}</p>
+// 					</div>
+
+// 				<div className={Style.Card}>
+// 					<div className={Style.CardContent}>
+// 						<h3 className={Style.Header}>{name}</h3>
+// 						<div style={{ backgroundImage: `url(${url})` }} className={Style.CardImage}></div>
+// 						{/* <div className={Style.CardText}>
+// 						<p>{info}</p>
+// 					</div> */}
+// 					</div>
+// 					<img
+// 						src='https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/pine_tree_card_bg.png'
+// 						alt='pine tree background'
+// 						className={Style.CardBg}
+// 					/>
+// 				</div>
+// 			</div>
+// 		</div>
+// 	);
+// }
 
 const Reviews = forwardRef((props, ref) => {
 	const [reviews, reviewsIntersected] = useHasIntersected();
@@ -34,24 +62,23 @@ const Reviews = forwardRef((props, ref) => {
 	}, []);
 
 	return (
-		<div ref={ref}>
-			<div className={reviewsIntersected ? Style.ReviewsShow : Style.Reviews} ref={reviews}>
-				<div className={Style.Bubble}>
-					<div className={Style.BubbleInner}></div>
-				</div>
-				<div className={Style.Content}>
-					<SectionHeader text='Reviews' />
-					<div className={Style.Carousel}>
-						<Carousel
-							slideSize={{ base: mobile ? '100%' : '33.333%' }}
-							slideGap={{ base: mobile ? rem(10) : rem(25) }}
-							align='start'
-							slidesToScroll={3}>
-							{slides}
-						</Carousel>
+		<div className={Style.Reviews} ref={ref}>
+			<Stack className={Style.InnerWrapper}>
+				<Group justify='space-between' className={Style.AboutSubSection} ref={reviews}>
+					<SectionHeader top='Reviews' />
+					<div className={Style.Content}>
+						<div className={Style.Carousel}>
+							<Carousel
+								slideSize={{ base: mobile ? '100%' : '33.333%' }}
+								slideGap={{ base: mobile ? rem(10) : rem(25) }}
+								align='start'
+								slidesToScroll={3}>
+								{slides}
+							</Carousel>
+						</div>
 					</div>
-				</div>
-			</div>
+				</Group>
+			</Stack>
 		</div>
 	);
 });

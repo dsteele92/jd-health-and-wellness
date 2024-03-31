@@ -6,16 +6,44 @@ import { useHasIntersected, useScroll, SectionHeader } from 'components';
 import { useMantineTheme, rem, Group, Stack } from '@mantine/core';
 import { staffInfo } from 'content';
 
+// function Card({ name, title, url, info }) {
+// 	return (
+// 		<div className={Style.Card}>
+// 			<div className={Style.Header}>
+// 				<h3>{name}</h3>
+// 				{title && <h4>{title}</h4>}
+// 			</div>
+// 			<div style={{ backgroundImage: `url(${url})` }} className={Style.CardImage}>
+// 				<div className={Style.CardText}>
+// 					<p>{info}</p>
+// 				</div>
+// 			</div>
+// 		</div>
+// 	);
+// }
+
 function Card({ name, title, url, info }) {
 	return (
-		<div className={Style.Card}>
-			<div className={Style.Header}>
-				<h3>{name}</h3>
-				{title && <h4>{title}</h4>}
-			</div>
-			<div style={{ backgroundImage: `url(${url})` }} className={Style.CardImage}>
-				<div className={Style.CardText}>
-					<p>{info}</p>
+		<div className={Style.CardOuter}>
+			<div className={Style.CardInner}>
+				{title && (
+					<div className={Style.Circle}>
+						<p className={Style.Caption}>{title}</p>
+					</div>
+				)}
+				<div className={Style.Card}>
+					<div className={Style.CardContent}>
+						<h3 className={Style.Header}>{name}</h3>
+						<div style={{ backgroundImage: `url(${url})` }} className={Style.CardImage}></div>
+					</div>
+					<div className={Style.CardText}>
+						<p>{info}</p>
+					</div>
+					<img
+						src='https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/pine_tree_card_bg.png'
+						alt='pine tree background'
+						className={Style.CardBg}
+					/>
 				</div>
 			</div>
 		</div>
@@ -52,21 +80,6 @@ const Staff = forwardRef((props, ref) => {
 
 	return (
 		<div className={Style.Staff} ref={ref}>
-			<div className={Style.TextDisplay}>
-				<div className={Style.MovingTextLg}>
-					<div className={Style.LargeText} ref={lgText}>
-						Meet the team · Meet the team · Meet the team · Meet the team · Meet the team · Meet the team ·
-						Meet the team ·{' '}
-					</div>
-				</div>
-				<div className={Style.MovingTextSm}>
-					<div className={Style.SmallText} ref={smText}>
-						Hover over photos to read more · Hover over photos to read more · Hover over photos to read more
-						· Hover over photos to read more · Hover over photos to read more · Hover over photos to read
-						more · Hover over photos to read more ·{' '}
-					</div>
-				</div>
-			</div>
 			<Stack className={Style.InnerWrapper}>
 				<Group justify='space-between' className={Style.AboutSubSection} ref={staff}>
 					<SectionHeader top='Meet' middle='The' bottom='Team' />
@@ -83,6 +96,21 @@ const Staff = forwardRef((props, ref) => {
 					</div>
 				</Group>
 			</Stack>
+			<div className={Style.TextDisplay}>
+				<div className={Style.MovingTextSm}>
+					<div className={Style.SmallText} ref={smText}>
+						Hover over photos to read more · Hover over photos to read more · Hover over photos to read more
+						· Hover over photos to read more · Hover over photos to read more · Hover over photos to read
+						more · Hover over photos to read more ·{' '}
+					</div>
+				</div>
+				<div className={Style.MovingTextLg}>
+					<div className={Style.LargeText} ref={lgText}>
+						Meet the team · Meet the team · Meet the team · Meet the team · Meet the team · Meet the team ·
+						Meet the team ·{' '}
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 });
