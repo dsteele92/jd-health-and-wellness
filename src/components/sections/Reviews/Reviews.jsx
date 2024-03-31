@@ -6,46 +6,40 @@ import { Carousel } from '@mantine/carousel';
 import { useMediaQuery } from '@mantine/hooks';
 import { useMantineTheme, rem, Group, Stack } from '@mantine/core';
 
-function Card({ name, review }) {
-	return (
-		<div className={Style.Card}>
-			<div className={Style.Header}>
-				<h3>{name}</h3>
-			</div>
-			<div className={Style.Review}>
-				<p>{review}</p>
-			</div>
-		</div>
-	);
-}
-
-// function Card({ name, title, url, info }) {
+// function Card({ name, review }) {
 // 	return (
-// 		<div className={Style.CardOuter}>
-// 			<div className={Style.CardInner}>
-
-// 					<div className={Style.Circle}>
-// 						<p className={Style.Caption}>{name}</p>
-// 					</div>
-
-// 				<div className={Style.Card}>
-// 					<div className={Style.CardContent}>
-// 						<h3 className={Style.Header}>{name}</h3>
-// 						<div style={{ backgroundImage: `url(${url})` }} className={Style.CardImage}></div>
-// 						{/* <div className={Style.CardText}>
-// 						<p>{info}</p>
-// 					</div> */}
-// 					</div>
-// 					<img
-// 						src='https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/pine_tree_card_bg.png'
-// 						alt='pine tree background'
-// 						className={Style.CardBg}
-// 					/>
-// 				</div>
+// 		<div className={Style.Card}>
+// 			<div className={Style.Header}>
+// 				<h3>{name}</h3>
+// 			</div>
+// 			<div className={Style.Review}>
+// 				<p>{review}</p>
 // 			</div>
 // 		</div>
 // 	);
 // }
+
+function Card({ name, review }) {
+	return (
+		<div className={Style.CardOuter}>
+			<div className={Style.CardInner}>
+				<div className={Style.Circle}>
+					<p className={Style.Caption}>{name}</p>
+				</div>
+				<div className={Style.Card}>
+					<div className={Style.CardText}>
+						<p>{review}</p>
+					</div>
+					<img
+						src='https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/pine_tree_card_bg.png'
+						alt='pine tree background'
+						className={Style.CardBg}
+					/>
+				</div>
+			</div>
+		</div>
+	);
+}
 
 const Reviews = forwardRef((props, ref) => {
 	const [reviews, reviewsIntersected] = useHasIntersected();
@@ -69,10 +63,10 @@ const Reviews = forwardRef((props, ref) => {
 					<div className={Style.Content}>
 						<div className={Style.Carousel}>
 							<Carousel
-								slideSize={{ base: mobile ? '100%' : '33.333%' }}
+								slideSize={{ base: mobile ? '100%' : '50%' }}
 								slideGap={{ base: mobile ? rem(10) : rem(25) }}
 								align='start'
-								slidesToScroll={3}>
+								slidesToScroll={2}>
 								{slides}
 							</Carousel>
 						</div>
