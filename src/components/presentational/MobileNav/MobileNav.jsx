@@ -5,7 +5,15 @@ import { useScroll } from 'components';
 import { RxOpenInNewWindow } from 'react-icons/rx';
 
 export default function MobileNav(props) {
-	const { scrollToIntro, scrollToAbout, scrollToReviews, scrollToForms, scrollToContact, currentSection } = props;
+	const {
+		scrollToIntro,
+		scrollToAbout,
+		scrollToStaff,
+		scrollToReviews,
+		scrollToForms,
+		scrollToContact,
+		currentSection,
+	} = props;
 	const [top, setTop] = useState(true);
 	const [openNav, setOpenNav] = useState(false);
 
@@ -79,11 +87,22 @@ export default function MobileNav(props) {
 						className={openNav ? Style.ListFall : Style.List}
 						onClick={() => {
 							setOpenNav(!openNav);
-							scrollToReviews();
+							scrollToStaff();
 						}}>
 						<div className={currentSection === 2 ? Style.Current : ''}>
+							<h3>Staff</h3>
+							<div className={currentSection === 2 ? Style.HighlightCurrentAbout : ''}></div>
+						</div>
+					</li>
+					<li
+						className={openNav ? Style.ListFall : Style.List}
+						onClick={() => {
+							setOpenNav(!openNav);
+							scrollToReviews();
+						}}>
+						<div className={currentSection === 3 ? Style.Current : ''}>
 							<h3>Reviews</h3>
-							<div className={currentSection === 2 ? Style.HighlightCurrentReviews : ''}></div>
+							<div className={currentSection === 3 ? Style.HighlightCurrentReviews : ''}></div>
 						</div>
 					</li>
 					<li
@@ -92,9 +111,9 @@ export default function MobileNav(props) {
 							setOpenNav(!openNav);
 							scrollToForms();
 						}}>
-						<div className={currentSection === 3 ? Style.Current : ''}>
+						<div className={currentSection === 4 ? Style.Current : ''}>
 							<h3>Patient Forms</h3>
-							<div className={currentSection === 3 ? Style.HighlightCurrentForms : ''}></div>
+							<div className={currentSection === 4 ? Style.HighlightCurrentForms : ''}></div>
 						</div>
 					</li>
 					<li
@@ -103,9 +122,9 @@ export default function MobileNav(props) {
 							setOpenNav(!openNav);
 							scrollToContact();
 						}}>
-						<div className={currentSection === 4 ? Style.Current : ''}>
+						<div className={currentSection === 5 ? Style.Current : ''}>
 							<h3>Contact</h3>
-							<div className={currentSection === 4 ? Style.HighlightCurrentContact : ''}></div>
+							<div className={currentSection === 5 ? Style.HighlightCurrentContact : ''}></div>
 						</div>
 					</li>
 					<li className={openNav ? Style.ListFall : Style.List}>

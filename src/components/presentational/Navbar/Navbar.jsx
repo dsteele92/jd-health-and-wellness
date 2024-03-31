@@ -3,7 +3,15 @@ import Style from './navbar.module.scss';
 import { useScroll } from 'components';
 
 const Navbar = forwardRef((props, ref) => {
-	const { scrollToIntro, scrollToAbout, scrollToReviews, scrollToForms, scrollToContact, currentSection } = props;
+	const {
+		scrollToIntro,
+		scrollToAbout,
+		scrollToStaff,
+		scrollToReviews,
+		scrollToForms,
+		scrollToContact,
+		currentSection,
+	} = props;
 	const [top, setTop] = useState(true);
 	const { scrollY } = useScroll();
 
@@ -37,19 +45,26 @@ const Navbar = forwardRef((props, ref) => {
 					className={`${!top ? Style.NavLink : Style.NavLinkHide} ${
 						currentSection === 2 ? Style.Current : ''
 					}`}
+					onClick={scrollToStaff}>
+					Staff
+				</div>
+				<div
+					className={`${!top ? Style.NavLink : Style.NavLinkHide} ${
+						currentSection === 3 ? Style.Current : ''
+					}`}
 					onClick={scrollToReviews}>
 					Reviews
 				</div>
 				<div
 					className={`${!top ? Style.NavLink : Style.NavLinkHide} ${
-						currentSection === 3 ? Style.Current : ''
+						currentSection === 4 ? Style.Current : ''
 					}`}
 					onClick={scrollToForms}>
 					Patient Forms
 				</div>
 				<div
 					className={`${!top ? Style.NavLink : Style.NavLinkHide} ${
-						currentSection === 4 ? Style.Current : ''
+						currentSection === 5 ? Style.Current : ''
 					}`}
 					onClick={scrollToContact}>
 					Contact

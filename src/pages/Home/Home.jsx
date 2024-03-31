@@ -34,10 +34,12 @@ export default function Home() {
 
 	useEffect(() => {
 		if (scrollY >= contact.current.offsetTop - navbar.current.clientHeight - 5) {
-			setCurrentSection(4);
+			setCurrentSection(5);
 		} else if (scrollY >= forms.current.offsetTop - navbar.current.clientHeight - 5) {
-			setCurrentSection(3);
+			setCurrentSection(4);
 		} else if (scrollY >= reviews.current.offsetTop - navbar.current.clientHeight - 5) {
+			setCurrentSection(3);
+		} else if (scrollY >= staff.current.offsetTop - navbar.current.clientHeight - 5) {
 			setCurrentSection(2);
 		} else if (scrollY >= about.current.offsetTop - navbar.current.clientHeight - 5) {
 			setCurrentSection(1);
@@ -58,10 +60,10 @@ export default function Home() {
 	// 	const offset = services.current.offsetTop - navbar.current.clientHeight - 5;
 	// 	window.scrollTo({ top: offset, behavior: 'smooth' });
 	// };
-	// const scrollToStaff = () => {
-	// 	const offset = staff.current.offsetTop - navbar.current.clientHeight - 5;
-	// 	window.scrollTo({ top: offset, behavior: 'smooth' });
-	// };
+	const scrollToStaff = () => {
+		const offset = staff.current.offsetTop - navbar.current.clientHeight - 5;
+		window.scrollTo({ top: offset, behavior: 'smooth' });
+	};
 	const scrollToReviews = () => {
 		const offset = reviews.current.offsetTop - navbar.current.clientHeight - 5;
 		window.scrollTo({ top: offset, behavior: 'smooth' });
@@ -102,6 +104,7 @@ export default function Home() {
 				ref={navbar}
 				scrollToIntro={scrollToIntro}
 				scrollToAbout={scrollToAbout}
+				scrollToStaff={scrollToStaff}
 				scrollToReviews={scrollToReviews}
 				scrollToForms={scrollToForms}
 				scrollToContact={scrollToContact}
@@ -110,6 +113,7 @@ export default function Home() {
 			<MobileNav
 				scrollToIntro={scrollToMobileIntro}
 				scrollToAbout={scrollToMobileAbout}
+				scrollToStaff={scrollToStaff}
 				scrollToReviews={scrollToMobileReviews}
 				scrollToForms={scrollToMobileForms}
 				scrollToContact={scrollToMobileContact}
@@ -127,7 +131,7 @@ export default function Home() {
 				{windowWidth >= 768 ? <Services ref={services} /> : <ServicesMobile ref={services} />}
 				<Staff ref={staff} />
 				<Reviews ref={reviews} />
-				{windowWidth < 768 ? <FormsMobile ref={forms} /> : <Forms ref={forms} />}
+				<Forms ref={forms} />
 				<Contact ref={contact} />
 				<Footer />
 			</div>
