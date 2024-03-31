@@ -6,19 +6,6 @@ import { Carousel } from '@mantine/carousel';
 import { useMediaQuery } from '@mantine/hooks';
 import { useMantineTheme, rem, Group, Stack } from '@mantine/core';
 
-// function Card({ name, review }) {
-// 	return (
-// 		<div className={Style.Card}>
-// 			<div className={Style.Header}>
-// 				<h3>{name}</h3>
-// 			</div>
-// 			<div className={Style.Review}>
-// 				<p>{review}</p>
-// 			</div>
-// 		</div>
-// 	);
-// }
-
 function Card({ name, review }) {
 	return (
 		<div className={Style.CardOuter}>

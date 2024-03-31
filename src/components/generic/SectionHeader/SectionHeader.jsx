@@ -1,12 +1,15 @@
 import { React } from 'react';
 import Style from './sectionHeader.module.scss';
+import { useHasIntersected } from 'components';
 
 export default function SectionHeader(props) {
+	const [header, headerIntersected] = useHasIntersected();
+
 	return (
-		<div className={Style.HeaderWrapper}>
-			<h1 className={Style.Header1}>{props.top}</h1>
-			{props.middle && <h1 className={Style.Header2}>{props.middle}</h1>}
-			{props.bottom && <h1 className={Style.Header3}>{props.bottom}</h1>}
+		<div className={Style.HeaderWrapper} ref={header}>
+			<h1 className={Style[`Header1${headerIntersected ? 'Show' : ''}`]}>{props.top}</h1>
+			{props.middle && <h1 className={Style[`Header2${headerIntersected ? 'Show' : ''}`]}>{props.middle}</h1>}
+			{props.bottom && <h1 className={Style[`Header3${headerIntersected ? 'Show' : ''}`]}>{props.bottom}</h1>}
 		</div>
 	);
 }

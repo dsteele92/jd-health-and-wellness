@@ -6,22 +6,6 @@ import { useHasIntersected, useScroll, SectionHeader } from 'components';
 import { useMantineTheme, rem, Group, Stack } from '@mantine/core';
 import { staffInfo } from 'content';
 
-// function Card({ name, title, url, info }) {
-// 	return (
-// 		<div className={Style.Card}>
-// 			<div className={Style.Header}>
-// 				<h3>{name}</h3>
-// 				{title && <h4>{title}</h4>}
-// 			</div>
-// 			<div style={{ backgroundImage: `url(${url})` }} className={Style.CardImage}>
-// 				<div className={Style.CardText}>
-// 					<p>{info}</p>
-// 				</div>
-// 			</div>
-// 		</div>
-// 	);
-// }
-
 function Card({ name, title, url, info }) {
 	return (
 		<div className={Style.CardOuter}>

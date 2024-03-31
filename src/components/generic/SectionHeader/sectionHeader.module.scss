@@ -6,21 +6,38 @@
 	width: 14rem;
 	max-width: 30%;
 
-	.Header {
+	@mixin sharedHeader {
 		color: $color-green;
 		text-transform: uppercase;
+		opacity: 0;
+		transform: translateX(-100%);
+	}
 
-		&1 {
-			@extend .Header;
-			align-self: flex-start;
+	.Header1 {
+		@include sharedHeader();
+		align-self: flex-start;
+
+		&Show {
+			@extend .Header1;
+			animation: fadeInSlideRight 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s forwards;
 		}
-		&2 {
-			@extend .Header;
-			align-self: center;
+	}
+	.Header2 {
+		@include sharedHeader();
+		align-self: center;
+
+		&Show {
+			@extend .Header2;
+			animation: fadeInSlideRight 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) 0.35s forwards;
 		}
-		&3 {
-			@extend .Header;
-			align-self: flex-end;
+	}
+	.Header3 {
+		@include sharedHeader();
+		align-self: flex-end;
+
+		&Show {
+			@extend .Header3;
+			animation: fadeInSlideRight 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) 0.5s forwards;
 		}
 	}
 }
