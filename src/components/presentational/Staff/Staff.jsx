@@ -35,7 +35,7 @@ function Card({ name, title, url, info }) {
 }
 
 const Staff = forwardRef((props, ref) => {
-	const [staff, staffIntersected] = useHasIntersected();
+	const [staff, staffIntersected] = useHasIntersected({ threshold: 0.3 });
 
 	const smText = useRef();
 	const lgText = useRef();
@@ -67,7 +67,7 @@ const Staff = forwardRef((props, ref) => {
 			<Stack className={Style.InnerWrapper}>
 				<Group justify='space-between' className={Style.AboutSubSection} ref={staff}>
 					<SectionHeader top='Meet' middle='The' bottom='Team' />
-					<div className={Style.Content}>
+					<div className={Style[`Content${staffIntersected ? 'Show' : ''}`]}>
 						<div className={Style.Carousel}>
 							<Carousel
 								slideSize={{ base: mobile ? '100%' : '33.333%' }}

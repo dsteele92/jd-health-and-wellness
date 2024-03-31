@@ -95,12 +95,18 @@
 
 			.Content {
 				@include section-content;
+				opacity: 0;
 
 				.Carousel {
 					margin: 2rem auto;
 					position: relative;
 					width: 100%;
 					max-width: 75rem;
+				}
+
+				&Show {
+					@extend .Content;
+					animation: fadeInLift 0.75s ease forwards;
 				}
 			}
 		}

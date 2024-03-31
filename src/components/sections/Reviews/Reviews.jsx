@@ -29,7 +29,7 @@ function Card({ name, review }) {
 }
 
 const Reviews = forwardRef((props, ref) => {
-	const [reviews, reviewsIntersected] = useHasIntersected();
+	const [reviews, reviewsIntersected] = useHasIntersected({ threshold: 0.5 });
 
 	const theme = useMantineTheme();
 	const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
@@ -47,7 +47,7 @@ const Reviews = forwardRef((props, ref) => {
 			<Stack className={Style.InnerWrapper}>
 				<Group justify='space-between' className={Style.AboutSubSection} ref={reviews}>
 					<SectionHeader top='Reviews' />
-					<div className={Style.Content}>
+					<div className={Style[`Content${reviewsIntersected ? 'Show' : ''}`]}>
 						<div className={Style.Carousel}>
 							<Carousel
 								slideSize={{ base: mobile ? '100%' : '50%' }}
