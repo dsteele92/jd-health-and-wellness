@@ -3,7 +3,6 @@
 .HeaderWrapper {
 	display: flex;
 	flex-direction: column;
-	width: 14rem;
 	max-width: 30%;
 
 	@mixin sharedHeader {

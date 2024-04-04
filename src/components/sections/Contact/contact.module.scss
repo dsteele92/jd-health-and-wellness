@@ -2,191 +2,361 @@
 
 .Contact {
 	position: relative;
-	margin: 0 auto;
-	@include width;
-	@include bubble-container;
-	margin: $margin-section;
+	overflow: hidden;
+	height: fit-content;
+	@include section;
 
-	.Bubble {
-		@include bubble;
-		.BubbleInner {
-			@include bubble-inner;
-			background-color: $color-section-background;
-		}
-	}
-	.FullContent {
-		@include content-div;
-		// set padding here
-		position: relative;
-		padding: 2rem 0 4rem;
-		@include flex-center;
-		flex-direction: column;
+	.InnerWrapper {
+		@include section-inner;
 
-		.ContactContainer {
-			@include width-inner;
-			display: grid;
-			grid-template-columns: 1fr 1fr 1fr;
-			// set the height of the grid sections in accordance with height-sm mixin
-			grid-template-rows: minmax(80px, 10vh) minmax(80px, 10vh) minmax(160px, 20vh);
-			column-gap: $margin;
-			row-gap: $margin;
+		.AboutSubSection {
+			@include subsection-flex;
 
-			.FirstName {
-				grid-column: 1 / 2;
-				grid-row: 1 / 1;
-			}
-			.LastName {
-				grid-column: 2 / 3;
-				grid-row: 1 / 1;
-			}
-			.Phone {
-				grid-column: 3 / 4;
-				grid-row: 1 / 1;
-			}
-			.Email {
-				grid-column: 1 / 3;
-				grid-row: 2 / 2;
-			}
-			.Message {
-				grid-column: 1 / 3;
-				grid-row: 3 / 3;
-			}
-			.Submit {
-				grid-column: 3 / 4;
-				grid-row: 2 / 4;
-			}
+			.Content {
+				@include section-content;
+				opacity: 0;
 
-			.Input {
-				@include bubble-container;
-				height: 100%;
-				width: 100%;
-				.Bubble {
-					@include bubble;
-					.BubbleInner {
-						@include bubble-inner;
-						background-color: $color-section-background;
-						border: 2px solid $color-background-main;
-						// set background color
+				.ContactContainer {
+					max-width: 60rem;
+					display: grid;
+					grid-template-columns: 1fr 1fr 1fr;
+					// set the height of the grid sections in accordance with height-sm mixin
+					grid-template-rows: minmax(80px, 10vh) minmax(80px, 10vh) minmax(160px, 20vh);
+					column-gap: $margin;
+					row-gap: $margin;
+
+					.FirstName {
+						grid-column: 1 / 2;
+						grid-row: 1 / 1;
+					}
+					.LastName {
+						grid-column: 2 / 3;
+						grid-row: 1 / 1;
+					}
+					.Phone {
+						grid-column: 3 / 4;
+						grid-row: 1 / 1;
+					}
+					.Email {
+						grid-column: 1 / 3;
+						grid-row: 2 / 2;
+					}
+					.Message {
+						grid-column: 1 / 3;
+						grid-row: 3 / 3;
+					}
+					.Submit {
+						grid-column: 3 / 4;
+						grid-row: 2 / 4;
+					}
+
+					.Input {
+						@include bubble-container;
+						height: 100%;
+						width: 100%;
+						.Bubble {
+							@include bubble;
+							.BubbleInner {
+								@include bubble-inner;
+								background-color: $color-section-background;
+								border: 2px solid $color-background-main;
+							}
+						}
+						.BubbleContent {
+							height: 100%;
+							width: 100%;
+							display: flex;
+							justify-content: flex-start;
+							padding: 10px 3vw;
+
+							input,
+							textarea {
+								background-color: transparent;
+								border: none;
+								font-weight: 500;
+								letter-spacing: 1pt;
+								color: $color-green;
+								width: 100%;
+
+								// same as h3 sizing
+								font-size: 1.75rem;
+								@media screen and (max-width: $breakpoint-desktop) {
+									font-size: 1.5rem;
+								}
+
+								@media screen and (max-width: $breakpoint-medium) {
+									font-size: 1rem;
+								}
+							}
+							textarea {
+								padding: 20px 0;
+								width: 100%;
+							}
+
+							input::placeholder,
+							textarea::placeholder {
+								color: $color-green;
+								font-weight: 400;
+								letter-spacing: 1pt;
+								font-size: 1.75rem;
+								@media screen and (max-width: $breakpoint-desktop) {
+									font-size: 1.5rem;
+								}
+
+								@media screen and (max-width: $breakpoint-medium) {
+									font-size: 1rem;
+								}
+							}
+						}
+
+						&Show {
+							@extend .Input;
+							@include bubble-show;
+						}
+					}
+
+					.Button {
+						@include bubble-container;
+						height: 100%;
+						width: 100%;
+						.Bubble {
+							@include bubble;
+							.BubbleInner {
+								@include bubble-inner;
+								background-color: $color-green;
+								// set background color
+							}
+						}
+						.BubbleContent {
+							cursor: pointer;
+							height: 100%;
+							width: 100%;
+							display: flex;
+							flex-direction: column;
+							justify-content: center;
+							align-items: center;
+
+							h3 {
+								margin-top: 1rem;
+								color: $color-text-light;
+							}
+						}
+
+						&:hover {
+							.Bubble {
+								@include bubble-active;
+							}
+						}
+
+						&Show {
+							@extend .Button;
+							@include bubble-show;
+						}
 					}
 				}
-				.Content {
-					height: 100%;
-					width: 100%;
-					display: flex;
-					justify-content: flex-start;
-					padding: 10px 3vw;
 
-					input,
-					textarea {
-						background-color: transparent;
-						border: none;
-						font-weight: 500;
-						letter-spacing: 1pt;
-						color: $color-green;
-						width: 100%;
-
-						// same as h3 sizing
-						font-size: 1.75rem;
-						@media screen and (max-width: $breakpoint-desktop) {
-							font-size: 1.5rem;
-						}
-
-						@media screen and (max-width: $breakpoint-medium) {
-							font-size: 1rem;
-						}
-					}
-					textarea {
-						padding: 20px 0;
-						width: 100%;
-					}
-
-					input::placeholder,
-					textarea::placeholder {
-						color: $color-green;
-						font-weight: 400;
-						letter-spacing: 1pt;
-						font-size: 1.75rem;
-						@media screen and (max-width: $breakpoint-desktop) {
-							font-size: 1.5rem;
-						}
-
-						@media screen and (max-width: $breakpoint-medium) {
-							font-size: 1rem;
-						}
-					}
+				.MapsContent {
+					@include height-xl;
+					border-radius: 20px;
+					overflow: hidden;
 				}
 
 				&Show {
-					@extend .Input;
-					@include bubble-show;
-				}
-			}
-
-			.Button {
-				@include bubble-container;
-				height: 100%;
-				width: 100%;
-				.Bubble {
-					@include bubble;
-					.BubbleInner {
-						@include bubble-inner;
-						background-color: $color-green;
-						// set background color
-					}
-				}
-				.Content {
-					cursor: pointer;
-					height: 100%;
-					width: 100%;
-					display: flex;
-					flex-direction: column;
-					justify-content: center;
-					align-items: center;
-
-					h3 {
-						margin-top: 1rem;
-						color: $color-text-light;
-					}
-				}
-
-				&:hover {
-					.Bubble {
-						@include bubble-active;
-					}
-				}
-
-				&Show {
-					@extend .Button;
-					@include bubble-show;
+					@extend .Content;
+					animation: fadeInLift 0.75s ease forwards;
 				}
 			}
 		}
 	}
-	&Show {
-		@extend .Contact;
-		@include bubble-show;
-	}
 }
-.Maps {
-	position: relative;
-	@include width;
-	margin: $margin-section;
 
-	.Bubble {
-		@include bubble;
-		.BubbleInner {
-			@include bubble-inner;
-			// set background color
-		}
-	}
-	.MapsContent {
-		@include height-xl;
-		border-radius: 20px;
-		overflow: hidden;
-	}
+// .Contact {
+// 	position: relative;
+// 	margin: 0 auto;
+// 	@include width;
+// 	@include bubble-container;
+// 	margin: $margin-section;
 
-	&Show {
-		@extend .Maps;
-		@include bubble-show;
-	}
-}
+// 	.Bubble {
+// 		@include bubble;
+// 		.BubbleInner {
+// 			@include bubble-inner;
+// 			background-color: $color-section-background;
+// 		}
+// 	}
+// 	.FullContent {
+// 		@include content-div;
+// 		// set padding here
+// 		position: relative;
+// 		padding: 2rem 0 4rem;
+// 		@include flex-center;
+// 		flex-direction: column;
+
+// 		.ContactContainer {
+// 			@include width-inner;
+// 			display: grid;
+// 			grid-template-columns: 1fr 1fr 1fr;
+// 			// set the height of the grid sections in accordance with height-sm mixin
+// 			grid-template-rows: minmax(80px, 10vh) minmax(80px, 10vh) minmax(160px, 20vh);
+// 			column-gap: $margin;
+// 			row-gap: $margin;
+
+// 			.FirstName {
+// 				grid-column: 1 / 2;
+// 				grid-row: 1 / 1;
+// 			}
+// 			.LastName {
+// 				grid-column: 2 / 3;
+// 				grid-row: 1 / 1;
+// 			}
+// 			.Phone {
+// 				grid-column: 3 / 4;
+// 				grid-row: 1 / 1;
+// 			}
+// 			.Email {
+// 				grid-column: 1 / 3;
+// 				grid-row: 2 / 2;
+// 			}
+// 			.Message {
+// 				grid-column: 1 / 3;
+// 				grid-row: 3 / 3;
+// 			}
+// 			.Submit {
+// 				grid-column: 3 / 4;
+// 				grid-row: 2 / 4;
+// 			}
+
+// 			.Input {
+// 				@include bubble-container;
+// 				height: 100%;
+// 				width: 100%;
+// 				.Bubble {
+// 					@include bubble;
+// 					.BubbleInner {
+// 						@include bubble-inner;
+// 						background-color: $color-section-background;
+// 						border: 2px solid $color-background-main;
+// 						// set background color
+// 					}
+// 				}
+// 				.Content {
+// 					height: 100%;
+// 					width: 100%;
+// 					display: flex;
+// 					justify-content: flex-start;
+// 					padding: 10px 3vw;
+
+// 					input,
+// 					textarea {
+// 						background-color: transparent;
+// 						border: none;
+// 						font-weight: 500;
+// 						letter-spacing: 1pt;
+// 						color: $color-green;
+// 						width: 100%;
+
+// 						// same as h3 sizing
+// 						font-size: 1.75rem;
+// 						@media screen and (max-width: $breakpoint-desktop) {
+// 							font-size: 1.5rem;
+// 						}
+
+// 						@media screen and (max-width: $breakpoint-medium) {
+// 							font-size: 1rem;
+// 						}
+// 					}
+// 					textarea {
+// 						padding: 20px 0;
+// 						width: 100%;
+// 					}
+
+// 					input::placeholder,
+// 					textarea::placeholder {
+// 						color: $color-green;
+// 						font-weight: 400;
+// 						letter-spacing: 1pt;
+// 						font-size: 1.75rem;
+// 						@media screen and (max-width: $breakpoint-desktop) {
+// 							font-size: 1.5rem;
+// 						}
+
+// 						@media screen and (max-width: $breakpoint-medium) {
+// 							font-size: 1rem;
+// 						}
+// 					}
+// 				}
+
+// 				&Show {
+// 					@extend .Input;
+// 					@include bubble-show;
+// 				}
+// 			}
+
+// 			.Button {
+// 				@include bubble-container;
+// 				height: 100%;
+// 				width: 100%;
+// 				.Bubble {
+// 					@include bubble;
+// 					.BubbleInner {
+// 						@include bubble-inner;
+// 						background-color: $color-green;
+// 						// set background color
+// 					}
+// 				}
+// 				.Content {
+// 					cursor: pointer;
+// 					height: 100%;
+// 					width: 100%;
+// 					display: flex;
+// 					flex-direction: column;
+// 					justify-content: center;
+// 					align-items: center;
+
+// 					h3 {
+// 						margin-top: 1rem;
+// 						color: $color-text-light;
+// 					}
+// 				}
+
+// 				&:hover {
+// 					.Bubble {
+// 						@include bubble-active;
+// 					}
+// 				}
+
+// 				&Show {
+// 					@extend .Button;
+// 					@include bubble-show;
+// 				}
+// 			}
+// 		}
+// 	}
+// 	&Show {
+// 		@extend .Contact;
+// 		@include bubble-show;
+// 	}
+// }
+// .Maps {
+// 	position: relative;
+// 	@include width;
+// 	margin: $margin-section;
+
+// 	.Bubble {
+// 		@include bubble;
+// 		.BubbleInner {
+// 			@include bubble-inner;
+// 			// set background color
+// 		}
+// 	}
+// 	.MapsContent {
+// 		@include height-xl;
+// 		border-radius: 20px;
+// 		overflow: hidden;
+// 	}
+
+// 	&Show {
+// 		@extend .Maps;
+// 		@include bubble-show;
+// 	}
+// }

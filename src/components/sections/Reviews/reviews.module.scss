@@ -61,7 +61,10 @@
 				padding: 4rem 3rem 3rem;
 				border-radius: 10px;
 				background-color: rgba($color: $color-blue, $alpha: 0.75);
-				overflow: scroll;
+				overflow: hidden;
+				&:hover {
+					overflow: auto;
+				}
 				p {
 					font-weight: 400;
 					color: white;
@@ -90,8 +93,7 @@
 		@include section-inner;
 
 		.AboutSubSection {
-			padding: 0 5%;
-			gap: 0;
+			@include subsection-flex;
 
 			.Content {
 				@include section-content;

@@ -2,7 +2,7 @@ import { React, useEffect, useRef, forwardRef } from 'react';
 import Style from './about.module.scss';
 import { SectionHeader, useHasIntersected, useScroll } from 'components';
 import { PiArrowBendRightDownThin } from 'react-icons/pi';
-import { Stack, Group } from '@mantine/core';
+import { Stack } from '@mantine/core';
 
 const About = forwardRef((props, ref) => {
 	const [whoWeAre, whoWeAreIntersected] = useHasIntersected({ threshold: 0.5 });
@@ -23,7 +23,7 @@ const About = forwardRef((props, ref) => {
 	return (
 		<div className={Style.AboutSection} ref={ref}>
 			<Stack className={Style.InnerWrapper}>
-				<Group justify='space-between' className={Style.AboutSubSection} ref={whoWeAre}>
+				<div className={Style.AboutSubSection} ref={whoWeAre}>
 					<SectionHeader top='Who' middle='We' bottom='Are' />
 					<div className={Style.Content}>
 						<div className={Style[`IntroText${whoWeAreIntersected ? 'Show' : ''}`]}>
@@ -37,8 +37,8 @@ const About = forwardRef((props, ref) => {
 							</h3>
 						</div>
 					</div>
-				</Group>
-				<Group justify='space-between' className={Style.AboutSubSection} ref={video}>
+				</div>
+				<div className={Style.AboutSubSection} ref={video}>
 					<SectionHeader top='Our' bottom='Story' />
 					<div className={Style.Content}>
 						<div className={Style[`VideoContainer${videoIntersected ? 'Show' : ''}`]}>
@@ -51,9 +51,8 @@ const About = forwardRef((props, ref) => {
 							</video>
 						</div>
 					</div>
-				</Group>
+				</div>
 			</Stack>
-			{/* {windowWidth >= 768 ? <Services /> : <ServicesMobile />} */}
 			{/* <div className={CTAIntersected ? Style.CTAShow : Style.CTA} ref={CTA}>
 					<div className={Style.Bubble}>
 						<div className={Style.BubbleInner}></div>

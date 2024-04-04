@@ -1,6 +1,6 @@
 import { React, useState, forwardRef, useMemo } from 'react';
 import Style from './forms.module.scss';
-import { useHasIntersected, SectionHeader, ButtonRoundInverse } from 'components';
+import { useHasIntersected, SectionHeader, ButtonRoundInverse, ButtonRound } from 'components';
 import { patientForms } from 'content';
 import { Modal } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
@@ -16,52 +16,18 @@ const Forms = forwardRef((props, ref) => {
 	}, []);
 
 	return (
-		<div ref={ref}>
-			<div className={formsIntersected ? Style.FormsShow : Style.Forms} ref={forms}>
-				<div className={Style.Bubble}>
-					<div className={Style.BubbleInner}></div>
-				</div>
-				<div className={Style.Content}>
-					<Modal
-						opened={opened}
-						onClose={close}
-						fullScreen
-						radius={0}
-						transitionProps={{ transition: 'fade', duration: 200 }}>
-						{formModal}
-					</Modal>
-					<SectionHeader text='Patient Forms' />
-					<div className={Style.FormsContainer}>
-						{patientForms.map((form, index) => (
-							<div
-								className={formsIntersected ? Style.FormShow : Style.Form}
-								key={index}
-								onMouseEnter={() => setFormSelected(index)}
-								onMouseLeave={() => setFormSelected(-1)}
-								onClick={open}>
-								<div className={Style.FormBubble}>
-									<div className={Style.FormBubbleInner}>
-										<div className={Style.Top}></div>
-										<div className={Style.Bottom}></div>
-									</div>
-								</div>
-								<div className={Style.FormContent}>
-									<div className={Style.FormWrapper}>
-										<div className={Style.FormTitle}>
-											<h3>{form.name}</h3>
-										</div>
-										<div className={Style.Button}>
-											<ButtonRoundInverse
-												size='small'
-												direction='down'
-												active={formSelected === index ? true : false}
-												section='Forms'
-											/>
-										</div>
-									</div>
-								</div>
-							</div>
-						))}
+		<div className={Style.Forms} ref={ref}>
+			<div className={Style.InnerWrapper}>
+				<div className={Style.AboutSubSection} ref={forms}>
+					<SectionHeader top='Patient' bottom='Forms' width='20rem' />
+					<div className={Style[`Content${formsIntersected ? 'Show' : ''}`]}>
+						<ul className={Style.Form}>
+							{patientForms.map((form, index) => (
+								<li key={index}>
+									<h3>{form.name}</h3>
+								</li>
+							))}
+						</ul>
 					</div>
 				</div>
 			</div>

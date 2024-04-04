@@ -66,7 +66,7 @@
 			@include bubble;
 			.BubbleInner {
 				@include bubble-inner;
-				border-radius: 20px;
+				border-radius: 10px;
 				background-color: rgba($color: #ffffff, $alpha: 0.4);
 				backdrop-filter: blur(3px);
 			}
@@ -74,7 +74,7 @@
 
 		.Content {
 			padding: 1.3rem 1.6rem;
-			border-radius: 20px;
+			border-radius: 10px;
 			cursor: pointer;
 
 			.SubLinks {

@@ -4,7 +4,7 @@ import { useHasIntersected, SectionHeader } from 'components';
 import { reviewsData } from 'content';
 import { Carousel } from '@mantine/carousel';
 import { useMediaQuery } from '@mantine/hooks';
-import { useMantineTheme, rem, Group, Stack } from '@mantine/core';
+import { useMantineTheme, rem } from '@mantine/core';
 
 function Card({ name, review }) {
 	return (
@@ -44,8 +44,8 @@ const Reviews = forwardRef((props, ref) => {
 
 	return (
 		<div className={Style.Reviews} ref={ref}>
-			<Stack className={Style.InnerWrapper}>
-				<Group justify='space-between' className={Style.AboutSubSection} ref={reviews}>
+			<div className={Style.InnerWrapper}>
+				<div className={Style.AboutSubSection} ref={reviews}>
 					<SectionHeader top='Reviews' />
 					<div className={Style[`Content${reviewsIntersected ? 'Show' : ''}`]}>
 						<div className={Style.Carousel}>
@@ -58,8 +58,8 @@ const Reviews = forwardRef((props, ref) => {
 							</Carousel>
 						</div>
 					</div>
-				</Group>
-			</Stack>
+				</div>
+			</div>
 		</div>
 	);
 });

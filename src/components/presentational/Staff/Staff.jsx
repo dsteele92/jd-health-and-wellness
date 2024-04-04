@@ -3,7 +3,7 @@ import Style from './staff.module.scss';
 import { Carousel } from '@mantine/carousel';
 import { useMediaQuery } from '@mantine/hooks';
 import { useHasIntersected, useScroll, SectionHeader } from 'components';
-import { useMantineTheme, rem, Group, Stack } from '@mantine/core';
+import { useMantineTheme, rem } from '@mantine/core';
 import { staffInfo } from 'content';
 
 function Card({ name, title, url, info }) {
@@ -64,8 +64,22 @@ const Staff = forwardRef((props, ref) => {
 
 	return (
 		<div className={Style.Staff} ref={ref}>
-			<Stack className={Style.InnerWrapper}>
-				<Group justify='space-between' className={Style.AboutSubSection} ref={staff}>
+			<div className={Style.TextDisplay}>
+				<div className={Style.MovingTextLg}>
+					<div className={Style.LargeText} ref={lgText}>
+						Our Staff · Our Staff · Our Staff · Our Staff · Our Staff · Our Staff · Our Staff ·{' '}
+					</div>
+				</div>
+				<div className={Style.MovingTextSm}>
+					<div className={Style.SmallText} ref={smText}>
+						Hover over photos to read more · Hover over photos to read more · Hover over photos to read more
+						· Hover over photos to read more · Hover over photos to read more · Hover over photos to read
+						more · Hover over photos to read more ·{' '}
+					</div>
+				</div>
+			</div>
+			<div className={Style.InnerWrapper}>
+				<div className={Style.AboutSubSection} ref={staff}>
 					<SectionHeader top='Meet' middle='The' bottom='Team' />
 					<div className={Style[`Content${staffIntersected ? 'Show' : ''}`]}>
 						<div className={Style.Carousel}>
@@ -77,21 +91,6 @@ const Staff = forwardRef((props, ref) => {
 								{slides}
 							</Carousel>
 						</div>
-					</div>
-				</Group>
-			</Stack>
-			<div className={Style.TextDisplay}>
-				<div className={Style.MovingTextSm}>
-					<div className={Style.SmallText} ref={smText}>
-						Hover over photos to read more · Hover over photos to read more · Hover over photos to read more
-						· Hover over photos to read more · Hover over photos to read more · Hover over photos to read
-						more · Hover over photos to read more ·{' '}
-					</div>
-				</div>
-				<div className={Style.MovingTextLg}>
-					<div className={Style.LargeText} ref={lgText}>
-						Meet the team · Meet the team · Meet the team · Meet the team · Meet the team · Meet the team ·
-						Meet the team ·{' '}
 					</div>
 				</div>
 			</div>

@@ -13,8 +13,7 @@
 		padding-bottom: 400px;
 
 		.AboutSubSection {
-			padding: 0 5%;
-			gap: 0;
+			@include subsection-flex;
 
 			.Content {
 				@include section-content;

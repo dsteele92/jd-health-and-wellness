@@ -129,7 +129,7 @@
 	@include section;
 
 	.TextDisplay {
-		margin: 0 0 6rem;
+		margin: 3rem 0 0;
 		position: relative;
 		height: 150px;
 		width: 100%;
@@ -137,7 +137,7 @@
 		flex-direction: column;
 		.MovingTextLg {
 			position: relative;
-			height: 50%;
+			height: 70%;
 			width: 100%;
 			overflow: hidden;
 			.LargeText {
@@ -155,7 +155,7 @@
 		}
 		.MovingTextSm {
 			position: relative;
-			height: 50%;
+			height: 30%;
 			width: 100%;
 			overflow: hidden;
 			.SmallText {
@@ -163,8 +163,8 @@
 				right: 0;
 				bottom: 0;
 				white-space: nowrap;
-				font-weight: 300;
-				font-size: 3rem;
+				font-weight: 400;
+				font-size: 2.5rem;
 				letter-spacing: 2pt;
 				color: $color-blue;
 				text-transform: uppercase;
@@ -175,18 +175,16 @@
 
 	.InnerWrapper {
 		@include section-inner;
-		padding-bottom: 2rem;
 
 		.AboutSubSection {
-			padding: 0 5%;
-			gap: 0;
+			@include subsection-flex;
 
 			.Content {
 				@include section-content;
 				opacity: 0;
 
 				.Carousel {
-					margin: 2rem auto;
+					margin: 0 auto 2rem;
 					position: relative;
 					width: 100%;
 					max-width: 75rem;
