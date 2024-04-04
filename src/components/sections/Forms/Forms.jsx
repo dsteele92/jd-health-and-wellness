@@ -1,19 +1,19 @@
-import { React, useState, forwardRef, useMemo } from 'react';
+import { React, forwardRef } from 'react';
 import Style from './forms.module.scss';
-import { useHasIntersected, SectionHeader, ButtonRoundInverse, ButtonRound } from 'components';
+import { useHasIntersected, SectionHeader } from 'components';
 import { patientForms } from 'content';
-import { Modal } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
-import { IntakeForm } from './IntakeForm.tsx';
+// import { Modal } from '@mantine/core';
+// import { useDisclosure } from '@mantine/hooks';
+// import { IntakeForm } from './IntakeForm.tsx';
 
 const Forms = forwardRef((props, ref) => {
 	const [forms, formsIntersected] = useHasIntersected();
-	const [formSelected, setFormSelected] = useState(-1);
-	const [opened, { open, close }] = useDisclosure(false);
+	// const [formSelected, setFormSelected] = useState(-1);
+	// const [opened, { open, close }] = useDisclosure(false);
 
-	const formModal = useMemo(() => {
-		return <IntakeForm />;
-	}, []);
+	// const formModal = useMemo(() => {
+	// 	return <IntakeForm />;
+	// }, []);
 
 	return (
 		<div className={Style.Forms} ref={ref}>

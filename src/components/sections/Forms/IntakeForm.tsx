@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { TextInput, SegmentedControl, Checkbox, Box, Text, Flex, Stack, Group, Button } from '@mantine/core';
+import { TextInput, SegmentedControl, Checkbox, Text, Flex, Stack, Button } from '@mantine/core';
 import SignatureCanvas from 'react-signature-canvas';
 
 export const IntakeForm = () => {

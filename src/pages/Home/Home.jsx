@@ -7,7 +7,6 @@ import {
 	About,
 	Reviews,
 	Forms,
-	FormsMobile,
 	Contact,
 	useScroll,
 	Footer,
