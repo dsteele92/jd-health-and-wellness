@@ -8,19 +8,20 @@
 
 	.InnerWrapper {
 		@include section-inner;
-		row-gap: 6rem;
+		row-gap: 8rem;
 		padding-top: 6rem;
-		padding-bottom: 400px;
+		padding-bottom: 350px;
 
 		.AboutSubSection {
-			@include subsection-flex;
+			@include subsection-flex-row;
 
 			.Content {
-				@include section-content;
+				@include section-content-row;
+				// border-left: 2px groove $color-yellow;
 				.IntroText {
 					justify-self: center;
 					text-align: justify;
-					padding: 2rem;
+					// padding-left: 3rem;
 					opacity: 0;
 
 					&Show {
@@ -36,7 +37,7 @@
 					opacity: 0;
 
 					video {
-						border: 2px solid $color-green;
+						border: 2px solid $color-yellow;
 						border-radius: 10px;
 						width: 100%;
 						height: 100%;

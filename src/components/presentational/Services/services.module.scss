@@ -4,64 +4,75 @@
 	position: relative;
 	margin: 0 auto;
 	@include width;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	gap: 0.75rem;
+	overflow: hidden;
 
-	.Service {
-		position: relative;
-		z-index: 0;
-		width: 100%;
-		@include height-sm;
-
-		.Serv {
+	.Arrow {
+		position: absolute;
+		bottom: 4rem;
+		right: 5rem;
+		color: white;
+		z-index: 10;
+		font-size: 2.5rem;
+		.Bounce {
 			position: absolute;
 			top: 0;
-			// left: 50%;
-			width: calc(50% - calc($margin / 2));
-			height: 100%;
-			border-radius: 20px;
+			animation: sideBounce 1.5s infinite;
+			cursor: pointer;
+		}
+	}
+	.InnerWrapper {
+		width: 100%;
+		overflow-y: hidden;
+		display: flex;
+		justify-content: flex-start;
+		overflow-x: auto;
+
+		gap: 1rem;
+		// hide scrollbar for Chrome, Safari and Opera
+		&::-webkit-scrollbar {
+			display: none;
+		}
+		// hide scrollbar for IE, Edge and Firefox
+		-ms-overflow-style: none; // IE 10+
+		scrollbar-width: none; // Firefox
+
+		.Service {
+			position: relative;
+			z-index: 0;
+			width: 28rem;
+			height: 42rem;
 			display: flex;
 			flex-direction: column;
-			justify-content: center;
-			align-items: center;
+			flex-shrink: 0;
+			border-radius: 10px;
+			overflow: hidden;
+			background-color: $color-background-main;
+			transform: rotateY(90deg);
 
-			&Name {
-				@extend .Serv;
-				background-color: rgba($color: $color-green, $alpha: 1);
-				padding: 2rem;
-				z-index: 1;
-				left: 25%;
-
+			.Name {
+				height: 12rem;
+				padding: 1.5rem 2rem;
+				background-color: $color-green;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 0.5rem;
 				.Icon {
-					height: 65px;
-					width: 65px;
+					height: 3rem;
 				}
 				.Text {
-					text-transform: uppercase;
-					text-align: center;
-					letter-spacing: 1pt;
 					color: white;
-					font-family: 'Livvic', sans-serif;
-					font-weight: 300;
+					text-transform: uppercase;
+					font-size: 2rem;
+					line-height: 2.5rem;
 				}
 			}
-			&Description {
-				@extend .Serv;
+			.Description {
+				font-size: 1.5rem;
+				padding: 2rem;
+				flex-grow: 1;
 				background-color: $color-section-background;
-				padding: 2rem 5%;
-				letter-spacing: 0.5pt;
-				font-size: 1.2rem;
-				@media screen and (max-width: $breakpoint-large) {
-					font-size: 1rem;
-				}
-				@media screen and (max-width: $breakpoint-medium) {
-					font-size: 0.8rem;
-				}
-				text-align: justify;
-				z-index: 0;
-				right: 25%;
+				background-color: rgba($color: $color-green, $alpha: 0.32);
 			}
 		}
 	}

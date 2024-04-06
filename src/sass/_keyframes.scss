@@ -119,3 +119,15 @@
 		transform: translateY(0);
 	}
 }
+
+@keyframes sideBounce {
+	from {
+		transform: translateX(0);
+	}
+	60% {
+		transform: translateX(-10px);
+	}
+	to {
+		transform: translateX(0);
+	}
+}

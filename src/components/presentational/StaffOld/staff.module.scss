@@ -71,7 +71,7 @@
 					text-transform: uppercase;
 					letter-spacing: 1pt;
 					max-width: 90%;
-					font-weight: 600;
+					font-weight: 500;
 					text-align: center;
 					white-space: wrap;
 					line-height: 1.5rem;
@@ -93,7 +93,7 @@
 				bottom: 0;
 				width: 100%;
 				border-radius: 0 0 10px 10px;
-				opacity: 0.35;
+				opacity: 0.5;
 			}
 			.CardText {
 				position: absolute;
@@ -130,7 +130,7 @@
 	@include section;
 
 	.TextDisplay {
-		margin: 4rem 0 0;
+		margin: 3rem 0 0;
 		position: relative;
 		height: 150px;
 		width: 100%;
@@ -145,7 +145,6 @@
 				position: absolute;
 				top: 0;
 				left: 0;
-				color: $color-green;
 				color: $color-background-main;
 				text-align: center;
 				white-space: nowrap;
@@ -180,7 +179,6 @@
 
 		.AboutSubSection {
 			@include subsection-flex-column;
-			gap: 3rem;
 
 			.Content {
 				@include section-content-column;

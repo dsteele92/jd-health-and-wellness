@@ -2,7 +2,7 @@ import { React, useMemo, useEffect, useRef, forwardRef } from 'react';
 import Style from './staff.module.scss';
 import { Carousel } from '@mantine/carousel';
 import { useMediaQuery } from '@mantine/hooks';
-import { useHasIntersected, useScroll } from 'components';
+import { useHasIntersected, useScroll, SectionHeader } from 'components';
 import { useMantineTheme, rem } from '@mantine/core';
 import { staffInfo } from 'content';
 
@@ -23,11 +23,11 @@ function Card({ name, title, url, info }) {
 					<div className={Style.CardText}>
 						<p>{info}</p>
 					</div>
-					<img
+					{/* <img
 						src='https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/pine_tree_card_bg.png'
 						alt='pine tree background'
 						className={Style.CardBg}
-					/>
+					/> */}
 				</div>
 			</div>
 		</div>
@@ -79,8 +79,7 @@ const Staff = forwardRef((props, ref) => {
 			</div>
 			<div className={Style.InnerWrapper}>
 				<div className={Style.AboutSubSection} ref={staff}>
-					{/* <h1>Meet the Team</h1> */}
-					{/* <SectionHeader top='Meet the Team' /> */}
+					{/* <SectionHeader top='Meet' middle='The' bottom='Team' /> */}
 					<div className={Style[`Content${staffIntersected ? 'Show' : ''}`]}>
 						<div className={Style.Carousel}>
 							<Carousel

@@ -3,29 +3,11 @@
 .Footer {
 	position: relative;
 	margin: 0 auto;
-	@include width;
-	@include bubble-container;
-
-	.Bubble {
-		@include bubble;
-		.BubbleInner {
-			@include bubble-inner;
-		}
-	}
-	.Content {
-		height: 100%;
-		width: 100%;
-		@include content-div;
-		@include flex-center;
-		height: 4rem;
-		h3 {
-			font-weight: 300;
-			text-transform: uppercase;
-		}
-	}
-
-	&Show {
-		@extend .Footer;
-		@include bubble-show;
+	@include section;
+	@include flex-center;
+	height: 4rem;
+	h3 {
+		font-weight: 300;
+		text-transform: uppercase;
 	}
 }

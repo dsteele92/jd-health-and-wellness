@@ -1,20 +1,33 @@
 @import 'sass';
 
 .HeaderWrapper {
+	position: relative;
 	display: flex;
 	flex-direction: column;
-	max-width: 30%;
+	min-width: fit-content;
+	max-width: 20%;
+	padding: 0 1.5rem 1.5rem 0;
+
+	.Corner {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		width: 75px;
+		height: 75px;
+		border-right: 3px groove $color-yellow;
+		border-bottom: 3px groove $color-yellow;
+	}
 
 	@mixin sharedHeader {
 		color: $color-green;
 		text-transform: uppercase;
 		opacity: 0;
 		transform: translateX(-100%);
+		align-self: flex-end;
 	}
 
 	.Header1 {
 		@include sharedHeader();
-		align-self: flex-start;
 
 		&Show {
 			@extend .Header1;
@@ -23,7 +36,6 @@
 	}
 	.Header2 {
 		@include sharedHeader();
-		align-self: center;
 
 		&Show {
 			@extend .Header2;
@@ -32,7 +44,6 @@
 	}
 	.Header3 {
 		@include sharedHeader();
-		align-self: flex-end;
 
 		&Show {
 			@extend .Header3;

@@ -44,8 +44,8 @@
 			height: 100%;
 			display: flex;
 			flex-direction: column;
-			justify-content: space-between;
 			align-items: flex-start;
+			gap: 1rem;
 			border-radius: 10px;
 			border: 1px solid $color-grey-dark;
 			background-color: $color-card-background;
@@ -58,7 +58,7 @@
 				z-index: 10;
 				width: 100%;
 				height: 100%;
-				padding: 4rem 3rem 3rem;
+				padding: 5rem 3rem 3rem;
 				border-radius: 10px;
 				background-color: rgba($color: $color-blue, $alpha: 0.75);
 				overflow: hidden;
@@ -93,10 +93,10 @@
 		@include section-inner;
 
 		.AboutSubSection {
-			@include subsection-flex;
+			@include subsection-flex-column;
 
 			.Content {
-				@include section-content;
+				@include section-content-column;
 				opacity: 0;
 
 				.Carousel {

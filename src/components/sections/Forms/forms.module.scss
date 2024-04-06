@@ -10,10 +10,10 @@
 		@include section-inner;
 
 		.AboutSubSection {
-			@include subsection-flex;
+			@include subsection-flex-row;
 
 			.Content {
-				@include section-content;
+				@include section-content-row;
 				opacity: 0;
 
 				.Form {

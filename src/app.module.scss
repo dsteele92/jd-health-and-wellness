@@ -31,6 +31,7 @@
 h1 {
 	// font-family: 'Marcellus', sans-serif;
 	// font-family: 'KoHo', sans-serif;
+	color: $color-green;
 	font-family: 'Raleway', sans-serif;
 	font-size: 4rem;
 	line-height: 5rem;
@@ -70,11 +71,12 @@ h2 {
 }
 
 h3 {
-	font-size: 2rem;
-	font-weight: 300;
+	font-family: 'Darker Grotesque', sans-serif;
+	font-size: 1.75rem;
+	font-weight: 500;
 	letter-spacing: 1pt;
 	@media screen and (max-width: $breakpoint-desktop) {
-		font-size: 1.5rem;
+		// font-size: 1.5rem;
 	}
 	@media screen and (max-width: $breakpoint-large) {
 	}
@@ -96,16 +98,14 @@ h4 {
 }
 
 p {
-	font-size: 1.25rem;
+	font-size: 1.35rem;
 	font-weight: 400;
 	letter-spacing: 1pt;
 	line-height: 1.5;
 	text-align: justify;
-	// @media screen and (max-width: $breakpoint-large) {
-	// 	font-size: 1rem;
-	// }
+	font-family: 'Darker Grotesque', sans-serif;
 	@media screen and (max-width: $breakpoint-medium) {
-		font-size: 0.9rem;
+		font-size: 1rem;
 	}
 }
 
