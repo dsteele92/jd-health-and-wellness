@@ -4,8 +4,8 @@ import Style from './contact.module.scss';
 import { useHasIntersected, SectionHeader, ButtonRoundInverse, GoogleMaps } from 'components';
 
 const Contact = forwardRef((props, ref) => {
-	const [contact, contactIntersected] = useHasIntersected();
-	const [maps, mapsIntersected] = useHasIntersected();
+	const [contact, contactIntersected] = useHasIntersected({ threshold: 0.25 });
+	const [maps, mapsIntersected] = useHasIntersected({ threshold: 0.25 });
 
 	const [firstName, setFirstName] = useState('');
 	const [lastName, setLastName] = useState('');
@@ -18,17 +18,20 @@ const Contact = forwardRef((props, ref) => {
 		<div className={Style.Contact} ref={ref}>
 			<main>
 				<Stack className={Style.InnerWrapper}>
-					<div className={Style.AboutSubSection} ref={maps}>
-						<h1>Contact us to schedule an appointment</h1>
-						<div className={Style[`Content${mapsIntersected ? 'Show' : ''}`]}></div>
+					<div className={Style.AboutSubSection} ref={contact}>
+						<SectionHeader top='Contact us' />
+						{/* <h1>Contact us to schedule an appointment</h1> */}
+						<div className={Style[`Content${contactIntersected ? 'Show' : ''}`]}>
+							<h2>Call us to schedule an appointment today.</h2>
+						</div>
 					</div>
 				</Stack>
 			</main>
-			<div className={Style.Outer}>
-				<div className={Style.MapsContent}>
+			<div className={Style.Outer} ref={maps}>
+				<div className={Style[`MapsContent${mapsIntersected ? 'Show' : ''}`]}>
 					<GoogleMaps />
 				</div>
-				<section className={Style.ContactContainer} ref={contact}>
+				<section className={Style[`ContactContainer${mapsIntersected ? 'Show' : ''}`]}>
 					<div className={`${Style.Input} ${Style.FirstName}`}>
 						<input
 							type='text'

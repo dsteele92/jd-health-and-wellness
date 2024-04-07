@@ -34,7 +34,7 @@ function Card({ name, review }) {
 }
 
 const Reviews = forwardRef((props, ref) => {
-	const [reviews, reviewsIntersected] = useHasIntersected({ threshold: 0.5 });
+	const [reviews, reviewsIntersected] = useHasIntersected({ threshold: 0.25 });
 
 	const theme = useMantineTheme();
 	const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);

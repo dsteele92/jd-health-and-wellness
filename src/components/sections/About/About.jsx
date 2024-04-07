@@ -5,12 +5,7 @@ import { PiArrowBendRightDownThin } from 'react-icons/pi';
 import { Stack } from '@mantine/core';
 
 const About = forwardRef((props, ref) => {
-	const [whoWeAre, whoWeAreIntersected] = useHasIntersected({ threshold: 0.5 });
-	// const [video, videoIntersected] = useHasIntersected({ threshold: 0.5 });
-	// const [CTA, CTAIntersected] = useHasIntersected();
-	// const [video, videoIntersected] = useHasIntersected();
-	// const [community, communityIntersected] = useHasIntersected();
-	// const [communityLinkSelected, setCommunityLinkSelected] = useState(-1);
+	const [whoWeAre, whoWeAreIntersected] = useHasIntersected({ threshold: 0.25 });
 
 	const circleText = useRef();
 	const { scrollY } = useScroll();

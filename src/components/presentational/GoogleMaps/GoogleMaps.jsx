@@ -14,6 +14,9 @@ const label = {
 	lat: 44.9265,
 	lng: -122.981545,
 };
+const mapOptions = {
+	scrollwheel: false,
+};
 
 const GoogleMaps = memo((props) => {
 	const { isLoaded, loadError } = useJsApiLoader({
@@ -28,7 +31,7 @@ const GoogleMaps = memo((props) => {
 	}
 
 	return isLoaded ? (
-		<GoogleMap mapContainerStyle={containerStyle} center={center} zoom={13}>
+		<GoogleMap mapContainerStyle={containerStyle} center={center} zoom={13} options={mapOptions}>
 			<Marker position={center} onClick={() => setShowInfo(!showInfo)} />
 			{showInfo && (
 				<InfoWindow position={label} onCloseClick={() => setShowInfo(false)}>

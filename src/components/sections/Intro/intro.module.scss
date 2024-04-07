@@ -18,8 +18,10 @@
 		.Headers {
 			position: absolute;
 			transform: translate(-50%, -50%);
+			opacity: 0;
+			animation: appear 0.75s ease 0.25s forwards;
 			left: 50%;
-			bottom: 45%;
+			bottom: 42%;
 			@media screen and (max-width: $breakpoint-large) {
 				bottom: 50%;
 			}
@@ -104,6 +106,43 @@
 						font-size: 1.25rem;
 					}
 				}
+			}
+		}
+		.Center {
+			position: absolute;
+			transform: translate(-50%, 30px);
+			left: 50%;
+			bottom: 20%;
+			max-width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 2rem;
+
+			@keyframes introButtonsFadeInLift {
+				from {
+					opacity: 0;
+					transform: translate(-50%, 30px);
+				}
+				to {
+					opacity: 1;
+					transform: translate(-50%, 0px);
+				}
+			}
+
+			opacity: 0;
+			animation: introButtonsFadeInLift 0.75s ease 0.25s forwards;
+
+			.Subtitle {
+				color: white;
+				font-weight: 300;
+				font-size: 2rem;
+			}
+			.Buttons {
+				width: 100%;
+				// background-color: white;
+				display: flex;
+				gap: 3rem;
 			}
 		}
 		.Arrow {

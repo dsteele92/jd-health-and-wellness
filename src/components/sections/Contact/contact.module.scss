@@ -19,6 +19,9 @@
 
 				.Content {
 					@include section-content-column;
+					justify-content: flex-start;
+					color: $color-blue;
+
 					opacity: 0;
 
 					&Show {
@@ -36,6 +39,7 @@
 		gap: 1rem;
 
 		.ContactContainer {
+			opacity: 0;
 			width: 100%;
 			height: 100%;
 			display: grid;
@@ -153,12 +157,22 @@
 					}
 				}
 			}
+			&Show {
+				@extend .ContactContainer;
+				animation: fadeInLift 0.75s ease 0.5s forwards;
+			}
 		}
 
 		.MapsContent {
+			opacity: 0;
 			width: 100%;
 			border-radius: 20px;
 			overflow: hidden;
+
+			&Show {
+				@extend .MapsContent;
+				animation: fadeInLift 0.75s ease forwards;
+			}
 		}
 	}
 }

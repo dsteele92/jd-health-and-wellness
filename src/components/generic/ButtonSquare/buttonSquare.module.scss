@@ -1,0 +1,26 @@
+@import 'sass';
+
+.Button {
+	position: relative;
+	flex-shrink: 0;
+	background-color: rgba($color: white, $alpha: 0.9);
+	border: 2px solid $color-green;
+	border-radius: 5px;
+	@include flex-center;
+	padding: 0.5rem 1.5rem 0.55rem;
+	cursor: pointer;
+	transition: $transition-regular;
+
+	.Text {
+		text-transform: uppercase;
+		color: $color-blue;
+		font-size: 1.75rem;
+		font-weight: 400;
+		// font-family: Raleway, sans-serif;
+	}
+
+	&:hover {
+		border: 2px solid $color-yellow;
+		background-color: rgba($color: white, $alpha: 1);
+	}
+}

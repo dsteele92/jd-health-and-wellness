@@ -54,12 +54,13 @@
 				height: 100%;
 				padding: 5rem 3rem 3rem;
 				border-radius: 10px;
-				background-color: rgba($color: $color-blue, $alpha: 0.75);
+				background-color: rgba($color: $color-blue, $alpha: 0.85);
 				overflow: hidden;
 				&:hover {
 					overflow: auto;
 				}
 				p {
+					text-align: left;
 					font-weight: 400;
 					color: white;
 				}

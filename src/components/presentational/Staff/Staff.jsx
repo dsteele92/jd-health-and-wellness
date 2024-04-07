@@ -1,8 +1,8 @@
-import { React, useMemo, useRef, forwardRef } from 'react';
+import { React, useMemo, forwardRef } from 'react';
 import Style from './staff.module.scss';
 import { Carousel } from '@mantine/carousel';
 import { useMediaQuery } from '@mantine/hooks';
-import { useHasIntersected, SectionHeader } from 'components';
+import { useHasIntersected, SectionHeader, ButtonSquare } from 'components';
 import { useMantineTheme, rem } from '@mantine/core';
 import { staffInfo } from 'content';
 
@@ -35,10 +35,7 @@ function Card({ name, title, url, info }) {
 }
 
 const Staff = forwardRef((props, ref) => {
-	const [staff, staffIntersected] = useHasIntersected({ threshold: 0.3 });
-
-	const smText = useRef();
-	const lgText = useRef();
+	const [staff, staffIntersected] = useHasIntersected({ threshold: 0.25 });
 
 	const theme = useMantineTheme();
 	const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
@@ -55,7 +52,6 @@ const Staff = forwardRef((props, ref) => {
 		<div className={Style.Staff} ref={ref}>
 			<div className={Style.InnerWrapper}>
 				<div className={Style.AboutSubSection} ref={staff}>
-					{/* <h1>Meet the Team</h1> */}
 					<SectionHeader top='Meet the Team' />
 					<div className={Style[`Content${staffIntersected ? 'Show' : ''}`]}>
 						<div className={Style.Carousel}>
@@ -66,6 +62,9 @@ const Staff = forwardRef((props, ref) => {
 								slidesToScroll={3}>
 								{slides}
 							</Carousel>
+						</div>
+						<div className={Style.Button}>
+							<ButtonSquare text='View All' />
 						</div>
 					</div>
 				</div>
