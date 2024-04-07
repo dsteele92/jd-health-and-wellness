@@ -1,44 +1,19 @@
 // ---> COLORS:
-// $color-background-main: #c2cadb;
-$color-background-main: #ffffff;
-$color-background-main: #d0d0d0;
 $color-background-main: #e4e4e4;
-// $color-background-main: #eeedeb;
+$color-section-background: #eeedeb;
+$color-white: #f8f8f8;
 
-$color-text-light: #ffffff;
-$color-text-dark: #000000;
-$color-text-grey: #525252;
-
-$color-section-background: #fffffa; // yellowish sections
-$color-section-background: #eeedeb; // yellowish sections
-$color-card-background: #f8f8f8;
-$color-navbar: #f8f8f8;
-
-$color-lightblue: #c2cadb;
-
-// old colors
-$color-green: rgb(146, 166, 148);
-$color-blue: #415184;
-$color-yellow: #efefd3;
-
-// Palette #1:
+// Palette:
 $color-green: #93beb6;
 $color-blue: #4e818b;
 $color-yellow: #e2ae33;
 $color-grey-dark: #878787;
-
-// ---> PADDING:
-$padding-left: 3%;
-$padding-left-mobile: 10px;
 
 // ---> MARGINS:
 $inner-max-width: 100rem;
 $width-full: 98%;
 $width-tablet: 97%;
 $width-mobile: 95%;
-$margin-section: 12px auto 0;
-$margin-sub-section: 12px auto 0;
-$margin: 12px;
 
 // ---> TRANSITIONS & ANIMATIONS:
 $transition-fast: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -46,7 +21,6 @@ $transition-bubble: all 0.3s ease-in-out;
 $transition-bubble-appear: all 0.4s ease-in-out 0.2s;
 $transition-slow: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
 $transition-regular: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
-// $transition-bubble:
 
 // ---> BREAKPOINTS:
 // -----> *** If you change these make sure to change them inside the functional components that use them for animations ***

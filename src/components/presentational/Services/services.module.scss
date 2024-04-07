@@ -49,7 +49,7 @@
 			display: flex;
 			flex-direction: column;
 			flex-shrink: 0;
-			border-radius: 10px;
+			border-radius: 5px;
 			overflow: hidden;
 			background-color: $color-background-main;
 			transform: rotateY(90deg);
@@ -69,6 +69,8 @@
 					height: 3rem;
 				}
 				.Text {
+					font-family: 'Raleway', 'Darker Grotesque', sans-serif;
+					font-weight: 300;
 					color: white;
 					text-transform: uppercase;
 					font-size: 2rem;

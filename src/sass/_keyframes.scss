@@ -110,6 +110,18 @@
 
 @keyframes bounce {
 	from {
+		transform: translateY(-10px);
+	}
+	60% {
+		transform: translateY(0px);
+	}
+	to {
+		transform: translateY(-10px);
+	}
+}
+
+@keyframes sideBounce {
+	from {
 		transform: translateY(0);
 	}
 	60% {
@@ -117,17 +129,5 @@
 	}
 	to {
 		transform: translateY(0);
-	}
-}
-
-@keyframes sideBounce {
-	from {
-		transform: translateX(0);
-	}
-	60% {
-		transform: translateX(-10px);
-	}
-	to {
-		transform: translateX(0);
 	}
 }

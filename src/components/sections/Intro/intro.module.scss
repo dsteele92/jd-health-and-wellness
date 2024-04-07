@@ -13,145 +13,145 @@
 		position: absolute;
 		height: 100vh;
 		width: 100vw;
-		background-color: rgba(0, 0, 0, 0.15);
-
-		.Headers {
+		background-color: rgba(0, 0, 0, 0.2);
+		.IntroContent {
 			position: absolute;
-			transform: translate(-50%, -50%);
-			opacity: 0;
-			animation: appear 0.75s ease 0.25s forwards;
+			width: 90%;
+			transform: translateX(-50%);
 			left: 50%;
-			bottom: 42%;
-			@media screen and (max-width: $breakpoint-large) {
-				bottom: 50%;
-			}
-			@media screen and (max-width: $breakpoint-medium) {
-				bottom: 55%;
-			}
-			@media screen and (max-width: $breakpoint-tablet) {
-				bottom: 60%;
-			}
-			@media screen and (max-width: 625px) {
-				bottom: 65%;
-			}
-			@media screen and (max-width: $breakpoint-mobile) {
-				bottom: 70%;
-			}
-			@media screen and (max-width: 400px) {
-				bottom: 70%;
-			}
-			.Title {
-				max-width: 75vw;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				letter-spacing: 10pt;
-
-				.JD {
-					font-size: 13rem;
-					font-weight: 200;
-					text-transform: uppercase;
-					color: white;
-					font-family: 'Kumbh Sans', sans-serif;
-					margin-right: 2rem;
-
-					@media screen and (max-width: $breakpoint-large) {
-						font-size: 12rem;
-					}
-					@media screen and (max-width: $breakpoint-medium) {
-						font-size: 9rem;
-					}
-					@media screen and (max-width: $breakpoint-tablet) {
-						font-size: 8rem;
-						margin-right: 1rem;
-						letter-spacing: 8pt;
-					}
-					@media screen and (max-width: 625px) {
-						font-size: 6rem;
-						margin-right: 0.5rem;
-					}
-					@media screen and (max-width: $breakpoint-mobile) {
-						font-size: 4rem;
-						margin-right: 0.5rem;
-					}
-					@media screen and (max-width: 400px) {
-						font-size: 3.5rem;
-						margin-right: 0.5rem;
-					}
-				}
-				.HW {
-					font-size: 4.5rem;
-					font-weight: 300;
-					text-transform: uppercase;
-					color: white;
-					font-family: 'Inter', sans-serif;
-
-					@media screen and (max-width: $breakpoint-large) {
-						font-size: 4rem;
-					}
-					@media screen and (max-width: $breakpoint-medium) {
-						font-size: 3rem;
-					}
-					@media screen and (max-width: $breakpoint-tablet) {
-						font-size: 3rem;
-						letter-spacing: 6pt;
-					}
-					@media screen and (max-width: 625px) {
-						font-size: 2rem;
-					}
-					@media screen and (max-width: $breakpoint-mobile) {
-						font-size: 1.5rem;
-					}
-					@media screen and (max-width: 400px) {
-						font-size: 1.25rem;
-					}
-				}
-			}
-		}
-		.Center {
-			position: absolute;
-			transform: translate(-50%, 30px);
-			left: 50%;
-			bottom: 20%;
-			max-width: 100%;
+			top: 10%;
+			height: 70%;
 			display: flex;
 			flex-direction: column;
+			justify-content: space-between;
 			align-items: center;
 			gap: 2rem;
+			min-height: fit-content;
+			.Headers {
+				opacity: 0;
+				animation: appear 0.75s ease 0.25s forwards;
 
-			@keyframes introButtonsFadeInLift {
-				from {
-					opacity: 0;
-					transform: translate(-50%, 30px);
-				}
-				to {
-					opacity: 1;
-					transform: translate(-50%, 0px);
+				.Title {
+					max-width: 75vw;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					letter-spacing: 10pt;
+
+					.JD {
+						font-size: 12rem;
+						font-weight: 200;
+						text-transform: uppercase;
+						color: white;
+						font-family: 'Kumbh Sans', sans-serif;
+						margin-right: 2rem;
+
+						@media screen and (max-width: $breakpoint-large) {
+							font-size: 10rem;
+						}
+						@media screen and (max-width: $breakpoint-medium) {
+							font-size: 9rem;
+						}
+						@media screen and (max-width: $breakpoint-tablet) {
+							font-size: 8rem;
+							margin-right: 1rem;
+							letter-spacing: 8pt;
+						}
+						@media screen and (max-width: 625px) {
+							font-size: 6rem;
+							margin-right: 0.5rem;
+						}
+						@media screen and (max-width: $breakpoint-mobile), (max-height: $breakpoint-mobile) {
+							font-size: 4rem;
+							margin-right: 0.5rem;
+						}
+						@media screen and (max-width: 400px) {
+							font-size: 3.5rem;
+							margin-right: 0.5rem;
+						}
+					}
+					.HW {
+						font-size: 4rem;
+						font-weight: 300;
+						text-transform: uppercase;
+						color: white;
+						font-family: 'Inter', sans-serif;
+
+						@media screen and (max-width: $breakpoint-large) {
+							font-size: 3.5rem;
+						}
+						@media screen and (max-width: $breakpoint-medium) {
+							font-size: 3rem;
+						}
+						@media screen and (max-width: $breakpoint-tablet) {
+							font-size: 3rem;
+							letter-spacing: 6pt;
+						}
+						@media screen and (max-width: 625px) {
+							font-size: 2rem;
+						}
+						@media screen and (max-width: $breakpoint-mobile), (max-height: $breakpoint-mobile) {
+							font-size: 1.5rem;
+						}
+						@media screen and (max-width: 400px) {
+							font-size: 1.25rem;
+						}
+					}
 				}
 			}
-
-			opacity: 0;
-			animation: introButtonsFadeInLift 0.75s ease 0.25s forwards;
-
-			.Subtitle {
-				color: white;
-				font-weight: 300;
-				font-size: 2rem;
-			}
-			.Buttons {
-				width: 100%;
-				// background-color: white;
+			.Center {
+				left: 50%;
+				bottom: 10%;
+				max-width: 100%;
 				display: flex;
-				gap: 3rem;
+				flex-direction: column;
+				align-items: center;
+				gap: 1.5rem;
+
+				@keyframes introButtonsFadeInLift {
+					from {
+						opacity: 0;
+						bottom: 10%;
+					}
+					to {
+						opacity: 1;
+						bottom: 22%;
+					}
+				}
+
+				opacity: 0;
+				animation: introButtonsFadeInLift 0.75s ease 0.25s forwards;
+
+				.Subtitle {
+					color: white;
+					font-weight: 400;
+					font-size: 2rem;
+					@media screen and (max-width: $breakpoint-tablet) {
+						font-size: 1.75rem;
+					}
+					@media screen and (max-width: $breakpoint-mobile), (max-height: $breakpoint-mobile) {
+						font-size: 1.5rem;
+					}
+					text-align: center;
+				}
+				.Buttons {
+					width: 100%;
+					display: flex;
+					flex-wrap: wrap;
+					align-items: center;
+					justify-content: center;
+					column-gap: 3rem;
+					row-gap: 1rem;
+				}
 			}
 		}
 		.Arrow {
 			position: absolute;
-			top: 90%;
+			bottom: 10%;
 			left: 50%;
 			transform: translateX(-50%);
 			@include flex-center;
-			font-size: 30px;
+			font-size: 2rem;
 			color: white;
 
 			.Bounce {

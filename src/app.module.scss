@@ -1,36 +1,10 @@
 @import 'sass';
 
-// .ExampleSection {
-// 	position: relative;
-// 	margin: 0 auto;
-// 	@include width;
-// 	@include bubble-container;
-
-// 	.Bubble {
-// 		@include bubble;
-// 		.BubbleInner {
-// 			@include bubble-inner;
-// 			// set background color
-// 		}
-// 	}
-// 	.Content {
-// 		@include content-div;
-// 		// set padding here
-// 	}
-
-// 	&Show {
-// 		@extend .ExampleSection;
-// 		@include bubble-show;
-// 	}
-// }
-
 * {
-	font-family: 'KoHo', 'Roboto', sans-serif;
+	font-family: 'Darker Grotesque', sans-serif;
 }
 
 h1 {
-	// font-family: 'Marcellus', sans-serif;
-	// font-family: 'KoHo', sans-serif;
 	color: $color-green;
 	font-family: 'Raleway', sans-serif;
 	font-size: 4rem;

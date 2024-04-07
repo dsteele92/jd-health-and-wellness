@@ -25,7 +25,7 @@
 	margin-bottom: 2rem;
 	padding: 1.25rem;
 	background-color: $color-blue;
-	border-radius: 10px;
+	border-radius: 5px;
 	color: white;
 	text-transform: uppercase;
 }
@@ -53,7 +53,7 @@
 
 @mixin section {
 	background-color: $color-section-background;
-	border-radius: 10px;
+	border-radius: 5px;
 	margin: 0 auto;
 	@include width;
 }
@@ -100,60 +100,32 @@
 	align-items: flex-start;
 }
 
-@mixin content-div {
-	background-color: $color-section-background;
-	margin: $margin-sub-section;
-	border-radius: 20px;
-}
-
 @mixin bubble-container {
 	// this is responsible for the fading in of each section
 	z-index: 0;
-	opacity: 0;
-	transition: $transition-bubble-appear;
+	transition: $transition-bubble;
 	position: relative;
 }
 
 @mixin bubble {
 	z-index: -1;
-	transition: $transition-bubble-appear;
+	transition: $transition-bubble;
 
 	position: absolute;
 	top: 0;
 	left: 0;
 	height: 100%;
 	width: 100%;
-
-	// this is responsible for the enlarging of each bubble on the fade-in
-	padding: 10px;
+	padding: 0px;
 }
 
 @mixin bubble-inner {
 	position: relative;
 	height: 100%;
 	width: 100%;
-	border-radius: 20px;
-	// this is the transition for any background color changes
-	transition: $transition-bubble;
+	border-radius: 5px;
 }
 
 @mixin bubble-active {
-	// this sets the transition for the bubbles on hover
-	transition: $transition-bubble;
 	padding: 5px !important;
 }
-
-@mixin bubble-show {
-	// this is responsible for the fade-in of each bubble
-	opacity: 1;
-	.Bubble {
-		padding: 0px;
-	}
-}
-
-// @mixin bubble-content {
-// 	z-index: 100;
-// 	// position: absolute;
-// 	// height: 100%;
-// 	// width: 100%;
-// }
