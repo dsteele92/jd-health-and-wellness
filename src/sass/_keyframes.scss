@@ -122,12 +122,12 @@
 
 @keyframes sideBounce {
 	from {
-		transform: translateY(0);
+		transform: translateX(0);
 	}
 	60% {
-		transform: translateY(10px);
+		transform: translateX(10px);
 	}
 	to {
-		transform: translateY(0);
+		transform: translateX(0);
 	}
 }
