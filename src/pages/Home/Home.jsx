@@ -11,7 +11,6 @@ import {
 	useScroll,
 	Footer,
 	Services,
-	ServicesMobile,
 	Staff,
 } from 'components';
 
@@ -28,8 +27,6 @@ export default function Home() {
 	const [currentSection, setCurrentSection] = useState(0);
 
 	const { scrollY } = useScroll();
-
-	const windowWidth = window.innerWidth;
 
 	useEffect(() => {
 		if (scrollY >= contact.current.offsetTop - navbar.current.clientHeight - 5) {
@@ -127,7 +124,7 @@ export default function Home() {
 					scrollToContact={scrollToContact}
 				/>
 				<About ref={about} />
-				{windowWidth >= 768 ? <Services ref={services} /> : <ServicesMobile ref={services} />}
+				<Services ref={services} />
 				<Staff ref={staff} />
 				<Reviews ref={reviews} />
 				<Forms ref={forms} />

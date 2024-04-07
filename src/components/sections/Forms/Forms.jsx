@@ -19,7 +19,7 @@ const Forms = forwardRef((props, ref) => {
 		<div className={Style.Forms} ref={ref}>
 			<div className={Style.InnerWrapper}>
 				<div className={Style.AboutSubSection} ref={forms}>
-					<SectionHeader top='Patient' bottom='Forms' width='20rem' />
+					<SectionHeader top='Patient Forms' />
 					<div className={Style[`Content${formsIntersected ? 'Show' : ''}`]}>
 						<ul className={Style.Form}>
 							{patientForms.map((form, index) => (

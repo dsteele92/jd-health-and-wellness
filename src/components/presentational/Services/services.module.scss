@@ -40,7 +40,11 @@
 			position: relative;
 			z-index: 0;
 			width: 28rem;
+			max-width: 100%;
 			height: 42rem;
+			@media screen and (max-width: $breakpoint-mobile) {
+				height: 50rem;
+			}
 			display: flex;
 			flex-direction: column;
 			flex-shrink: 0;
@@ -51,6 +55,9 @@
 
 			.Name {
 				height: 12rem;
+				@media screen and (max-width: $breakpoint-mobile) {
+					height: 14rem;
+				}
 				padding: 1.5rem 2rem;
 				background-color: $color-green;
 				display: flex;

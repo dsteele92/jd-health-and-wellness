@@ -1,20 +1,14 @@
 @import 'sass';
 
 .CardOuter {
-	height: 23rem;
-	@media screen and (max-width: $breakpoint-medium) {
-		height: 18rem;
-	}
+	height: 25rem;
 	padding-top: 3rem;
 	border-radius: 10px;
 	overflow: hidden;
 
 	.CardInner {
 		position: relative;
-		height: 20rem;
-		@media screen and (max-width: $breakpoint-medium) {
-			height: 15rem;
-		}
+		height: 22rem;
 		overflow: visible;
 
 		.Circle {
@@ -91,7 +85,7 @@
 				z-index: 2;
 				position: absolute;
 				bottom: 0;
-				width: 100%;
+				width: 200%;
 				border-radius: 0 0 10px 10px;
 				opacity: 0.35;
 			}
@@ -190,7 +184,7 @@
 					margin: 0 auto 2rem;
 					position: relative;
 					width: 100%;
-					max-width: 75rem;
+					// max-width: 75rem;
 				}
 
 				&Show {

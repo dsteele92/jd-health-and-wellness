@@ -10,10 +10,11 @@
 		@include section-inner;
 
 		.AboutSubSection {
-			@include subsection-flex-row;
+			@include subsection-flex-column;
+			gap: 2rem;
 
 			.Content {
-				@include section-content-row;
+				@include section-content-column;
 				opacity: 0;
 
 				.Form {

@@ -10,17 +10,21 @@
 		@include section-inner;
 		row-gap: 8rem;
 		padding-top: 6rem;
-		padding-bottom: 350px;
+		padding-bottom: 300px;
 
 		.AboutSubSection {
-			@include subsection-flex-row;
+			@include subsection-flex-column;
+			gap: 2rem;
 
 			.Content {
-				@include section-content-row;
+				// @include section-content-row;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
 				// border-left: 2px groove $color-yellow;
 				.IntroText {
 					justify-self: center;
 					text-align: justify;
+					line-height: 2.5rem;
 					// padding-left: 3rem;
 					opacity: 0;
 
@@ -30,17 +34,19 @@
 					}
 				}
 				.VideoContainer {
-					width: 50rem;
-					max-width: 100%;
-					height: fit-content;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					width: 100%;
+					height: 100%;
 					overflow: hidden;
 					opacity: 0;
 
 					video {
 						border: 3px solid $color-green;
 						border-radius: 10px;
-						width: 100%;
-						height: 100%;
+						width: 80%;
+						// height: 100%;
 						object-fit: cover;
 					}
 
@@ -53,134 +59,29 @@
 		}
 	}
 
-	// .CTA {
-	// 	position: relative;
-	// 	@include width;
-	// 	margin: 0 auto;
-	// 	@include bubble-container;
-
-	// 	.Bubble {
-	// 		@include bubble;
-	// 		.BubbleInner {
-	// 			@include bubble-inner;
-	// 			background-color: $color-section-background;
-	// 		}
-	// 	}
-	// 	.Content {
-	// 		@include content-div;
-	// 		@include flex-center;
-	// 		flex-direction: column;
-	// 		padding: 50px 20px;
-	// 		@media screen and (max-width: $breakpoint-tablet) {
-	// 			padding: 30px 20px;
-	// 		}
-	// 		h1 {
-	// 			// width: 100%;
-	// 			color: $color-blue;
-	// 			margin-bottom: 0.5rem;
-	// 			text-transform: uppercase;
-	// 			text-align: center;
-	// 		}
-	// 		h2 {
-	// 			color: $color-green;
-	// 			text-transform: uppercase;
-	// 			text-align: center;
-	// 		}
-	// 	}
-
-	// 	&Show {
-	// 		@extend .CTA;
-	// 		@include bubble-show;
-	// 	}
-	// }
-
-	// .Community {
-	// 	position: relative;
-	// 	margin: 0 auto;
-	// 	@include width;
-	// 	@include bubble-container;
-
-	// 	.Bubble {
-	// 		@include bubble;
-	// 		.BubbleInner {
-	// 			@include bubble-inner;
-	// 			// set background color
-	// 		}
-	// 	}
-	// 	.Content {
-	// 		@include content-div;
-	// 		// set padding here
-	// 		height: 30vh;
-	// 		width: 100%;
-	// 		min-height: 400px;
-	// 		overflow: hidden;
-
-	// 		.Links {
-	// 			position: relative;
-	// 			height: 100%;
-	// 			width: 100%;
-	// 			display: grid;
-	// 			grid-template-rows: repeat(4, 1fr);
-
-	// 			a {
-	// 				list-style: none;
-	// 				&:nth-child(2n) {
-	// 					background-color: $color-grey-light;
-	// 				}
-	// 				.Link {
-	// 					position: relative;
-	// 					width: 100%;
-	// 					height: 100%;
-	// 					display: flex;
-	// 					justify-content: space-between;
-	// 					align-items: center;
-	// 					padding: 0 3rem;
-	// 					@media screen and (max-width: $breakpoint-tablet) {
-	// 						padding: 0 2rem;
-	// 					}
-
-	// 					.Article {
-	// 						height: 100%;
-	// 						width: 60%;
-	// 						display: flex;
-	// 						flex-direction: row;
-	// 						align-items: center;
-	// 						justify-content: flex-start;
-	// 					}
-	// 				}
-	// 			}
-	// 		}
-	// 	}
-
-	// 	&Show {
-	// 		@extend .Community;
-	// 		@include bubble-show;
-	// 	}
-	// }
-
 	.SpinnerContainer {
 		z-index: 10;
-		height: 200px;
-		width: 200px;
+		height: 150px;
+		width: 150px;
 		position: absolute;
 		// margin-top: 3rem;
 		bottom: 4rem;
 		left: 4rem;
 		.Circle {
-			height: 200px;
-			width: 200px;
+			height: 150px;
+			width: 150px;
 			position: absolute;
 			border-radius: 50%;
-			border: 1px solid $color-blue;
+			border: 3px solid $color-yellow;
 			// right: 30px;
 			// bottom: 25px;
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
 			@include flex-center;
-			color: $color-blue;
-			background-color: rgba($color: $color-lightblue, $alpha: 0.85);
-			font-size: 25px;
+			color: $color-yellow;
+			background-color: $color-section-background;
+			font-size: 30px;
 
 			@media screen and (max-width: $breakpoint-tablet) {
 				display: none;
@@ -204,6 +105,5 @@
 		width: 1000px;
 		min-width: 100%;
 		height: 300px;
-		// opacity: 0.75;
 	}
 }

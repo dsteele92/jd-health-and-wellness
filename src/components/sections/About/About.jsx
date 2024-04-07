@@ -6,7 +6,7 @@ import { Stack } from '@mantine/core';
 
 const About = forwardRef((props, ref) => {
 	const [whoWeAre, whoWeAreIntersected] = useHasIntersected({ threshold: 0.5 });
-	const [video, videoIntersected] = useHasIntersected({ threshold: 0.5 });
+	// const [video, videoIntersected] = useHasIntersected({ threshold: 0.5 });
 	// const [CTA, CTAIntersected] = useHasIntersected();
 	// const [video, videoIntersected] = useHasIntersected();
 	// const [community, communityIntersected] = useHasIntersected();
@@ -24,7 +24,7 @@ const About = forwardRef((props, ref) => {
 		<div className={Style.AboutSection} ref={ref}>
 			<Stack className={Style.InnerWrapper}>
 				<div className={Style.AboutSubSection} ref={whoWeAre}>
-					<SectionHeader top='Who' middle='We' bottom='Are' />
+					<SectionHeader top='Who We Are' />
 					<div className={Style.Content}>
 						<div className={Style[`IntroText${whoWeAreIntersected ? 'Show' : ''}`]}>
 							<h3>
@@ -36,12 +36,7 @@ const About = forwardRef((props, ref) => {
 								strengthen both body and mind to improve one’s complete health.
 							</h3>
 						</div>
-					</div>
-				</div>
-				<div className={Style.AboutSubSection} ref={video}>
-					<SectionHeader top='Our' bottom='Story' />
-					<div className={Style.Content}>
-						<div className={Style[`VideoContainer${videoIntersected ? 'Show' : ''}`]}>
+						<div className={Style[`VideoContainer${whoWeAreIntersected ? 'Show' : ''}`]}>
 							<video controls>
 								<source
 									src='https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/JDHW_Better-Together-2.mp4'
@@ -53,47 +48,10 @@ const About = forwardRef((props, ref) => {
 					</div>
 				</div>
 			</Stack>
-			{/* <div className={CTAIntersected ? Style.CTAShow : Style.CTA} ref={CTA}>
-					<div className={Style.Bubble}>
-						<div className={Style.BubbleInner}></div>
-					</div>
-					<div className={Style.Content}>
-						<h1>Schedule an appointment today!</h1>
-						<a href='tel:5038771995'>
-							<h2>Call (503) 877-1995</h2>
-						</a>
-					</div>
-				</div> */}
-			{/* <Staff /> */}
-			{/* <SectionHeader text='COMMUNITY & GOVERNMENT' section='About' /> */}
-			{/* <div className={communityIntersected ? Style.CommunityShow : Style.Community} ref={community}>
-					<div className={Style.Bubble}>
-						<div className={Style.BubbleInner}></div>
-					</div>
-					<div className={Style.Content}>
-						<div className={Style.Links} onMouseLeave={() => setCommunityLinkSelected(-1)}>
-							{communityLinks.map((item, index) => (
-								<a href='/' target='_blank' rel='noopener noreferrer' key={index}>
-									<div
-										className={Style.Link}
-										key={index}
-										onMouseEnter={() => setCommunityLinkSelected(index)}>
-										<h3 className={Style.Article}>{item.name}</h3>
-										<ButtonRound
-											size={windowWidth < 768 ? 'small' : 'medium'}
-											active={communityLinkSelected === index ? true : false}
-										/>
-									</div>
-								</a>
-							))}
-						</div>
-					</div>
-				</div> */}
-			{/* </div> */}
 			<div className={Style.SpinnerContainer}>
 				<div className={Style.Circle}>
 					<img
-						src='https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/see-our-services.png'
+						src='https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/SeeOurServices.png'
 						alt='See our services'
 						className={Style.CircleText}
 						ref={circleText}
@@ -102,7 +60,7 @@ const About = forwardRef((props, ref) => {
 				</div>
 			</div>
 			<img
-				src='https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/pine_tree_horizon_green.png'
+				src='https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/pine_tree_horizon_teal.png'
 				alt='pine tree horizon outline'
 				className={Style.PineTrees}
 			/>

@@ -1,8 +1,8 @@
-import { React, useMemo, useEffect, useRef, forwardRef } from 'react';
+import { React, useMemo, useRef, forwardRef } from 'react';
 import Style from './staff.module.scss';
 import { Carousel } from '@mantine/carousel';
 import { useMediaQuery } from '@mantine/hooks';
-import { useHasIntersected, useScroll } from 'components';
+import { useHasIntersected, SectionHeader } from 'components';
 import { useMantineTheme, rem } from '@mantine/core';
 import { staffInfo } from 'content';
 
@@ -24,7 +24,7 @@ function Card({ name, title, url, info }) {
 						<p>{info}</p>
 					</div>
 					<img
-						src='https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/pine_tree_card_bg.png'
+						src='https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/pine_tree_horizon_teal.png'
 						alt='pine tree background'
 						className={Style.CardBg}
 					/>
@@ -40,15 +40,6 @@ const Staff = forwardRef((props, ref) => {
 	const smText = useRef();
 	const lgText = useRef();
 
-	const { scrollY } = useScroll();
-
-	useEffect(() => {
-		const delta = (3 * scrollY) / window.innerHeight;
-		const deltaSlow = scrollY / window.innerHeight;
-		smText.current.style.transform = `translateX(${deltaSlow % 100}%)`;
-		lgText.current.style.transform = `translateX(${-delta % 100}%)`;
-	}, [scrollY, staffIntersected]);
-
 	const theme = useMantineTheme();
 	const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
 
@@ -62,25 +53,10 @@ const Staff = forwardRef((props, ref) => {
 
 	return (
 		<div className={Style.Staff} ref={ref}>
-			<div className={Style.TextDisplay}>
-				<div className={Style.MovingTextLg}>
-					<div className={Style.LargeText} ref={lgText}>
-						Meet the Team · Meet the Team · Meet the Team · Meet the Team · Meet the Team · Meet the Team ·
-						Meet the Team ·{' '}
-					</div>
-				</div>
-				<div className={Style.MovingTextSm}>
-					<div className={Style.SmallText} ref={smText}>
-						Hover over photos to read more · Hover over photos to read more · Hover over photos to read more
-						· Hover over photos to read more · Hover over photos to read more · Hover over photos to read
-						more · Hover over photos to read more ·{' '}
-					</div>
-				</div>
-			</div>
 			<div className={Style.InnerWrapper}>
 				<div className={Style.AboutSubSection} ref={staff}>
 					{/* <h1>Meet the Team</h1> */}
-					{/* <SectionHeader top='Meet the Team' /> */}
+					<SectionHeader top='Meet the Team' />
 					<div className={Style[`Content${staffIntersected ? 'Show' : ''}`]}>
 						<div className={Style.Carousel}>
 							<Carousel

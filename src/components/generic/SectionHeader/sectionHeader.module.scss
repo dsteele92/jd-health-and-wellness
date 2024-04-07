@@ -6,7 +6,7 @@
 	flex-direction: column;
 	min-width: fit-content;
 	max-width: 20%;
-	padding: 0 1.5rem 1.5rem 0;
+	padding: 0 2rem 1rem 0;
 
 	.Corner {
 		position: absolute;
@@ -14,8 +14,9 @@
 		right: 0;
 		width: 75px;
 		height: 75px;
-		border-right: 3px groove $color-yellow;
-		border-bottom: 3px groove $color-yellow;
+		border-right: 4px solid $color-yellow;
+		border-bottom: 4px solid $color-yellow;
+		// border-radius: 0 0 10px 0;
 	}
 
 	@mixin sharedHeader {

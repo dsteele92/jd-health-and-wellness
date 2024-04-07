@@ -17,12 +17,6 @@ const Intro = forwardRef((props, ref) => {
 						</div>
 					</div>
 				</div>
-				<MainMenu
-					scrollToAbout={scrollToAbout}
-					scrollToReviews={scrollToReviews}
-					scrollToForms={scrollToForms}
-					scrollToContact={scrollToContact}
-				/>
 				<div className={Style.Arrow}>
 					<div className={Style.Bounce} onClick={scrollToAbout}>
 						<HiArrowLongDown />

@@ -1,6 +1,6 @@
 import { React, forwardRef, useMemo } from 'react';
 import Style from './reviews.module.scss';
-import { useHasIntersected } from 'components';
+import { useHasIntersected, SectionHeader } from 'components';
 import { reviewsData } from 'content';
 import { Carousel } from '@mantine/carousel';
 import { useMediaQuery } from '@mantine/hooks';
@@ -51,8 +51,8 @@ const Reviews = forwardRef((props, ref) => {
 		<div className={Style.Reviews} ref={ref}>
 			<div className={Style.InnerWrapper}>
 				<div className={Style.AboutSubSection} ref={reviews}>
-					{/* <SectionHeader top='Reviews' /> */}
-					<h1>Healthcare that hears you</h1>
+					<SectionHeader top='Reviews' />
+					{/* <h1>Healthcare that hears you</h1> */}
 					<div className={Style[`Content${reviewsIntersected ? 'Show' : ''}`]}>
 						<div className={Style.Carousel}>
 							<Carousel
