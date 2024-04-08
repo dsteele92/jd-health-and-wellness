@@ -6,9 +6,15 @@
 	@include section;
 	@include flex-center;
 	height: 4rem;
+	min-height: fit-content;
+	padding: 0 2rem;
+	@media screen and (max-width: $breakpoint-tablet) {
+		height: 6rem;
+	}
 	h3 {
 		color: $color-blue;
 		font-weight: 400;
 		text-transform: uppercase;
+		text-align: center;
 	}
 }

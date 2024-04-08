@@ -25,10 +25,13 @@
 				margin: 1rem 0 1rem 2rem;
 
 				@media screen and (max-width: $breakpoint-medium) {
-					width: 90%;
-					margin: 1rem 0 0 2rem;
+					width: 100%;
+					margin: 1rem 0;
 					column-gap: 2rem;
 					row-gap: 2rem;
+				}
+				@media screen and (max-width: $breakpoint-tablet) {
+					width: 100%;
 				}
 
 				.Form {
@@ -40,6 +43,7 @@
 					transition: $transition-regular;
 					@media screen and (max-width: $breakpoint-medium) {
 						height: 8rem;
+						max-width: 100%;
 					}
 
 					.FormImage {

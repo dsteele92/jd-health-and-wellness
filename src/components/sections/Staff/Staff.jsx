@@ -38,7 +38,7 @@ const Staff = forwardRef((props, ref) => {
 	const [staff, staffIntersected] = useHasIntersected({ threshold: 0.25 });
 
 	const theme = useMantineTheme();
-	const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
+	const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.md})`);
 
 	const slides = useMemo(() => {
 		return staffInfo.map((item, index) => (
@@ -59,7 +59,7 @@ const Staff = forwardRef((props, ref) => {
 								slideSize={{ base: mobile ? '100%' : '30%' }}
 								slideGap={{ base: mobile ? rem(10) : rem(25) }}
 								align='start'
-								slidesToScroll={3}>
+								slidesToScroll={{ base: mobile ? 1 : 3 }}>
 								{slides}
 							</Carousel>
 						</div>

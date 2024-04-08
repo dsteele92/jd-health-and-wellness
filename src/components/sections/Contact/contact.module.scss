@@ -24,6 +24,22 @@
 
 					opacity: 0;
 
+					.Call {
+						display: flex;
+						align-items: center;
+						gap: 1rem;
+
+						.PhoneIcon {
+							color: $color-yellow;
+							font-size: 2rem;
+							@include flex-center;
+						}
+						h3 {
+							font-size: 2rem;
+							font-weight: 700;
+						}
+					}
+
 					&Show {
 						@extend .Content;
 						animation: fadeInLift 0.75s ease forwards;
@@ -37,6 +53,22 @@
 		margin: 0 auto;
 		display: flex;
 		gap: 1rem;
+		@media screen and (max-width: $breakpoint-medium) {
+			flex-direction: column-reverse;
+		}
+		.MapsContent {
+			opacity: 0;
+			width: 100%;
+			border-radius: 5px;
+			overflow: hidden;
+			height: 40vh;
+			min-height: 25rem;
+
+			&Show {
+				@extend .MapsContent;
+				animation: fadeInLift 0.75s ease forwards;
+			}
+		}
 
 		.ContactContainer {
 			opacity: 0;
@@ -44,39 +76,72 @@
 			height: 100%;
 			display: grid;
 			grid-template-columns: 1fr 1fr 1fr;
+
 			// set the height of the grid sections in accordance with height-sm mixin
 			grid-template-rows: minmax(80px, 10vh) minmax(80px, 10vh) minmax(160px, 20vh);
 			column-gap: 0.5rem;
 			row-gap: 0.5rem;
+			@media screen and (max-width: $breakpoint-mobile) {
+				grid-template-columns: 100%;
+				grid-template-rows: auto auto auto auto auto auto;
+				height: fit-content;
+			}
 
 			.FirstName {
 				grid-column: 1 / 2;
 				grid-row: 1 / 1;
+				@media screen and (max-width: $breakpoint-mobile) {
+					grid-column: auto;
+					grid-row: auto;
+				}
 			}
 			.LastName {
 				grid-column: 2 / 3;
 				grid-row: 1 / 1;
+				@media screen and (max-width: $breakpoint-mobile) {
+					grid-column: auto;
+					grid-row: auto;
+				}
 			}
 			.Phone {
 				grid-column: 3 / 4;
 				grid-row: 1 / 1;
+				@media screen and (max-width: $breakpoint-mobile) {
+					grid-column: auto;
+					grid-row: auto;
+				}
 			}
 			.Email {
 				grid-column: 1 / 3;
 				grid-row: 2 / 2;
+				@media screen and (max-width: $breakpoint-mobile) {
+					grid-column: auto;
+					grid-row: auto;
+				}
 			}
 			.Message {
 				grid-column: 1 / 3;
 				grid-row: 3 / 3;
+				@media screen and (max-width: $breakpoint-mobile) {
+					grid-column: auto;
+					grid-row: auto;
+				}
 			}
 			.Submit {
 				grid-column: 3 / 4;
 				grid-row: 2 / 4;
+				@media screen and (max-width: $breakpoint-mobile) {
+					grid-column: auto;
+					grid-row: auto;
+				}
 			}
 
 			.Input {
 				height: 100%;
 				width: 100%;
+				@media screen and (max-width: $breakpoint-mobile) {
+					height: 6rem;
+				}
 				background-color: $color-section-background;
 				border-radius: 5px;
 				display: flex;
@@ -91,16 +156,7 @@
 					letter-spacing: 1pt;
 					color: $color-blue;
 					width: 100%;
-
-					// same as h3 sizing
 					font-size: 1.75rem;
-					@media screen and (max-width: $breakpoint-desktop) {
-						font-size: 1.5rem;
-					}
-
-					@media screen and (max-width: $breakpoint-medium) {
-						font-size: 1rem;
-					}
 				}
 				textarea {
 					padding: 20px 0;
@@ -113,13 +169,6 @@
 					font-weight: 400;
 					letter-spacing: 1pt;
 					font-size: 1.75rem;
-					@media screen and (max-width: $breakpoint-desktop) {
-						font-size: 1.5rem;
-					}
-
-					@media screen and (max-width: $breakpoint-medium) {
-						font-size: 1rem;
-					}
 				}
 			}
 
@@ -127,6 +176,9 @@
 				@include bubble-container;
 				height: 100%;
 				width: 100%;
+				@media screen and (max-width: $breakpoint-mobile) {
+					height: 10rem;
+				}
 				.Bubble {
 					@include bubble;
 					.BubbleInner {
@@ -158,18 +210,6 @@
 			&Show {
 				@extend .ContactContainer;
 				animation: fadeInLift 0.75s ease 0.5s forwards;
-			}
-		}
-
-		.MapsContent {
-			opacity: 0;
-			width: 100%;
-			border-radius: 5px;
-			overflow: hidden;
-
-			&Show {
-				@extend .MapsContent;
-				animation: fadeInLift 0.75s ease forwards;
 			}
 		}
 	}

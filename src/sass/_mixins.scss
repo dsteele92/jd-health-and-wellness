@@ -62,9 +62,9 @@
 	width: 100%;
 	max-width: $inner-max-width;
 	margin: 0 auto;
-	padding: 4rem 5rem 4rem;
+	padding: 4rem 5rem;
 	@media screen and (max-width: $breakpoint-mobile) {
-		padding: 2rem 3rem;
+		padding: 3rem 2rem;
 	}
 }
 

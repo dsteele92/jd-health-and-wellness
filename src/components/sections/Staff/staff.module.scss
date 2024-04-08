@@ -89,6 +89,9 @@
 				width: 200%;
 				border-radius: 0 0 5px 5px;
 				opacity: 1;
+				@media screen and (max-width: $breakpoint-medium) {
+					opacity: 0.75;
+				}
 			}
 			.CardText {
 				position: absolute;
@@ -144,6 +147,10 @@
 				.Button {
 					align-self: flex-end;
 					margin: 1rem 1rem 0 0;
+					@media screen and (max-width: $breakpoint-mobile) {
+						align-self: center;
+						margin: 0 0 0 0;
+					}
 				}
 
 				&Show {

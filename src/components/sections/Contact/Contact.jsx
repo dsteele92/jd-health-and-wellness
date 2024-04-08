@@ -2,6 +2,7 @@ import { React, useState, forwardRef } from 'react';
 import { Stack } from '@mantine/core';
 import Style from './contact.module.scss';
 import { useHasIntersected, SectionHeader, ButtonRoundInverse, GoogleMaps } from 'components';
+import { FaPhoneAlt } from 'react-icons/fa';
 
 const Contact = forwardRef((props, ref) => {
 	const [contact, contactIntersected] = useHasIntersected({ threshold: 0.25 });
@@ -23,6 +24,12 @@ const Contact = forwardRef((props, ref) => {
 						{/* <h1>Contact us to schedule an appointment</h1> */}
 						<div className={Style[`Content${contactIntersected ? 'Show' : ''}`]}>
 							<h2>Call us to schedule an appointment today.</h2>
+							<div className={Style.Call}>
+								<div className={Style.PhoneIcon}>
+									<FaPhoneAlt />
+								</div>
+								<h3>(503) 877-1995</h3>
+							</div>
 						</div>
 					</div>
 				</Stack>
