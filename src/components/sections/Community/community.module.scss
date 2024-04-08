@@ -56,6 +56,9 @@
 				margin-top: 3rem;
 				padding: 0 2rem;
 				color: white;
+				@media screen and (max-width: $breakpoint-tablet) {
+					padding: 0 0;
+				}
 			}
 		}
 
@@ -67,6 +70,9 @@
 				height: fit-content;
 				width: 100%;
 				padding: 3rem 2rem;
+			}
+			@media screen and (max-width: $breakpoint-tablet) {
+				padding: 3rem 0;
 			}
 
 			.RightContent {
@@ -80,6 +86,9 @@
 					display: flex;
 					justify-content: space-between;
 					gap: 2rem;
+					@media screen and (max-width: $breakpoint-mobile) {
+						gap: 1rem;
+					}
 					opacity: 0;
 					cursor: pointer;
 
