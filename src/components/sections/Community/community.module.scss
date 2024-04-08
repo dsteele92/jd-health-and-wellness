@@ -1,0 +1,140 @@
+@import 'sass';
+
+.Community {
+	position: relative;
+	overflow: hidden;
+	height: fit-content;
+	@include section;
+	background-image: url('https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/oregon-coast.jpg');
+	background-size: cover;
+
+	// height: 80vh;
+
+	.Tint {
+		z-index: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba($color: rgb(80, 80, 80), $alpha: 0.6);
+		border-radius: 5px;
+	}
+
+	.InnerWrapper {
+		position: relative;
+		z-index: 1;
+		@include section-inner;
+		height: 100%;
+		padding: 0 3rem;
+		display: flex;
+
+		.Stripe {
+			height: 100%;
+			width: 40%;
+			background-color: rgba($color: $color-blue, $alpha: 0.8);
+			backdrop-filter: blur(10px);
+			padding: 4rem 2rem 5rem;
+
+			display: flex;
+			flex-direction: column;
+
+			.StripeContent {
+				margin-top: 3rem;
+				padding: 0 2rem;
+				color: white;
+			}
+		}
+
+		.Right {
+			// height: 100%;
+			width: 60%;
+			padding: 10% 5rem;
+
+			.RightContent {
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+
+				.Article {
+					display: flex;
+					justify-content: space-between;
+					gap: 2rem;
+					opacity: 0;
+					cursor: pointer;
+
+					h1 {
+						font-family: 'Darker Grotesque', sans-serif;
+					}
+					h3 {
+						font-family: 'Darker Grotesque', sans-serif;
+					}
+
+					.Number {
+						transition: $transition-regular;
+						color: white;
+						font-style: italic;
+						font-weight: 300;
+						font-size: 4rem;
+						height: 5rem;
+						width: 5rem;
+					}
+					.Name {
+						font-size: 2rem;
+						transition: $transition-regular;
+						color: white;
+						flex-grow: 1;
+						display: flex;
+						align-items: center;
+					}
+
+					&0 {
+						@extend .Article;
+					}
+					&1 {
+						@extend .Article;
+					}
+					&2 {
+						@extend .Article;
+					}
+					&3 {
+						@extend .Article;
+					}
+
+					&:hover {
+						.Number {
+							color: $color-yellow;
+						}
+						.Name {
+							color: $color-yellow;
+						}
+					}
+				}
+
+				&Show {
+					@extend .RightContent;
+
+					.Article {
+						&0 {
+							animation: 0.5s fadeInLift forwards;
+							animation-delay: 0.25s;
+						}
+						&1 {
+							animation: 0.5s fadeInLift forwards;
+							animation-delay: 0.5s;
+						}
+						&2 {
+							animation: 0.5s fadeInLift forwards;
+							animation-delay: 0.75s;
+						}
+						&3 {
+							animation: 0.5s fadeInLift forwards;
+							animation-delay: 1s;
+						}
+					}
+				}
+			}
+		}
+	}
+}

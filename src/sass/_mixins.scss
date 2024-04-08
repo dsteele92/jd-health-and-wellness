@@ -63,7 +63,6 @@
 	max-width: $inner-max-width;
 	margin: 0 auto;
 	padding: 4rem 5rem 4rem;
-	row-gap: 6rem;
 	@media screen and (max-width: $breakpoint-mobile) {
 		padding: 2rem 3rem;
 	}
@@ -82,7 +81,6 @@
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
-	// padding: 0 3%;
 	gap: 1rem;
 }
 

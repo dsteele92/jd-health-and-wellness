@@ -12,6 +12,7 @@ import {
 	Footer,
 	Services,
 	Staff,
+	Community,
 } from 'components';
 
 export default function Home() {
@@ -20,7 +21,7 @@ export default function Home() {
 	const about = useRef();
 	const services = useRef();
 	const staff = useRef();
-	// const news = useRef();
+	const community = useRef();
 	const reviews = useRef();
 	const forms = useRef();
 	const contact = useRef();
@@ -52,16 +53,16 @@ export default function Home() {
 		const offset = about.current.offsetTop - navbar.current.clientHeight - 5;
 		window.scrollTo({ top: offset, behavior: 'smooth' });
 	};
-	// const scrollToServices = () => {
-	// 	const offset = services.current.offsetTop - navbar.current.clientHeight - 5;
-	// 	window.scrollTo({ top: offset, behavior: 'smooth' });
-	// };
 	const scrollToStaff = () => {
 		const offset = staff.current.offsetTop - navbar.current.clientHeight - 5;
 		window.scrollTo({ top: offset, behavior: 'smooth' });
 	};
 	const scrollToReviews = () => {
 		const offset = reviews.current.offsetTop - navbar.current.clientHeight - 5;
+		window.scrollTo({ top: offset, behavior: 'smooth' });
+	};
+	const scrollToCommunity = () => {
+		const offset = community.current.offsetTop - navbar.current.clientHeight - 5;
 		window.scrollTo({ top: offset, behavior: 'smooth' });
 	};
 	const scrollToForms = () => {
@@ -85,6 +86,10 @@ export default function Home() {
 		const offset = reviews.current.offsetTop - 5;
 		window.scrollTo({ top: offset });
 	};
+	const scrollToMobileCommunity = () => {
+		const offset = community.current.offsetTop - 5;
+		window.scrollTo({ top: offset });
+	};
 	const scrollToMobileForms = () => {
 		const offset = forms.current.offsetTop - 5;
 		window.scrollTo({ top: offset });
@@ -102,6 +107,7 @@ export default function Home() {
 				scrollToAbout={scrollToAbout}
 				scrollToStaff={scrollToStaff}
 				scrollToReviews={scrollToReviews}
+				scrollToCommunity={scrollToCommunity}
 				scrollToForms={scrollToForms}
 				scrollToContact={scrollToContact}
 				currentSection={currentSection}
@@ -111,22 +117,18 @@ export default function Home() {
 				scrollToAbout={scrollToMobileAbout}
 				scrollToStaff={scrollToStaff}
 				scrollToReviews={scrollToMobileReviews}
+				scrollToCommunity={scrollToMobileCommunity}
 				scrollToForms={scrollToMobileForms}
 				scrollToContact={scrollToMobileContact}
 				currentSection={currentSection}
 			/>
 			<div className={Style.Home}>
-				<Intro
-					ref={intro}
-					scrollToAbout={scrollToAbout}
-					scrollToReviews={scrollToReviews}
-					scrollToForms={scrollToForms}
-					scrollToContact={scrollToContact}
-				/>
+				<Intro ref={intro} scrollToAbout={scrollToAbout} scrollToForms={scrollToForms} />
 				<About ref={about} />
 				<Services ref={services} />
 				<Staff ref={staff} />
 				<Reviews ref={reviews} />
+				<Community ref={community} />
 				<Forms ref={forms} />
 				<Contact ref={contact} />
 				<Footer />

@@ -1,6 +1,6 @@
 import { React, forwardRef, useMemo } from 'react';
 import Style from './reviews.module.scss';
-import { useHasIntersected, SectionHeader } from 'components';
+import { useHasIntersected, SectionHeader, ButtonSquare } from 'components';
 import { reviewsData } from 'content';
 import { Carousel } from '@mantine/carousel';
 import { useMediaQuery } from '@mantine/hooks';
@@ -22,11 +22,6 @@ function Card({ name, review }) {
 						/>
 						<p>{review}</p>
 					</div>
-					{/* <img
-						src='https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/pine_tree_card_bg.png'
-						alt='pine tree background'
-						className={Style.CardBg}
-					/> */}
 				</div>
 			</div>
 		</div>
@@ -52,7 +47,6 @@ const Reviews = forwardRef((props, ref) => {
 			<div className={Style.InnerWrapper}>
 				<div className={Style.AboutSubSection} ref={reviews}>
 					<SectionHeader top='Reviews' />
-					{/* <h1>Healthcare that hears you</h1> */}
 					<div className={Style[`Content${reviewsIntersected ? 'Show' : ''}`]}>
 						<div className={Style.Carousel}>
 							<Carousel
@@ -62,6 +56,9 @@ const Reviews = forwardRef((props, ref) => {
 								slidesToScroll={3}>
 								{slides}
 							</Carousel>
+						</div>
+						<div className={Style.Button}>
+							<ButtonSquare text='View All' />
 						</div>
 					</div>
 				</div>

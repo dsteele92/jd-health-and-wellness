@@ -3,6 +3,7 @@ export { default as About } from './sections/About/About.jsx';
 export { default as Reviews } from './sections/Reviews/Reviews.jsx';
 export { default as Forms } from './sections/Forms/Forms.jsx';
 export { default as Contact } from './sections/Contact/Contact.jsx';
+export { default as Community } from './sections/Community/Community.jsx';
 
 export { default as SectionHeader } from './generic/SectionHeader/SectionHeader.jsx';
 export { default as ButtonSquare } from './generic/ButtonSquare/ButtonSquare.jsx';

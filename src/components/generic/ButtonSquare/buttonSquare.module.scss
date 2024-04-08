@@ -4,7 +4,7 @@
 	position: relative;
 	flex-shrink: 0;
 	// background-color: rgba($color: white, $alpha: 0.9);
-	background-color: rgba($color: $color-white, $alpha: 0.8);
+	background-color: rgba($color: $color-white, $alpha: 0.75);
 	backdrop-filter: blur(10px);
 	border: 2px solid $color-green;
 	border-radius: 5px;
@@ -17,8 +17,8 @@
 	.Text {
 		text-transform: uppercase;
 		color: $color-blue;
-		font-size: 1.5rem;
-		font-weight: 400;
+		font-size: 1.65rem;
+		font-weight: 500;
 		// font-family: Raleway, sans-serif;
 	}
 

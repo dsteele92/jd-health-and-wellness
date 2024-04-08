@@ -14,33 +14,60 @@
 			gap: 2rem;
 
 			.Content {
-				@include section-content-column;
 				opacity: 0;
 
+				display: flex;
+				justify-content: center;
+				flex-wrap: wrap;
+				column-gap: 8rem;
+				row-gap: 3rem;
+				width: 90%;
+				margin: 1rem 0 1rem 2rem;
+
+				@media screen and (max-width: $breakpoint-medium) {
+					width: 90%;
+					margin: 1rem 0 0 2rem;
+					column-gap: 2rem;
+					row-gap: 2rem;
+				}
+
 				.Form {
-					list-style: none;
-					border: 2px solid $color-background-main;
-					height: fit-content;
-					width: 100%;
-					border-radius: 5px;
-					overflow: hidden;
+					position: relative;
+					height: 11rem;
+					display: flex;
+					align-items: center;
+					cursor: pointer;
+					transition: $transition-regular;
+					@media screen and (max-width: $breakpoint-medium) {
+						height: 8rem;
+					}
 
-					li {
-						height: 5rem;
-						display: flex;
-						justify-content: space-between;
-						align-items: center;
-						padding: 0 1rem;
+					.FormImage {
+						height: 100%;
+					}
+					.FormLabel {
+						transition: $transition-regular;
+						background-color: $color-green;
+						height: 99%;
+						width: 10rem;
+						@media screen and (max-width: $breakpoint-medium) {
+							width: 14rem;
+						}
+						@include flex-center;
+						padding: 0.5rem 1rem;
+						border-radius: 5px 0 0 5px;
+
 						h3 {
+							color: white;
 							font-weight: 500;
-							// color: white;
+							font-size: 1.5rem;
+							line-height: 1.75rem;
 						}
+					}
 
-						&:nth-of-type(odd) {
-							background-color: rgba($color: $color-green, $alpha: 0.5);
-						}
-						&:nth-of-type(even) {
-							background-color: rgba($color: $color-background-main, $alpha: 0.5);
+					&:hover {
+						.FormLabel {
+							background-color: $color-yellow;
 						}
 					}
 				}

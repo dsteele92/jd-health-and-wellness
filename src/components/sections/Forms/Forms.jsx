@@ -1,6 +1,7 @@
 import { React, forwardRef } from 'react';
 import Style from './forms.module.scss';
 import { useHasIntersected, SectionHeader } from 'components';
+import { patientForms } from 'content';
 // import { Modal } from '@mantine/core';
 // import { useDisclosure } from '@mantine/hooks';
 // import { IntakeForm } from './IntakeForm.tsx';
@@ -20,13 +21,18 @@ const Forms = forwardRef((props, ref) => {
 				<div className={Style.AboutSubSection} ref={forms}>
 					<SectionHeader top='Patient Forms' />
 					<div className={Style[`Content${formsIntersected ? 'Show' : ''}`]}>
-						{/* <ul className={Style.Form}>
-							{patientForms.map((form, index) => (
-								<li key={index}>
+						{patientForms.map((form, index) => (
+							<div key={index} className={Style.Form}>
+								<div className={Style.FormLabel}>
 									<h3>{form.name}</h3>
-								</li>
-							))}
-						</ul> */}
+								</div>
+								<img
+									src='https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/form.png'
+									alt='form'
+									className={Style.FormImage}
+								/>
+							</div>
+						))}
 					</div>
 				</div>
 			</div>
