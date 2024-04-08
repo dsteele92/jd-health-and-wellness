@@ -85,10 +85,10 @@
 					position: absolute;
 					bottom: 0.5rem;
 					right: 1rem;
-					@media screen and (max-width: $breakpoint-tablet) {
-						right: 0.5rem;
-					}
 					display: flex;
+					@media screen and (max-width: $breakpoint-tablet) {
+						display: none;
+					}
 					flex-direction: column;
 					justify-content: center;
 					align-items: center;
@@ -110,6 +110,20 @@
 						p {
 							opacity: 1;
 						}
+					}
+				}
+				.ShowBioMobile {
+					position: absolute;
+					bottom: 0.75rem;
+					right: 0.75rem;
+					display: none;
+					@media screen and (max-width: $breakpoint-tablet) {
+						display: flex;
+					}
+					p {
+						font-size: 0.9rem;
+						font-weight: 500;
+						color: white;
 					}
 				}
 			}

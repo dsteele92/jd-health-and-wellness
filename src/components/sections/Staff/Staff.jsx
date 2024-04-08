@@ -26,6 +26,9 @@ function Card({ name, title, url, info }) {
 							<FaCircleArrowRight />
 							<p>Show Bio</p>
 						</div>
+						<div className={Style.ShowBioMobile}>
+							<p>Tap to View Bio</p>
+						</div>
 					</div>
 					<div
 						className={Style[`CardText${showBio ? 'Show' : ''}`]}
