@@ -1,12 +1,15 @@
-import { React, useMemo, forwardRef } from 'react';
+import { React, useMemo, forwardRef, useState } from 'react';
 import Style from './staff.module.scss';
 import { Carousel } from '@mantine/carousel';
 import { useMediaQuery } from '@mantine/hooks';
 import { useHasIntersected, SectionHeader, ButtonSquare } from 'components';
 import { useMantineTheme, rem } from '@mantine/core';
 import { staffInfo } from 'content';
+import { FaCircleArrowRight } from 'react-icons/fa6';
+import { IoMdCloseCircle } from 'react-icons/io';
 
 function Card({ name, title, url, info }) {
+	const [showBio, setShowBio] = useState(false);
 	return (
 		<div className={Style.CardOuter}>
 			<div className={Style.CardInner}>
@@ -16,11 +19,20 @@ function Card({ name, title, url, info }) {
 					</div>
 				)}
 				<div className={Style.Card}>
-					<div className={Style.CardContent}>
+					<div className={Style.CardContent} onClick={() => setShowBio(true)}>
 						<h3 className={Style.Header}>{name}</h3>
 						<div style={{ backgroundImage: `url(${url})` }} className={Style.CardImage}></div>
+						<div className={Style.ShowBio}>
+							<FaCircleArrowRight />
+							<p>Show Bio</p>
+						</div>
 					</div>
-					<div className={Style.CardText}>
+					<div
+						className={Style[`CardText${showBio ? 'Show' : ''}`]}
+						style={{ pointerEvents: showBio ? 'auto' : 'none' }}>
+						<div className={Style.Close} onClick={() => setShowBio(false)}>
+							<IoMdCloseCircle />
+						</div>
 						<p>{info}</p>
 					</div>
 					<img

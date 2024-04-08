@@ -6,7 +6,7 @@ import { Carousel } from '@mantine/carousel';
 import { useMediaQuery } from '@mantine/hooks';
 import { useMantineTheme, rem } from '@mantine/core';
 
-function Card({ name, review }) {
+function Card({ name, highlight }) {
 	return (
 		<div className={Style.CardOuter}>
 			<div className={Style.CardInner}>
@@ -20,7 +20,15 @@ function Card({ name, review }) {
 							alt='five stars'
 							style={{ width: '100px', height: '20px' }}
 						/>
-						<p>{review}</p>
+						<p>
+							{/* <span className={Style.QuoteLeft}>
+								<FaQuoteLeft />
+							</span> */}
+							{highlight}
+							{/* <span className={Style.QuoteRight}>
+								<FaQuoteRight />
+							</span> */}
+						</p>
 					</div>
 				</div>
 			</div>

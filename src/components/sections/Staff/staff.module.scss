@@ -1,14 +1,14 @@
 @import 'sass';
 
 .CardOuter {
-	height: 25rem;
-	padding-top: 3rem;
+	height: 28rem;
+	padding-top: 4rem;
 	border-radius: 5px;
 	overflow: hidden;
 
 	.CardInner {
 		position: relative;
-		height: 22rem;
+		height: 24rem;
 		overflow: visible;
 
 		.Circle {
@@ -20,9 +20,9 @@
 			background-color: $color-white;
 			border: 1px solid $color-grey-dark;
 			border-radius: 50%;
-			height: 6rem;
-			width: 6rem;
-			padding: 0.5rem;
+			height: 7rem;
+			width: 7rem;
+			padding: 1rem;
 			@include flex-center;
 
 			.Caption {
@@ -45,9 +45,9 @@
 			border: 1px solid $color-grey-dark;
 			background-color: $color-white;
 			overflow: hidden;
-			cursor: pointer;
 
 			.CardContent {
+				cursor: pointer;
 				position: absolute;
 				transition: $transition-regular;
 				z-index: 10;
@@ -81,7 +81,36 @@
 					border-radius: 5px;
 					filter: grayscale(20%);
 				}
+				.ShowBio {
+					position: absolute;
+					bottom: 0.5rem;
+					right: 1rem;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					gap: 0.15rem;
+					color: $color-green;
+					transition: $transition-regular;
+					font-size: 2rem;
+					p {
+						transition: $transition-regular;
+						opacity: 0;
+						font-size: 0.9rem;
+						font-weight: 500;
+						color: $color-yellow;
+					}
+				}
+				&:hover {
+					.ShowBio {
+						color: $color-yellow;
+						p {
+							opacity: 1;
+						}
+					}
+				}
 			}
+
 			.CardBg {
 				z-index: 2;
 				position: absolute;
@@ -109,12 +138,16 @@
 					font-weight: 400;
 					color: white;
 				}
-			}
-			&:hover {
-				.CardContent {
-					opacity: 0;
+				.Close {
+					position: absolute;
+					top: 0.5rem;
+					right: 1rem;
+					color: $color-green;
+					font-size: 2rem;
+					cursor: pointer;
 				}
-				.CardText {
+				&Show {
+					@extend .CardText;
 					opacity: 1;
 				}
 			}

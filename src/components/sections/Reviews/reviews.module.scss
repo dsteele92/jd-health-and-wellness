@@ -1,14 +1,14 @@
 @import 'sass';
 
 .CardOuter {
-	height: 30rem;
+	height: 28rem;
 	padding-top: 4rem;
 	border-radius: 5px;
 	overflow: hidden;
 
 	.CardInner {
 		position: relative;
-		height: 26rem;
+		height: 24rem;
 		overflow: visible;
 
 		.Circle {
@@ -56,6 +56,9 @@
 				border-radius: 5px;
 				background-color: rgba($color: $color-blue, $alpha: 1);
 				overflow: hidden;
+				display: flex;
+				flex-direction: column;
+				gap: 1rem;
 				&:hover {
 					overflow: auto;
 				}
@@ -64,6 +67,14 @@
 					font-weight: 400;
 					color: white;
 				}
+			}
+			.QuoteLeft {
+				color: $color-green;
+				margin-right: 1rem;
+			}
+			.QuoteRight {
+				color: $color-green;
+				margin-left: 1rem;
 			}
 			.CardBg {
 				z-index: 2;
