@@ -85,6 +85,9 @@
 					position: absolute;
 					bottom: 0.5rem;
 					right: 1rem;
+					@media screen and (max-width: $breakpoint-tablet) {
+						right: 0.5rem;
+					}
 					display: flex;
 					flex-direction: column;
 					justify-content: center;
