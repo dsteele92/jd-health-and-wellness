@@ -7,9 +7,12 @@ import { useMantineTheme, rem } from '@mantine/core';
 import { staffInfo } from 'content';
 import { FaCircleArrowRight } from 'react-icons/fa6';
 import { IoMdCloseCircle } from 'react-icons/io';
+import { Modal } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
 
 function Card({ name, title, url, info }) {
 	const [showBio, setShowBio] = useState(false);
+
 	return (
 		<div className={Style.CardOuter}>
 			<div className={Style.CardInner}>
@@ -50,6 +53,8 @@ function Card({ name, title, url, info }) {
 }
 
 const Staff = forwardRef((props, ref) => {
+	const [opened, { open, close }] = useDisclosure(false);
+
 	const [staff, staffIntersected] = useHasIntersected({ threshold: 0.25 });
 
 	const theme = useMantineTheme();
@@ -63,8 +68,34 @@ const Staff = forwardRef((props, ref) => {
 		));
 	}, []);
 
+	const viewAllModal = useMemo(() => {
+		return (
+			<div className={Style.ModalContent}>
+				{staffInfo.map((item, index) => (
+					<div key={index} className={Style.Member}>
+						<div className={Style.MemberTitle}>
+							<h3 className={Style.Header}>{item.name}</h3>
+							<div style={{ backgroundImage: `url(${item.url})` }} className={Style.CardImage}></div>
+						</div>
+						<div className={Style.MemberText}>
+							<p>{item.info}</p>
+						</div>
+					</div>
+				))}
+			</div>
+		);
+	}, []);
+
 	return (
 		<div className={Style.Staff} ref={ref}>
+			<Modal
+				opened={opened}
+				onClose={close}
+				size='100%'
+				classNames={{ body: Style.ViewAllModal }}
+				withCloseButton={false}>
+				{viewAllModal}
+			</Modal>
 			<div className={Style.InnerWrapper}>
 				<div className={Style.AboutSubSection} ref={staff}>
 					<SectionHeader top='Meet the Team' />
@@ -78,7 +109,7 @@ const Staff = forwardRef((props, ref) => {
 								{slides}
 							</Carousel>
 						</div>
-						<div className={Style.Button}>
+						<div className={Style.Button} onClick={open}>
 							<ButtonSquare text='View All' />
 						</div>
 					</div>

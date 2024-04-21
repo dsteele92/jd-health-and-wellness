@@ -21,15 +21,16 @@ const Contact = forwardRef((props, ref) => {
 				<Stack className={Style.InnerWrapper}>
 					<div className={Style.AboutSubSection} ref={contact}>
 						<SectionHeader top='Contact us' />
-						{/* <h1>Contact us to schedule an appointment</h1> */}
 						<div className={Style[`Content${contactIntersected ? 'Show' : ''}`]}>
 							<h2>Call us to schedule an appointment today.</h2>
-							<div className={Style.Call}>
-								<div className={Style.PhoneIcon}>
-									<FaPhoneAlt />
+							<a href='tel:5038771995'>
+								<div className={Style.Call}>
+									<div className={Style.PhoneIcon}>
+										<FaPhoneAlt />
+									</div>
+									<h3>(503) 877-1995</h3>
 								</div>
-								<h3>(503) 877-1995</h3>
-							</div>
+							</a>
 						</div>
 					</div>
 				</Stack>
