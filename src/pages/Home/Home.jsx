@@ -30,15 +30,18 @@ export default function Home() {
 	const { scrollY } = useScroll();
 
 	useEffect(() => {
-		if (scrollY >= contact.current.offsetTop - navbar.current.clientHeight - 5) {
+		if (scrollY >= contact.current.offsetTop - navbar.current.clientHeight - contact.current.clientHeight / 2) {
 			setCurrentSection(5);
-		} else if (scrollY >= forms.current.offsetTop - navbar.current.clientHeight - 5) {
+		} else if (scrollY >= forms.current.offsetTop - navbar.current.clientHeight - forms.current.clientHeight / 2) {
 			setCurrentSection(4);
-		} else if (scrollY >= reviews.current.offsetTop - navbar.current.clientHeight - 5) {
+		} else if (
+			scrollY >=
+			reviews.current.offsetTop - navbar.current.clientHeight - reviews.current.clientHeight / 2
+		) {
 			setCurrentSection(3);
-		} else if (scrollY >= staff.current.offsetTop - navbar.current.clientHeight - 5) {
+		} else if (scrollY >= staff.current.offsetTop - navbar.current.clientHeight - staff.current.clientHeight / 2) {
 			setCurrentSection(2);
-		} else if (scrollY >= about.current.offsetTop - navbar.current.clientHeight - 5) {
+		} else if (scrollY >= about.current.offsetTop - navbar.current.clientHeight - about.current.clientHeight / 2) {
 			setCurrentSection(1);
 		} else {
 			setCurrentSection(0);

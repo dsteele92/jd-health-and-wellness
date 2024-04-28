@@ -56,6 +56,7 @@ const Staff = forwardRef((props, ref) => {
 	const [opened, { open, close }] = useDisclosure(false);
 
 	const [staff, staffIntersected] = useHasIntersected({ threshold: 0.25 });
+	const [selected, setSelected] = useState(0);
 
 	const theme = useMantineTheme();
 	const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.md})`);
@@ -71,20 +72,34 @@ const Staff = forwardRef((props, ref) => {
 	const viewAllModal = useMemo(() => {
 		return (
 			<div className={Style.ModalContent}>
-				{staffInfo.map((item, index) => (
-					<div key={index} className={Style.Member}>
-						<div className={Style.MemberTitle}>
-							<h3 className={Style.Header}>{item.name}</h3>
-							<div style={{ backgroundImage: `url(${item.url})` }} className={Style.CardImage}></div>
-						</div>
-						<div className={Style.MemberText}>
-							<p>{item.info}</p>
-						</div>
+				<div className={Style.ModalHeader}>
+					<div className={Style.ModalClose} onClick={close}>
+						<IoMdCloseCircle />
 					</div>
-				))}
+					<h2 className={Style.ModalTitle}>A compassionate team that hears you</h2>
+					<div className={Style.MemberText}>
+						<h3>{staffInfo[selected].name}</h3>
+						<p>{staffInfo[selected].info}</p>
+					</div>
+				</div>
+				<h4 className={Style.Instructions}>Click on member of our staff to read their bio</h4>
+				<div className={Style.Members}>
+					{staffInfo.map((item, index) => (
+						<div
+							key={index}
+							className={Style[`Member${selected === index ? 'Selected' : ''}`]}
+							onClick={() => setSelected(index)}>
+							<div style={{ backgroundImage: `url(${item.url})` }} className={Style.MemberImage}></div>
+							<div className={Style.MemberInfo}>
+								<h3 className={Style.MemberName}>{item.name}</h3>
+								{item.title && <h4 className={Style.MemberTitle}>{item.title}</h4>}
+							</div>
+						</div>
+					))}
+				</div>
 			</div>
 		);
-	}, []);
+	}, [selected, close]);
 
 	return (
 		<div className={Style.Staff} ref={ref}>

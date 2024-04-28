@@ -65,9 +65,9 @@ const Reviews = forwardRef((props, ref) => {
 								{slides}
 							</Carousel>
 						</div>
-						<div className={Style.Button}>
+						{/* <div className={Style.Button}>
 							<ButtonSquare text='View All' />
-						</div>
+						</div> */}
 					</div>
 				</div>
 			</div>
