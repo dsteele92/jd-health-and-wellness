@@ -33,9 +33,9 @@ export const IntakeForm = () => {
   };
 
   return (
-    <form onSubmit={handleFormSubmit} style={{padding: '0 1rem'}}>
+    <form onSubmit={handleFormSubmit} style={{padding: '0 1rem', width: '100%'}}>
       <Flex direction='column' align='flex-start' gap='sm'>
-        <Text size='xl'>Intake Form</Text>
+        {/* <Text size='xl'>Intake Form</Text> */}
           <Flex gap='md' wrap='wrap'>
               <TextInput
                 label="First Name"

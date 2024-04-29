@@ -21,7 +21,7 @@ const Community = forwardRef((props, ref) => {
 					<h2 className={Style.ModalTitle}>{communityLinks[selected].name}</h2>
 				</div>
 				{communityLinks[selected].links.map((link, index) => (
-					<iframe key={index} title='PDF Viewer' src={link} width='100%' height='800px' />
+					<iframe key={index} title={link.name} src={link} width='100%' height='800px' />
 				))}
 				{communityLinks[selected].image && (
 					<img
