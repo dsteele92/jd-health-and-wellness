@@ -15,6 +15,36 @@ const Contact = forwardRef((props, ref) => {
 	const [message, setMessage] = useState('');
 	const [submitHover, setSubmitHover] = useState(false);
 
+	// Function to submit form data to your AWS Lambda function
+	const handleSubmit = async (event) => {
+		event.preventDefault(); // Prevent the default form submission behavior
+
+		const formData = {
+			firstName,
+			lastName,
+			phone,
+			email,
+			message,
+		};
+
+		try {
+			const response = await fetch('https://s4eyymdmr27o3uobyos62uduea0hlhhi.lambda-url.us-west-2.on.aws/', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(formData),
+			});
+
+			const responseData = await response.json();
+			console.log(responseData);
+			alert('Form submitted successfully!'); // Show success message
+		} catch (error) {
+			console.error('Failed to submit the form:', error);
+			alert('Failed to submit the form.'); // Show error message
+		}
+	};
+
 	return (
 		<div className={Style.Contact} ref={ref}>
 			<main>
@@ -92,7 +122,7 @@ const Contact = forwardRef((props, ref) => {
 						<div className={Style.Bubble}>
 							<div className={Style.BubbleInner}></div>
 						</div>
-						<div className={Style.BubbleContent}>
+						<div className={Style.BubbleContent} onClick={handleSubmit}>
 							<ButtonRoundInverse size='small' direction='right' active={submitHover} section='Contact' />
 							<h3>SEND</h3>
 						</div>

@@ -1,13 +1,19 @@
 import React, { useState, useRef } from 'react';
-import { TextInput, SegmentedControl, Checkbox, Text, Flex, Stack, Button } from '@mantine/core';
+import { TextInput, SegmentedControl, Checkbox, Text, Flex, Stack, Button, Select, ComboboxItem } from '@mantine/core';
 import SignatureCanvas from 'react-signature-canvas';
 
 export const IntakeForm = () => {
   const [firstName, setFirstName] = useState('');
   const [middleName, setMiddleName] = useState('');
   const [lastName, setLastName] = useState('');
+  const [maidenName, setMaidenName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
-  const [gender, setGender] = useState('male');
+  const [maritalStatus, setMaritalStatus] = useState<ComboboxItem | null>(null);
+  const [akas, setAkas] = useState('');
+  const [dob, setDob] = useState('');
+  const [ssn, setSsn] = useState('');
+  const [address, setAddress] = useState('');
+  const [gender, setGender] = useState('');
   const [race, setRace] = useState('');
   const [otherInfo, setOtherInfo] = useState('');
   const [hasAllergies, setHasAllergies] = useState(false);
@@ -47,7 +53,6 @@ export const IntakeForm = () => {
                 label="Middle Name"
                 value={middleName}
                 onChange={(event) => setMiddleName(event.target.value)}
-                required
               />
               <TextInput
                 label="Last Name"
@@ -56,6 +61,27 @@ export const IntakeForm = () => {
                 required
               />
           </Flex>
+              <Flex gap='md' wrap='wrap'>
+                <TextInput
+                  label="Maiden Name"
+                  value={maidenName}
+                  onChange={(event) => setMaidenName(event.target.value)}
+                />
+                    <Select
+                      data={[
+                        { value: 'Married', label: 'Married' },
+                        { value: 'Single, never married', label: 'Single, never married' },
+                        { value: 'Single, divorced', label: 'Single, divorced' },
+                        { value: 'Married, separated', label: 'Married, separated' },
+                        { value: 'Widowed', label: 'Widowed' },
+                        { value: 'Living as married', label: 'Living as married' },
+                        { value: 'Other', label: 'Other' },
+                      ]}
+                      label="Marital Status"
+                      value={maritalStatus ? maritalStatus.value : null}
+                      onChange={(_value, option) => setMaritalStatus(option)}
+                    />
+              </Flex>
           <TextInput
             label="Phone Number"
             value={phoneNumber}
