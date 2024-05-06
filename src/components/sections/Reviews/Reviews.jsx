@@ -1,6 +1,6 @@
 import { React, forwardRef, useMemo } from 'react';
 import Style from './reviews.module.scss';
-import { useHasIntersected, SectionHeader, ButtonSquare } from 'components';
+import { useHasIntersected, SectionHeader } from 'components';
 import { reviewsData } from 'content';
 import { Carousel } from '@mantine/carousel';
 import { useMediaQuery } from '@mantine/hooks';

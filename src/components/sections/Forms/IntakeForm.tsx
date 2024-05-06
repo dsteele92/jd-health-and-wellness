@@ -7,14 +7,24 @@ export const IntakeForm = () => {
   const [middleName, setMiddleName] = useState('');
   const [lastName, setLastName] = useState('');
   const [maidenName, setMaidenName] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
   const [maritalStatus, setMaritalStatus] = useState<ComboboxItem | null>(null);
   const [akas, setAkas] = useState('');
   const [dob, setDob] = useState('');
-  const [ssn, setSsn] = useState('');
-  const [address, setAddress] = useState('');
+  // const [ssn, setSsn] = useState('');
+  // const [address, setAddress] = useState('');
+  const [homePhone, setHomePhone] = useState('');
+  const [cellPhone, setCellPhone] = useState('');
   const [gender, setGender] = useState('');
+  const [pregnant, setPregnant] = useState('');
+  // const [veteran, setVeteran] = useState('');
+
   const [race, setRace] = useState('');
+  // const [height, setHeight] = useState('');
+  // const [weight, setWeight] = useState('');
+  // const [hairColor, setHairColor] = useState('');
+  // const [eyeColor, setEyeColor] = useState('');
+  // const [highestGradeLevelCompleted, setHighestGradeLevelCompleted] = useState('');
+
   const [otherInfo, setOtherInfo] = useState('');
   const [hasAllergies, setHasAllergies] = useState(false);
   const [hasMedicalCondition, setHasMedicalCondition] = useState(false);
@@ -41,7 +51,6 @@ export const IntakeForm = () => {
   return (
     <form onSubmit={handleFormSubmit} style={{padding: '0 1rem', width: '100%'}}>
       <Flex direction='column' align='flex-start' gap='sm'>
-        {/* <Text size='xl'>Intake Form</Text> */}
           <Flex gap='md' wrap='wrap'>
               <TextInput
                 label="First Name"
@@ -83,18 +92,51 @@ export const IntakeForm = () => {
                     />
               </Flex>
           <TextInput
-            label="Phone Number"
-            value={phoneNumber}
-            onChange={(event) => setPhoneNumber(event.target.value)}
+            label="AKA's"
+            value={akas}
+            onChange={(event) => setAkas(event.target.value)}
+          />
+          <TextInput
+            label="Date of Birth"
+            value={dob}
+            onChange={(event) => setDob(event.target.value)}
             required
-            type="tel"
+            type="date"
           />
-          <SegmentedControl
-          size='sm'
-            value={gender}
-            onChange={setGender}
-            data={['male', 'female', 'other']}
-          />
+          <Flex gap='md' wrap='wrap'>
+            <Stack>
+              <Text size='sm'>Gender</Text>
+              <SegmentedControl
+                size='sm'
+                value={gender}
+                onChange={setGender}
+                data={['Male', 'Female', 'Other']}
+              />
+            </Stack>
+            <Stack>
+              <Text size='sm'>Are you pregnant?</Text>
+              <SegmentedControl
+                size='sm'
+                value={pregnant}
+                onChange={setPregnant}
+                data={['Yes', 'No', 'N/A']}
+              />
+            </Stack>
+          </Flex>
+          <Flex gap='md' wrap='wrap'>
+            <TextInput
+              label="Home Phone"
+              value={homePhone}
+              onChange={(event) => setHomePhone(event.target.value)}
+              type="tel"
+            />
+            <TextInput
+              label="Cell Phone"
+              value={cellPhone}
+              onChange={(event) => setCellPhone(event.target.value)}
+              type="tel"
+            />
+          </Flex>
           <TextInput
             label="Race"
             value={race}
