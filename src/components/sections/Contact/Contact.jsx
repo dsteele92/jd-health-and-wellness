@@ -25,6 +25,7 @@ const Contact = forwardRef((props, ref) => {
 			phone,
 			email,
 			message,
+			form: 'contact-forms',
 		};
 
 		try {
