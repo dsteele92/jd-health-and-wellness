@@ -37,8 +37,7 @@ const Contact = forwardRef((props, ref) => {
 				body: JSON.stringify(formData),
 			});
 
-			const responseData = await response.json();
-			console.log(responseData);
+			await response.json();
 			alert('Form submitted successfully!'); // Show success message
 		} catch (error) {
 			console.error('Failed to submit the form:', error);
