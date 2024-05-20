@@ -30,12 +30,6 @@ export const staffInfo = [
 		info: 'Dr. Clark is a licensed naturopathic physician beginning her first year of postgraduate residency at JD Health and Wellness. She is excited to be joining the existing team of practitioners, and looks forward to forming long lasting therapeutic relationships with both new and existing patients at the clinic and its offsite locations.<br/>During her training at the National University of National Medicine in Portland, Dr. Clark focused her clinical education on primary care and integrative mental health. She is passionate about practicing trauma-informed, individualized, patient-centered care. Prior to attending medical school, she gained extensive experience working closely with individuals addressing chemical dependency issues. She strongly believes that everyone can find a path to healing and improved quality of life, and hopes to get the chance to work with you on your journey to wellness.',
 	},
 	{
-		name: 'Dr. Josie Boyle',
-		title: '',
-		url: 'https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/Josie.jpeg',
-		info: 'Dr. Josie Boyle is a doctorate prepared family nurse practitioner that joined our clinic this Spring. She is committed to help her patients on their journey to living their best lives by addressing mind, body, and spirit. The nursing model incorporates your physical health with the social and emotional aspects of your life for a better outcome. Josie has a long history in healthcare,with experience in obstetrics, emergency medicine, and internal medicine. Most recently, addressing addiction and mental health have become a priority in her career. She is happy to talk with you about your health goals, please reach out with any questions.',
-	},
-	{
 		name: 'Christina Cano-Young',
 		title: 'CSWA, CADCI',
 		url: 'https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/ChristinaCanoYoung.jpeg',
@@ -61,7 +55,7 @@ export const staffInfo = [
 	},
 	{
 		name: 'Kimberli Wicks',
-		title: '',
+		title: 'LPC',
 		url: 'https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/Kimberli.jpeg',
 		info: 'Kimberli Wicks is a professional counseling associate who graduated from George Fox University in 2003. Mother of two grown children, she loves the beach, camping and her tiny dog Olive. Play therapy, art and creativity are the backbone of her work with children and adolescents. She utilizes her sense of humor, expressive personality and warm honest approach in her work with families and individuals. Making a solid, trustworthy connection with her clients is her passion. She believes that is the critical foundation for healing to begin. She looks for challenges that can be turned into strengths in her clients. She focuses on behavioral issues, Autism Spectrum, anxiety, parenting challenges and trauma. Feedback she gets often is that she is relatable and non judgmental, but is not afraid to challenge clients outside of their comfort zone. She works with children, adolescents, individuals and families.',
 	},
@@ -76,11 +70,5 @@ export const staffInfo = [
 		title: 'MSW, CSWA',
 		url: 'https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/Mariana_Barrera.jpeg',
 		info: 'Mental health is essential at every stage of our life. It includes our emotional, psychological, and social well-being. I’m passionate about developing strong relationships with my clients. I firmly believe that creating a safe place where they feel safe and comfortable sharing their struggles is fundamental. My passion is to guide individuals through their trauma and unexpected life stressors. My goal as a therapist is to empower individuals to uncover their strengths and to help them heal from their traumatic experiences. I’m committed to providing a space for self-growth and healing.<br/>As a bilingual and bicultural therapist, my therapeutic practice approach is strength-based and trauma-informed. I have been trained in and use different trauma-informed modalities, including Cognitive Behavioral Therapy (CBT), Dialectical Behavioral Therapy (DBT), Acceptance and Commitment Therapy (ACT), and Motivational Interviewing, and currently been trained in becoming an EMDR trained therapist. I have received additional training in Collaborative Assessment and Management of Suicidality (CAMS) to work with individuals at high suicidal risk. I’m also working professionally within the context of alcohol and substance use. I have worked with families, children, adolescents, adults, and the homeless community throughout my practice.<br/>I earned a bachelor’s degree in psychology from Western Oregon University and a master’s degree in social work from Portland State University, focusing on clinical social work. I am currently working on my LSCW. My education and work experience has allowed me to work with individuals who experience Crisis, Depression, generalized anxiety, Panic attacks, mood disorders, obsessive-compulsive disorder, complex PTSD, ADHD, and Substance Use.',
-	},
-	{
-		name: 'Dr. Gina',
-		title: '',
-		url: 'https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/dr-gina.jpeg',
-		info: 'Dr. Gina (she/her) is a biracial licensed Naturopathic Physician who graduated from the National University of Natural Medicine in 2021. She has had extra training supporting client’s mental health needs, receiving a master’s degree in integrative mental health in 2020. Her core values are to practice from an equity framework, where all patients and their individual experiences are welcome.<br/>She strives to collaborate with patients, with kindness and listening. Her focus is to provide holistic primary care by addressing her patients physical, mental, and emotional needs.<br/>When Dr. Gina is not working you can find her spending time with her children, 12-year-olddog, and partner. She loves camping, cooking, swimming, and ultimate frisbee.',
 	},
 ];
