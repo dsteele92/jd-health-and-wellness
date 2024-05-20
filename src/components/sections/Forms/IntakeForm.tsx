@@ -7,7 +7,7 @@ export const IntakeForm = () => {
   const [middleName, setMiddleName] = useState('');
   const [lastName, setLastName] = useState('');
   const [maidenName, setMaidenName] = useState('');
-  const [maritalStatus, setMaritalStatus] = useState(null);
+  const [maritalStatus, setMaritalStatus] = useState('');
   const [akas, setAkas] = useState('');
   const [dob, setDob] = useState('');
   const [ssn, setSsn] = useState('');
@@ -201,8 +201,8 @@ export const IntakeForm = () => {
                 { value: 'Other', label: 'Other' },
               ]}
               label="Marital Status"
-              value={maritalStatus ? maritalStatus.value : null}
-              onChange={(_value, option) => setMaritalStatus(option)}
+              value={maritalStatus ? maritalStatus : ''}
+              onChange={(value) => setMaritalStatus(value || '')}
             />
           </Flex>
           <TextInput
@@ -280,6 +280,11 @@ export const IntakeForm = () => {
             label="Job Title"
             value={jobTitle}
             onChange={(event) => setJobTitle(event.target.value)}
+          />
+          <TextInput
+            label="Dependents"
+            value={dependents}
+            onChange={(event) => setDependents(event.target.value)}
           />
         </Flex>
 
@@ -374,7 +379,7 @@ export const IntakeForm = () => {
             ]}
             label="Primary Source of Household Income"
             value={householdIncomeSource}
-            onChange={(value) => setHouseholdIncomeSource(value)}
+            onChange={(value) => setHouseholdIncomeSource(value || '')}
             />
           <Select
             data={[
@@ -386,7 +391,7 @@ export const IntakeForm = () => {
             ]}
             label="Employability Factor"
             value={employabilityFactor}
-            onChange={(value) => setEmployabilityFactor(value)}
+            onChange={(value) => setEmployabilityFactor(value || '')}
             />
             </Flex>
             <Flex gap='md' wrap='wrap'>
@@ -403,7 +408,7 @@ export const IntakeForm = () => {
             ]}
             label="Health Insurance Coverage"
             value={healthInsurance}
-            onChange={(value) => setHealthInsurance(value)}
+            onChange={(value) => setHealthInsurance(value || '')}
             />
           <Select
             data={[
@@ -416,7 +421,7 @@ export const IntakeForm = () => {
             ]}
             label="Living Arrangement"
             value={livingArrangement}
-            onChange={(value) => setLivingArrangement(value)}
+            onChange={(value) => setLivingArrangement(value || '')}
             />
             </Flex>
           <Flex gap='md' wrap='wrap'>
