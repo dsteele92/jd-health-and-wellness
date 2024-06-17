@@ -22,10 +22,7 @@ const Intro = forwardRef((props, ref) => {
 						<h2 className={Style.Subtitle}>Serving Oregon for over 40 years</h2>
 						<div className={Style.Buttons}>
 							<ButtonSquare text='Patient Forms' minWidth='15rem' onClick={scrollToForms} />
-							<a
-								href='https://patientportal.intelichart.com/login/Account/Login?ReturnUrl=%2f'
-								target='_blank'
-								rel='noopener noreferrer'>
+							<a href='http://practiceportal.intelichart.com/' target='_blank' rel='noopener noreferrer'>
 								<ButtonSquare text='Patient Portal' minWidth='15rem' />
 							</a>
 						</div>

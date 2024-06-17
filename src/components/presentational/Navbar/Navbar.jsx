@@ -52,10 +52,7 @@ const Navbar = forwardRef((props, ref) => {
 						Contact
 					</div>
 					<div className={Style.NavLink}>
-						<a
-							href='https://patientportal.intelichart.com/login/Account/Login?ReturnUrl=%2f'
-							target='_blank'
-							rel='noopener noreferrer'>
+						<a href='http://practiceportal.intelichart.com/' target='_blank' rel='noopener noreferrer'>
 							Patient Portal
 						</a>
 					</div>

@@ -128,10 +128,7 @@ export default function MobileNav(props) {
 						</div>
 					</li>
 					<li className={openNav ? Style.ListFall : Style.List}>
-						<a
-							href='https://patientportal.intelichart.com/login/Account/Login?ReturnUrl=%2f'
-							target='_blank'
-							rel='noopener noreferrer'>
+						<a href='http://practiceportal.intelichart.com/' target='_blank' rel='noopener noreferrer'>
 							<h3>
 								Patient Portal{' '}
 								<span>
