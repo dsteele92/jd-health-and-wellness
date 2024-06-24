@@ -20,10 +20,10 @@ export const IntakeForm = () => {
   const [race, setRace] = useState('');
   const [hairColor, setHairColor] = useState('');
   const [gradeLevel, setGradeLevel] = useState('');
-  const [homeless, setHomeless] = useState(false);
-  const [enrolledInSchool, setEnrolledInSchool] = useState(false);
-  const [employed, setEmployed] = useState(false);
-  const [seekingWork, setSeekingWork] = useState(false);
+  const [homeless, setHomeless] = useState();
+  const [enrolledInSchool, setEnrolledInSchool] = useState();
+  const [employed, setEmployed] = useState();
+  const [seekingWork, setSeekingWork] = useState();
   const [workHours, setWorkHours] = useState('');
   const [grossMonthlyIncome, setGrossMonthlyIncome] = useState('');
   const [employment, setEmployment] = useState('');
@@ -50,12 +50,12 @@ export const IntakeForm = () => {
   const [emergencyContactRelationship, setEmergencyContactRelationship] = useState('');
   const [emergencyContactAddress, setEmergencyContactAddress] = useState('');
   const [emergencyContactPhone, setEmergencyContactPhone] = useState('');
-  const [emergencyContactVoicemail, setEmergencyContactVoicemail] = useState(false);
-  const [authorizedToSchedule, setAuthorizedToSchedule] = useState(false);
+  const [emergencyContactVoicemail, setEmergencyContactVoicemail] = useState();
+  const [authorizedToSchedule, setAuthorizedToSchedule] = useState();
   const [authorizedPersonName, setAuthorizedPersonName] = useState('');
   const [authorizedPersonDOB, setAuthorizedPersonDOB] = useState('');
-  const [authorizedToDiscussTreatment, setAuthorizedToDiscussTreatment] = useState(false);
-  const [authorizedToPayBenefits, setAuthorizedToPayBenefits] = useState(false);
+  const [authorizedToDiscussTreatment, setAuthorizedToDiscussTreatment] = useState();
+  const [authorizedToPayBenefits, setAuthorizedToPayBenefits] = useState();
   const [mainReasonForVisit, setMainReasonForVisit] = useState('');
   const [otherConcerns, setOtherConcerns] = useState('');
   const [healthGoals, setHealthGoals] = useState('');
@@ -63,99 +63,104 @@ export const IntakeForm = () => {
   const [medications, setMedications] = useState('');
   const [medicationAllergies, setMedicationAllergies] = useState('');
   const [otherInfo, setOtherInfo] = useState('');
-  const [hasAllergies, setHasAllergies] = useState(false);
-  const [hasMedicalCondition, setHasMedicalCondition] = useState(false);
+  const [hasAllergies, setHasAllergies] = useState();
+  const [hasMedicalCondition, setHasMedicalCondition] = useState();
 
   const sigCanvas = useRef({});
 
   const handleSignatureClear = () => {
-    sigCanvas.current.clear();
+    (sigCanvas.current).clear();
   };
 
   const handleFormSubmit = async (event) => {
-    event.preventDefault(); // Prevent the default form submission behavior
+    event.preventDefault();
 
     const formData = {
-      firstName,
-      middleName,
-      lastName,
-      maidenName,
-      maritalStatus: maritalStatus ? maritalStatus.value : null,
-      akas,
-      dob,
-      ssn,
-      address,
-      homePhone,
-      cellPhone,
-      gender,
-      pregnant,
-      veteran,
-      race,
-      hairColor,
-      gradeLevel,
-      homeless,
-      enrolledInSchool,
-      employed,
-      seekingWork,
-      workHours,
-      grossMonthlyIncome,
-      employment,
-      jobTitle,
-      dependents,
-      personalMedicalHistory,
-      familyMedicalHistory,
-      surgeries,
-      householdIncomeSource,
-      employabilityFactor,
-      healthInsurance,
-      livingArrangement,
-      primaryInsurance,
-      primaryInsurancePhone,
-      primaryInsuranceGroup,
-      primaryInsuranceID,
-      secondaryInsurance,
-      secondaryInsurancePhone,
-      secondaryInsuranceGroup,
-      secondaryInsuranceID,
-      secondaryInsuredName,
-      secondaryInsuredDOB,
-      emergencyContactName,
-      emergencyContactRelationship,
-      emergencyContactAddress,
-      emergencyContactPhone,
-      emergencyContactVoicemail,
-      authorizedToSchedule,
-      authorizedPersonName,
-      authorizedPersonDOB,
-      authorizedToDiscussTreatment,
-      authorizedToPayBenefits,
-      mainReasonForVisit,
-      otherConcerns,
-      healthGoals,
-      previousCare,
-      medications,
-      medicationAllergies,
-      otherInfo,
-      hasAllergies,
-      hasMedicalCondition,
-      form: 'patient-forms',
+      data: {
+        firstName,
+        middleName,
+        lastName,
+        maidenName,
+        maritalStatus,
+        akas,
+        dob,
+        ssn,
+        address,
+        homePhone,
+        cellPhone,
+        gender,
+        pregnant,
+        veteran,
+        race,
+        hairColor,
+        gradeLevel,
+        homeless,
+        enrolledInSchool,
+        employed,
+        seekingWork,
+        workHours,
+        grossMonthlyIncome,
+        employment,
+        jobTitle,
+        dependents,
+        personalMedicalHistory,
+        familyMedicalHistory,
+        surgeries,
+        householdIncomeSource,
+        employabilityFactor,
+        healthInsurance,
+        livingArrangement,
+        primaryInsurance,
+        primaryInsurancePhone,
+        primaryInsuranceGroup,
+        primaryInsuranceID,
+        secondaryInsurance,
+        secondaryInsurancePhone,
+        secondaryInsuranceGroup,
+        secondaryInsuranceID,
+        secondaryInsuredName,
+        secondaryInsuredDOB,
+        emergencyContactName,
+        emergencyContactRelationship,
+        emergencyContactAddress,
+        emergencyContactPhone,
+        emergencyContactVoicemail,
+        authorizedToSchedule,
+        authorizedPersonName,
+        authorizedPersonDOB,
+        authorizedToDiscussTreatment,
+        authorizedToPayBenefits,
+        mainReasonForVisit,
+        otherConcerns,
+        healthGoals,
+        previousCare,
+        medications,
+        medicationAllergies,
+        otherInfo,
+        hasAllergies,
+        hasMedicalCondition
+      },
+      formType: 'Patient',
     };
 
     try {
-      const response = await fetch('https://s4eyymdmr27o3uobyos62uduea0hlhhi.lambda-url.us-west-2.on.aws/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+			const response = await fetch('https://s4eyymdmr27o3uobyos62uduea0hlhhi.lambda-url.us-west-2.on.aws/', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(formData),
+			});
 
-      await response.json();
-      alert('Form submitted successfully!'); // Show success message
-    } catch (error) {
-      console.error('Failed to submit the form:', error);
-      alert('Failed to submit the form.'); // Show error message
-    }
+			const data = await response.json();
+			if (response.ok) {
+				console.log('Response Data:', data);
+				alert('Form submitted successfully!'); // Show success message
+			}
+		} catch (error) {
+			console.error('Failed to submit the form:', error);
+			alert('Failed to submit the form.'); // Show error message
+		}
   };
 
   return (

@@ -17,15 +17,17 @@ const Contact = forwardRef((props, ref) => {
 
 	// Function to submit form data to your AWS Lambda function
 	const handleSubmit = async (event) => {
-		event.preventDefault(); // Prevent the default form submission behavior
+		event.preventDefault();
 
 		const formData = {
-			firstName,
-			lastName,
-			phone,
-			email,
-			message,
-			form: 'contact-forms',
+			data: {
+				firstName,
+				lastName,
+				phone,
+				email,
+				message,
+			},
+			formType: 'Contact',
 		};
 
 		try {
@@ -37,8 +39,11 @@ const Contact = forwardRef((props, ref) => {
 				body: JSON.stringify(formData),
 			});
 
-			await response.json();
-			alert('Form submitted successfully!'); // Show success message
+			const data = await response.json();
+			if (response.ok) {
+				console.log('Response Data:', data);
+				alert('Form submitted successfully!'); // Show success message
+			}
 		} catch (error) {
 			console.error('Failed to submit the form:', error);
 			alert('Failed to submit the form.'); // Show error message

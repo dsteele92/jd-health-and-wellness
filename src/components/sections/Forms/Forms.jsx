@@ -59,7 +59,7 @@ const Forms = forwardRef((props, ref) => {
 				size='100%'
 				classNames={{ body: Style.Modal }}
 				withCloseButton={false}>
-				>{formModal}
+				{formModal}
 			</Modal>
 			<div className={Style.InnerWrapper}>
 				<div className={Style.AboutSubSection} ref={forms}>
