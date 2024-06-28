@@ -1,12 +1,14 @@
 export const communityLinks = [
 	{
-		name: 'Eric Davis Meets with President',
+		name: 'Eric Davis Meets with President & Governor',
 		links: [
 			'https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/Letter_from_OBAMA_7-1-2016.pdf',
 			'https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/Obama_Second_Letter.pdf',
 		],
 		image: 'https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/biden.jpeg',
-		altText: 'Eric Davis with President Obama',
+		altText: 'Eric Davis with President Biden',
+		imageTwo: 'https://jd-health-and-wellness.s3.us-west-2.amazonaws.com/governer.png',
+		altTextTwo: 'Eric Davis with Oregon Governor Tina Kotek',
 	},
 	{
 		name: 'Union Gospel Misson of Salem Partners with Local Clinic to Provide Telehealth Services to Guests',
