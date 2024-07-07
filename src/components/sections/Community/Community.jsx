@@ -21,11 +21,24 @@ const Community = forwardRef((props, ref) => {
 					<h2 className={Style.ModalTitle}>{communityLinks[selected].name}</h2>
 				</div>
 				{communityLinks[selected].image && (
-					<img
-						src={communityLinks[selected].image}
-						alt={communityLinks[selected].altText}
-						className={Style.ModalImage}
-					/>
+					<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
+						<h3>{communityLinks[selected].altText}</h3>
+						<img
+							src={communityLinks[selected].image}
+							alt={communityLinks[selected].altText}
+							className={Style.ModalImage}
+						/>
+					</div>
+				)}
+				{communityLinks[selected].imageTwo && (
+					<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
+						<h3>{communityLinks[selected].altTextTwo}</h3>
+						<img
+							src={communityLinks[selected].imageTwo}
+							alt={communityLinks[selected].altTextTwo}
+							className={Style.ModalImage}
+						/>
+					</div>
 				)}
 				{communityLinks[selected].links.map((link, index) => (
 					<iframe key={index} title={link.name} src={link} width='100%' height='800px' />
