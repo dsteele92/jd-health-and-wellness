@@ -5,9 +5,10 @@
 	margin: 0 auto;
 	@include section;
 	@include flex-center;
-	height: 4rem;
-	min-height: fit-content;
-	padding: 0 2rem;
+	flex-direction: column;
+	height: fit-content;
+	// min-height: fit-content;
+	padding: 0.5rem 2rem;
 	@media screen and (max-width: $breakpoint-tablet) {
 		height: 6rem;
 	}
@@ -16,5 +17,52 @@
 		font-weight: 400;
 		text-transform: uppercase;
 		text-align: center;
+	}
+	.Documents {
+		@include flex-center;
+		gap: 10%;
+		width: 100%;
+		h3 {
+			// font-weight: 500;
+			text-decoration: underline;
+			cursor: pointer;
+		}
+	}
+}
+
+.Modal {
+	background-color: $color-section-background;
+	.ModalContent {
+		padding: 2rem 5%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
+		.ModalHeader {
+			display: flex;
+			// justify-content: space-evenly;
+			flex-direction: column;
+			width: 100%;
+
+			.ModalClose {
+				position: absolute;
+				top: 0.5rem;
+				right: 1rem;
+				color: $color-green;
+				font-size: 2rem;
+				cursor: pointer;
+			}
+			.ModalTitle {
+				color: $color-blue;
+				font-weight: 500;
+				text-align: left;
+				text-transform: uppercase;
+				padding: 0 2rem;
+			}
+		}
+		.ModalImage {
+			width: 100%;
+			max-width: 800px;
+		}
 	}
 }

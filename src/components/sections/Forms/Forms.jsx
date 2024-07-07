@@ -4,7 +4,7 @@ import { useHasIntersected, SectionHeader } from 'components';
 import { patientForms } from 'content';
 import { Modal } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { IntakeForm } from './IntakeForm.tsx';
+import { IntakeForm } from './IntakeForm';
 import { IoMdCloseCircle } from 'react-icons/io';
 
 const Forms = forwardRef((props, ref) => {

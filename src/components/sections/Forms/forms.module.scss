@@ -10,7 +10,6 @@
 		gap: 2rem;
 		.ModalHeader {
 			display: flex;
-			// justify-content: space-evenly;
 			flex-direction: column;
 			width: 100%;
 
@@ -30,6 +29,7 @@
 				padding: 0 2rem;
 			}
 		}
+
 		.ModalImage {
 			width: 100%;
 			max-width: 800px;
